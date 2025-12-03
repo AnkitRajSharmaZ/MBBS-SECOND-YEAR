@@ -233,16 +233,6 @@
             100% { transform: scale(1); opacity: 1; }
         }
 
-        @keyframes popOut {
-            0% { transform: scale(1); opacity: 1; }
-            100% { transform: scale(0.8); opacity: 0; }
-        }
-
-        /* apply when closing modal so it animates out */
-        .modal-content.closing {
-            animation: popOut 260ms ease-in forwards;
-        }
-
         .close-btn {
             position: absolute;
             top: 10px;
@@ -526,48 +516,14 @@
         const modal = document.getElementById("pathologyModal");
 
         function openModal() {
-            // show modal and push a history state so the browser back button can close it
             modal.style.display = "flex";
-            const content = modal.querySelector('.modal-content');
-            content.classList.remove('closing');
-            try {
-                // push a state only if it's not already the modal state
-                if (!history.state || history.state.modal !== 'pathology') {
-                    history.pushState({ modal: 'pathology' }, '');
-                }
-            } catch (e) {
-                // ignore history errors on some platforms
-                console.warn('history.pushState failed', e);
-            }
         }
 
-        function closeModal(triggeredByPop = false) {
-            // play closing animation, then hide and clear dropdowns
-            const content = modal.querySelector('.modal-content');
-            // add closing class to run CSS animation
-            content.classList.add('closing');
-
-            // after animation ends, fully hide modal and reset internals
-            const cleanup = () => {
-                modal.style.display = 'none';
-                content.classList.remove('closing');
-                document.getElementById('paper1').style.display = 'none';
-                document.getElementById('paper2').style.display = 'none';
-                content.removeEventListener('animationend', cleanup);
-            };
-
-            content.addEventListener('animationend', cleanup);
-
-            // If user clicked a close control (not triggered by popstate), and
-            // the modal was opened via history.pushState, go back so the back
-            // button behavior remains consistent. The popstate handler will
-            // call closeModal(true) and we avoid double-closing.
-            if (!triggeredByPop) {
-                if (history.state && history.state.modal === 'pathology') {
-                    // trigger browser back to allow popstate to fire
-                    history.back();
-                }
-            }
+        function closeModal() {
+            modal.style.display = "none";
+            // Optional: Close dropdowns when closing modal
+            document.getElementById('paper1').style.display = 'none';
+            document.getElementById('paper2').style.display = 'none';
         }
 
         // Close modal if clicking outside the white box
@@ -576,15 +532,6 @@
                 closeModal();
             }
         }
-
-        // When the active history entry changes (e.g. user presses Back),
-        // close the modal if it's open. We mark the call so closeModal
-        // doesn't call history.back() again.
-        window.addEventListener('popstate', function(event) {
-            if (modal.style.display === 'flex') {
-                closeModal(true);
-            }
-        });
 
         // 2. Dropdown Logic for Papers
         function toggleTopics(id) {
@@ -635,6 +582,22 @@
                     }
                 }
             });
+        });
+
+        // Ensure overlay is hidden when returning to this page (Back/Forward navigation)
+        // Some mobile browsers restore the exact DOM state (including overlays) from bfcache,
+        // which can leave the splash visible and block interaction. Hide it on pageshow/popstate.
+        window.addEventListener('pageshow', (event) => {
+            pageOverlay.classList.remove('show');
+            pageOverlay.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        });
+
+        // Also handle explicit history navigation events
+        window.addEventListener('popstate', () => {
+            pageOverlay.classList.remove('show');
+            pageOverlay.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
         });
 
         // 3. Background Heart Animation Generator
