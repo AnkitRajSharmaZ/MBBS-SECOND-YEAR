@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detailed Inflammation Notes - Vardaan Learning Institute</title>
+    <!-- Google Font: Kalam for the handwritten feel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --paper-color: #ffffff;
+            --ink-color: #2c3e50;
+            --neon-yellow: #ffff00; /* Brighter neon for importance */
+            --neon-green: #b9f6ca;  /* Natural marker green */
+            --accent-blue: #e1f5fe;
+            --border-color: #455a64;
+            --heading-red: #c62828;
+        }
+
+        body {
+            background-color: #cfd8dc; /* Desk background */
+            font-family: 'Kalam', cursive;
+            color: var(--ink-color);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.5;
+            font-size: 16px; /* Optimized for dense text */
+        }
+
+        /* A4 Paper Simulation */
+        .page-container {
+            background-color: var(--paper-color);
+            width: 210mm; 
+            min-height: 297mm;
+            margin: 0 auto;
+            padding: 20mm; 
+            box-sizing: border-box;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        /* Header / Branding */
+        header {
+            text-align: center;
+            border-bottom: 4px double var(--ink-color);
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin: 0;
+            color: var(--heading-red);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 0px rgba(0,0,0,0.1);
+        }
+
+        .institute-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #37474f;
+            margin-bottom: 5px;
+            text-decoration: underline;
+            text-decoration-color: var(--neon-yellow);
+            text-decoration-thickness: 3px;
+        }
+
+        /* Typography */
+        h2 {
+            color: #0d47a1; /* Dark Blue ink */
+            border-bottom: 2px solid #90caf9;
+            padding-bottom: 2px;
+            margin-top: 40px;
+            font-size: 1.8rem;
+        }
+
+        h3 {
+            color: #2e7d32; /* Green ink */
+            margin-top: 25px;
+            font-weight: 700;
+            font-size: 1.4rem;
+            border-left: 5px solid var(--neon-yellow);
+            padding-left: 10px;
+        }
+
+        h4 {
+            color: #d84315;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        p {
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        /* Highlighting Classes */
+        .highlight {
+            background-color: var(--neon-yellow);
+            padding: 0 2px;
+        }
+
+        .marker-green {
+            background-color: var(--neon-green);
+            padding: 0 2px;
+        }
+
+        /* Hand-drawn Boxes */
+        .sketch-box {
+            background: #fff9c4; /* Light yellow note */
+            border: 2px solid var(--ink-color);
+            border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+            padding: 15px 25px;
+            margin: 25px 0;
+            box-shadow: 3px 3px 0px rgba(0,0,0,0.1);
+        }
+        
+        .sketch-box.blue {
+            background: #e1f5fe;
+            border-color: #0277bd;
+        }
+
+        .sketch-box.important {
+            background: #ffccbc;
+            border-color: #d84315;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            border: 1px solid var(--ink-color);
+            padding: 8px 12px;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #cfd8dc;
+            color: #000;
+            font-weight: bold;
+        }
+
+        /* Lists */
+        ul, ol {
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        .key-point {
+            font-weight: bold;
+            color: #c62828;
+        }
+
+        /* Print Styling */
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+            .page-container {
+                width: 100%;
+                box-shadow: none;
+                margin: 0;
+                padding: 15mm;
+                border: none;
+            }
+            .sketch-box {
+                break-inside: avoid;
+                border-width: 1px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-container">
+        <header>
+            <div class="institute-name">VARDAAN LEARNING INSTITUTE</div>
+            <h1>Inflammation & Repair</h1>
+            <p><strong>Subject:</strong> Pathology (MBBS Phase II) | <strong>Reference:</strong> Ramdas Nayak & Robbins</p>
+        </header>
+
+        <!-- SECTION 1: INTRODUCTION -->
+        <section>
+            <h2>1. General Features of Inflammation</h2>
+            
+            <div class="sketch-box">
+                <p><strong>Definition:</strong> Inflammation is a complex reaction of <strong>vascularized living tissue</strong> to local injury. It serves as a protective response intended to eliminate the initial cause of cell injury (e.g., microbes, toxins) and the necrotic cells and tissues resulting from the original insult.</p>
+                <p><em>Without inflammation, infections would go unchecked, wounds would never heal, and injured tissues would remain permanently festering sores.</em></p>
+            </div>
+
+            <h3>The Cardinal Signs of Inflammation</h3>
+            <p>First described by Celsus (first 4) and Virchow (5th sign):</p>
+            <ol>
+                <li><strong>Rubor (Redness):</strong> Due to dilation of small blood vessels and increased blood flow (hyperemia).</li>
+                <li><strong>Calor (Heat):</strong> Also due to increased blood flow (hyperemia).</li>
+                <li><strong>Tumor (Swelling):</strong> Due to accumulation of fluid in the extravascular space (edema).</li>
+                <li><strong>Dolor (Pain):</strong> Due to stretching of tissues by edema and release of chemical mediators like <span class="highlight">Bradykinin</span> and <span class="highlight">Prostaglandins</span>.</li>
+                <li><strong>Functio Laesa (Loss of Function):</strong> Due to pain, swelling, and tissue damage.</li>
+            </ol>
+
+            <h3>Classification: Acute vs. Chronic Inflammation</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 20%;">Feature</th>
+                        <th style="width: 40%;">Acute Inflammation</th>
+                        <th style="width: 40%;">Chronic Inflammation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Onset</strong></td>
+                        <td>Rapid (minutes to hours)</td>
+                        <td>Slow (days to weeks)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cellular Infiltrate</strong></td>
+                        <td>Mainly <strong>Neutrophils</strong> (Polymorphonuclear leukocytes)</td>
+                        <td><strong>Mononuclear cells</strong> (Macrophages, Lymphocytes, Plasma cells)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tissue Injury</strong></td>
+                        <td>Usually mild and self-limited</td>
+                        <td>Often severe and progressive</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Fibrosis</strong></td>
+                        <td>Absent (unless chronic progression occurs)</td>
+                        <td>Prominent</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Local & Systemic Signs</strong></td>
+                        <td>Prominent</td>
+                        <td>Less prominent</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- SECTION 2: ACUTE INFLAMMATION -->
+        <section>
+            <h2>2. Acute Inflammation</h2>
+            <p>Acute inflammation has two main components: <strong>Vascular Events</strong> and <strong>Cellular Events</strong>.</p>
+
+            <h3>A. Vascular Events (Hemodynamic Changes)</h3>
+            <p>The reactions of blood vessels aim to maximize the movement of plasma proteins and leukocytes out of the circulation and into the site of infection or injury.</p>
+            <ol>
+                <li><strong>Transient Vasoconstriction:</strong> Immediate, transient constriction of arterioles (lasts only seconds). Mediated by neurogenic reflexes.</li>
+                <li><strong>Vasodilation:</strong> It involves arterioles and leads to opening of new capillary beds. Result is increased blood flow (<span class="highlight">Active Hyperemia</span>), causing heat and redness. Mediated by <strong>Histamine</strong> and <strong>Nitric Oxide (NO)</strong> acting on vascular smooth muscle.</li>
+                <li><strong>Increased Vascular Permeability:</strong> The hallmark of acute inflammation. It leads to the escape of protein-rich fluid (exudate) into the extravascular tissue.
+                    <br><em>Mechanisms of Leakage:</em>
+                    <ul>
+                        <li><span class="marker-green">Endothelial Cell Contraction:</span> Leads to widening of intercellular gaps. Usually occurs in post-capillary venules. Mediated by histamine, bradykinin, leukotrienes. This is the <strong>immediate transient response</strong>.</li>
+                        <li><span class="marker-green">Direct Endothelial Injury:</span> Caused by burns, bacterial lytic enzymes. Results in necrosis and detachment of endothelial cells. Leads to <strong>immediate sustained leakage</strong>.</li>
+                        <li><span class="marker-green">Leukocyte-mediated Injury:</span> Activated leukocytes release toxic oxygen species and proteolytic enzymes causing endothelial damage.</li>
+                        <li><span class="marker-green">Increased Transcytosis:</span> Increased transport of fluids and proteins through the endothelial cell via channels (vesiculovacuolar organelle). Mediated by VEGF.</li>
+                    </ul>
+                </li>
+                <li><strong>Stasis:</strong> Loss of fluid results in concentration of red cells in small vessels and increased blood viscosity. Blood flow slows down (Stasis), which allows leukocytes to settle along the endothelium (Margination).</li>
+            </ol>
+
+            <div class="sketch-box blue">
+                <h3>B. Cellular Events (Leukocyte Extravasation)</h3>
+                <p>The journey of leukocytes from the vessel lumen to the tissue is a multistep process regulated by adhesion molecules and cytokines.</p>
+                
+                <h4>1. Margination and Rolling</h4>
+                <p>Due to stasis, leukocytes move to the periphery (margination). They tumble on the endothelial surface, transiently sticking and detaching (rolling). [Image of leukocyte rolling mechanism]</p>
+                <ul>
+                    <li><strong>Mediators:</strong> <span class="highlight">Selectins</span>.
+                        <ul>
+                            <li><strong>L-Selectin:</strong> Expressed on Leukocytes.</li>
+                            <li><strong>E-Selectin:</strong> Expressed on Endothelium (induced by TNF, IL-1).</li>
+                            <li><strong>P-Selectin:</strong> Expressed on Platelets and Endothelium (stored in Weibel-Palade bodies).</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h4>2. Adhesion (Firm Attachment)</h4>
+                <p>Leukocytes stop rolling and bind firmly to the endothelium.</p>
+                <ul>
+                    <li><strong>Mediators:</strong> <span class="highlight">Integrins</span> on leukocytes interacting with Ligands on endothelium.
+                        <ul>
+                            <li><strong>LFA-1 (CD11a/CD18)</strong> on leukocytes binds to <strong>ICAM-1</strong> (Intercellular Adhesion Molecule-1) on endothelium.</li>
+                            <li><strong>VLA-4</strong> on leukocytes binds to <strong>VCAM-1</strong> (Vascular Cell Adhesion Molecule-1).</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h4>3. Transmigration (Diapedesis)</h4>
+                <p>Leukocytes squeeze between endothelial cells to enter the extravascular space. Occurs mainly in venules.</p>
+                <ul>
+                    <li><strong>Mediator:</strong> <span class="highlight">PECAM-1 (CD31)</span> (Platelet Endothelial Cell Adhesion Molecule) present on both leukocytes and endothelial cell junctions. Leukocytes secrete collagenases to pierce the basement membrane.</li>
+                </ul>
+
+                <h4>4. Chemotaxis</h4>
+                <p>Locomotion oriented along a chemical gradient. Leukocytes move toward the site of injury.</p>
+                <ul>
+                    <li><strong>Chemoattractants (Chemotactic Agents):</strong>
+                        <ul>
+                            <li><strong>Exogenous:</strong> Bacterial products (e.g., N-formylmethionine peptides).</li>
+                            <li><strong>Endogenous:</strong>
+                                <ul>
+                                    <li><span class="marker-green">C5a</span> (Complement system).</li>
+                                    <li><span class="marker-green">Leukotriene B4 (LTB4)</span> (Arachidonic acid metabolite).</li>
+                                    <li><span class="marker-green">IL-8</span> (Chemokines).</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <h3>C. Phagocytosis (Cell Eating)</h3>
+            <p>Phagocytosis involves three distinct steps: [Image of phagocytosis process]</p>
+            <ol>
+                <li><strong>Recognition and Attachment:</strong>
+                    <ul>
+                        <li>Phagocytes (Neutrophils/Macrophages) use receptors (Mannose receptors, Scavenger receptors) to recognize microbes.</li>
+                        <li>Efficiency is enhanced by <span class="highlight">Opsonins</span> (coating proteins): IgG antibodies (Fc portion), C3b (complement), and Collectins.</li>
+                    </ul>
+                </li>
+                <li><strong>Engulfment:</strong>
+                    <ul>
+                        <li>Pseudopods extend around the object to form a phagocytic vacuole (<span class="highlight">Phagosome</span>).</li>
+                        <li>The phagosome fuses with a lysosome to form a <span class="highlight">Phagolysosome</span>, discharging granule contents.</li>
+                    </ul>
+                </li>
+                <li><strong>Killing and Degradation:</strong>
+                    <ul>
+                        <li><strong>Oxygen-Dependent Mechanism (Respiratory Burst):</strong>
+                            <ul>
+                                <li>NADPH oxidase converts O<sub>2</sub> to Superoxide anion (O<sub>2</sub><sup>-</sup>).</li>
+                                <li>Superoxide is converted to Hydrogen Peroxide (H<sub>2</sub>O<sub>2</sub>).</li>
+                                <li><span class="highlight">H<sub>2</sub>O<sub>2</sub>-MPO-Halide System:</span> Myeloperoxidase (MPO) in neutrophil granules converts H<sub>2</sub>O<sub>2</sub> + Cl<sup>-</sup> into <strong>Hypochlorous acid (HOCl)</strong> (bleach). This is the most potent bactericidal system.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Oxygen-Independent Mechanism:</strong>
+                            <ul>
+                                <li>Bactericidal Permeability Increasing protein (BPI), Lysozyme (degrades bacterial coat), Lactoferrin (iron-binding), Major Basic Protein (eosinophils).</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
+
+        <!-- SECTION 3: CHEMICAL MEDIATORS -->
+        <section>
+            <h2>3. Chemical Mediators of Inflammation</h2>
+            <p>Mediators can be cell-derived (sequestered in granules or synthesized de novo) or plasma-derived (produced by liver, present as precursors).</p>
+
+            <div class="sketch-box">
+                <h3>A. Cell-Derived Mediators</h3>
+                <ul>
+                    <li><strong>Vasoactive Amines:</strong>
+                        <ul>
+                            <li><span class="highlight">Histamine:</span> Richest source is Mast Cells. Released by trauma, heat, immune reactions (IgE). Causes Vasodilation and increased Vascular Permeability.</li>
+                            <li><span class="highlight">Serotonin (5-HT):</span> Found in Platelets. Actions similar to histamine.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Arachidonic Acid (AA) Metabolites (Eicosanoids):</strong> AA is released from cell membranes by Phospholipase A2.
+                        <ul>
+                            <li><strong>Cyclooxygenase (COX) Pathway:</strong> Generates Prostaglandins (PGs).
+                                <ul>
+                                    <li><em>PGI2 (Prostacyclin):</em> Vasodilation, inhibits platelet aggregation.</li>
+                                    <li><em>TXA2 (Thromboxane A2):</em> Vasoconstriction, promotes platelet aggregation.</li>
+                                    <li><em>PGE2:</em> Causes Vasodilation, <span class="highlight">Pain</span>, and <span class="highlight">Fever</span>.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Lipoxygenase Pathway:</strong> Generates Leukotrienes (LTs) and Lipoxins.
+                                <ul>
+                                    <li><em>LTB4:</em> Potent chemotactic agent for neutrophils.</li>
+                                    <li><em>LTC4, LTD4, LTE4:</em> Cause Bronchospasm and increased Vascular Permeability.</li>
+                                    <li><em>Lipoxins:</em> Anti-inflammatory; inhibit neutrophil recruitment.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Platelet-Activating Factor (PAF):</strong> Derived from membrane phospholipids. Causes platelet aggregation, vasodilation, and increased permeability (100x more potent than histamine).</li>
+                    <li><strong>Cytokines:</strong>
+                        <ul>
+                            <li><span class="highlight">TNF and IL-1:</span> The master cytokines of acute inflammation. Produced by activated macrophages.
+                                <ul>
+                                    <li><em>Local effects:</em> Endothelial activation (adhesion molecules).</li>
+                                    <li><em>Systemic effects:</em> Fever, lethargy, cachexia, release of acute-phase proteins.</li>
+                                </ul>
+                            </li>
+                            <li><span class="highlight">Chemokines:</span> E.g., IL-8. Act as chemoattractants for leukocytes.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nitric Oxide (NO):</strong> Produced by endothelial cells and macrophages. Causes Vasodilation and kills microbes.</li>
+                    <li><strong>Lysosomal Enzymes:</strong> Neutrophil granules (Specific and Azurophilic) contain proteases (elastase, collagenase) that can damage tissue.</li>
+                </ul>
+            </div>
+
+            <div class="sketch-box">
+                <h3>B. Plasma Protein-Derived Mediators</h3>
+                <ul>
+                    <li><strong>Complement System:</strong>
+                        <ul>
+                            <li><span class="highlight">C3a, C5a (Anaphylatoxins):</span> Cause mast cell degranulation (histamine release) → Vasodilation and Permeability.</li>
+                            <li><span class="highlight">C5a:</span> Powerful chemotactic agent. Activates Lipoxygenase pathway.</li>
+                            <li><span class="highlight">C3b:</span> Opsonin (promotes phagocytosis).</li>
+                            <li><span class="highlight">MAC (C5b-9):</span> Membrane Attack Complex causes lysis of microbes.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Kinin System:</strong>
+                        <ul>
+                            <li>Activation leads to formation of <span class="highlight">Bradykinin</span>.</li>
+                            <li>Bradykinin causes increased vascular permeability, vasodilation, smooth muscle contraction, and <strong>Pain</strong>.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Coagulation System:</strong>
+                        <ul>
+                            <li>Thrombin converts fibrinogen to fibrin. Fibrinopeptides increase vascular permeability.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECTION 4: CHRONIC INFLAMMATION -->
+        <section>
+            <h2>4. Chronic Inflammation</h2>
+            <p><strong>Definition:</strong> Inflammation of prolonged duration (weeks or months) in which inflammation, tissue injury, and attempts at repair coexist, in varying combinations.</p>
+
+            <h3>Causes</h3>
+            <ol>
+                <li><strong>Persistent Infections:</strong> By microorganisms that are difficult to eradicate (e.g., <em>Mycobacterium tuberculosis</em>, <em>Treponema pallidum</em>, certain viruses and fungi). These evoke a delayed-type hypersensitivity reaction.</li>
+                <li><strong>Immune-Mediated Inflammatory Diseases (Hypersensitivity):</strong>
+                    <ul>
+                        <li>Autoimmune diseases (e.g., Rheumatoid arthritis, Multiple sclerosis).</li>
+                        <li>Allergic diseases (e.g., Bronchial asthma).</li>
+                    </ul>
+                </li>
+                <li><strong>Prolonged Exposure to Toxic Agents:</strong>
+                    <ul>
+                        <li>Exogenous: Silica dust (Silicosis).</li>
+                        <li>Endogenous: Atherosclerosis (response to plasma lipids).</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h3>Morphological Features</h3>
+            <ul>
+                <li><strong>Infiltration with Mononuclear Cells:</strong> Macrophages, Lymphocytes, and Plasma cells. (Contrast with neutrophils in acute).</li>
+                <li><strong>Tissue Destruction:</strong> Induced by the persistent offending agent or by the inflammatory cells themselves.</li>
+                <li><strong>Attempts at Healing:</strong> Replacement of damaged tissue by connective tissue (fibrosis) and proliferation of small blood vessels (angiogenesis).</li>
+            </ul>
+
+            <h3>Cells of Chronic Inflammation</h3>
+            <p><strong>1. Macrophages:</strong> The dominant cells. Derived from blood monocytes.
+                <br><em>Activation Pathways:</em>
+                <ul>
+                    <li><strong>Classical Activation (M1):</strong> Induced by endotoxin, IFN-gamma. Produce ROS, NO, Lysosomal enzymes. Function: <strong>Microbicidal</strong> and inflammation.</li>
+                    <li><strong>Alternative Activation (M2):</strong> Induced by IL-4, IL-13. Function: <strong>Tissue repair</strong>, fibrosis, anti-inflammatory effects.</li>
+                </ul>
+            </p>
+            <p><strong>2. Lymphocytes:</strong> T and B cells. Interaction between macrophages and lymphocytes amplifies the reaction.</p>
+            <p><strong>3. Eosinophils:</strong> Abundant in immune reactions mediated by IgE and in parasitic infections. Granules contain <span class="highlight">Major Basic Protein</span>, toxic to parasites.</p>
+
+            <div class="sketch-box important">
+                <h3>Granulomatous Inflammation</h3>
+                <p><strong>Definition:</strong> A distinctive pattern of chronic inflammation characterized by aggregates of activated macrophages, often with T lymphocytes, and sometimes associated with central necrosis.</p>
+                <p><strong>Structure of a Granuloma:</strong>
+                    <ul>
+                        <li><strong>Epithelioid Cells:</strong> Activated macrophages develop abundant pale pink granular cytoplasm resembling epithelial cells. They have indistinct cell boundaries.</li>
+                        <li><strong>Giant Cells:</strong> Formed by fusion of epithelioid cells.
+                            <ul>
+                                <li><em>Langhans Type:</em> Nuclei arranged in a horseshoe pattern at periphery (seen in TB).</li>
+                                <li><em>Foreign Body Type:</em> Nuclei scattered haphazardly in cytoplasm (seen in foreign body reaction).</li>
+                            </ul>
+                        </li>
+                        <li><strong>Lymphocytic Collar:</strong> A rim of T lymphocytes surrounding the epithelioid cells.</li>
+                        <li><strong>Fibrosis:</strong> In older granulomas, a rim of fibroblasts and connective tissue encloses the lesion.</li>
+                    </ul>
+                </p>
+
+                <h4>Classification of Granulomas</h4>
+                <ol>
+                    <li><strong>Foreign Body Granulomas:</strong> Incited by relatively inert foreign bodies (talc, sutures). Epithelioid cells and giant cells form around the foreign material.</li>
+                    <li><strong>Immune Granulomas:</strong> Caused by agents capable of inducing a persistent T-cell-mediated immune response (e.g., TB).</li>
+                </ol>
+
+                <h4>Examples of Granulomatous Diseases</h4>
+                <table>
+                    <tr>
+                        <th>Disease</th>
+                        <th>Cause</th>
+                        <th>Tissue Reaction</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Tuberculosis</strong></td>
+                        <td><em>Mycobacterium tuberculosis</em></td>
+                        <td><strong>Caseating Granuloma (Tubercle):</strong> Central caseous (cheesy) necrosis, epithelioid cells, Langhans giant cells.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Leprosy</strong></td>
+                        <td><em>Mycobacterium leprae</em></td>
+                        <td><strong>Non-caseating granulomas</strong> (Tuberculoid type). Acid-fast bacilli in macrophages (Lepromatous type).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Syphilis</strong></td>
+                        <td><em>Treponema pallidum</em></td>
+                        <td><strong>Gumma:</strong> Central necrosis with preservation of outline cells, plasma cell infiltrate.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sarcoidosis</strong></td>
+                        <td>Unknown</td>
+                        <td><strong>Non-caseating "Naked" Granulomas</strong> (sparse lymphocytic rim). Asteroid/Schaumann bodies.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cat-scratch Disease</strong></td>
+                        <td><em>Bartonella henselae</em></td>
+                        <td>Rounded or stellate granuloma containing central granular debris and neutrophils.</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- SECTION 5: UNIVERSITY QUESTIONS -->
+        <section>
+            <h2>Important University Questions (Model Answers)</h2>
+
+            <div class="sketch-box blue">
+                <h3>Q1. Define Inflammation. Describe the cellular events of acute inflammation in detail.</h3>
+                <p><strong>Answer:</strong></p>
+                <p><strong>Definition:</strong> Inflammation is a complex local response of living vascularized tissues to an injurious agent. It is a protective response intended to eliminate the initial cause of cell injury and the necrotic cells and tissues resulting from the original insult.</p>
+                
+                <p><strong>Cellular Events of Acute Inflammation:</strong>
+                The most important function of inflammation is the delivery of leukocytes to the site of injury. This involves two phases: <strong>Leukocyte Extravasation</strong> and <strong>Phagocytosis</strong>.</p>
+                
+                <p><strong>A. Leukocyte Extravasation:</strong>
+                The journey of leukocytes from the vessel lumen to the tissue occurs in the following steps:
+                <br>
+                <strong>1. Margination and Rolling:</strong> Normally, red cells flow in the center (axial stream) and leukocytes are pushed to the wall. In inflammation, stasis slows blood flow, and leukocytes accumulate at the periphery (margination). They bind loosely to the endothelium, detach, and bind again, tumbling along the surface (rolling). This is mediated by the <strong>Selectin</strong> family:
+                <ul>
+                    <li><em>E-selectin</em> (Endothelium) and <em>P-selectin</em> (Endothelium/Platelets) bind to Sialyl-Lewis X on leukocytes.</li>
+                    <li><em>L-selectin</em> (Leukocytes) binds to mucin-like glycam-1 on endothelium.</li>
+                </ul>
+                
+                <strong>2. Adhesion:</strong> Rolling leukocytes firmly attach to the endothelium. This is mediated by <strong>Integrins</strong> on leukocytes binding to immunoglobulins on endothelium:
+                <ul>
+                    <li><em>LFA-1 and Mac-1</em> (Integrins) bind to <em>ICAM-1</em> (Intercellular Adhesion Molecule-1).</li>
+                    <li><em>VLA-4</em> (Integrin) binds to <em>VCAM-1</em> (Vascular Cell Adhesion Molecule-1).</li>
+                    <li> cytokines like TNF and IL-1 activate endothelial cells to increase expression of ICAM and VCAM.</li>
+                </ul>
+                
+                <strong>3. Transmigration (Diapedesis):</strong> Leukocytes squeeze between endothelial cells at intercellular junctions to enter extravascular space. This is mediated by <strong>PECAM-1 (CD31)</strong>. Leukocytes then secrete collagenases to breach the basement membrane.
+                <br>
+                <strong>4. Chemotaxis:</strong> After extravasation, leukocytes migrate toward the site of injury along a chemical gradient. Exogenous chemoattractants include bacterial products. Endogenous chemoattractants include <strong>C5a</strong>, <strong>LTB4</strong>, and <strong>IL-8</strong>.
+                </p>
+
+                <p><strong>B. Phagocytosis:</strong>
+                Once leukocytes (neutrophils and macrophages) reach the site, they engulf and destroy the offender.
+                <br>
+                <strong>1. Recognition and Attachment:</strong> Mediated by opsonins which coat the bacteria. Major opsonins are IgG antibodies (Fc fragment) and C3b (complement product).
+                <br>
+                <strong>2. Engulfment:</strong> Pseudopods flow around the particle to form a phagosome, which fuses with a lysosome to form a phagolysosome.
+                <br>
+                <strong>3. Killing and Degradation:</strong>
+                <ul>
+                    <li><strong>Oxygen-Dependent Killing (Respiratory Burst):</strong> This is the most efficient mechanism. NADPH oxidase reduces oxygen to superoxide (O<sub>2</sub><sup>-</sup>), which converts to H<sub>2</sub>O<sub>2</sub>. Myeloperoxidase (MPO) in neutrophil granules converts H<sub>2</sub>O<sub>2</sub> + Chloride to <strong>Hypochlorous acid (HOCl)</strong>. HOCl is a potent oxidant (bleach) that destroys bacteria by halogenation.</li>
+                    <li><strong>Oxygen-Independent Killing:</strong> Mediated by substances in leukocyte granules like Lysozyme (hydrolyzes bacterial coat), Lactoferrin (binds iron), and Major Basic Protein (cytotoxic to parasites).</li>
+                </ul>
+                </p>
+            </div>
+
+            <div class="sketch-box blue">
+                <h3>Q2. Define Granuloma. Classify it and describe the morphology of a Tuberculous Granuloma.</h3>
+                <p><strong>Answer:</strong></p>
+                <p><strong>Definition:</strong> A granuloma is a distinctive pattern of chronic inflammation characterized by focal aggregation of activated macrophages (epithelioid cells), often surrounded by a collar of lymphocytes and sometimes plasma cells. Giant cells and central necrosis may be present.</p>
+                
+                <p><strong>Pathogenesis:</strong>
+                It is a Type IV Hypersensitivity reaction (Cell-mediated immunity). 
+                <ol>
+                    <li>Macrophages engulf the antigen (e.g., TB bacilli) but cannot eradicate it.</li>
+                    <li>Macrophages present the antigen to CD4+ T cells.</li>
+                    <li>Activated T cells produce cytokines like <strong>IL-2</strong> (activates other T cells) and <strong>Interferon-gamma (IFN-γ)</strong>.</li>
+                    <li>IFN-γ transforms macrophages into <strong>Epithelioid cells</strong> and Giant cells.</li>
+                </ol>
+                </p>
+
+                <p><strong>Classification:</strong>
+                <ol>
+                    <li><strong>Foreign Body Granulomas:</strong> Formed around inert material (talc, sutures) that is large enough to preclude phagocytosis. Epithelioid cells and foreign body giant cells are present. Usually non-immune.</li>
+                    <li><strong>Immune Granulomas:</strong> Caused by insoluble particles (microbes) that induce a cell-mediated immune response. Example: Tuberculosis, Leprosy, Syphilis.</li>
+                </ol>
+                </p>
+
+                <p><strong>Morphology of Tuberculous Granuloma (The Tubercle):</strong>
+                A typical tubercle shows the following zones from center to periphery:
+                <ul>
+                    <li><strong>Central Zone of Caseous Necrosis:</strong> The center appears amorphous, granular, and eosinophilic (pink) with loss of cellular details. It resembles cheese grossly. It is due to the cytotoxic effects of T-cells and free radicals.</li>
+                    <li><strong>Zone of Epithelioid Cells:</strong> Surrounding the necrosis are modified macrophages called epithelioid cells. They have abundant pale pink cytoplasm and distinct cell boundaries, resembling epithelial cells.</li>
+                    <li><strong>Giant Cells:</strong> Langhans type giant cells are characteristic of TB. They are large cells formed by fusion of epithelioid cells, with nuclei arranged in a horseshoe or semicircular pattern at the periphery of the cell.</li>
+                    <li><strong>Peripheral Zone:</strong> A rim of lymphocytes (mainly CD4+ T cells) and plasma cells.</li>
+                    <li><strong>Fibrosis:</strong> In older lesions, fibroblasts produce a collagenous capsule surrounding the granuloma.</li>
+                </ul>
+                </p>
+            </div>
+
+            <div class="sketch-box blue">
+                <h3>Q3. Enumerate the chemical mediators of inflammation. Write a note on Arachidonic Acid Metabolites.</h3>
+                <p><strong>Answer:</strong></p>
+                <p><strong>Chemical Mediators:</strong>
+                Chemical mediators are substances that initiate and regulate inflammatory reactions.
+                <ul>
+                    <li><strong>Cell-Derived Mediators:</strong>
+                        <ul>
+                            <li>Vasoactive Amines: Histamine, Serotonin.</li>
+                            <li>Arachidonic Acid Metabolites: Prostaglandins, Leukotrienes, Lipoxins.</li>
+                            <li>Platelet-Activating Factor (PAF).</li>
+                            <li>Reactive Oxygen Species (ROS).</li>
+                            <li>Nitric Oxide (NO).</li>
+                            <li>Cytokines (TNF, IL-1) and Chemokines.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Plasma-Derived Mediators:</strong>
+                        <ul>
+                            <li>Complement Products (C3a, C5a, C3b, C5b-9).</li>
+                            <li>Kinins (Bradykinin).</li>
+                            <li>Coagulation and Fibrinolytic Proteases.</li>
+                        </ul>
+                    </li>
+                </ul>
+                </p>
+
+                <p><strong>Arachidonic Acid (AA) Metabolites (Eicosanoids):</strong>
+                AA is a 20-carbon polyunsaturated fatty acid derived from cell membrane phospholipids by the enzyme <strong>Phospholipase A2</strong>. Once released, AA is metabolized by two major enzymatic pathways:
+                </p>
+                
+                <p><strong>1. Cyclooxygenase (COX) Pathway:</strong>
+                This pathway produces Prostaglandins (PGs) and Thromboxanes. Key enzymes are COX-1 (constitutive) and COX-2 (inducible during inflammation).
+                <ul>
+                    <li><strong>PGI2 (Prostacyclin):</strong> Produced by vascular endothelium. Causes Vasodilation and inhibits platelet aggregation.</li>
+                    <li><strong>TXA2 (Thromboxane A2):</strong> Produced by platelets. Causes Vasoconstriction and promotes platelet aggregation (opposite to PGI2).</li>
+                    <li><strong>PGD2, PGE2, PGF2α:</strong> Cause Vasodilation and Potentiate Edema.</li>
+                    <li><strong>PGE2:</strong> Specifically involved in the induction of <strong>Pain</strong> and <strong>Fever</strong>.</li>
+                </ul>
+                </p>
+
+                <p><strong>2. Lipoxygenase Pathway:</strong>
+                This pathway produces Leukotrienes (LTs) and Lipoxins. Key enzyme is 5-lipoxygenase (dominant in neutrophils).
+                <ul>
+                    <li><strong>LTB4:</strong> A highly potent chemotactic agent and activator of neutrophils.</li>
+                    <li><strong>LTC4, LTD4, LTE4:</strong> Known as slow-reacting substances of anaphylaxis (SRS-A). They cause intense Bronchoconstriction (asthma) and increased vascular permeability (more potent than histamine).</li>
+                    <li><strong>Lipoxins:</strong> (LXA4, LXB4) These are anti-inflammatory mediators. They inhibit neutrophil recruitment and chemotaxis, aiding in the resolution of inflammation.</li>
+                </ul>
+                </p>
+                <p><em>Clinical Relevance:</em> Anti-inflammatory drugs like Aspirin and NSAIDs (Non-steroidal anti-inflammatory drugs) work by inhibiting the Cyclooxygenase enzymes, thereby blocking prostaglandin synthesis.</p>
+            </div>
+        </section>
+
+        <footer style="text-align:center; margin-top:50px; border-top:4px double var(--ink-color); padding-top:20px; font-size: 0.9rem; color:#555;">
+            &copy; 2023 Vardaan Learning Institute • Comprehensive Exam Preparation Series • Pathology
+        </footer>
+
+    </div>
+
+</body>
+</html>

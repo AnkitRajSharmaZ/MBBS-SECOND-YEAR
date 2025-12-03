@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBBS Pathology Notes: Endocrine System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-yellow: #f4ff40; /* Neon yellowish highlighter */
+            --marker-green: #daffb3; /* Natural light green marker */
+            --ink-color: #2c2c2c; /* Dark grey/black ink look */
+            --paper-white: #ffffff; /* Pure white page */
+            --box-bg: #fffef0; /* Subtle warm tint for boxes */
+            --border-color: #333;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #525659; /* Grey background behind the paper */
+            font-family: 'Kalam', cursive;
+            color: var(--ink-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            line-height: 1.6;
+            font-size: 18px; /* Readable handwritten size */
+        }
+
+        /* A4 Paper Simulation */
+        .page-container {
+            background-color: var(--paper-white);
+            width: 210mm; /* A4 width */
+            min-height: 297mm; /* A4 height minimum */
+            padding: 25mm; /* Standard margins */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 32px;
+            text-align: center;
+            text-decoration: underline;
+            text-decoration-color: var(--neon-yellow);
+            text-decoration-thickness: 5px;
+            margin-bottom: 40px;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            font-size: 26px;
+            border-bottom: 3px solid var(--marker-green);
+            padding-bottom: 5px;
+            margin-top: 40px;
+            color: #1a1a1a;
+            display: inline-block;
+            width: 100%;
+        }
+
+        h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-top: 25px;
+            color: #333;
+            text-decoration: underline;
+        }
+
+        h4 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-top: 15px;
+            color: #444;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin-bottom: 15px;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* Highlighting Classes */
+        .highlight-neon {
+            background-color: var(--neon-yellow);
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .highlight-green {
+            background-color: var(--marker-green);
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        strong {
+            font-weight: 700;
+        }
+
+        /* Hand-drawn Box Style */
+        .hand-drawn-box {
+            border: 2px solid var(--border-color);
+            /* Irregular border radius for hand-drawn effect */
+            border-radius: 2px 20px 3px 25px / 25px 3px 20px 2px;
+            padding: 20px;
+            margin: 25px 0;
+            background-color: var(--box-bg); 
+            box-shadow: 3px 4px 0px rgba(0,0,0,0.1);
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 20px 0;
+            font-size: 16px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: var(--marker-green);
+            font-weight: bold;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        tr td:last-child, tr th:last-child {
+            border-right: none;
+        }
+
+        /* Model Answer Section */
+        .qa-section {
+            border-left: 4px solid var(--neon-yellow);
+            padding-left: 20px;
+            margin-top: 30px;
+        }
+
+        /* Print Settings */
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+            .page-container {
+                width: 100%;
+                box-shadow: none;
+                margin: 0;
+                padding: 15mm;
+            }
+            /* Ensure background colors print */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            h1, h2, h3 {
+                page-break-after: avoid;
+            }
+            table, .hand-drawn-box, li {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 800px) {
+            .page-container {
+                width: 100%;
+                padding: 15px;
+            }
+            table {
+                font-size: 14px;
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-container">
+
+    <h1>TOPIC 09: ENDOCRINE SYSTEM</h1>
+
+    <p><strong>Syllabus Scope:</strong> Thyroid disorders (Goiter, Hyper/Hypothyroidism, Tumors), Diabetes Mellitus, Hyperparathyroidism, Pancreatic Cancer, Adrenal disorders (Cushing's, Insufficiency, Neoplasms).</p>
+
+    <h2>1. THYROID SWELLINGS (GOITER)</h2>
+    <p><strong>Definition:</strong> Goiter is a generalized enlargement of the thyroid gland. It is a compensatory hypertrophy and hyperplasia of follicular epithelium in response to thyroid hormone deficiency.</p>
+
+    <div class="hand-drawn-box">
+        <h3>Classification & Etiology</h3>
+        <ol>
+            <li><strong>Diffuse Nontoxic (Simple) Goiter:</strong>
+                <ul>
+                    <li><em>Endemic:</em> Iodine deficiency (most common cause worldwide). Seen in mountainous regions (e.g., Himalayas).</li>
+                    <li><em>Sporadic:</em> Goitrogens (cabbage, cauliflower), enzyme defects, puberty, pregnancy.</li>
+                </ul>
+            </li>
+            <li><strong>Multinodular Goiter (MNG):</strong> Long-standing simple goiter leads to recurrent episodes of hyperplasia and involution, resulting in nodularity.</li>
+        </ol>
+    </div>
+
+    <h3>Pathogenesis</h3>
+    <p>Iodine deficiency &#8594; Decreased T3/T4 synthesis &#8594; Negative feedback stimulates Pituitary to secrete <span class="highlight-green">TSH</span> &#8594; TSH causes Hypertrophy & Hyperplasia of thyroid follicles &#8594; Goiter.</p>
+    
+    <h3>Pathology (Morphology)</h3>
+    <ul>
+        <li><strong>Hyperplastic Phase:</strong> Diffuse enlargement. Follicles lined by tall columnar epithelium. Scant colloid.</li>
+        <li><strong>Colloid Involution:</strong> If iodine supply increases, follicles fill with colloid and epithelium flattens.</li>
+        <li><strong>Multinodular Goiter:</strong>
+            <ul>
+                <li><em>Gross:</em> Asymmetric, extreme enlargement. Cut surface shows irregular nodules, gelatinous colloid, hemorrhage, fibrosis, and calcification.</li>
+                <li><em>Microscopy:</em> Colloid-rich macrofollicles and small hyperplastic microfollicles.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <hr>
+
+    <h2>2. THYROTOXICOSIS & HYPERTHYROIDISM</h2>
+
+    <h3>Definitions</h3>
+    <ul>
+        <li><strong>Thyrotoxicosis:</strong> Hypermetabolic state caused by elevated circulating free T3 and T4.</li>
+        <li><strong>Hyperthyroidism:</strong> Thyrotoxicosis caused by hyperfunction of the thyroid gland itself.</li>
+    </ul>
+
+    <h3>Etiology</h3>
+    <ol>
+        <li><strong>Diffuse Toxic Hyperplasia (Graves' Disease):</strong> Most common (85%).</li>
+        <li><strong>Toxic Multinodular Goiter (Plummer Disease).</strong></li>
+        <li><strong>Toxic Adenoma.</strong></li>
+    </ol>
+
+    <div class="hand-drawn-box">
+        <h3>Graves' Disease (Pathogenesis)</h3>
+        <p>An autoimmune disorder caused by <span class="highlight-neon">Thyroid Stimulating Immunoglobulins (TSI)</span>.</p>
+        <ul>
+            <li><strong>Mechanism:</strong> TSI mimics TSH and binds to the TSH receptor on thyroid cells &#8594; Stimulates adenylate cyclase &#8594; Increased T3/T4 release.</li>
+            <li><strong>Triad:</strong> 1. Thyrotoxicosis. 2. Ophthalmopathy (Exophthalmos). 3. Dermopathy (Pretibial Myxedema).</li>
+        </ul>
+    </div>
+
+    <h3>Clinical Features</h3>
+    <ul>
+        <li><strong>Metabolic:</strong> Heat intolerance, Weight loss despite increased appetite.</li>
+        <li><strong>Cardiac:</strong> Tachycardia, Palpitations, Atrial Fibrillation.</li>
+        <li><strong>Neuromuscular:</strong> Fine tremors, Anxiety, Hyperreflexia.</li>
+        <li><strong>Ocular:</strong> Stare, lid lag, Proptosis (in Graves').</li>
+    </ul>
+
+    <h3>Laboratory Findings</h3>
+    <ul>
+        <li><strong>TSH:</strong> <span class="highlight-neon">Decreased</span> (Primary).</li>
+        <li><strong>Free T3/T4:</strong> Increased.</li>
+        <li><strong>RAIU (Radioactive Iodine Uptake):</strong> Increased diffuse uptake.</li>
+    </ul>
+
+    <hr>
+
+    <h2>3. HYPOTHYROIDISM</h2>
+    <p>Structural or functional derangement resulting in inadequate thyroid hormone production.</p>
+
+    <h3>Etiology</h3>
+    <ul>
+        <li><strong>Primary:</strong> Hashimoto Thyroiditis (Autoimmune), Iodine Deficiency, Post-ablation (I-131, Surgery).</li>
+        <li><strong>Secondary:</strong> Pituitary failure (Sheehan syndrome).</li>
+    </ul>
+
+    <div class="hand-drawn-box">
+        <h3>Hashimoto Thyroiditis (Pathogenesis)</h3>
+        <p>Autoimmune destruction of the thyroid gland.</p>
+        <ul>
+            <li><strong>Mechanism:</strong> CD8+ Cytotoxic T-cell mediated killing of thyrocytes + Anti-thyroid antibodies (<span class="highlight-green">Anti-TPO</span>, Anti-Thyroglobulin).</li>
+            <li><strong>Pathology:</strong>
+                <ul>
+                    <li><em>Gross:</em> Diffusely enlarged, firm, pale.</li>
+                    <li><em>Microscopy:</em> Intense <strong>Lymphocytic Infiltrate</strong> with Germinal Centers. Atrophic follicles lined by <span class="highlight-neon">Hürthle Cells</span> (eosinophilic granular cytoplasm).</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <h3>Clinical Manifestations</h3>
+    <ul>
+        <li><strong>Cretinism (Infancy/Childhood):</strong> Severe mental retardation, short stature, coarse facial features, protruding tongue.</li>
+        <li><strong>Myxedema (Adults):</strong> Mental sluggishness, Cold intolerance, Weight gain, Constipation, Non-pitting edema (accumulation of GAGs), Bradycardia.</li>
+    </ul>
+
+    <hr>
+
+    <h2>4. THYROID TUMORS</h2>
+    
+    <h3>Classification</h3>
+    <ol>
+        <li><strong>Benign:</strong> Follicular Adenoma.</li>
+        <li><strong>Malignant:</strong>
+            <ul>
+                <li>Papillary Carcinoma (85%) - Best prognosis.</li>
+                <li>Follicular Carcinoma (5-15%).</li>
+                <li>Medullary Carcinoma (5%) - Neuroendocrine.</li>
+                <li>Anaplastic Carcinoma (<5%) - Worst prognosis.</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h3>Pathology of Key Tumors</h3>
+    
+    <h4>1. Papillary Carcinoma</h4>
+    <ul>
+        <li><strong>Genetics:</strong> <em>BRAF</em> mutation, <em>RET/PTC</em> rearrangement. Radiation exposure is a risk factor.</li>
+        <li><strong>Microscopy (Hallmarks):</strong>
+            <ul>
+                <li>Complex branching papillae.</li>
+                <li><span class="highlight-neon">Orphan Annie Eye Nuclei:</span> Optically clear, empty-appearing nuclei.</li>
+                <li><strong>Nuclear Grooves</strong> and Intranuclear Inclusions (Pseudo-inclusions).</li>
+                <li><span class="highlight-green">Psammoma Bodies:</span> Concentric calcifications.</li>
+            </ul>
+        </li>
+        <li><strong>Spread:</strong> Lymphatic spread to cervical nodes.</li>
+    </ul>
+    
+
+[Image of Papillary Thyroid Carcinoma Histology]
+
+
+    <h4>2. Follicular Carcinoma</h4>
+    <ul>
+        <li><strong>Microscopy:</strong> Small follicles containing colloid.</li>
+        <li><strong>Diagnosis:</strong> Requires evidence of <strong>Capsular or Vascular Invasion</strong> to distinguish from adenoma. (Cannot be diagnosed by FNAC).</li>
+        <li><strong>Spread:</strong> Hematogenous spread to bones/lungs.</li>
+    </ul>
+
+    <hr>
+
+    <h2>5. DIABETES MELLITUS (DM)</h2>
+    <p>A metabolic disorder characterized by hyperglycemia due to defects in insulin secretion, insulin action, or both.</p>
+
+    <h3>Classification and Etiology</h3>
+    <table border="1">
+        <tr>
+            <th>Feature</th>
+            <th>Type 1 DM</th>
+            <th>Type 2 DM</th>
+        </tr>
+        <tr>
+            <td><strong>Age</strong></td>
+            <td>Childhood/Adolescence</td>
+            <td>Adults (>40 yrs)</td>
+        </tr>
+        <tr>
+            <td><strong>Pathogenesis</strong></td>
+            <td>Autoimmune destruction of Beta-cells.</td>
+            <td>Insulin Resistance + Relative Beta-cell failure.</td>
+        </tr>
+        <tr>
+            <td><strong>Insulin Levels</strong></td>
+            <td>Absent/Low</td>
+            <td>Normal or High (early) &#8594; Low (late)</td>
+        </tr>
+        <tr>
+            <td><strong>Genetics</strong></td>
+            <td>HLA-DR3, DR4 linkage.</td>
+            <td>Polygenic (Strong family history). No HLA link.</td>
+        </tr>
+        <tr>
+            <td><strong>Autoantibodies</strong></td>
+            <td>Yes (Anti-GAD, Anti-Insulin).</td>
+            <td>No.</td>
+        </tr>
+        <tr>
+            <td><strong>Obesity</strong></td>
+            <td>Not associated.</td>
+            <td>Strongly associated (80%).</td>
+        </tr>
+    </table>
+
+    <h3>Pathogenesis of Complications</h3>
+    <p>Chronic hyperglycemia causes tissue damage via:</p>
+    <ol>
+        <li><strong>Formation of AGEs (Advanced Glycation End-products):</strong> Cross-link proteins, trap LDL in vessels, bind RAGE receptors inducing inflammation.</li>
+        <li><strong>Activation of Protein Kinase C (PKC):</strong> Increases VEGF (neovascularization) and TGF-beta (fibrosis).</li>
+        <li><strong>Polyol Pathway:</strong> Accumulation of Sorbitol causes osmotic damage (Lens cataracts, Nerves).</li>
+    </ol>
+
+    <h3>Pathology (Morphology)</h3>
+    <ul>
+        <li><strong>Pancreas:</strong>
+            <ul>
+                <li><em>Type 1:</em> Insulitis (lymphocytic infiltration), Reduction in number of islets.</li>
+                <li><em>Type 2:</em> Amyloid deposition (Amylin) in islets.</li>
+            </ul>
+        </li>
+        <li><strong>Kidney (Diabetic Nephropathy):</strong>
+            <ul>
+                <li><strong>Glomerular:</strong> Capillary basement membrane thickening, Diffuse Mesangial Sclerosis, <span class="highlight-green">Kimmelstiel-Wilson (KW) Nodules</span> (Nodular glomerulosclerosis - Pathognomonic).</li>
+                <li><strong>Vascular:</strong> Hyaline arteriolosclerosis (affects both afferent & efferent).</li>
+                <li><strong>Tubular:</strong> Armanni-Ebstein lesion (Glycogen deposits).</li>
+            </ul>
+        </li>
+        <li><strong>Eye:</strong> Diabetic Retinopathy (Proliferative/Non-proliferative), Cataract, Glaucoma.</li>
+    </ul>
+
+    <hr>
+
+    <h2>6. HYPERPARATHYROIDISM</h2>
+
+    <h3>Primary Hyperparathyroidism</h3>
+    <ul>
+        <li><strong>Etiology:</strong> Adenoma (85-95%), Hyperplasia (5-10%), Carcinoma (1%).</li>
+        <li><strong>Genetics:</strong> MEN1, MEN2A syndromes.</li>
+        <li><strong>Pathogenesis:</strong> Autonomous overproduction of PTH &#8594; Hypercalcemia.
+            <ul>
+                <li>Bone resorption (Osteoclasts).</li>
+                <li>Renal Ca reabsorption & Phosphate excretion.</li>
+                <li>Vitamin D activation (Increased gut absorption).</li>
+            </ul>
+        </li>
+        <li><strong>Clinical Features ("Bones, Stones, Groans, Moans"):</strong>
+            <ul>
+                <li><em>Bones:</em> Osteitis Fibrosa Cystica (Brown tumors).</li>
+                <li><em>Stones:</em> Renal calculi (Calcium oxalate/phosphate).</li>
+                <li><em>Groans:</em> Peptic ulcers, Pancreatitis, Constipation.</li>
+                <li><em>Moans:</em> Depression, CNS dysfunction.</li>
+            </ul>
+        </li>
+        <li><strong>Labs:</strong> High Serum Calcium, Low Phosphate, High PTH.</li>
+    </ul>
+
+    <hr>
+
+    <h2>7. PANCREATIC CANCER</h2>
+    <p>Mostly Ductal Adenocarcinoma (Exocrine).</p>
+    <ul>
+        <li><strong>Etiology:</strong> Smoking (strongest risk), Chronic Pancreatitis, Diabetes, Obesity.</li>
+        <li><strong>Genetics:</strong> <span class="highlight-neon">KRAS</span> mutation (90%), CDKN2A (p16), TP53, SMAD4.</li>
+        <li><strong>Morphology:</strong>
+            <ul>
+                <li><em>Site:</em> Head of Pancreas (60%).</li>
+                <li><em>Gross:</em> Hard, stellate, grey-white, infiltrating mass. Desmoplastic response.</li>
+                <li><em>Microscopy:</em> Infiltrating glandular structures lined by mucin-secreting atypical cuboidal cells. Perineural invasion is common.</li>
+            </ul>
+        </li>
+        <li><strong>Clinical:</strong> Painless Jaundice (Head tumors), Courvoisier’s Sign (palpable gallbladder), Weight loss. <span class="highlight-green">Trousseau's Sign</span> (Migratory thrombophlebitis).</li>
+        <li><strong>Prognosis:</strong> Very poor. Often metastatic at diagnosis (Liver, Lungs).</li>
+    </ul>
+
+    <hr>
+
+    <h2>8. ADRENAL CORTEX DISORDERS</h2>
+
+    <h3>A. Cushing's Syndrome (Hypercortisolism)</h3>
+    <ul>
+        <li><strong>Etiology:</strong>
+            <ol>
+                <li><strong>Exogenous:</strong> Steroid therapy (Most common cause).</li>
+                <li><strong>Endogenous:</strong>
+                    <ul>
+                        <li><em>Pituitary Adenoma (Cushing Disease):</em> High ACTH. (70%).</li>
+                        <li><em>Adrenal Adenoma/Carcinoma:</em> Low ACTH. (20%).</li>
+                        <li><em>Ectopic ACTH (Small cell lung Ca):</em> Very High ACTH. (10%).</li>
+                    </ul>
+                </li>
+            </ol>
+        </li>
+        <li><strong>Manifestations:</strong> Moon face, Buffalo hump (Truncal obesity), Purple striae, Hypertension, Osteoporosis, Hyperglycemia.</li>
+        <li><strong>Morphology:</strong>
+            <ul>
+                <li><em>Pituitary/Ectopic:</em> Bilateral Diffuse Cortical Hyperplasia.</li>
+                <li><em>Adrenal Adenoma:</em> Solitary yellow nodule. Contralateral adrenal atrophy.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>B. Adrenal Insufficiency (Hypoadrenalism)</h3>
+    <ul>
+        <li><strong>Acute (Adrenal Crisis):</strong> Sudden withdrawal of steroids, Massive hemorrhage (<span class="highlight-neon">Waterhouse-Friderichsen Syndrome</span> in Meningococcemia).</li>
+        <li><strong>Chronic (Addison's Disease):</strong> Autoimmune adrenalitis (most common), Tuberculosis, Metastasis.
+            <ul>
+                <li><em>Manifestations:</em> Weakness, Fatigue, Hyperpigmentation (High ACTH/MSH), Hypotension, Hyponatremia, Hyperkalemia.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <hr>
+
+    <h2>9. ADRENAL NEOPLASMS</h2>
+
+    <h3>Adrenocortical Adenoma</h3>
+    <ul>
+        <li>Usually incidental ("Incidentaloma"). Benign.</li>
+        <li><strong>Gross:</strong> Small, yellow-orange, well-circumscribed.</li>
+        <li><strong>Microscopy:</strong> Lipid-rich clear cells resembling zona fasciculata.</li>
+    </ul>
+
+    <h3>Pheochromocytoma (Adrenal Medulla)</h3>
+    <ul>
+        <li><strong>Definition:</strong> Tumor of chromaffin cells secreting Catecholamines (Adrenaline/Noradrenaline).</li>
+        <li><strong>Rule of 10s:</strong> 10% Bilateral, 10% Extra-adrenal (Paraganglioma), 10% Malignant, 10% Familial (MEN2, VHL, NF1).</li>
+        <li><strong>Clinical:</strong> Episodic Hypertension, Palpitations, Headache, Sweating.</li>
+        <li><strong>Morphology:</strong>
+            <ul>
+                <li><em>Gross:</em> Grey-tan, hemorrhagic. Reaction with Dichromate turns it brown (Chromaffin reaction).</li>
+                <li><em>Microscopy:</em> Nests of cells (<span class="highlight-green">"Zellballen"</span>) separated by vascular stroma.</li>
+            </ul>
+        </li>
+        <li><strong>Labs:</strong> Urinary VMA and Metanephrines.</li>
+    </ul>
+
+    <hr>
+
+    <h2 style="color: #d32f2f; border-color: #d32f2f;">IMPORTANT UNIVERSITY QUESTIONS</h2>
+
+    <div class="qa-section">
+        <h3>Q1: Classify Diabetes Mellitus. Describe the renal lesions in Diabetes (Diabetic Nephropathy).</h3>
+        <p><strong>Introduction:</strong> DM is a group of metabolic disorders sharing the phenotype of hyperglycemia. Diabetic nephropathy is a leading cause of end-stage renal disease.</p>
+        <p><strong>Body:</strong>
+            <br><strong>Classification:</strong> Type 1 (Autoimmune beta-cell destruction), Type 2 (Insulin resistance), Gestational, Secondary (Pancreatitis, Drugs).
+            <br><strong>Renal Lesions:</strong> The kidneys are prime targets of microangiopathy.
+            <ol>
+                <li><em>Glomerular Lesions:</em> Capillary basement membrane thickening, Diffuse mesangial sclerosis, and the pathognomonic <strong>Kimmelstiel-Wilson Nodules</strong> (nodular glomerulosclerosis).</li>
+                <li><em>Vascular Lesions:</em> Hyaline arteriolosclerosis of <strong>both</strong> afferent and efferent arterioles (highly specific).</li>
+                <li><em>Tubulointerstitial:</em> Tubular atrophy, fibrosis, and susceptibility to Pyelonephritis (Papillary Necrosis).</li>
+            </ol>
+        </p>
+        <p><strong>Conclusion:</strong> Microalbuminuria is the earliest marker of diabetic nephropathy.</p>
+    </div>
+
+    <div class="qa-section">
+        <h3>Q2: Describe the etiology and pathology of Graves' Disease.</h3>
+        <p><strong>Introduction:</strong> Graves' disease is the most common cause of endogenous hyperthyroidism, characterized by the triad of thyrotoxicosis, ophthalmopathy, and dermopathy.</p>
+        <p><strong>Body:</strong>
+            <br><strong>Etiology/Pathogenesis:</strong> An autoimmune disorder caused by <strong>Thyroid Stimulating Immunoglobulin (TSI)</strong>. This antibody binds to the TSH receptor and mimics TSH action, stimulating thyroid growth and hormone synthesis unregulated by negative feedback.
+            <br><strong>Pathology:</strong>
+            <ul>
+                <li><em>Gross:</em> Symmetrical, diffuse enlargement of the thyroid. It is soft and fleshy ("Beefy").</li>
+                <li><em>Microscopy:</em> Diffuse hyperplasia. Follicles are lined by tall, crowded columnar epithelium which forms <strong>Papillary infoldings</strong> into the lumen. Colloid is pale and scalloped at the edges ("Scalloping"). Lymphocytic infiltrates are present in the stroma.</li>
+            </ul>
+        </p>
+        <p><strong>Conclusion:</strong> It leads to a hypermetabolic state requiring anti-thyroid drugs or radioiodine therapy.</p>
+    </div>
+
+</div>
+
+</body>
+</html>

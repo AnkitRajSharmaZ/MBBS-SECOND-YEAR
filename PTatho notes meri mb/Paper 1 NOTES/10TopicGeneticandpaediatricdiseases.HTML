@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBBS Pathology Notes: Genetic & Paediatric Diseases</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-yellow: #f4ff40; /* Neon yellowish highlighter */
+            --marker-green: #daffb3; /* Natural light green marker */
+            --ink-color: #2c2c2c; /* Dark grey/black ink look */
+            --paper-white: #ffffff; /* Pure white page */
+            --box-bg: #fffef0; /* Subtle warm tint for boxes */
+            --border-color: #333;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #525659; /* Grey background behind the paper */
+            font-family: 'Kalam', cursive;
+            color: var(--ink-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            line-height: 1.6;
+            font-size: 18px; /* Readable handwritten size */
+        }
+
+        /* A4 Paper Simulation */
+        .page-container {
+            background-color: var(--paper-white);
+            width: 210mm; /* A4 width */
+            min-height: 297mm; /* A4 height minimum */
+            padding: 25mm; /* Standard margins */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 32px;
+            text-align: center;
+            text-decoration: underline;
+            text-decoration-color: var(--neon-yellow);
+            text-decoration-thickness: 5px;
+            margin-bottom: 40px;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            font-size: 26px;
+            border-bottom: 3px solid var(--marker-green);
+            padding-bottom: 5px;
+            margin-top: 40px;
+            color: #1a1a1a;
+            display: inline-block;
+            width: 100%;
+        }
+
+        h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-top: 25px;
+            color: #333;
+            text-decoration: underline;
+        }
+
+        h4 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-top: 15px;
+            color: #444;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin-bottom: 15px;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* Highlighting Classes */
+        .highlight-neon {
+            background-color: var(--neon-yellow);
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .highlight-green {
+            background-color: var(--marker-green);
+            padding: 2px 5px;
+            border-radius: 4px;
+        }
+
+        strong {
+            font-weight: 700;
+        }
+
+        /* Hand-drawn Box Style */
+        .hand-drawn-box {
+            border: 2px solid var(--border-color);
+            /* Irregular border radius for hand-drawn effect */
+            border-radius: 2px 20px 3px 25px / 25px 3px 20px 2px;
+            padding: 20px;
+            margin: 25px 0;
+            background-color: var(--box-bg); 
+            box-shadow: 3px 4px 0px rgba(0,0,0,0.1);
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 20px 0;
+            font-size: 16px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: var(--marker-green);
+            font-weight: bold;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        tr td:last-child, tr th:last-child {
+            border-right: none;
+        }
+
+        /* Model Answer Section */
+        .qa-section {
+            border-left: 4px solid var(--neon-yellow);
+            padding-left: 20px;
+            margin-top: 30px;
+        }
+
+        /* Print Settings */
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+            .page-container {
+                width: 100%;
+                box-shadow: none;
+                margin: 0;
+                padding: 15mm;
+            }
+            /* Ensure background colors print */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            h1, h2, h3 {
+                page-break-after: avoid;
+            }
+            table, .hand-drawn-box, li {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 800px) {
+            .page-container {
+                width: 100%;
+                padding: 15px;
+            }
+            table {
+                font-size: 14px;
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-container">
+
+    <h1>TOPIC 10: GENETIC AND PAEDIATRIC DISEASES</h1>
+
+    <p><strong>Syllabus Scope:</strong> Cytogenetic abnormalities, Single gene mutations (PKU, CF), and Pediatric Tumors (Wilms, Neuroblastoma).</p>
+
+    <h2>1. COMMON CYTOGENETIC ABNORMALITIES</h2>
+    <p>Cytogenetic disorders involve alterations in the number or structure of chromosomes. They may be Autosomal or Sex chromosomal.</p>
+
+    <div class="hand-drawn-box">
+        <h3>A. Down Syndrome (Trisomy 21)</h3>
+        <p>The most common chromosomal disorder and cause of mental retardation.</p>
+        <p><strong>Pathogenesis (Karyotype):</strong></p>
+        <ol>
+            <li><strong>Meiotic Nondisjunction (95%):</strong> Trisomy 21 (47, XX, +21). Strong association with <strong>Maternal Age</strong> (>45 years). Nondisjunction usually occurs in Meiosis I of the ovum.</li>
+            <li><strong>Robertsonian Translocation (4%):</strong> Translocation of long arm of Chr 21 to Chr 14 or 22. (Familial Down Syndrome).</li>
+            <li><strong>Mosaicism (1%):</strong> Mixture of normal and trisomic cells (46,XX / 47,XX,+21). Mild symptoms.</li>
+        </ol>
+
+        <p><strong>Clinical Features:</strong></p>
+        <ul>
+            <li><strong>Face:</strong> Flat facial profile, <span class="highlight-green">Oblique palpebral fissures</span>, Epicanthic folds.</li>
+            <li><strong>Hands:</strong> Simian crease (Single transverse palmar crease), short broad hands.</li>
+            <li><strong>Mental Retardation:</strong> IQ 25–50.</li>
+            <li><strong>Congenital Heart Disease:</strong> 40% cases. Most common is Endocardial Cushion Defect (<span class="highlight-neon">Ostium Primum ASD</span>, VSD).</li>
+            <li><strong>Risk of Malignancy:</strong> 10-20x increased risk of Acute Leukemia (<span class="highlight-green">ALL</span> and Megakaryocytic AML).</li>
+            <li><strong>Neurology:</strong> Early onset Alzheimer's Disease (>40 years).</li>
+        </ul>
+    </div>
+
+    <h3>B. Klinefelter Syndrome (47, XXY)</h3>
+    <ul>
+        <li><strong>Definition:</strong> Male hypogonadism occurring when there are two or more X chromosomes and one or more Y chromosomes.</li>
+        <li><strong>Karyotype:</strong> Classical <strong>47, XXY</strong> (82%). Caused by nondisjunction during gametogenesis (maternal or paternal).</li>
+        <li><strong>Clinical Features:</strong>
+            <ul>
+                <li><strong>Hypogonadism:</strong> Small, atrophic testes; Azoospermia (Infertility); Failure of male secondary sexual characteristics.</li>
+                <li><strong>Hormones:</strong> Low Testosterone, <span class="highlight-neon">High FSH and LH</span>, High Estradiol.</li>
+                <li><strong>Physical:</strong> Tall stature (eunuchoid habitus), <strong>Gynecomastia</strong> (risk of breast cancer), reduced facial hair.</li>
+                <li><strong>Mental:</strong> Slight reduction in IQ.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>C. Turner Syndrome (45, X)</h3>
+    <ul>
+        <li><strong>Definition:</strong> Complete or partial monosomy of the X chromosome in a phenotypic female.</li>
+        <li><strong>Karyotype:</strong> <strong>45, X</strong> (57%). (Most common cause of primary amenorrhea).</li>
+        <li><strong>Clinical Features:</strong>
+            <ul>
+                <li><strong>Short stature</strong> (Shortest females).</li>
+                <li><strong>Neck:</strong> Webbing of neck (<span class="highlight-green">Cystic Hygroma</span> remnants).</li>
+                <li><strong>Chest:</strong> Shield-like chest with widely spaced nipples.</li>
+                <li><strong>Genitalia:</strong> "Streak Ovaries" (fibrous stroma, no follicles) &rarr; Primary Amenorrhea & Infertility.</li>
+                <li><strong>Cardiovascular:</strong> <span class="highlight-neon">Coarctation of Aorta</span> (Preductal).</li>
+            </ul>
+        </li>
+    </ul>
+
+    <hr>
+
+    <h2>2. MUTATIONS IN CHILDHOOD (SINGLE GENE DISORDERS)</h2>
+    <p>Common Mendelian disorders manifesting in childhood.</p>
+
+    <h3>A. Phenylketonuria (PKU)</h3>
+    <ul>
+        <li><strong>Genetics:</strong> Autosomal Recessive. Deficiency of hepatic enzyme <strong>Phenylalanine Hydroxylase (PAH)</strong>.</li>
+        <li><strong>Pathogenesis:</strong> Inability to convert Phenylalanine (Phe) to Tyrosine.
+            <br>&rarr; Accumulation of Phenylalanine (neurotoxic) and Phenylpyruvic acid (excreted in urine/sweat).
+            <br>&rarr; Lack of Tyrosine leads to reduced Melanin.</li>
+        <li><strong>Clinical Features:</strong>
+            <ul>
+                <li>Severe <strong>Mental Retardation</strong> (if untreated).</li>
+                <li>Seizures.</li>
+                <li><strong>Pigmentation:</strong> Fair skin, blond hair, blue eyes (hypopigmentation).</li>
+                <li><strong>Odor:</strong> "Mousy" or "Musty" odor of urine/sweat.</li>
+            </ul>
+        </li>
+        <li><strong>Treatment:</strong> Phenylalanine-free diet restricted early in life.</li>
+    </ul>
+
+    <h3>B. Cystic Fibrosis (Mucoviscidosis)</h3>
+    <ul>
+        <li><strong>Genetics:</strong> Autosomal Recessive. Mutation in <span class="highlight-neon">CFTR Gene</span> (Chr 7q31). Most common mutation: <strong>&Delta;F508</strong>.</li>
+        <li><strong>Pathogenesis:</strong> Defective Cl<sup>-</sup> channel protein &rarr; Impermeable to Chloride &rarr; Na<sup>+</sup> and H<sub>2</sub>O reabsorption increases &rarr; Dehydrated, thick, viscous mucus secretions.</li>
+        <li><strong>Morphology & Effects:</strong>
+            <ul>
+                <li><strong>Lungs:</strong> Thick mucus blocks airways &rarr; Recurrent infections (<span class="highlight-green">Pseudomonas</span>), Bronchiectasis, Lung abscess.</li>
+                <li><strong>Pancreas:</strong> Plugged ducts &rarr; Atrophy & fibrosis &rarr; Malabsorption (Steatorrhea) and Vitamin deficiency.</li>
+                <li><strong>Sweat Glands:</strong> High Salt content in sweat (<span class="highlight-neon">Salty baby syndrome</span>).</li>
+                <li><strong>Gut:</strong> Meconium Ileus in newborns.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <hr>
+
+    <h2>3. TUMOR AND TUMOR-LIKE CONDITIONS</h2>
+
+    <h3>A. Tumor-Like Lesions (Benign)</h3>
+    <ol>
+        <li><strong>Hamartoma:</strong> A focal, disorganized overgrowth of tissue elements <em>indigenous</em> (native) to the site.
+            <ul>
+                <li><em>Example:</em> Pulmonary Hamartoma (cartilage + bronchial epithelium in lung).</li>
+            </ul>
+        </li>
+        <li><strong>Choristoma (Heterotopia):</strong> Mass of histologically normal tissue in an <em>abnormal</em> location.
+            <ul>
+                <li><em>Example:</em> Pancreatic tissue rest in stomach wall or Meckel's diverticulum.</li>
+            </ul>
+        </li>
+        <li><strong>Hemangioma:</strong> Most common tumor of infancy.
+            <ul>
+                <li><em>Capillary Hemangioma:</em> "Strawberry Nevus". Appears at birth, grows rapidly, then regresses spontaneously (fades by age 7).</li>
+                <li><em>Cavernous Hemangioma:</em> Large, deep vascular channels. Associated with von Hippel-Lindau disease.</li>
+            </ul>
+        </li>
+        <li><strong>Lymphangioma:</strong> Benign lymphatic tumor.
+            <ul>
+                <li><em>Cystic Hygroma:</em> Large cystic mass in neck/axilla of infants. Associated with Turner syndrome.</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h3>B. Malignant Tumors of Childhood</h3>
+    <p>Characterized by "Small Round Blue Cells" (Blastemal origin).</p>
+
+    <div class="hand-drawn-box">
+        <h4>1. Wilms Tumor (Nephroblastoma)</h4>
+        <p>Most common primary renal tumor in children (2-5 years).</p>
+        <p><strong>Pathogenesis:</strong>
+            <br>Mutation in <strong>WT1 gene</strong> (Chr 11p13). Arises from <span class="highlight-green">Nephrogenic Rests</span> (persistent blastema).
+            <br><em>Associated Syndromes:</em>
+            <ul>
+                <li><strong>WAGR Syndrome:</strong> <strong>W</strong>ilms, <strong>A</strong>niridia (no iris), <strong>G</strong>enital anomaly, <strong>R</strong>etardation (Mental).</li>
+                <li><strong>Denys-Drash Syndrome:</strong> Gonadal dysgenesis + Nephropathy.</li>
+                <li><strong>Beckwith-Wiedemann Syndrome:</strong> Hemihypertrophy + Macroglossia (WT2 gene).</li>
+            </ul>
+        </p>
+        <p><strong>Morphology (Triphasic Histology):</strong>
+            <ol>
+                <li><strong>Blastemal:</strong> Sheets of small round blue cells.</li>
+                <li><strong>Epithelial:</strong> Abortive tubules or glomeruli (rosettes).</li>
+                <li><strong>Stromal:</strong> Fibrocystic or myxoid stroma (sometimes muscle/cartilage).</li>
+            </ol>
+        </p>
+        <p><strong>Clinical:</strong> Large palpable abdominal mass (does <em>not</em> cross midline), Hematuria, Hypertension. Excellent prognosis.</p>
+    </div>
+
+    <div class="hand-drawn-box">
+        <h4>2. Neuroblastoma</h4>
+        <p>Most common <em>extracranial</em> solid tumor of childhood. Arises from Neural Crest cells (Adrenal Medulla or Sympathetic Chain).</p>
+        <p><strong>Pathogenesis:</strong>
+            <br><strong>N-MYC amplification</strong> (Chr 2) correlates with poor prognosis.
+            <br>Partial deletion of Chr 1p.
+        </p>
+        <p><strong>Morphology:</strong>
+            <ul>
+                <li><strong>Gross:</strong> Large, soft, hemorrhagic mass in adrenal gland.</li>
+                <li><strong>Microscopy:</strong> Small round blue cells. <span class="highlight-green">Homer-Wright Rosettes</span> (cells surrounding a central meshwork of neuropil/fibrils).</li>
+            </ul>
+        </p>
+        <p><strong>Clinical:</strong>
+            <ul>
+                <li>Abdominal mass (crosses midline).</li>
+                <li>Metastasis to skin ("Blueberry Muffin Baby") and bones.</li>
+                <li>Secretes Catecholamines (VMA/HVA elevated in urine).</li>
+            </ul>
+        </p>
+    </div>
+
+    <div class="hand-drawn-box">
+        <h4>3. Retinoblastoma</h4>
+        <p>Most common intraocular tumor in children.</p>
+        <p><strong>Pathogenesis:</strong> Mutation in <span class="highlight-neon">RB1 Gene</span> (Chr 13q14) - Tumor suppressor gene. Follows "Knudson’s Two-Hit Hypothesis" (Familial cases are bilateral; Sporadic are unilateral).</p>
+        <p><strong>Morphology:</strong> <span class="highlight-green">Flexner-Wintersteiner Rosettes</span> (cells surrounding a true central lumen).</p>
+        <p><strong>Clinical:</strong> <strong>Leukocoria</strong> (White pupillary reflex / Cat's eye reflex).</p>
+    </div>
+
+    <hr>
+
+    <h2 style="color: #d32f2f; border-color: #d32f2f;">IMPORTANT UNIVERSITY QUESTIONS</h2>
+
+    <div class="qa-section">
+        <h3>Q1: Classify chromosomal disorders. Describe the clinical features and karyotype of Down Syndrome.</h3>
+        <p><strong>Introduction:</strong> Chromosomal disorders are alterations in the number or structure of chromosomes, leading to genetic syndromes. Down syndrome is the most common autosomal trisomy.</p>
+        <p><strong>Body:</strong>
+            <br><strong>Classification:</strong>
+            <ul>
+                <li><em>Numerical (Aneuploidy):</em> Trisomy (21, 18, 13), Monosomy (Turner).</li>
+                <li><em>Structural:</em> Translocation, Deletion (Cri-du-chat), Inversion.</li>
+            </ul>
+            <br><strong>Down Syndrome (Trisomy 21):</strong>
+            <br><em>Karyotype:</em> 47, XX, +21 (95% due to meiotic nondisjunction).
+            <br><em>Clinical Features:</em> Flat facial profile, oblique palpebral fissures, epicanthic folds, simian crease, mental retardation, and congenital heart defects (ASD/VSD).</p>
+        <p><strong>Conclusion:</strong> It is strongly associated with advanced maternal age and carries an increased risk of acute leukemia.</p>
+    </div>
+
+    <div class="qa-section">
+        <h3>Q2: Describe the pathogenesis and morphology of Wilms Tumor.</h3>
+        <p><strong>Introduction:</strong> Wilms tumor (Nephroblastoma) is the most common primary malignant renal tumor in children, derived from primitive nephrogenic blastema.</p>
+        <p><strong>Body:</strong>
+            <br><strong>Pathogenesis:</strong> Linked to mutations in the <strong>WT1 gene</strong> on Chromosome 11p13. It is associated with WAGR syndrome (Wilms, Aniridia, Genital anomalies, Retardation) and Denys-Drash syndrome. It arises from nephrogenic rests.
+            <br><strong>Morphology:</strong>
+            <ul>
+                <li><em>Gross:</em> Large, solitary, well-circumscribed mass. Cut surface is grey-white and fleshy.</li>
+                <li><em>Microscopy:</em> Classical <strong>Triphasic pattern</strong> consisting of:
+                    <ol>
+                        <li>Blastema (small round blue cells).</li>
+                        <li>Epithelium (abortive tubules/glomeruli).</li>
+                        <li>Stroma (fibrous/myxoid spindle cells).</li>
+                    </ol>
+                </li>
+            </ul>
+        </p>
+        <p><strong>Conclusion:</strong> Prognosis is generally excellent with nephrectomy and chemotherapy.</p>
+    </div>
+
+    <div class="qa-section">
+        <h3>Q3: Differentiate between Neuroblastoma and Wilms Tumor.</h3>
+        <p><strong>Introduction:</strong> Both are common pediatric abdominal malignant tumors presenting as masses.</p>
+        <p><strong>Body:</strong>
+            <table style="border: 1px solid #333;">
+                <tr>
+                    <th>Feature</th>
+                    <th>Wilms Tumor</th>
+                    <th>Neuroblastoma</th>
+                </tr>
+                <tr>
+                    <td><strong>Origin</strong></td>
+                    <td>Kidney (Nephrogenic blastema)</td>
+                    <td>Adrenal Medulla (Neural crest)</td>
+                </tr>
+                <tr>
+                    <td><strong>Gene</strong></td>
+                    <td>WT1 (Chr 11)</td>
+                    <td>N-MYC (Chr 2)</td>
+                </tr>
+                <tr>
+                    <td><strong>Microscopy</strong></td>
+                    <td>Triphasic histology</td>
+                    <td>Homer-Wright Rosettes (Neuropil)</td>
+                </tr>
+                <tr>
+                    <td><strong>Abdominal Mass</strong></td>
+                    <td>Does <strong>not</strong> cross midline</td>
+                    <td>Often <strong>crosses</strong> midline</td>
+                </tr>
+                <tr>
+                    <td><strong>Urine markers</strong></td>
+                    <td>Hematuria</td>
+                    <td>VMA / HVA elevated (Catecholamines)</td>
+                </tr>
+            </table>
+        </p>
+        <p><strong>Conclusion:</strong> Differentiation is crucial as Neuroblastoma generally has a worse prognosis if N-MYC amplified.</p>
+    </div>
+
+</div>
+
+</body>
+</html>

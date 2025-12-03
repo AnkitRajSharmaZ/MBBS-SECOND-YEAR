@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBBS Study Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- PROFESSIONAL THEME VARIABLES --- */
+        :root {
+            --primary-blue: #0284c7;       /* Medical Blue */
+            --dark-blue: #0c4a6e;          /* Navy for Text */
+            --bg-color: #f0f9ff;           /* Very Light Blue Background */
+            --white: #ffffff;
+            --gray-text: #64748b;
+            --border-color: #e2e8f0;
+            --hover-blue: #0ea5e9;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--dark-blue);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* --- HEADER --- */
+        header {
+            width: 100%;
+            background-color: var(--white);
+            padding: 20px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 4px solid var(--primary-blue);
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 0.9rem;
+            color: var(--gray-text);
+            margin-top: 5px;
+        }
+
+        /* --- MAIN CONTAINER --- */
+        .container {
+            width: 90%;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding-bottom: 40px;
+        }
+
+        /* --- SUBJECT CARDS (BUTTONS) --- */
+        .subject-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: var(--shadow);
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            text-decoration: none;
+            border: 1px solid var(--border-color);
+            border-left: 6px solid var(--primary-blue); /* Professional Accent */
+        }
+
+        .subject-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .icon-box {
+            background-color: #e0f2fe;
+            color: var(--primary-blue);
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+        }
+
+        .card-text h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: var(--dark-blue);
+        }
+
+        .card-text p {
+            font-size: 0.85rem;
+            color: var(--gray-text);
+        }
+
+        .arrow-icon {
+            color: #cbd5e1;
+            font-weight: bold;
+        }
+
+        /* --- MODAL (POPUP) STYLES --- */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.6); /* Darker, professional overlay */
+            backdrop-filter: blur(2px);
+            z-index: 1000;
+            justify-content: center;
+            align-items: flex-end; /* Slides up on mobile */
+        }
+
+        @media (min-width: 600px) {
+            .modal-overlay {
+                align-items: center; /* Center on desktop */
+            }
+        }
+
+        .modal-container {
+            background: var(--white);
+            width: 100%;
+            max-width: 500px;
+            border-radius: 20px 20px 0 0; /* Rounded top only for mobile feel */
+            padding: 30px;
+            animation: slideUp 0.3s ease-out;
+            max-height: 85vh;
+            overflow-y: auto;
+        }
+
+        @media (min-width: 600px) {
+            .modal-container {
+                border-radius: 12px;
+                animation: fadeIn 0.3s ease-out;
+            }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+        }
+
+        .modal-header h3 {
+            font-size: 1.2rem;
+            color: var(--dark-blue);
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--gray-text);
+            cursor: pointer;
+        }
+
+        /* --- ACCORDION (PAPER SELECTION) --- */
+        .accordion-item {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            background: #f8fafc;
+            padding: 15px;
+            width: 100%;
+            text-align: left;
+            border: none;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--dark-blue);
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+        .accordion-header:hover {
+            background: #f1f5f9;
+        }
+
+        .accordion-content {
+            display: none;
+            padding: 15px;
+            background: var(--white);
+            border-top: 1px solid var(--border-color);
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        /* Topic Buttons */
+        .topic-btn {
+            padding: 12px;
+            background-color: var(--white);
+            border: 1px solid var(--primary-blue);
+            color: var(--primary-blue);
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: block;
+        }
+
+        .topic-btn:hover {
+            background-color: var(--primary-blue);
+            color: var(--white);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            color: var(--gray-text);
+            font-size: 0.8rem;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>MBBS Digital Library</h1>
+        <p>Select a subject to access notes</p>
+    </header>
+
+    <div class="container">
+        
+        <div class="subject-card" onclick="openModal('pathologyModal')">
+            <div class="card-content">
+                <div class="icon-box">📚</div>
+                <div class="card-text">
+                    <h2>Pathology</h2>
+                    <p>General & Systemic Pathology Notes</p>
+                </div>
+            </div>
+            <div class="arrow-icon">➔</div>
+        </div>
+
+        <a href="#" class="subject-card">
+            <div class="card-content">
+                <div class="icon-box">💊</div>
+                <div class="card-text">
+                    <h2>Pharmacology</h2>
+                    <p>Drug Classifications & Mechanism</p>
+                </div>
+            </div>
+            <div class="arrow-icon">➔</div>
+        </a>
+
+        <a href="#" class="subject-card">
+            <div class="card-content">
+                <div class="icon-box">🔬</div>
+                <div class="card-text">
+                    <h2>Microbiology</h2>
+                    <p>Bacteriology, Virology & Mycology</p>
+                </div>
+            </div>
+            <div class="arrow-icon">➔</div>
+        </a>
+
+    </div>
+
+    <footer>
+        &copy; 2025 MBBS Notes Portal. All rights reserved.
+    </footer>
+
+    <div id="pathologyModal" class="modal-overlay">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3>Pathology Papers</h3>
+                <button class="close-btn" onclick="closeModal('pathologyModal')">&times;</button>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header" onclick="toggleAccordion('paper1')">
+                    Paper 1 NOTES
+                    <span>▼</span>
+                </button>
+                <div id="paper1" class="accordion-content">
+                    <a href="INSERT_LINK_HERE" class="topic-btn">General Pathology</a>
+                    <a href="INSERT_LINK_HERE" class="topic-btn">Hematology</a>
+                    <a href="INSERT_LINK_HERE" class="topic-btn">Clinical Pathology</a>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header" onclick="toggleAccordion('paper2')">
+                    Paper 2 NOTES
+                    <span>▼</span>
+                </button>
+                <div id="paper2" class="accordion-content">
+                    <a href="INSERT_LINK_HERE" class="topic-btn">Systemic Pathology (CVS/RS)</a>
+                    <a href="INSERT_LINK_HERE" class="topic-btn">Systemic Pathology (GIT/Liver)</a>
+                    <a href="INSERT_LINK_HERE" class="topic-btn">Renal & Endocrine</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // Modal Functions
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Close modal when clicking outside content
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal-overlay')) {
+                event.target.style.display = 'none';
+            }
+        }
+
+        // Accordion Function
+        function toggleAccordion(contentId) {
+            const content = document.getElementById(contentId);
+            const allContents = document.querySelectorAll('.accordion-content');
+            
+            // Optional: Close other accordions when opening one (Accordion behavior)
+            allContents.forEach(item => {
+                if(item.id !== contentId) {
+                    item.style.display = 'none';
+                }
+            });
+
+            // Toggle current
+            if (content.style.display === 'flex') {
+                content.style.display = 'none';
+            } else {
+                content.style.display = 'flex';
+            }
+        }
+    </script>
+</body>
+</html>

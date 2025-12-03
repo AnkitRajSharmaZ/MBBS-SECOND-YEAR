@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBBS Pathology Notes: Plasma Cell Myeloma</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-yellow: #f4ff40; /* Neon yellowish highlighter */
+            --marker-green: #daffb3; /* Natural light green marker */
+            --ink-color: #2c2c2c; /* Dark grey/black ink look */
+            --paper-white: #ffffff; /* Pure white page */
+            --box-bg: #fffef0; /* Subtle warm tint for boxes */
+            --border-color: #333;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #525659; /* Grey background behind the paper */
+            font-family: 'Kalam', cursive;
+            color: var(--ink-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            line-height: 1.6;
+            font-size: 18px; /* Readable handwritten size */
+        }
+
+        /* A4 Paper Simulation */
+        .page-container {
+            background-color: var(--paper-white);
+            width: 210mm; /* A4 width */
+            min-height: 297mm; /* A4 height minimum */
+            padding: 25mm; /* Standard margins */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 32px;
+            text-align: center;
+            text-decoration: underline;
+            text-decoration-color: var(--neon-yellow);
+            text-decoration-thickness: 5px;
+            margin-bottom: 40px;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            font-size: 26px;
+            border-bottom: 3px solid var(--marker-green);
+            padding-bottom: 5px;
+            margin-top: 40px;
+            color: #1a1a1a;
+            display: inline-block;
+            width: 100%;
+        }
+
+        h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-top: 25px;
+            color: #333;
+            text-decoration: underline;
+        }
+
+        h4 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-top: 15px;
+            color: #444;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin-bottom: 15px;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* Highlighting Classes */
+        .highlight-neon {
+            background-color: var(--neon-yellow);
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .highlight-green {
+            background-color: var(--marker-green);
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        strong {
+            font-weight: 700;
+        }
+
+        /* Hand-drawn Box Style */
+        .hand-drawn-box {
+            border: 2px solid var(--border-color);
+            /* Irregular border radius for hand-drawn effect */
+            border-radius: 2px 20px 3px 25px / 25px 3px 20px 2px;
+            padding: 20px;
+            margin: 25px 0;
+            background-color: var(--box-bg); 
+            box-shadow: 3px 4px 0px rgba(0,0,0,0.1);
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 20px 0;
+            font-size: 16px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: var(--marker-green);
+            font-weight: bold;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        tr td:last-child, tr th:last-child {
+            border-right: none;
+        }
+
+        /* Model Answer Section */
+        .qa-section {
+            border-left: 4px solid var(--neon-yellow);
+            padding-left: 20px;
+            margin-top: 30px;
+        }
+
+        /* Print Settings */
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+            .page-container {
+                width: 100%;
+                box-shadow: none;
+                margin: 0;
+                padding: 15mm;
+            }
+            /* Ensure background colors print */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            h1, h2, h3 {
+                page-break-after: avoid;
+            }
+            table, .hand-drawn-box, li {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 800px) {
+            .page-container {
+                width: 100%;
+                padding: 15px;
+            }
+            table {
+                font-size: 14px;
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-container">
+
+    <h1>TOPIC 19: PLASMA CELL MYELOMA</h1>
+
+    <p><strong>Syllabus Scope:</strong> Features of Plasma Cell Myeloma (Multiple Myeloma).</p>
+
+    <h2>1. DEFINITION AND INTRODUCTION</h2>
+    
+    <p><strong>Definition:</strong> Multiple Myeloma (MM) is a malignant neoplasm of plasma cells that is characterized by the accumulation of clonal plasma cells in the bone marrow, the production of a monoclonal immunoglobulin (M protein) in the serum and/or urine, and associated end-organ damage (CRAB criteria).</p>
+
+    <div class="hand-drawn-box">
+        <h3>Key Terminology</h3>
+        <ul>
+            <li><strong>Monoclonal Gammopathy:</strong> Expansion of a single clone of immunoglobulin-secreting cells.</li>
+            <li><strong>M-Protein (Paraprotein):</strong> The monoclonal antibody produced (usually IgG or IgA).</li>
+            <li><strong>Bence Jones Protein:</strong> Free light chains (kappa or lambda) excreted in the urine.</li>
+        </ul>
+    </div>
+
+    <hr>
+
+    <h2>2. PATHOGENESIS</h2>
+    <p>The disease typically evolves from a premalignant stage called <strong>MGUS</strong> (Monoclonal Gammopathy of Undetermined Significance).</p>
+
+    <h3>A. Molecular Pathogenesis</h3>
+    <ul>
+        <li><strong>Genetic Aberrations:</strong> Frequent translocations involving the <strong>IgH locus on Chromosome 14q32</strong> (e.g., t(11;14), t(4;14)). Deletions of 13q and 17p (TP53) are poor prognostic markers.</li>
+        <li><strong>Bone Marrow Microenvironment:</strong> Adhesion of myeloma cells to stromal cells triggers the production of cytokines, most importantly <span class="highlight-neon">Interleukin-6 (IL-6)</span>. IL-6 promotes the survival and proliferation of myeloma cells.</li>
+    </ul>
+
+    <h3>B. Mechanism of Clinical Features</h3>
+    <ol>
+        <li><strong>Bone Destruction (Lytic Lesions):</strong> Myeloma cells upregulate <span class="highlight-green">RANKL</span> expression on stromal cells. RANKL activates <strong>Osteoclasts</strong> (bone-eating cells). Simultaneously, they suppress Osteoblasts (bone-forming cells) via Wnt pathway inhibitors. This leads to purely lytic "punched-out" lesions.</li>
+        <li><strong>Renal Failure (Myeloma Kidney):</strong> Excess free light chains (Bence Jones proteins) are toxic to renal tubules. They combine with <strong>Tamm-Horsfall protein</strong> in the distal tubules to form obstructing casts. Hypercalcemia also damages the kidney (nephrocalcinosis).</li>
+        <li><strong>Immunosuppression:</strong> Suppression of normal plasma cells leads to hypogammaglobulinemia, increasing susceptibility to bacterial infections.</li>
+    </ol>
+
+    <hr>
+
+    <h2>3. CLINICAL FEATURES (CRAB CRITERIA)</h2>
+    <p>The hallmark manifestations are summarized by the mnemonic <strong>CRAB</strong>:</p>
+
+    <div class="hand-drawn-box">
+        <ul>
+            <li><strong>C - Hyper<u>C</u>alcemia:</strong> Due to extensive bone resorption. Causes confusion, weakness, constipation, and stones.</li>
+            <li><strong>R - <u>R</u>enal Insufficiency:</strong> Elevated creatinine due to cast nephropathy.</li>
+            <li><strong>A - <u>A</u>nemia:</strong> Normocytic normochromic anemia due to marrow replacement by tumor cells and renal failure (low EPO). Causes fatigue and pallor.</li>
+            <li><strong>B - <u>B</u>one Lesions:</strong> Bone pain (especially back pain), pathologic fractures, and vertebral collapse.</li>
+        </ul>
+        <p><em>*Note: Updated criteria (SLiM-CRAB) allow diagnosis with >60% marrow plasma cells, Light chain ratio >100, or MRI lesions even without symptoms.</em></p>
+    </div>
+
+    <p><strong>Other Features:</strong>
+        <br>&bull; Recurrent infections (Pneumonia, Pyelonephritis).
+        <br>&bull; Hyperviscosity syndrome (rare in IgG myeloma, common in IgA/IgM): Visual disturbances, neurological symptoms.
+        <br>&bull; AL Amyloidosis (10% cases): Macroglossia, Carpal tunnel syndrome.</p>
+
+    <hr>
+
+    <h2>4. MORPHOLOGY (PATHOLOGY)</h2>
+
+    <h3>A. Bone Marrow</h3>
+    <ul>
+        <li><strong>Cellularity:</strong> Hypercellular marrow.</li>
+        <li><strong>Plasma Cells:</strong> <span class="highlight-green">> 10% Clonal Plasma Cells</span> (often >30%). They may be arranged in sheets, clusters, or interstitial infiltrates.</li>
+        <li><strong>Microscopic Features of Neoplastic Plasma Cells:</strong>
+            <ul>
+                <li><strong>Perinuclear Halo:</strong> Clear zone near the nucleus (Golgi apparatus).</li>
+                <li><strong>Eccentric Nucleus:</strong> "Cartwheel" or "Clock-face" chromatin pattern.</li>
+                <li><strong>Binucleate/Multinucleate forms.</strong></li>
+                <li><strong>Inclusion Bodies:</strong>
+                    <ul>
+                        <li><span class="highlight-neon">Russell Bodies:</span> Eosinophilic globules of immunoglobulin in the cytoplasm.</li>
+                        <li><span class="highlight-neon">Dutcher Bodies:</span> Intranuclear inclusions (PAS positive).</li>
+                        <li><strong>Mott Cells:</strong> Cells filled with multiple grape-like vacuoles (Grape cells).</li>
+                        <li><strong>Flame Cells:</strong> Fiery red cytoplasm (seen in IgA myeloma).</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>B. Peripheral Blood Smear</h3>
+    <ul>
+        <li><strong>Rouleaux Formation:</strong> RBCs stack like coins due to high serum protein (globulins) reducing negative charge (Zeta potential).</li>
+        <li><strong>Plasma Cells:</strong> Occasionally seen (Plasma Cell Leukemia if >2,000/uL).</li>
+        <li><strong>Anemia:</strong> Normocytic normochromic.</li>
+    </ul>
+
+    <h3>C. Gross Pathology (Bones)</h3>
+    <ul>
+        <li><strong>Punched-out Defects:</strong> Sharp, round, lytic defects seen in the skull ("Raindrop skull"), ribs, vertebrae, and pelvis. No reactive bone formation (sclerosis).</li>
+    </ul>
+
+    <hr>
+
+    <h2>5. INVESTIGATIONS (LAB DIAGNOSIS)</h2>
+
+    <div class="hand-drawn-box">
+        <h3>Diagnostic Triad</h3>
+        <ol>
+            <li><strong>Bone Marrow:</strong> >10% clonal plasma cells.</li>
+            <li><strong>Serum/Urine Protein:</strong> Monoclonal M-protein spike.</li>
+            <li><strong>End Organ Damage:</strong> CRAB features.</li>
+        </ol>
+    </div>
+
+    <ol>
+        <li><strong>Serum Protein Electrophoresis (SPEP):</strong>
+            <ul>
+                <li>Shows a localized band/spike in the gamma-globulin region (<span class="highlight-neon">M-Spike</span> or M-Component).</li>
+                <li>Most common: IgG (55%), followed by IgA (25%).</li>
+            </ul>
+        </li>
+        <li><strong>Immunofixation:</strong> Confirms the type of heavy and light chain (e.g., IgG Kappa).</li>
+        <li><strong>Urine Electrophoresis (UPEP):</strong> Detects Bence Jones Proteins (Free light chains).</li>
+        <li><strong>Serum Free Light Chain Assay:</strong> Abnormal Kappa/Lambda ratio.</li>
+        <li><strong>Biochemistry:</strong>
+            <ul>
+                <li>Hypercalcemia.</li>
+                <li>Elevated Creatinine and Urea.</li>
+                <li>Elevated Total Protein (with reversed Albumin/Globulin ratio).</li>
+                <li><span class="highlight-green">Beta-2 Microglobulin:</span> Important prognostic marker (High levels = Poor prognosis).</li>
+            </ul>
+        </li>
+        <li><strong>Radiology (Skeletal Survey):</strong> X-rays show punched-out lytic lesions. MRI/PET is more sensitive.</li>
+    </ol>
+
+    <hr>
+
+    <h2 style="color: #d32f2f; border-color: #d32f2f;">IMPORTANT UNIVERSITY QUESTIONS</h2>
+
+    <div class="qa-section">
+        <h3>Q1: Define Multiple Myeloma. Describe its Pathogenesis and Clinical Features (CRAB).</h3>
+        <p><strong>Introduction:</strong> Multiple Myeloma is a malignant neoplasm of plasma cells characterized by the production of monoclonal immunoglobulin (M-protein) and lytic bone lesions.</p>
+        <p><strong>Body:</strong>
+            <br><strong>Pathogenesis:</strong>
+            <ul>
+                <li><em>Genetic:</em> IgH translocations (14q32) and deletions (13q).</li>
+                <li><em>Microenvironment:</em> IL-6 produced by stromal cells is the key growth factor.</li>
+                <li><em>Bone Disease:</em> Myeloma cells activate RANKL, stimulating osteoclasts to resorb bone, leading to lytic lesions and hypercalcemia.</li>
+            </ul>
+            <br><strong>Clinical Features (CRAB):</strong>
+            <ul>
+                <li><strong>C:</strong> Calcium elevation (Hypercalcemia) &rarr; Confusion, weakness.</li>
+                <li><strong>R:</strong> Renal impairment &rarr; Cast nephropathy (Bence Jones proteins).</li>
+                <li><strong>A:</strong> Anemia &rarr; Fatigue.</li>
+                <li><strong>B:</strong> Bone pain/Lesions &rarr; Pathologic fractures, punched-out lytic lesions.</li>
+            </ul>
+        </p>
+        <p><strong>Conclusion:</strong> Diagnosis requires demonstrating marrow plasmacytosis (>10%), M-protein spike, and end-organ damage.</p>
+    </div>
+
+    <div class="qa-section">
+        <h3>Q2: Describe the Laboratory Findings and Morphology of Multiple Myeloma.</h3>
+        <p><strong>Introduction:</strong> Lab diagnosis hinges on demonstrating the monoclonal protein and the proliferation of atypical plasma cells.</p>
+        <p><strong>Body:</strong>
+            <br><strong>1. Peripheral Smear:</strong>
+            <ul>
+                <li><strong>Rouleaux formation</strong> (Coin stacking of RBCs) due to hypergammaglobulinemia.</li>
+                <li>Leukoerythroblastic picture may be seen.</li>
+            </ul>
+            <br><strong>2. Bone Marrow:</strong>
+            <ul>
+                <li>Hypercellular with >10% plasma cells.</li>
+                <li><em>Morphology:</em> Binucleate forms, eccentric nuclei, perinuclear halo. Presence of <strong>Russell bodies</strong> (cytoplasmic), <strong>Dutcher bodies</strong> (intranuclear), and <strong>Mott cells</strong> (grape-like).</li>
+            </ul>
+            <br><strong>3. Electrophoresis:</strong>
+            <ul>
+                <li>Serum: Tall, narrow <strong>M-spike</strong> in the gamma region.</li>
+                <li>Urine: Bence Jones proteinuria.</li>
+            </ul>
+        </p>
+        <p><strong>Conclusion:</strong> Elevated Beta-2 Microglobulin and Albumin levels are used for staging (ISS system).</p>
+    </div>
+
+</div>
+
+
+</body>
+</html>

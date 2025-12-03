@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healing & Repair Notes - Vardaan Learning Institute</title>
+    <!-- Google Font: Kalam for the handwritten feel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --paper-color: #ffffff;
+            --ink-color: #2c3e50;
+            --neon-yellow: #ffff00; /* Bright neon for importance */
+            --neon-green: #b9f6ca;  /* Natural marker green */
+            --accent-blue: #e1f5fe;
+            --border-color: #455a64;
+            --heading-red: #c62828;
+        }
+
+        body {
+            background-color: #cfd8dc; /* Desk background */
+            font-family: 'Kalam', cursive;
+            color: var(--ink-color);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+            font-size: 17px;
+        }
+
+        /* A4 Paper Simulation */
+        .page-container {
+            background-color: var(--paper-color);
+            width: 210mm; 
+            min-height: 297mm;
+            margin: 0 auto;
+            padding: 20mm; 
+            box-sizing: border-box;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        /* Header / Branding */
+        header {
+            text-align: center;
+            border-bottom: 4px double var(--ink-color);
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            color: var(--heading-red);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 0px rgba(0,0,0,0.1);
+        }
+
+        .institute-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #37474f;
+            margin-bottom: 5px;
+            text-decoration: underline;
+            text-decoration-color: var(--neon-yellow);
+            text-decoration-thickness: 3px;
+        }
+
+        /* Typography */
+        h2 {
+            color: #0d47a1; /* Dark Blue ink */
+            border-bottom: 2px solid #90caf9;
+            padding-bottom: 2px;
+            margin-top: 50px;
+            font-size: 1.8rem;
+        }
+
+        h3 {
+            color: #2e7d32; /* Green ink */
+            margin-top: 30px;
+            font-weight: 700;
+            font-size: 1.4rem;
+            border-left: 5px solid var(--neon-yellow);
+            padding-left: 10px;
+        }
+
+        h4 {
+            color: #d84315;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            margin-bottom: 5px;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        p {
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        /* Highlighting Classes */
+        .highlight {
+            background-color: var(--neon-yellow);
+            padding: 0 2px;
+        }
+
+        .marker-green {
+            background-color: var(--neon-green);
+            padding: 0 2px;
+        }
+
+        /* Hand-drawn Boxes */
+        .sketch-box {
+            background: #fff9c4; /* Light yellow note */
+            border: 2px solid var(--ink-color);
+            border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+            padding: 15px 25px;
+            margin: 25px 0;
+            box-shadow: 3px 3px 0px rgba(0,0,0,0.1);
+        }
+        
+        .sketch-box.blue {
+            background: #e1f5fe;
+            border-color: #0277bd;
+        }
+
+        .sketch-box.important {
+            background: #ffccbc;
+            border-color: #d84315;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            border: 1px solid var(--ink-color);
+            padding: 10px;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #cfd8dc;
+            color: #000;
+            font-weight: bold;
+        }
+
+        /* Lists */
+        ul, ol {
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* Print Styling */
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+            .page-container {
+                width: 100%;
+                box-shadow: none;
+                margin: 0;
+                padding: 15mm;
+                border: none;
+            }
+            .sketch-box {
+                break-inside: avoid;
+                border-width: 1px;
+            }
+            h2 {
+                page-break-before: always;
+            }
+            h2:first-of-type {
+                page-break-before: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-container">
+        <header>
+            <div class="institute-name">VARDAAN LEARNING INSTITUTE</div>
+            <h1>Healing & Repair</h1>
+            <p><strong>MBBS Pathology • General Pathology</strong> | Detailed Notes for University Exams</p>
+        </header>
+
+        <!-- SECTION 1: INTRODUCTION -->
+        <section>
+            <h2>1. Introduction</h2>
+            
+            <div class="sketch-box">
+                <h3>Definitions</h3>
+                <ul>
+                    <li><strong>Healing (Repair):</strong> The restoration of tissue architecture and function after an injury.</li>
+                    <li><strong>Regeneration:</strong> The complete replacement of damaged cells by new cells of the same type, resulting in perfect restoration of normal function. (e.g., Liver regeneration after partial hepatectomy).</li>
+                    <li><strong>Repair by Scar Formation (Fibrosis):</strong> Replacement of injured tissue by connective tissue (collagen), leading to scar formation. This occurs when the injured tissues are incapable of complete restitution or the supporting structures are severely damaged.</li>
+                </ul>
+            </div>
+
+            <p>Healing involves two distinct processes:</p>
+            <ol>
+                <li><strong>Regeneration:</strong> Growth of cells to replace lost tissues.</li>
+                <li><strong>Fibrosis (Scarring):</strong> Laying down of collagen.</li>
+            </ol>
+        </section>
+
+        <!-- SECTION 2: REGENERATION -->
+        <section>
+            <h2>2. Regeneration & Cell Cycle</h2>
+            <p>The ability of tissues to regenerate depends on the proliferative capacity of their cells. Based on this, cells are divided into three groups:</p>
+
+            <div class="sketch-box blue">
+                <h3>Classification of Cells (Based on Proliferative Capacity)</h3>
+                
+                <h4>1. Labile Cells (Continuously Dividing Cells)</h4>
+                <p>These cells are continuously being lost and replaced by maturation from stem cells and by proliferation of mature cells.</p>
+                <ul>
+                    <li><span class="highlight">Examples:</span> Hematopoietic cells in bone marrow, Surface epithelia (skin, oral cavity, vagina, cervix), Epithelium of GIT and urinary tract.</li>
+                    <li><strong>Significance:</strong> Have excellent capacity for regeneration.</li>
+                </ul>
+
+                <h4>2. Stable Cells (Quiescent Cells)</h4>
+                <p>These cells are normally in the G0 stage (resting) and have a low rate of replication. However, they can undergo rapid division in response to injury (re-enter G1 phase).</p>
+                <ul>
+                    <li><span class="highlight">Examples:</span> Parenchyma of solid organs (Liver, Kidney, Pancreas), Endothelial cells, Fibroblasts, Smooth muscle cells.</li>
+                    <li><strong>Significance:</strong> Regenerate well if the stromal framework is preserved.</li>
+                </ul>
+
+                <h4>3. Permanent Cells (Non-dividing Cells)</h4>
+                <p>These cells have left the cell cycle and cannot undergo mitotic division in postnatal life.</p>
+                <ul>
+                    <li><span class="highlight">Examples:</span> Neurons, Cardiac muscle cells, Skeletal muscle cells.</li>
+                    <li><strong>Significance:</strong> Injury to these tissues always results in <span class="marker-green">Scar Formation</span> (Repair), never regeneration.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECTION 3: REPAIR BY SCAR FORMATION -->
+        <section>
+            <h2>3. Repair by Scar Formation (Fibrosis)</h2>
+            <p>If tissue injury is severe or affects chronic inflammation, repair occurs by replacement with connective tissue. It involves four sequential steps:</p>
+            
+            <ol>
+                <li><strong>Angiogenesis (Neovascularization):</strong> Formation of new blood vessels from pre-existing vessels.
+                    <ul>
+                        <li>Driven by growth factors like <span class="highlight">VEGF</span> (Vascular Endothelial Growth Factor) and FGF.</li>
+                        <li>Provides oxygen and nutrients to the healing tissue.</li>
+                    </ul>
+                </li>
+                <li><strong>Formation of Granulation Tissue:</strong> This is the hallmark of healing.
+                    <ul>
+                        <li><span class="marker-green">Definition:</span> Highly vascularized, loose connective tissue containing new capillaries, proliferating fibroblasts, and inflammatory cells (macrophages).</li>
+                        <li><strong>Gross Appearance:</strong> Pink, soft, granular appearance on the surface of wounds.</li>
+                    </ul>
+                </li>
+                <li><strong>Maturation and Remodeling:</strong>
+                    <ul>
+                        <li>Granulation tissue is progressively replaced by a mature scar.</li>
+                        <li>Collagen deposition increases, and vascularity decreases.</li>
+                        <li><strong>Remodeling:</strong> Balance between collagen synthesis and degradation. Mediated by <span class="highlight">MMPs (Matrix Metalloproteinases)</span>.</li>
+                    </ul>
+                </li>
+            </ol>
+            [Image of Granulation tissue histology]
+        </section>
+
+        <!-- SECTION 4: CUTANEOUS WOUND HEALING -->
+        <section>
+            <h2>4. Cutaneous Wound Healing</h2>
+            <p>Wound healing in the skin illustrates the general principles of repair. It is divided into two types:</p>
+
+            <div class="sketch-box">
+                <h3>A. Healing by First Intention (Primary Union)</h3>
+                <p><strong>Definition:</strong> Healing of a clean, uninfected surgical incision approximated by surgical sutures.</p>
+                <ul>
+                    <li><span class="highlight">Conditions:</span> Minimal tissue loss, clean wound margins, no infection, minimal clot.</li>
+                    <li><span class="highlight">Mechanism:</span> Epithelial regeneration dominates over fibrosis.</li>
+                </ul>
+
+                <h4>Sequence of Events:</h4>
+                <ul>
+                    <li><strong>Immediately (0 hours):</strong> Incision causes bleeding. Coagulation pathway activates. A <strong>blood clot</strong> containing fibrin and platelets fills the gap. Surface clot dries to form a scab.</li>
+                    <li><strong>24 Hours (Day 1):</strong>
+                        <ul>
+                            <li><strong>Neutrophils</strong> appear at margins (acute inflammation).</li>
+                            <li>Basal cells of epidermis show mitotic activity and migrate to meet in the midline beneath the scab.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Day 3:</strong>
+                        <ul>
+                            <li>Neutrophils are replaced by <strong>Macrophages</strong> (clean up debris).</li>
+                            <li><strong>Granulation tissue</strong> invades the incision space.</li>
+                            <li>Collagen fibers appear vertically at margins.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Day 5:</strong>
+                        <ul>
+                            <li><span class="marker-green">Maximum Neovascularization</span> occurs.</li>
+                            <li>Collagen fibers bridge the incision.</li>
+                            <li>Epidermis recovers normal thickness.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Week 2:</strong>
+                        <ul>
+                            <li>Accumulation of collagen and proliferation of fibroblasts continue.</li>
+                            <li>Leukocytes, edema, and vascularity diminish (blanching begins).</li>
+                        </ul>
+                    </li>
+                    <li><strong>End of Month 1:</strong>
+                        <ul>
+                            <li>Scar is cellular connective tissue covered by normal epidermis.</li>
+                            <li>Dermal appendages (hair follicles, glands) are <strong>permanently lost</strong> in the line of incision.</li>
+                            <li>Tensile strength increases over months.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sketch-box blue">
+                <h3>B. Healing by Second Intention (Secondary Union)</h3>
+                <p><strong>Definition:</strong> Healing of large open wounds with extensive tissue loss, necrosis, or infection (e.g., Abscess, large ulcer, infarction).</p>
+                <ul>
+                    <li><span class="highlight">Conditions:</span> Extensive tissue loss, margins cannot be approximated, gaping wound.</li>
+                    <li><span class="highlight">Mechanism:</span> Combination of regeneration and scarring.</li>
+                </ul>
+
+                <h4>Key Differences from Primary Union:</h4>
+                <ol>
+                    <li><strong>Larger Clot and Debris:</strong> Requires more intense inflammatory reaction to clean up.</li>
+                    <li><strong>Much more Granulation Tissue:</strong> Needed to fill the large gap. Resulting in a larger scar.</li>
+                    <li><strong>Wound Contraction:</strong> This is a unique feature of secondary union.
+                        <ul>
+                            <li>The wound size decreases by 50-80% within weeks.</li>
+                            <li>Mediated by <span class="highlight">Myofibroblasts</span> (modified fibroblasts with contractile properties like smooth muscle).</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            
+            
+
+            <h3>Differences between Primary and Secondary Union</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Primary Union</th>
+                        <th>Secondary Union</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Nature of Wound</strong></td>
+                        <td>Clean, surgical incision, margins approximated</td>
+                        <td>Large, infected, gaping, margins not approximated</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tissue Loss</strong></td>
+                        <td>Minimal</td>
+                        <td>Extensive</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Granulation Tissue</strong></td>
+                        <td>Scanty</td>
+                        <td>Abundant</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Wound Contraction</strong></td>
+                        <td>Absent / Minimal</td>
+                        <td>Prominent (due to Myofibroblasts)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Scar</strong></td>
+                        <td>Small, linear, neat</td>
+                        <td>Large, irregular</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Healing Time</strong></td>
+                        <td>Short</td>
+                        <td>Prolonged</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Outcome</strong></td>
+                        <td>Excellent</td>
+                        <td>Often poor (contractures)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- SECTION 5: FACTORS & COMPLICATIONS -->
+        <section>
+            <h2>5. Factors Affecting Wound Healing</h2>
+            
+            <h4>A. Systemic Factors</h4>
+            <ul>
+                <li><strong>Nutrition:</strong> Protein deficiency and <span class="highlight">Vitamin C deficiency</span> (scurvy) inhibit collagen synthesis. Zinc is required for DNA synthesis.</li>
+                <li><strong>Metabolic Status:</strong> <span class="highlight">Diabetes Mellitus</span> is associated with delayed healing and increased risk of infection.</li>
+                <li><strong>Circulatory Status:</strong> Inadequate blood supply (atherosclerosis, venous stasis) impairs healing.</li>
+                <li><strong>Hormones:</strong> <span class="marker-green">Glucocorticoids (Steroids)</span> have anti-inflammatory effects and inhibit collagen synthesis, resulting in weak scars.</li>
+            </ul>
+
+            <h4>B. Local Factors</h4>
+            <ul>
+                <li><strong>Infection:</strong> The single most important cause of delayed healing. Prolongs inflammation.</li>
+                <li><strong>Mechanical Factors:</strong> Early motion of wound can separate edges.</li>
+                <li><strong>Foreign Bodies:</strong> Sutures, glass, steel fragments obstruct healing.</li>
+                <li><strong>Size, Location, and Type of wound:</strong> Wounds in rich vascular areas (face) heal faster than poor vascular areas (foot).</li>
+            </ul>
+
+            <div class="sketch-box important">
+                <h3>Complications of Wound Healing</h3>
+                <ol>
+                    <li><strong>Deficient Scar Formation:</strong>
+                        <ul>
+                            <li><em>Wound Dehiscence:</em> Rupture of a wound (common in abdominal surgery due to coughing/vomiting).</li>
+                            <li><em>Ulceration:</em> Due to inadequate vascularization.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Excessive Formation of Repair Components:</strong>
+                        <ul>
+                            <li><span class="highlight">Keloid:</span> Accumulation of exuberant amounts of collagen giving rise to a raised scar that grows <strong>beyond the boundaries</strong> of the original wound. (Genetic predisposition, common in African Americans).</li>
+                            <li><span class="highlight">Hypertrophic Scar:</span> Excess collagen but <strong>confined within</strong> the boundaries of the wound. Often regresses.</li>
+                            <li><span class="highlight">Proud Flesh (Exuberant Granulation Tissue):</span> Excessive granulation tissue protrudes above the skin level and blocks re-epithelialization.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Contractures:</strong> Excessive wound contraction leads to deformities (common in burns, palms, soles).</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- SECTION 6: UNIVERSITY QUESTIONS -->
+        <section>
+            <h2>Important University Questions (Model Answers)</h2>
+
+            <div class="sketch-box blue">
+                <h3>Q1. Tabulate the differences between Healing by First Intention and Second Intention.</h3>
+                <p><strong>Answer:</strong></p>
+                <p><strong>Introduction:</strong> Cutaneous wound healing is divided into primary and secondary union based on the nature of the wound and the extent of tissue loss.</p>
+                <table>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Healing by First Intention (Primary Union)</th>
+                        <th>Healing by Second Intention (Secondary Union)</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Definition</strong></td>
+                        <td>Healing of a clean, uninfected surgical incision approximated by sutures.</td>
+                        <td>Healing of open wounds with extensive tissue loss, necrosis, or infection.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tissue Loss</strong></td>
+                        <td>Minimal.</td>
+                        <td>Extensive.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Wound Margins</strong></td>
+                        <td>Surgically approximated (close together).</td>
+                        <td>Gaping and cannot be approximated.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Blood Clot & Debris</strong></td>
+                        <td>Minimal.</td>
+                        <td>Abundant.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Inflammatory Reaction</strong></td>
+                        <td>Less intense.</td>
+                        <td>More intense (to clear debris).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Granulation Tissue</strong></td>
+                        <td>Scanty.</td>
+                        <td>Abundant (fills the gap from bottom up).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Wound Contraction</strong></td>
+                        <td>Absent or Minimal.</td>
+                        <td><strong>Prominent</strong> (mediated by myofibroblasts). reduces size by 50-80%.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Outcome</strong></td>
+                        <td>Neat, linear scar.</td>
+                        <td>Large, irregular scar with potential contracture.</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="sketch-box blue">
+                <h3>Q2. Describe the factors affecting wound healing.</h3>
+                <p><strong>Answer:</strong></p>
+                <p>Wound healing is a complex process influenced by multiple factors which can be classified into Systemic and Local factors.</p>
+                <p><strong>A. Systemic Factors:</strong>
+                <ol>
+                    <li><strong>Nutrition:</strong>
+                        <ul>
+                            <li><em>Protein Deficiency:</em> Impairs collagen synthesis.</li>
+                            <li><em>Vitamin C Deficiency (Scurvy):</em> Essential for hydroxylation of proline/lysine in collagen. Deficiency leads to weak wounds that break open.</li>
+                            <li><em>Zinc Deficiency:</em> Required for enzyme activity and DNA synthesis.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Metabolic Status:</strong> <em>Diabetes Mellitus</em> is a major cause of delayed healing due to microangiopathy (poor blood flow) and susceptibility to infection.</li>
+                    <li><strong>Circulatory Status:</strong> Adequate blood supply is crucial. Arteriosclerosis or venous stasis (varicose veins) delays healing.</li>
+                    <li><strong>Hormones:</strong> <em>Glucocorticoids</em> have anti-inflammatory effects and inhibit collagen synthesis, resulting in weak scar strength. However, they are useful in reducing corneal scarring.</li>
+                    <li><strong>Age:</strong> Healing is generally faster in young individuals.</li>
+                </ol>
+                </p>
+                <p><strong>B. Local Factors:</strong>
+                <ol>
+                    <li><strong>Infection:</strong> The most common cause of delayed healing. It prolongs the inflammatory phase and increases tissue destruction.</li>
+                    <li><strong>Mechanical Factors:</strong> Early mobilization or tension on wound edges can cause dehiscence (separation).</li>
+                    <li><strong>Foreign Bodies:</strong> Presence of steel fragments, glass, or bone pieces obstructs the healing process.</li>
+                    <li><strong>Size and Location:</strong> Small wounds heal faster. Wounds in highly vascular areas (e.g., face) heal faster than those in poorly vascularized areas (e.g., foot, tendon).</li>
+                </ol>
+                </p>
+            </div>
+
+            <div class="sketch-box blue">
+                <h3>Q3. Differentiate between Keloid and Hypertrophic Scar.</h3>
+                <p><strong>Answer:</strong> Both are complications of wound healing characterized by excessive collagen accumulation.</p>
+                <table>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Keloid</th>
+                        <th>Hypertrophic Scar</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Gross Appearance</strong></td>
+                        <td>Bulging, tumor-like scar.</td>
+                        <td>Raised scar, but less aggressive.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Extent of Growth</strong></td>
+                        <td>Grows <strong>beyond the boundaries</strong> of the original wound (claw-like extensions).</td>
+                        <td>Remains <strong>confined within</strong> the boundaries of the original wound.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Regression</strong></td>
+                        <td>Does <strong>not</strong> regress spontaneously; often recurs after excision.</td>
+                        <td>Tendency to <strong>regress</strong> spontaneously over time.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Site</strong></td>
+                        <td>Common on earlobes, face, neck, sternum.</td>
+                        <td>Anywhere, often tension lines.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Predisposition</strong></td>
+                        <td>Genetic predisposition; more common in African Americans.</td>
+                        <td>No specific genetic or racial predisposition.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Collagen Fibers</strong></td>
+                        <td>Thick, eosinophilic, glassy collagen bundles.</td>
+                        <td>Fine, organized collagen bundles.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Etiology</strong></td>
+                        <td>Unknown (possibly blocked apoptosis).</td>
+                        <td>Often due to thermal burns or traumatic injury.</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <footer style="text-align:center; margin-top:50px; border-top:4px double var(--ink-color); padding-top:20px; font-size: 0.9rem; color:#555;">
+            &copy; 2023 Vardaan Learning Institute • Comprehensive Exam Preparation Series • Pathology
+        </footer>
+
+    </div>
+
+</body>
+</html>

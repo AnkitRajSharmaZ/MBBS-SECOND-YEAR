@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBBS Pathology Notes: Lymph Node & Spleen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-yellow: #f4ff40; /* Neon yellowish highlighter */
+            --marker-green: #daffb3; /* Natural light green marker */
+            --ink-color: #2c2c2c; /* Dark grey/black ink look */
+            --paper-white: #ffffff; /* Pure white page */
+            --box-bg: #fffef0; /* Subtle warm tint for boxes */
+            --border-color: #333;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #525659; /* Grey background behind the paper */
+            font-family: 'Kalam', cursive;
+            color: var(--ink-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            line-height: 1.6;
+            font-size: 18px; /* Readable handwritten size */
+        }
+
+        /* A4 Paper Simulation */
+        .page-container {
+            background-color: var(--paper-white);
+            width: 210mm; /* A4 width */
+            min-height: 297mm; /* A4 height minimum */
+            padding: 25mm; /* Standard margins */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 32px;
+            text-align: center;
+            text-decoration: underline;
+            text-decoration-color: var(--neon-yellow);
+            text-decoration-thickness: 5px;
+            margin-bottom: 40px;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            font-size: 26px;
+            border-bottom: 3px solid var(--marker-green);
+            padding-bottom: 5px;
+            margin-top: 40px;
+            color: #1a1a1a;
+            display: inline-block;
+            width: 100%;
+        }
+
+        h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-top: 25px;
+            color: #333;
+            text-decoration: underline;
+        }
+
+        h4 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-top: 15px;
+            color: #444;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin-bottom: 15px;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* Highlighting Classes */
+        .highlight-neon {
+            background-color: var(--neon-yellow);
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .highlight-green {
+            background-color: var(--marker-green);
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        strong {
+            font-weight: 700;
+        }
+
+        /* Hand-drawn Box Style */
+        .hand-drawn-box {
+            border: 2px solid var(--border-color);
+            /* Irregular border radius for hand-drawn effect */
+            border-radius: 2px 20px 3px 25px / 25px 3px 20px 2px;
+            padding: 20px;
+            margin: 25px 0;
+            background-color: var(--box-bg); 
+            box-shadow: 3px 4px 0px rgba(0,0,0,0.1);
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 20px 0;
+            font-size: 16px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: var(--marker-green);
+            font-weight: bold;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        tr td:last-child, tr th:last-child {
+            border-right: none;
+        }
+
+        /* Model Answer Section */
+        .qa-section {
+            border-left: 4px solid var(--neon-yellow);
+            padding-left: 20px;
+            margin-top: 30px;
+        }
+
+        /* Print Settings */
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+            .page-container {
+                width: 100%;
+                box-shadow: none;
+                margin: 0;
+                padding: 15mm;
+            }
+            /* Ensure background colors print */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            h1, h2, h3 {
+                page-break-after: avoid;
+            }
+            table, .hand-drawn-box, li {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 800px) {
+            .page-container {
+                width: 100%;
+                padding: 15px;
+            }
+            table {
+                font-size: 14px;
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-container">
+
+    <h1>TOPIC 18: LYMPH NODE AND SPLEEN</h1>
+
+    <p><strong>Syllabus Scope:</strong> Causes and differentiation of Lymphadenopathy, Tuberculous Lymphadenitis, Hodgkin's vs. Non-Hodgkin's Lymphoma.</p>
+
+    <h2>1. LYMPHADENOPATHY</h2>
+    <p><strong>Definition:</strong> An abnormality in the size (>1 cm), consistency, or number of lymph nodes. It may be localized or generalized.</p>
+
+    <h3>Causes of Lymphadenopathy</h3>
+    <ul>
+        <li><strong>Infectious:</strong>
+            <ul>
+                <li><em>Bacterial:</em> Pyogenic bacteria (Staphylococcus, Streptococcus), Tuberculosis, Syphilis, Brucellosis.</li>
+                <li><em>Viral:</em> Infectious Mononucleosis (EBV), CMV, HIV, Rubella.</li>
+                <li><em>Parasitic:</em> Toxoplasmosis, Filariasis.</li>
+                <li><em>Fungal:</em> Histoplasmosis.</li>
+            </ul>
+        </li>
+        <li><strong>Neoplastic (Malignant):</strong>
+            <ul>
+                <li><em>Primary:</em> Hodgkin's Lymphoma, Non-Hodgkin's Lymphoma, CLL.</li>
+                <li><em>Metastatic:</em> Carcinomas (e.g., Virchow’s node from Gastric Ca), Melanoma.</li>
+            </ul>
+        </li>
+        <li><strong>Immunological / Autoimmune:</strong>
+            <ul>
+                <li>SLE, Rheumatoid Arthritis, Sarcoidosis.</li>
+            </ul>
+        </li>
+        <li><strong>Iatrogenic / Drugs:</strong> Phenytoin, Serum sickness.</li>
+        <li><strong>Lipid Storage Diseases:</strong> Gaucher disease, Niemann-Pick disease.</li>
+    </ul>
+
+    <div class="hand-drawn-box">
+        <h3>Differentiating Features of Lymphadenopathy</h3>
+        <table>
+            <tr>
+                <th>Feature</th>
+                <th>Infectious / Inflammatory</th>
+                <th>Neoplastic (Malignant)</th>
+                <th>Tuberculous</th>
+            </tr>
+            <tr>
+                <td><strong>Tenderness</strong></td>
+                <td><strong>Tender</strong> (Painful due to rapid capsule stretching).</td>
+                <td><strong>Non-tender</strong> (Painless).</td>
+                <td>Mildly tender or painless.</td>
+            </tr>
+            <tr>
+                <td><strong>Consistency</strong></td>
+                <td>Soft or fluctuant (if abscess).</td>
+                <td><strong>Hard</strong> (Carcinoma) or Rubbery (Lymphoma).</td>
+                <td><strong>Matted</strong> (Fixed to each other).</td>
+            </tr>
+            <tr>
+                <td><strong>Mobility</strong></td>
+                <td>Mobile (unless peri-adenitis occurs).</td>
+                <td>Fixed (due to invasion).</td>
+                <td>Fixed/Matted.</td>
+            </tr>
+            <tr>
+                <td><strong>Distribution</strong></td>
+                <td>Often localized (draining an infection site).</td>
+                <td>Localized or Generalized.</td>
+                <td>Cervical chain (Scrofula) is most common.</td>
+            </tr>
+        </table>
+    </div>
+
+    <hr>
+
+    <h2>2. TUBERCULOUS LYMPHADENITIS</h2>
+    <p><strong>Definition:</strong> The most common form of extrapulmonary tuberculosis, affecting the lymph nodes (formerly called "Scrofula").</p>
+
+    <h3>Etiology and Pathogenesis</h3>
+    <ul>
+        <li><strong>Causative Agent:</strong> <em>Mycobacterium tuberculosis</em>.</li>
+        <li><strong>Pathogenesis:</strong>
+            <ul>
+                <li>Post-primary dissemination from lungs (lympho-hematogenous spread) or direct infection of tonsils (bovine TB).</li>
+                <li>Bacilli lodge in lymph nodes &rarr; T-cell mediated immunity (<span class="highlight-green">Type IV Hypersensitivity</span>) &rarr; Macrophage activation &rarr; Granuloma formation &rarr; Central <span class="highlight-neon">Caseous Necrosis</span>.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>Pathology (Morphology)</h3>
+    <ol>
+        <li><strong>Gross Appearance:</strong>
+            <ul>
+                <li>Nodes are enlarged, <strong>matted</strong> (stuck together due to periadenitis), and firm.</li>
+                <li>Cut surface shows yellow-white, cheesy <strong>Caseous Necrosis</strong>.</li>
+                <li>May form a "Cold Abscess" or "Collar Stud Abscess" (sinus tract rupturing through skin).</li>
+            </ul>
+        </li>
+        <li><strong>Microscopy:</strong>
+            <ul>
+                <li><strong>Epithelioid Cell Granulomas:</strong> Aggregates of activated macrophages (epithelioid cells).</li>
+                <li><strong>Langhans Giant Cells:</strong> Large multinucleated cells with nuclei arranged in a horseshoe pattern.</li>
+                <li><strong>Central Caseation:</strong> Amorphous, eosinophilic, granular necrosis (Structureless).</li>
+                <li><strong>Peripheral Cuff:</strong> Lymphocytes and fibroblasts.</li>
+                <li><strong>ZN Stain:</strong> Demonstrates Acid-Fast Bacilli (AFB).</li>
+            </ul>
+        </li>
+    </ol>
+
+    <hr>
+
+    <h2>3. HODGKIN'S LYMPHOMA (HL)</h2>
+    <p><strong>Definition:</strong> A B-cell neoplasm arising in lymph nodes, characterized by the presence of giant neoplastic cells called <span class="highlight-neon">Reed-Sternberg (RS) cells</span> within a reactive inflammatory background.</p>
+
+    <h3>WHO Classification</h3>
+    <ol>
+        <li><strong>Nodular Lymphocyte Predominant HL:</strong> (Non-classical, rare).</li>
+        <li><strong>Classical Hodgkin Lymphoma:</strong>
+            <ul>
+                <li>Nodular Sclerosis (Most common).</li>
+                <li>Mixed Cellularity.</li>
+                <li>Lymphocyte Rich.</li>
+                <li>Lymphocyte Depleted (Worst prognosis).</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h3>Pathogenesis</h3>
+    <ul>
+        <li><strong>Cell of Origin:</strong> Germinal center B-cell ("Crippled" B-cell that cannot produce antibodies).</li>
+        <li><strong>Molecular:</strong> Activation of <span class="highlight-green">NF-&kappa;B</span> transcription factor (prevents apoptosis).</li>
+        <li><strong>EBV Association:</strong> Strong link with EBV (especially in Mixed Cellularity type). EBV genome found in RS cells.</li>
+    </ul>
+
+    <h3>Pathology</h3>
+    <ul>
+        <li><strong>Reed-Sternberg (RS) Cell:</strong> The diagnostic cell. Large (15-45 &mu;m), binucleate/multinucleate, with prominent eosinophilic inclusion-like nucleoli (<span class="highlight-green">"Owl-Eye Appearance"</span>).
+            <ul>
+                <li><em>Immunophenotype:</em> <span class="highlight-neon">CD15+, CD30+</span>, CD45- (Negative for leukocyte common antigen).</li>
+            </ul>
+        </li>
+        <li><strong>Variants:</strong>
+            <ul>
+                <li><em>Lacunar Cells:</em> Cell sits in an empty space (lacuna). Seen in <strong>Nodular Sclerosis</strong>.</li>
+                <li><em>Popcorn Cells (L&H cells):</em> Puffy nucleus. Seen in <strong>Nodular Lymphocyte Predominant</strong>.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <hr>
+
+    <h2>4. NON-HODGKIN'S LYMPHOMA (NHL)</h2>
+    <p><strong>Definition:</strong> A heterogeneous group of lymphoid neoplasms (B-cell or T-cell) that lack Reed-Sternberg cells. 85% are B-cell origin.</p>
+
+    <h3>Common Subtypes and Pathogenesis</h3>
+    <div class="hand-drawn-box">
+        <ul>
+            <li><strong>Follicular Lymphoma:</strong>
+                <ul>
+                    <li><em>Genetics:</em> <span class="highlight-neon">t(14;18)</span>.</li>
+                    <li><em>Gene:</em> Overexpression of <strong>BCL2</strong> (Anti-apoptotic). Prevents cell death.</li>
+                    <li><em>Microscopy:</em> Nodular growth pattern mimicking follicles. Centrocytes (cleaved) and Centroblasts.</li>
+                </ul>
+            </li>
+            <li><strong>Burkitt Lymphoma:</strong>
+                <ul>
+                    <li><em>Genetics:</em> <span class="highlight-neon">t(8;14)</span>.</li>
+                    <li><em>Gene:</em> Overexpression of <strong>c-MYC</strong> (Growth promoter).</li>
+                    <li><em>Microscopy:</em> <span class="highlight-green">"Starry Sky" pattern</span> (Macrophages eating apoptotic debris amidst sheets of blue tumor cells).</li>
+                </ul>
+            </li>
+            <li><strong>Diffuse Large B-Cell Lymphoma (DLBCL):</strong> Most common NHL. Aggressive. Diffuse growth of large cells.</li>
+        </ul>
+    </div>
+
+    <hr>
+
+    <h2>5. DIFFERENCES: HODGKIN'S VS. NON-HODGKIN'S LYMPHOMA</h2>
+    <p>This is a high-yield exam topic.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Feature</th>
+                <th>Hodgkin's Lymphoma (HL)</th>
+                <th>Non-Hodgkin's Lymphoma (NHL)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Cell Type</strong></td>
+                <td><span class="highlight-neon">Reed-Sternberg Cells</span> (CD15+, CD30+). Background has many reactive cells.</td>
+                <td>Monoclonal B or T cells. No RS cells.</td>
+            </tr>
+            <tr>
+                <td><strong>Nodal Involvement</strong></td>
+                <td>Localized to a single axial group (Cervical, Mediastinal).</td>
+                <td>Disseminated; frequent involvement of multiple peripheral nodes.</td>
+            </tr>
+            <tr>
+                <td><strong>Spread</strong></td>
+                <td><strong>Contiguous</strong> (Orderly spread to adjacent nodes).</td>
+                <td><strong>Non-contiguous</strong> (Haphazard/Skip spread).</td>
+            </tr>
+            <tr>
+                <td><strong>Extranodal Involvement</strong></td>
+                <td>Rare.</td>
+                <td><strong>Common</strong> (Waldeyer ring, Gut, Skin, CNS).</td>
+            </tr>
+            <tr>
+                <td><strong>Age Distribution</strong></td>
+                <td>Bimodal (Young adults & Elderly).</td>
+                <td>Peak incidence in older adults (increases with age).</td>
+            </tr>
+            <tr>
+                <td><strong>Constitutional Symptoms</strong></td>
+                <td>Common ("B Symptoms": Fever, Night sweats, Weight loss).</td>
+                <td>Less common (except in aggressive types).</td>
+            </tr>
+            <tr>
+                <td><strong>Prognosis</strong></td>
+                <td>Excellent cure rate with chemotherapy (ABVD).</td>
+                <td>Variable; some are indolent (incurable), others aggressive (curable).</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h2 style="color: #d32f2f; border-color: #d32f2f;">IMPORTANT UNIVERSITY QUESTIONS</h2>
+
+    <div class="qa-section">
+        <h3>Q1: Classify Lymphadenopathy. Describe the pathogenesis and pathology of Tuberculous Lymphadenitis.</h3>
+        <p><strong>Introduction:</strong> Lymphadenopathy is the enlargement of lymph nodes due to reactive or neoplastic causes. TB lymphadenitis is the commonest cause of inflammatory lymphadenopathy in developing countries.</p>
+        <p><strong>Body:</strong>
+            <br><strong>Classification:</strong>
+            <ul>
+                <li><em>Localized:</em> Infection (TB, Pyogenic), Metastasis.</li>
+                <li><em>Generalized:</em> Viral (HIV, EBV), Lymphoma, Leukemia, SLE.</li>
+            </ul>
+            <br><strong>Pathogenesis of TB Lymphadenitis:</strong> Caused by <em>M. tuberculosis</em> via lymphohematogenous spread. It involves a Type IV Hypersensitivity reaction where T-cells activate macrophages to form granulomas to contain the bacilli.
+            <br><strong>Pathology:</strong>
+            <ul>
+                <li><em>Gross:</em> Nodes are <strong>matted</strong>, firm, with a cut surface showing yellow, cheesy caseous necrosis.</li>
+                <li><em>Microscopy:</em> The hallmark is the <strong>Caseating Epithelioid Granuloma</strong> with Langhans giant cells and a lymphocytic rim. ZN stain reveals acid-fast bacilli.</li>
+            </ul>
+        </p>
+        <p><strong>Conclusion:</strong> It is a specific granulomatous inflammation often requiring FNAC or biopsy for confirmation.</p>
+    </div>
+
+    <div class="qa-section">
+        <h3>Q2: Tabulate the differences between Hodgkin's and Non-Hodgkin's Lymphoma. Describe the Reed-Sternberg cell.</h3>
+        <p><strong>Introduction:</strong> Lymphomas are malignancies of the lymphoid system. The primary distinction is the presence of Reed-Sternberg cells in Hodgkin's Lymphoma.</p>
+        <p><strong>Body:</strong>
+            <br><strong>Differences:</strong> (Refer to the table above). Key points are the contiguous spread and rarity of extranodal sites in HL compared to NHL.
+            <br><strong>Reed-Sternberg (RS) Cell:</strong>
+            <br>The diagnostic tumor giant cell of HL.
+            <ul>
+                <li><em>Morphology:</em> Large cell (15-45 &mu;m), binucleate (mirror image nuclei), with huge eosinophilic nucleoli creating an <strong>"Owl-eye"</strong> appearance.</li>
+                <li><em>Origin:</em> Germinal center B-cell.</li>
+                <li><em>Markers:</em> CD15 (+), CD30 (+), CD45 (-).</li>
+            </ul>
+        </p>
+        <p><strong>Conclusion:</strong> The identification of the RS cell in an appropriate inflammatory background is essential for diagnosing Hodgkin's Lymphoma.</p>
+    </div>
+
+</div>
+
+</body>
+</html>

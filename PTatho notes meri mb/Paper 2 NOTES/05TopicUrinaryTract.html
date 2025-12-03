@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBBS Pathology Notes: Urinary Tract</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-yellow: #f4ff40; /* Neon yellowish highlighter */
+            --marker-green: #daffb3; /* Natural light green marker */
+            --ink-color: #2c2c2c; /* Dark grey/black ink look */
+            --paper-white: #ffffff; /* Pure white page */
+            --box-bg: #fffef0; /* Subtle warm tint for boxes */
+            --border-color: #333;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #525659; /* Grey background behind the paper */
+            font-family: 'Kalam', cursive;
+            color: var(--ink-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            line-height: 1.6;
+            font-size: 18px; /* Readable handwritten size */
+        }
+
+        /* A4 Paper Simulation */
+        .page-container {
+            background-color: var(--paper-white);
+            width: 210mm; /* A4 width */
+            min-height: 297mm; /* A4 height minimum */
+            padding: 25mm; /* Standard margins */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 32px;
+            text-align: center;
+            text-decoration: underline;
+            text-decoration-color: var(--neon-yellow);
+            text-decoration-thickness: 5px;
+            margin-bottom: 40px;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            font-size: 26px;
+            border-bottom: 3px solid var(--marker-green);
+            padding-bottom: 5px;
+            margin-top: 40px;
+            color: #1a1a1a;
+            display: inline-block;
+            width: 100%;
+        }
+
+        h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-top: 25px;
+            color: #333;
+            text-decoration: underline;
+        }
+
+        h4 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-top: 15px;
+            color: #444;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin-bottom: 15px;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* Highlighting Classes */
+        .highlight-neon {
+            background-color: var(--neon-yellow);
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .highlight-green {
+            background-color: var(--marker-green);
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        strong {
+            font-weight: 700;
+        }
+
+        /* Hand-drawn Box Style */
+        .hand-drawn-box {
+            border: 2px solid var(--border-color);
+            /* Irregular border radius for hand-drawn effect */
+            border-radius: 2px 20px 3px 25px / 25px 3px 20px 2px;
+            padding: 20px;
+            margin: 25px 0;
+            background-color: var(--box-bg); 
+            box-shadow: 3px 4px 0px rgba(0,0,0,0.1);
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 20px 0;
+            font-size: 16px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: var(--marker-green);
+            font-weight: bold;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        tr td:last-child, tr th:last-child {
+            border-right: none;
+        }
+
+        /* Model Answer Section */
+        .qa-section {
+            border-left: 4px solid var(--neon-yellow);
+            padding-left: 20px;
+            margin-top: 30px;
+        }
+
+        /* Print Settings */
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+            .page-container {
+                width: 100%;
+                box-shadow: none;
+                margin: 0;
+                padding: 15mm;
+            }
+            /* Ensure background colors print */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            h1, h2, h3 {
+                page-break-after: avoid;
+            }
+            table, .hand-drawn-box, li {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 800px) {
+            .page-container {
+                width: 100%;
+                padding: 15px;
+            }
+            table {
+                font-size: 14px;
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-container">
+
+    <h1>TOPIC 05: URINARY TRACT PATHOLOGY</h1>
+
+    <p><strong>Syllabus Scope:</strong> Renal Failure, Glomerulonephritis (IgA, Lupus, Diabetic), Cystic Diseases, Tumors, and Tubulointerstitial Diseases (ATN, Pyelonephritis, Stones).</p>
+
+    <h2>1. RENAL FAILURE</h2>
+    <p><strong>Definition:</strong> A significant loss of renal function involving the retention of nitrogenous wastes (Azotemia) and derangement of fluid/electrolyte balance.</p>
+
+    <h3>A. Acute Renal Failure (ARF) / Acute Kidney Injury (AKI)</h3>
+    <ul>
+        <li><strong>Definition:</strong> Rapid decline in GFR (hours to days) causing oliguria or anuria and azotemia.</li>
+        <li><strong>Etiology:</strong>
+            <ul>
+                <li><em>Pre-renal:</em> Hypovolemia, Heart failure (Ischemia).</li>
+                <li><em>Renal:</em> Acute Tubular Necrosis (ATN), Rapidly Progressive Glomerulonephritis (RPGN).</li>
+                <li><em>Post-renal:</em> Obstruction (Stones, BPH).</li>
+            </ul>
+        </li>
+        <li><strong>Morphology:</strong> Depends on cause (e.g., swollen pale cortex in ATN).</li>
+        <li><strong>Labs:</strong> Rapid rise in Creatinine and Urea. Hyperkalemia. Metabolic Acidosis.</li>
+    </ul>
+
+    <h3>B. Chronic Renal Failure (CRF) / Chronic Kidney Disease (CKD)</h3>
+    <ul>
+        <li><strong>Definition:</strong> Progressive, irreversible destruction of nephrons over months/years. <strong>End-Stage Renal Disease (ESRD)</strong> is the terminal stage (GFR < 5% normal).</li>
+        <li><strong>Etiology:</strong> Diabetes (most common), Hypertension, Chronic Glomerulonephritis, Polycystic Kidney Disease.</li>
+        <li><strong>Pathogenesis of Uremia:</strong> Retention of toxins (urea, creatinine, phenols) affects all organ systems.
+            <ul>
+                <li><em>Intact Nephron Hypothesis:</em> Remaining nephrons undergo compensatory hypertrophy (super-nephrons) but eventually fail due to sclerosis.</li>
+            </ul>
+        </li>
+        <li><strong>Morphology:</strong> Kidneys are typically <span class="highlight-neon">symmetrically contracted (small)</span>, granular surface, and firm (fibrosis). <em>Exception:</em> Normal/Large in Diabetic Nephropathy, Amyloidosis, PKD.</li>
+        <li><strong>Clinical Features (Uremic Syndrome):</strong>
+            <ul>
+                <li><em>Fluid/Electrolytes:</em> Edema, Hyperkalemia, Metabolic Acidosis.</li>
+                <li><em>Hematologic:</em> Normocytic Anemia (Low Erythropoietin), Bleeding (Platelet dysfunction).</li>
+                <li><em>Bone:</em> Renal Osteodystrophy (due to secondary Hyperparathyroidism).</li>
+                <li><em>Skin:</em> Uremic Frost, Pruritus.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <hr>
+
+    <h2>2. GLOMERULAR DISEASES (GLOMERULONEPHRITIS)</h2>
+    <p>Disorders primarily affecting the glomerulus.</p>
+
+    <h3>Classification (Clinical Syndromes)</h3>
+    <ol>
+        <li><strong>Nephritic Syndrome:</strong> Hematuria (RBC casts), HTN, Mild Proteinuria, Oliguria. (e.g., Post-Streptococcal GN).</li>
+        <li><strong>Nephrotic Syndrome:</strong> Massive Proteinuria (>3.5g/day), Hypoalbuminemia, Edema, Hyperlipidemia. (e.g., Minimal Change Disease, Membranous GN).</li>
+        <li><strong>Rapidly Progressive GN (RPGN):</strong> Rapid loss of function with <span class="highlight-neon">Crescents</span> in Bowman's space.</li>
+        <li><strong>Chronic GN:</strong> End-stage glomerular fibrosis.</li>
+    </ol>
+
+    <h3>Pathogenesis of Glomerular Injury</h3>
+    <p>Most are immune-mediated.</p>
+    <ul>
+        <li><strong>Immune Complex Deposition:</strong>
+            <ul>
+                <li><em>Circulating Complexes:</em> Trapped in glomerulus (e.g., SLE, Post-Strep).</li>
+                <li><em>In-Situ Formation:</em> Antibodies react with intrinsic glomerular antigens (e.g., Anti-GBM in Goodpasture) or planted antigens.</li>
+            </ul>
+        </li>
+        <li><strong>Cell-Mediated:</strong> Sensitized T-cells cause injury (e.g., Minimal Change Disease).</li>
+        <li><strong>Mediators:</strong> Complement activation (C5b-9 MAC), Neutrophils, Monocytes, Platelets, Cytokines.</li>
+    </ul>
+
+    <div class="hand-drawn-box">
+        <h3>Specific Glomerular Diseases</h3>
+        <p><strong>1. IgA Nephropathy (Berger Disease):</strong> Most common GN worldwide.</p>
+        <ul>
+            <li><em>Pathogenesis:</em> Increased mucosal IgA synthesis (after respiratory/GI infection) &rarr; Deposition of <strong>IgA immune complexes</strong> in the <span class="highlight-green">Mesangium</span>. Activates Complement (Alternative pathway).</li>
+            <li><em>Morphology:</em> Mesangial proliferation. IF shows granular IgA deposits.</li>
+            <li><em>Clinical:</em> Recurrent gross hematuria in young adults.</li>
+        </ul>
+
+        <p><strong>2. Diabetic Nephropathy:</strong></p>
+        <ul>
+            <li><em>Pathogenesis:</em> Metabolic defects (Advanced Glycation End-products), Hemodynamic changes (Hyperfiltration), oxidative stress.</li>
+            <li><em>Morphology:</em>
+                <ul>
+                    <li>Capillary Basement Membrane Thickening.</li>
+                    <li><strong>Diffuse Glomerulosclerosis:</strong> Matrix increase.</li>
+                    <li><strong>Nodular Glomerulosclerosis:</strong> <span class="highlight-neon">Kimmelstiel-Wilson (KW) Nodules</span> (Pathognomonic) - Acellular, PAS+ nodules in mesangium.</li>
+                    <li><em>Armanni-Ebstein Lesion:</em> Glycogen deposits in tubular epithelium.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <p><strong>3. Lupus Nephritis (SLE):</strong></p>
+        <ul>
+            <li><em>Pathogenesis:</em> Deposition of DNA-Anti-DNA immune complexes.</li>
+            <li><em>WHO Classification (Classes I-VI):</em>
+                <ul>
+                    <li>Class I: Minimal mesangial.</li>
+                    <li>Class II: Mesangial proliferative.</li>
+                    <li>Class III: Focal proliferative.</li>
+                    <li>Class IV: <span class="highlight-green">Diffuse Proliferative</span> (Most common & severe). Shows <strong>"Wire-loop"</strong> lesions (Subendothelial deposits).</li>
+                    <li>Class V: Membranous (Subepithelial deposits).</li>
+                    <li>Class VI: Advanced Sclerosing.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <hr>
+
+    <h2>3. CYSTIC DISEASES OF THE KIDNEY</h2>
+    
+    <h3>Autosomal Dominant Polycystic Kidney Disease (ADPKD)</h3>
+    <ul>
+        <li><strong>Genetics:</strong> Mutation in <span class="highlight-neon">PKD1 gene</span> (Chr 16, Polycystin-1) - 85% cases; or <strong>PKD2 gene</strong> (Chr 4, Polycystin-2) - 15%.</li>
+        <li><strong>Pathogenesis:</strong> Defective polycystin affects cilium function ("Ciliopathy") &rarr; Altered calcium signaling &rarr; Tubular epithelial proliferation & fluid secretion &rarr; Cysts.</li>
+        <li><strong>Pathology:</strong>
+            <ul>
+                <li><em>Gross:</em> <strong>Bilaterally Enlarged Kidneys</strong> (massive, up to 4kg). Surface studded with numerous cysts (fluid-filled).</li>
+                <li><em>Microscopy:</em> Cysts arise from <em>all</em> parts of the nephron. Intervening parenchyma is atrophic/fibrotic.</li>
+            </ul>
+        </li>
+        <li><strong>Clinical:</strong> Manifests in adults (30-50 yrs). Flank pain, Hematuria, Hypertension, Renal failure.</li>
+        <li><strong>Extra-renal Anomalies:</strong> Liver cysts (40%), <span class="highlight-green">Berry Aneurysms</span> (Circle of Willis - risk of subarachnoid hemorrhage).</li>
+    </ul>
+
+    <h3>Autosomal Recessive Polycystic Kidney Disease (ARPKD)</h3>
+    <ul>
+        <li><strong>Genetics:</strong> Mutation in <strong>PKHD1 gene</strong> (Fibrocystin).</li>
+        <li><strong>Pathology:</strong> Kidneys enlarged but smooth surface. Cysts are elongated channels (dilated collecting ducts) arranged radially (Spongy appearance).</li>
+        <li><strong>Clinical:</strong> Infants/Children. Associated with <strong>Congenital Hepatic Fibrosis</strong>.</li>
+    </ul>
+
+    <hr>
+
+    <h2>4. TUMORS OF THE KIDNEY</h2>
+
+    <h3>A. Renal Cell Carcinoma (RCC)</h3>
+    <p>Most common malignant tumor of kidney (Adults). Arises from tubular epithelium.</p>
+    <ul>
+        <li><strong>Risk Factors:</strong> Smoking (strongest), Obesity, HTN, Cadmium exposure, von Hippel-Lindau (VHL) syndrome.</li>
+        <li><strong>Classification & Pathology:</strong>
+            <ol>
+                <li><strong>Clear Cell RCC (70-80%):</strong>
+                    <ul>
+                        <li><em>Genetics:</em> Loss of VHL gene (3p).</li>
+                        <li><em>Morphology:</em> Solitary, large, yellow mass (lipid) with hemorrhage/necrosis.
+                        <br><em>Microscopy:</em> Nests of cells with <span class="highlight-green">Clear Cytoplasm</span> (Glycogen/Lipid) separated by delicate vascular septa ("Chicken-wire" vasculature).</li>
+                        <li><em>Spread:</em> Tendency to invade <strong>Renal Vein</strong>.</li>
+                    </ul>
+                </li>
+                <li><strong>Papillary RCC (10-15%):</strong> Papillary growth pattern. Psammoma bodies. Multifocal.</li>
+                <li><strong>Chromophobe RCC (5%):</strong> Pale eosinophilic cells with <strong>Perinuclear Halo</strong>. Excellent prognosis.</li>
+            </ol>
+        </li>
+        <li><strong>Clinical Triad:</strong> Hematuria, Flank pain, Palpable mass (seen in only 10%). Paraneoplastic syndromes (Polycythemia, Hypercalcemia).</li>
+    </ul>
+
+    <h3>B. Wilms Tumor (Nephroblastoma)</h3>
+    <p>Most common renal tumor in <strong>Children</strong>.
+    <br><em>Genetics:</em> WT1 mutation.
+    <br><em>Morphology:</em> Triphasic histology - Blastema (small blue cells), Epithelium (tubules), Stroma.</p>
+
+    <hr>
+
+    <h2>5. UROTHELIAL TUMORS (BLADDER CANCER)</h2>
+    <p>90% are Urothelial Carcinomas (Transitional Cell Carcinoma).</p>
+    <ul>
+        <li><strong>Etiology:</strong> Smoking, Arylamines (Dye industry), Schistosomiasis (Squamous cell ca), Cyclophosphamide.</li>
+        <li><strong>Pathogenesis:</strong> Two pathways:
+            <ol>
+                <li><em>FGFR3 mutation pathway:</em> Leads to Low-grade papillary tumors (Recurrent, but rarely invade).</li>
+                <li><em>TP53 mutation pathway:</em> Leads to High-grade invasive tumors (Carcinoma in situ precursor).</li>
+            </ol>
+        </li>
+        <li><strong>Morphology:</strong> Papillary exophytic masses (resembling sea anemone). Invasion of muscularis propria determines prognosis.</li>
+        <li><strong>Clinical:</strong> Painless Hematuria.</li>
+    </ul>
+
+    <hr>
+
+    <h2>6. TUBULOINTERSTITIAL DISEASES</h2>
+    <p>Diseases affecting tubules and interstitium.
+    <br><em>Classification:</em> Acute Tubular Necrosis (ATN), Tubulointerstitial Nephritis (Infectious/Drug-induced).</p>
+
+    <h3>A. Acute Tubular Necrosis (ATN)</h3>
+    <p>Most common cause of Acute Renal Failure. Reversible injury to tubular epithelium.</p>
+    <ul>
+        <li><strong>Etiology:</strong>
+            <ul>
+                <li><em>Ischemic:</em> Shock, hypotension (affects patchy segments).</li>
+                <li><em>Toxic:</em> Drugs (Gentamicin), Heavy metals (Mercury), Myoglobin (Rhabdomyolysis). Affects extensive continuous segments (Proximal tubule).</li>
+            </ul>
+        </li>
+        <li><strong>Pathogenesis:</strong> Tubular cell injury (loss of polarity) + Vasoconstriction. Sloughed cells form casts causing obstruction.</li>
+        <li><strong>Pathology:</strong>
+            <ul>
+                <li><em>Gross:</em> Pale swollen cortex, congested medulla.</li>
+                <li><em>Microscopy:</em> Necrosis of epithelial cells (loss of nuclei), attenuation of brush border. <strong>Granular/Muddy Brown Casts</strong> in lumens.</li>
+            </ul>
+        </li>
+        <li><strong>Stages:</strong> Initiation, Maintenance (Oliguria), Recovery (Polyuria).</li>
+    </ul>
+
+    <h3>B. Pyelonephritis (Infection)</h3>
+    <p>Inflammation of tubules, interstitium, and renal pelvis.</p>
+    
+    <div class="hand-drawn-box">
+        <h4>1. Acute Pyelonephritis</h4>
+        <ul>
+            <li><strong>Etiology:</strong> Bacterial infection (<em>E. coli</em>). Usually Ascending infection (UTI).</li>
+            <li><strong>Pathology:</strong>
+                <ul>
+                    <li><em>Gross:</em> Yellowish abscesses on cortical surface.</li>
+                    <li><em>Microscopy:</em> <span class="highlight-neon">Intratubular Neutrophils</span> (Pus casts), interstitial inflammation. Glomeruli spared.</li>
+                </ul>
+            </li>
+            <li><strong>Complications:</strong> Papillary Necrosis (in Diabetics), Pyonephrosis.</li>
+        </ul>
+
+        <h4>2. Chronic Pyelonephritis & Reflux Nephropathy</h4>
+        <ul>
+            <li><strong>Etiology:</strong> Chronic obstruction or <strong>Vesicoureteral Reflux (VUR)</strong> in childhood.</li>
+            <li><strong>Pathology:</strong>
+                <ul>
+                    <li><em>Gross:</em> Irregular, broad, U-shaped corticomedullary scars (polar scarring).</li>
+                    <li><em>Microscopy:</em> Atrophic tubules containing eosinophilic proteinaceous material resembling thyroid follicles (<span class="highlight-green">Thyroidization</span> of kidney). Chronic inflammation, fibrosis.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <hr>
+
+    <h2>7. RENAL STONE DISEASE (UROLITHIASIS)</h2>
+
+    <h3>Etiology and Pathogenesis</h3>
+    <p>Formation requires supersaturation of urine, nucleation centers, and lack of inhibitors (citrate).</p>
+
+    <h3>Types and Morphology</h3>
+    <ol>
+        <li><strong>Calcium Stones (70%):</strong> Ca-Oxalate/Phosphate.
+            <br><em>Cause:</em> Hypercalciuria, Hypercalcemia. Hard, radiopaque.</li>
+        <li><strong>Struvite Stones (Triple Stones):</strong> Mg-Ammonium-Phosphate.
+            <br><em>Cause:</em> Infection by urease-producing bacteria (Proteus). Forms <span class="highlight-neon">Staghorn Calculi</span> (fills renal pelvis).</li>
+        <li><strong>Uric Acid Stones:</strong> Radiolucent. Seen in Gout, acidic urine.</li>
+        <li><strong>Cystine Stones:</strong> Genetic defect in amino acid transport.</li>
+    </ol>
+
+    <h3>Complications (Obstructive Uropathy)</h3>
+    <ul>
+        <li><strong>Hydronephrosis:</strong> Dilation of renal pelvis/calyces and atrophy of parenchyma due to obstruction.</li>
+        <li>Infection (Pyelonephritis).</li>
+        <li>Renal Failure (if bilateral obstruction).</li>
+    </ul>
+
+    <hr>
+
+    <h2 style="color: #d32f2f; border-color: #d32f2f;">IMPORTANT UNIVERSITY QUESTIONS</h2>
+
+    <div class="qa-section">
+        <h3>Q1: Classify Glomerulonephritis. Describe the pathogenesis and morphology of Post-Streptococcal Glomerulonephritis (PSGN).</h3>
+        <p><strong>Introduction:</strong> Glomerulonephritis (GN) is inflammation of the glomeruli. PSGN is a classic example of nephritic syndrome occurring 1-4 weeks after a streptococcal infection.</p>
+        <p><strong>Body:</strong>
+            <br><strong>Classification:</strong>
+            <ul>
+                <li><em>Nephritic Syndrome:</em> PSGN, RPGN.</li>
+                <li><em>Nephrotic Syndrome:</em> Minimal Change, Membranous, FSGS.</li>
+                <li><em>Chronic GN.</em></li>
+            </ul>
+            <br><strong>Pathogenesis of PSGN:</strong> It is an Immune Complex disease (Type III Hypersensitivity). Antibodies formed against Strep antigens (SpeB) circulate and deposit in the glomerulus or form in-situ. This activates Complement, attracting neutrophils.
+            <br><strong>Morphology:</strong>
+            <ul>
+                <li><em>Light Microscopy:</em> Diffuse hypercellularity (proliferation of mesangial/endothelial cells + neutrophils).</li>
+                <li><em>Immunofluorescence:</em> "Starry Sky" or granular pattern of IgG and C3 deposits.</li>
+                <li><em>Electron Microscopy:</em> Characteristic <span class="highlight-green">Subepithelial Humps</span> (immune deposits).</li>
+            </ul>
+        </p>
+        <p><strong>Conclusion:</strong> Prognosis is excellent in children (95% recover), but worse in adults.</p>
+    </div>
+
+    <div class="qa-section">
+        <h3>Q2: Define Renal Failure. Discuss the Etiopathogenesis and Pathology of Acute Tubular Necrosis (ATN).</h3>
+        <p><strong>Introduction:</strong> ATN is the destruction of tubular epithelial cells and is the most common cause of acute renal failure (intrinsic type).</p>
+        <p><strong>Body:</strong>
+            <br><strong>Etiopathogenesis:</strong>
+            <ul>
+                <li><em>Ischemic ATN:</em> Due to hypotension (shock). Affects straight segment of proximal tubule and thick ascending limb (patchy).</li>
+                <li><em>Nephrotoxic ATN:</em> Poisons/Drugs (Gentamicin, Mercury). Affects proximal convoluted tubule (diffuse).</li>
+            </ul>
+            <br><strong>Mechanism:</strong> Injury causes cell detachment and cast formation, leading to tubular obstruction, back-leak of filtrate, and vasoconstriction &rarr; GFR drops.
+            <br><strong>Pathology:</strong>
+            <ul>
+                <li><em>Gross:</em> Pale cortex, congested medulla.</li>
+                <li><em>Microscopy:</em> Coagulative necrosis of epithelium, loss of nuclei, attenuation of brush border. Tubules are dilated and contain <strong>dirty brown granular casts</strong>.</li>
+            </ul>
+        </p>
+        <p><strong>Conclusion:</strong> Tubular cells have regenerative capacity; thus, ATN is reversible if the patient is supported during the oliguric phase.</p>
+    </div>
+
+</div>
+
+</body>
+</html>

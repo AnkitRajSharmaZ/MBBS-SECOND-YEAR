@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hemodynamic Disorders Notes - Vardaan Learning Institute</title>
+    <!-- Google Font: Kalam for the handwritten feel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --paper-color: #ffffff;
+            --ink-color: #2c3e50;
+            --neon-yellow: #fff9c4; /* Soft neon for readability */
+            --neon-green: #c8e6c9;  /* Natural marker green */
+            --accent-blue: #e3f2fd;
+            --border-color: #455a64;
+            --heading-red: #d32f2f;
+        }
+
+        body {
+            background-color: #e0e0e0; /* Desk background */
+            font-family: 'Kalam', cursive;
+            color: var(--ink-color);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+            font-size: 17px;
+        }
+
+        /* A4 Paper Simulation */
+        .page-container {
+            background-color: var(--paper-color);
+            width: 210mm; 
+            min-height: 297mm;
+            margin: 0 auto;
+            padding: 20mm; 
+            box-sizing: border-box;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        /* Header / Branding */
+        header {
+            text-align: center;
+            border-bottom: 4px double var(--ink-color);
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 2.6rem;
+            margin: 0;
+            color: var(--heading-red);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .institute-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #37474f;
+            margin-bottom: 5px;
+            text-decoration: underline;
+            text-decoration-color: #ffeb3b; /* Neon yellow underline */
+            text-decoration-thickness: 3px;
+        }
+
+        /* Typography */
+        h2 {
+            color: #1565c0; /* Dark Blue ink */
+            border-bottom: 2px dashed #90caf9;
+            padding-bottom: 5px;
+            margin-top: 50px;
+            font-size: 1.9rem;
+        }
+
+        h3 {
+            color: #2e7d32; /* Green ink */
+            margin-top: 30px;
+            font-weight: 700;
+            font-size: 1.5rem;
+            border-left: 5px solid #ffeb3b;
+            padding-left: 10px;
+        }
+
+        h4 {
+            color: #d84315;
+            font-size: 1.25rem;
+            margin-top: 20px;
+            margin-bottom: 5px;
+            font-weight: bold;
+            text-decoration: underline;
+            text-decoration-style: wavy;
+        }
+
+        p {
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        /* Highlighting Classes */
+        .highlight {
+            background-color: var(--neon-yellow);
+            padding: 0 4px;
+            border-radius: 4px;
+        }
+
+        .marker-green {
+            background-color: var(--neon-green);
+            padding: 0 4px;
+            border-radius: 4px;
+        }
+
+        /* Hand-drawn Boxes */
+        .sketch-box {
+            background: #fffde7; /* Light yellow note */
+            border: 2px solid var(--ink-color);
+            border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+            padding: 20px;
+            margin: 25px 0;
+            position: relative;
+        }
+        
+        .sketch-box.blue {
+            background: #e1f5fe;
+            border-color: #0277bd;
+        }
+
+        .sketch-box.important {
+            background: #ffccbc;
+            border-color: #d84315;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            border: 2px solid var(--ink-color); /* Thicker border for handwritten feel */
+            padding: 10px;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #eceff1;
+            color: #000;
+            font-weight: bold;
+        }
+
+        /* Lists */
+        ul, ol {
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* Print Styling */
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+            .page-container {
+                width: 100%;
+                box-shadow: none;
+                margin: 0;
+                padding: 15mm;
+                border: none;
+            }
+            .sketch-box {
+                break-inside: avoid;
+            }
+            h2 {
+                page-break-before: always;
+            }
+            h2:first-of-type {
+                page-break-before: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-container">
+        <header>
+            <div class="institute-name">VARDAAN LEARNING INSTITUTE</div>
+            <h1>Hemodynamic Disorders</h1>
+            <p><strong>Subject:</strong> Pathology (MBBS Phase II) | <strong>Reference:</strong> Ramdas Nayak & Robbins</p>
+        </header>
+
+        <!-- SECTION 1: EDEMA -->
+        <section>
+            <h2>1. Edema</h2>
+            
+            <div class="sketch-box">
+                <h3>Definition</h3>
+                <p><strong>Edema</strong> is defined as an accumulation of excessive fluid in the <span class="highlight">interstitial tissue spaces</span> or <span class="highlight">body cavities</span>.</p>
+                <p>The fluid may be:</p>
+                <ul>
+                    <li><strong>Transudate:</strong> Protein-poor fluid (Specific gravity &lt; 1.012). Caused by hemodynamic disturbances (e.g., Heart failure).</li>
+                    <li><strong>Exudate:</strong> Protein-rich fluid (Specific gravity &gt; 1.020). Caused by inflammation (increased vascular permeability).</li>
+                </ul>
+            </div>
+
+            <h3>Terminology for Fluid in Body Cavities</h3>
+            <ul>
+                <li><strong>Hydrothorax:</strong> Fluid in pleural cavity.</li>
+                <li><strong>Hydropericardium:</strong> Fluid in pericardial cavity.</li>
+                <li><strong>Hydroperitoneum (Ascites):</strong> Fluid in peritoneal cavity.</li>
+                <li><strong>Anasarca:</strong> Severe, generalized edema with profound subcutaneous tissue swelling.</li>
+            </ul>
+
+            <h3>Pathogenesis (Physiologic Mechanisms)</h3>
+            <p>Edema is caused by an imbalance in <span class="marker-green">Starling's Forces</span> governing fluid movement across capillary walls. The normal fluid balance depends on:</p>
+            <ol>
+                <li><strong>Increased Hydrostatic Pressure:</strong> Pushes fluid out of vessels.
+                    <ul>
+                        <li><em>Impaired Venous Return:</em> Congestive Heart Failure (CHF), Constrictive Pericarditis, Venous obstruction (thrombosis).</li>
+                        <li><em>Arteriolar Dilation:</em> Heat, Neurohumoral dysregulation.</li>
+                    </ul>
+                </li>
+                <li><strong>Reduced Plasma Oncotic Pressure:</strong> Decreased albumin (which holds fluid in) allows fluid to leak out.
+                    <ul>
+                        <li><em>Decreased Synthesis:</em> Liver Cirrhosis, Protein Malnutrition (Kwashiorkor).</li>
+                        <li><em>Increased Loss:</em> Nephrotic Syndrome (Proteinuria), Protein-losing enteropathy.</li>
+                    </ul>
+                </li>
+                <li><strong>Lymphatic Obstruction:</strong> Impairs drainage of interstitial fluid (Lymphedema).
+                    <ul>
+                        <li><em>Causes:</em> Filariasis (Elephantiasis), Neoplastic obstruction, Post-surgical/Post-radiation.</li>
+                    </ul>
+                </li>
+                <li><strong>Sodium and Water Retention:</strong> Increases hydrostatic pressure (expanded volume) and reduces oncotic pressure (dilution).
+                    <ul>
+                        <li><em>Causes:</em> Acute renal failure, Glomerulonephritis.</li>
+                        <li><em>Mechanism:</em> Activation of <strong>Renin-Angiotensin-Aldosterone System (RAAS)</strong>.</li>
+                    </ul>
+                </li>
+                <li><strong>Inflammation:</strong> Increased vascular permeability (Exudate).</li>
+            </ol>
+
+            <h3>Clinical Correlations</h3>
+            <table>
+                <tr>
+                    <th>Type of Edema</th>
+                    <th>Pathogenesis</th>
+                    <th>Clinical Features</th>
+                </tr>
+                <tr>
+                    <td><strong>Cardiac Edema (CHF)</strong></td>
+                    <td>Increased hydrostatic pressure + Na+ retention (RAAS activation).</td>
+                    <td>Dependent edema (legs on standing, sacrum on lying down). <strong>Pitting edema.</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Renal Edema (Nephrotic Syn.)</strong></td>
+                    <td>Reduced oncotic pressure (Hypoalbuminemia).</td>
+                    <td>Generalized edema. Starts in loose tissues like eyelids (<strong>Periorbital edema</strong>).</td>
+                </tr>
+                <tr>
+                    <td><strong>Pulmonary Edema</strong></td>
+                    <td>Increased hydrostatic pressure (Left Heart Failure).</td>
+                    <td>Fluid fills alveoli. Lungs become heavy, wet. Patient has dyspnea.</td>
+                </tr>
+                <tr>
+                    <td><strong>Cerebral Edema</strong></td>
+                    <td>Trauma, Infection, Ischemia.</td>
+                    <td>Increased Intracranial Pressure (ICP). Can cause herniation and death.</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- SECTION 2: HYPEREMIA & CONGESTION -->
+        <section>
+            <h2>2. Hyperemia and Congestion</h2>
+            <p>Both terms indicate a local increase in the volume of blood in a particular tissue.</p>
+
+            <h3>Differences</h3>
+            <table>
+                <tr>
+                    <th>Feature</th>
+                    <th>Hyperemia</th>
+                    <th>Congestion</th>
+                </tr>
+                <tr>
+                    <td><strong>Process</strong></td>
+                    <td><strong>Active process.</strong></td>
+                    <td><strong>Passive process.</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Mechanism</strong></td>
+                    <td>Increased arterial inflow (arteriolar dilation).</td>
+                    <td>Impaired venous outflow.</td>
+                </tr>
+                <tr>
+                    <td><strong>Color</strong></td>
+                    <td><strong>Red (Erythema)</strong> due to oxygenated blood.</td>
+                    <td><strong>Blue-Red (Cyanosis)</strong> due to deoxygenated blood (stasis).</td>
+                </tr>
+                <tr>
+                    <td><strong>Examples</strong></td>
+                    <td>Inflammation, Exercise, Blushing.</td>
+                    <td>Cardiac failure, Venous obstruction.</td>
+                </tr>
+            </table>
+
+            <div class="sketch-box blue">
+                <h3>Morphology of Chronic Venous Congestion (CVC)</h3>
+                
+                <h4>1. CVC Liver ("Nutmeg Liver")</h4>
+                <ul>
+                    <li><strong>Cause:</strong> Right-sided Heart Failure.</li>
+                    <li><strong>Gross:</strong> Cut surface shows a mottled appearance resembling a <span class="highlight">Nutmeg</span>.
+                        <ul>
+                            <li><em>Red dots:</em> Congested central veins (Centrilobular necrosis/hemorrhage).</li>
+                            <li><em>Yellow areas:</em> Normal or fatty peripheral parenchyma.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Microscopy:</strong>
+                        <ul>
+                            <li><strong>Centrilobular necrosis:</strong> Hepatocytes around central vein die due to hypoxia.</li>
+                            <li><strong>Central vein:</strong> Dilated and congested.</li>
+                            <li><strong>Peripheral cells:</strong> May show fatty change.</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+
+                <h4>2. CVC Lung</h4>
+                <ul>
+                    <li><strong>Cause:</strong> Left-sided Heart Failure (Mitral stenosis).</li>
+                    <li><strong>Gross:</strong> Lungs are heavy, wet, and brownish (Brown Induration).</li>
+                    <li><strong>Microscopy:</strong>
+                        <ul>
+                            <li>Alveolar septa are thickened and fibrotic.</li>
+                            <li>Alveoli contain numerous <span class="highlight">Heart Failure Cells</span>.</li>
+                            <li><strong>Heart Failure Cells:</strong> Hemosiderin-laden macrophages (macrophages that have eaten RBCs leaked from congested capillaries).</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+            </div>
+
+            <h3>Hemorrhage</h3>
+            <p><strong>Definition:</strong> Extravasation of blood from vessels into the extravascular space.</p>
+            <ul>
+                <li><strong>Petechiae (1-2mm):</strong> Pinpoint hemorrhages (e.g., thrombocytopenia).</li>
+                <li><strong>Purpura (3-5mm):</strong> Slightly larger (e.g., vasculitis).</li>
+                <li><strong>Ecchymoses (1-2cm):</strong> Subcutaneous bruises. Color changes: Red (Hb) → Blue-Green (Bilirubin) → Gold-brown (Hemosiderin).</li>
+                <li><strong>Hematoma:</strong> Massive accumulation of blood within a tissue.</li>
+            </ul>
+        </section>
+
+        <!-- SECTION 3: SHOCK -->
+        <section>
+            <h2>3. Shock</h2>
+            
+            <div class="sketch-box important">
+                <h3>Definition</h3>
+                <p><strong>Shock</strong> is a state of systemic hypoperfusion due to either reduced cardiac output or reduced effective circulating blood volume. It results in hypotension, impaired tissue perfusion, and cellular hypoxia.</p>
+            </div>
+
+            <h3>Pathogenesis (Cellular Level)</h3>
+            <p>Hypoperfusion → Cellular Hypoxia → Anaerobic Glycolysis → Lactic Acid accumulation → Metabolic Acidosis → Cell membrane injury → Lysosomal enzyme release → Cell Death.</p>
+
+            <h3>Types of Shock</h3>
+            <ol>
+                <li><strong>Cardiogenic Shock:</strong> Failure of myocardial pump.
+                    <ul>
+                        <li><em>Causes:</em> Myocardial Infarction (most common), Arrhythmias, Cardiac tamponade.</li>
+                    </ul>
+                </li>
+                <li><strong>Hypovolemic Shock:</strong> Loss of blood or plasma volume.
+                    <ul>
+                        <li><em>Causes:</em> Hemorrhage, Severe burns, Diarrhea/Vomiting.</li>
+                    </ul>
+                </li>
+                <li><strong>Septic Shock:</strong> Systemic microbial infection.
+                    <ul>
+                        <li><em>Mechanism:</em> Endotoxins (LPS) activate monocytes to release TNF & IL-1 → Systemic vasodilation (Hypotension) + Endothelial injury + DISseminated Intravascular Coagulation (DIC).</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h3>Stages of Shock</h3>
+            <p>Shock is a progressive disorder that evolves through three stages:</p>
+            <ol>
+                <li><strong>Non-Progressive (Compensated) Stage:</strong> Reflex compensatory mechanisms maintain vital organ perfusion.
+                    <ul>
+                        <li><em>Mechanisms:</em> Baroreceptor reflex (Tachycardia), RAAS activation (Fluid retention), Catecholamine release (Vasoconstriction).</li>
+                        <li><em>Clinical:</em> Cool clammy skin, Tachycardia.</li>
+                    </ul>
+                </li>
+                <li><strong>Progressive Stage:</strong> Tissue hypoperfusion and onset of circulatory imbalance.
+                    <ul>
+                        <li><em>Pathology:</em> Anaerobic glycolysis → Lactic acidosis → Arterioles dilate → Blood pools in microcirculation.</li>
+                        <li><em>Clinical:</em> Confusion, Decreased urine output.</li>
+                    </ul>
+                </li>
+                <li><strong>Irreversible Stage:</strong> Severe cellular and tissue injury so that even if hemodynamic defects are corrected, survival is not possible.
+                    <ul>
+                        <li><em>Pathology:</em> Lysosomal enzyme leakage, Acute Renal Failure (Acute Tubular Necrosis), Ischemic Bowel.</li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
+
+        <!-- SECTION 4: THROMBOSIS -->
+        <section>
+            <h2>4. Thrombosis</h2>
+            
+            <h3>Normal Hemostasis vs. Thrombosis</h3>
+            <ul>
+                <li><strong>Hemostasis:</strong> Regulated process to stop bleeding at the site of vascular injury.</li>
+                <li><strong>Thrombosis:</strong> Pathologic formation of a blood clot (thrombus) within uninjured vessels or excessive clotting after minor injury.</li>
+            </ul>
+
+            <div class="sketch-box blue">
+                <h3>Etiopathogenesis: Virchow's Triad</h3>
+                <p>Three primary abnormalities predispose to thrombosis:</p>
+                <ol>
+                    <li><strong>Endothelial Injury:</strong> The most important factor.
+                        <ul>
+                            <li>Exposes subendothelial collagen (Platelet adhesion) and Tissue Factor (Coagulation cascade).</li>
+                            <li><em>Causes:</em> Atherosclerosis, Hypertension, Vasculitis.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Alterations in Blood Flow (Stasis or Turbulence):</strong>
+                        <ul>
+                            <li><em>Stasis:</em> Seen in veins. Promotes endothelial activation and prevents washout of clotting factors.</li>
+                            <li><em>Turbulence:</em> Seen in arteries. Causes endothelial injury.</li>
+                            <li><em>Causes:</em> Aneurysms, MI (non-contractile muscle), Hyperviscosity.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hypercoagulability of Blood:</strong>
+                        <ul>
+                            <li><em>Primary (Genetic):</em> Factor V Leiden mutation, Protein C or S deficiency.</li>
+                            <li><em>Secondary (Acquired):</em> Prolonged bed rest, Cancer, OCPs, DIC, Smoking.</li>
+                        </ul>
+                    </li>
+                </ol>
+                
+            </div>
+
+            <h3>Consequences (Fate) of a Thrombus</h3>
+            <p>Once formed, a thrombus can undergo:</p>
+            <ol>
+                <li><strong>Propagation:</strong> Accumulates more platelets and fibrin, causing vessel obstruction.</li>
+                <li><strong>Embolization:</strong> Dislodges and travels to other sites (very dangerous).</li>
+                <li><strong>Dissolution (Fibrinolysis):</strong> Cleared by plasmin (effective only for recent clots).</li>
+                <li><strong>Organization and Recanalization:</strong> Ingrowth of endothelial cells, smooth muscle, and fibroblasts. Capillary channels form within the thrombus to re-establish blood flow.</li>
+            </ol>
+        </section>
+
+        <!-- SECTION 5: EMBOLISM -->
+        <section>
+            <h2>5. Embolism</h2>
+            <p><strong>Definition:</strong> An embolus is a detached intravascular solid, liquid, or gaseous mass that is carried by the blood to a site distant from its point of origin.</p>
+
+            <h3>Common Types of Embolism</h3>
+            <ol>
+                <li><strong>Thromboembolism:</strong> (99% of cases) Dislodged thrombus.
+                    <ul>
+                        <li><em>Pulmonary Embolism (PE):</em> Originates from <strong>Deep Vein Thrombosis (DVT)</strong> of legs. Can cause sudden death (Saddle embolus), pulmonary infarction, or pulmonary hypertension.</li>
+                        <li><em>Systemic Thromboembolism:</em> Originates from heart (mural thrombi) or aneurysms. Lodges in lower extremities (gangrene) or brain (stroke).</li>
+                    </ul>
+                </li>
+                <li><strong>Fat Embolism:</strong>
+                    <ul>
+                        <li><em>Cause:</em> Fracture of long bones (release of marrow fat), severe burns.</li>
+                        <li><em>Clinical:</em> Fat Embolism Syndrome (Respiratory insufficiency, Neurologic symptoms, Petechial rash).</li>
+                    </ul>
+                </li>
+                <li><strong>Air Embolism:</strong>
+                    <ul>
+                        <li><em>Cause:</em> Surgery, Decompression sickness ("The Bends" - Nitrogen bubbles).</li>
+                        <li>Requires &gt;100ml of air to cause symptoms.</li>
+                    </ul>
+                </li>
+                <li><strong>Amniotic Fluid Embolism:</strong>
+                    <ul>
+                        <li><em>Cause:</em> Complication of labor. Infusion of amniotic fluid into maternal circulation via tear in placental membranes.</li>
+                        <li><em>Pathology:</em> Amniotic fluid contains thromboplastic substances → <strong>DIC</strong>.</li>
+                        <li><em>Morphology:</em> Fetal squamous cells, lanugo hair found in maternal pulmonary microcirculation.</li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
+
+        <!-- SECTION 6: ISCHEMIA & INFARCTION -->
+        <section>
+            <h2>6. Ischemia and Infarction</h2>
+            
+            <h3>Ischemia</h3>
+            <p><strong>Definition:</strong> Deficiency of blood supply to a tissue due to obstruction of arterial inflow or venous outflow.</p>
+            <p><em>Effect:</em> Causes hypoxia AND lack of nutrients/waste removal. Thus, ischemia injures tissue faster than hypoxia alone.</p>
+
+            <h3>Infarction</h3>
+            <p><strong>Definition:</strong> An area of ischemic necrosis caused by occlusion of either the arterial supply or the venous drainage.</p>
+            
+            <h4>Etiology</h4>
+            <ul>
+                <li><strong>Thrombotic or Embolic arterial occlusion</strong> (99% of cases).</li>
+                <li>Vasospasm.</li>
+                <li>Torsion of a vessel (e.g., Testicular torsion, Volvulus).</li>
+            </ul>
+
+            <div class="sketch-box blue">
+                <h3>Types and Morphology of Infarcts</h3>
+                <p>Classified based on color and presence of infection.</p>
+                
+                <h4>1. Red (Hemorrhagic) Infarcts</h4>
+                <ul>
+                    <li><strong>Occur in:</strong>
+                        <ul>
+                            <li>Venous occlusions (e.g., Ovarian torsion).</li>
+                            <li>Loose tissues (e.g., <span class="highlight">Lung</span>).</li>
+                            <li>Tissues with dual circulation (e.g., <span class="highlight">Lung, Small Intestine</span>).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Morphology:</strong> Red, firm, ill-defined. Microscopy shows frank hemorrhage along with necrosis.</li>
+                </ul>
+
+                <h4>2. White (Anemic) Infarcts</h4>
+                <ul>
+                    <li><strong>Occur in:</strong>
+                        <ul>
+                            <li>Arterial occlusions in solid organs with end-arterial circulation.</li>
+                            <li>Examples: <span class="highlight">Heart, Spleen, Kidney</span>.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Morphology:</strong>
+                        <ul>
+                            <li><strong>Shape:</strong> <span class="marker-green">Wedge-shaped</span> with occluded vessel at apex and base at organ periphery.</li>
+                            <li><strong>Color:</strong> Pale/White (due to lack of blood).</li>
+                            <li><strong>Microscopy:</strong> <span class="highlight">Coagulative Necrosis</span>. Preservation of basic cell outline (Ghost cells). (Exception: Brain shows Liquefactive Necrosis).</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+
+            <h3>Clinical Effects</h3>
+            <ul>
+                <li><strong>Myocardial Infarction:</strong> Heart failure, death.</li>
+                <li><strong>Cerebral Infarction:</strong> Stroke.</li>
+                <li><strong>Pulmonary Infarction:</strong> Hemoptysis, pleuritis.</li>
+                <li><strong>Intestinal Infarction:</strong> Acute abdomen, peritonitis, shock.</li>
+            </ul>
+        </section>
+
+        <footer style="text-align:center; margin-top:50px; border-top:4px double var(--ink-color); padding-top:20px; font-size: 0.9rem; color:#555;">
+            &copy; 2023 Vardaan Learning Institute • Comprehensive Exam Preparation Series • Pathology
+        </footer>
+
+    </div>
+
+</body>
+</html>

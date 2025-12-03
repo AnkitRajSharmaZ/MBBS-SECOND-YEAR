@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBBS Pathology Notes: Respiratory System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-yellow: #f4ff40; /* Neon yellowish highlighter */
+            --marker-green: #daffb3; /* Natural light green marker */
+            --ink-color: #2c2c2c; /* Dark grey/black ink look */
+            --paper-white: #ffffff; /* Pure white page */
+            --box-bg: #fffef0; /* Subtle warm tint for boxes */
+            --border-color: #333;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #525659; /* Grey background behind the paper */
+            font-family: 'Kalam', cursive;
+            color: var(--ink-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            line-height: 1.6;
+            font-size: 18px; /* Readable handwritten size */
+        }
+
+        /* A4 Paper Simulation */
+        .page-container {
+            background-color: var(--paper-white);
+            width: 210mm; /* A4 width */
+            min-height: 297mm; /* A4 height minimum */
+            padding: 25mm; /* Standard margins */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 32px;
+            text-align: center;
+            text-decoration: underline;
+            text-decoration-color: var(--neon-yellow);
+            text-decoration-thickness: 5px;
+            margin-bottom: 40px;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            font-size: 26px;
+            border-bottom: 3px solid var(--marker-green);
+            padding-bottom: 5px;
+            margin-top: 40px;
+            color: #1a1a1a;
+            display: inline-block;
+            width: 100%;
+        }
+
+        h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-top: 25px;
+            color: #333;
+            text-decoration: underline;
+        }
+
+        h4 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-top: 15px;
+            color: #444;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin-bottom: 15px;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* Highlighting Classes */
+        .highlight-neon {
+            background-color: var(--neon-yellow);
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .highlight-green {
+            background-color: var(--marker-green);
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        strong {
+            font-weight: 700;
+        }
+
+        /* Hand-drawn Box Style */
+        .hand-drawn-box {
+            border: 2px solid var(--border-color);
+            /* Irregular border radius for hand-drawn effect */
+            border-radius: 2px 20px 3px 25px / 25px 3px 20px 2px;
+            padding: 20px;
+            margin: 25px 0;
+            background-color: var(--box-bg); 
+            box-shadow: 3px 4px 0px rgba(0,0,0,0.1);
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 20px 0;
+            font-size: 16px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: var(--marker-green);
+            font-weight: bold;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        tr td:last-child, tr th:last-child {
+            border-right: none;
+        }
+
+        /* Model Answer Section */
+        .qa-section {
+            border-left: 4px solid var(--neon-yellow);
+            padding-left: 20px;
+            margin-top: 30px;
+        }
+
+        /* Print Settings */
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+            .page-container {
+                width: 100%;
+                box-shadow: none;
+                margin: 0;
+                padding: 15mm;
+            }
+            /* Ensure background colors print */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            h1, h2, h3 {
+                page-break-after: avoid;
+            }
+            table, .hand-drawn-box, li {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 800px) {
+            .page-container {
+                width: 100%;
+                padding: 15px;
+            }
+            table {
+                font-size: 14px;
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-container">
+
+    <h1>TOPIC 03: RESPIRATORY SYSTEM</h1>
+
+    <h2>1. PNEUMONIA</h2>
+    
+    <p><strong>Definition:</strong> Pneumonia is defined as the inflammation of the lung parenchyma (alveoli and interstitium), usually caused by an infectious agent.</p>
+    
+    <h3>Etiology</h3>
+    <ul>
+        <li><strong>Bacterial:</strong> <em>Streptococcus pneumoniae</em> (Most common), <em>Haemophilus influenzae</em>, <em>Staphylococcus aureus</em>, <em>Klebsiella pneumoniae</em>.</li>
+        <li><strong>Viral:</strong> Influenza, RSV, Adenovirus, SARS-CoV-2.</li>
+        <li><strong>Atypical:</strong> <em>Mycoplasma pneumoniae</em>, <em>Chlamydia</em>.</li>
+        <li><strong>Fungal/Parasitic:</strong> In immunocompromised hosts.</li>
+    </ul>
+
+    <h3>Classification (Anatomical)</h3>
+    <ol>
+        <li><strong>Lobar Pneumonia:</strong> Consolidation of an entire lobe (or large part). Usually <em>S. pneumoniae</em>.</li>
+        <li><strong>Bronchopneumonia (Lobular):</strong> Patchy consolidation centering around bronchioles. Often bilateral and basal. <em>Staph, H. flu, Klebsiella</em>.</li>
+        <li><strong>Interstitial Pneumonia:</strong> Inflammation of alveolar septa. Viral/Atypical agents.</li>
+    </ol>
+
+    <div class="hand-drawn-box">
+        <h3>Pathogenesis & Stages of Lobar Pneumonia</h3>
+        <p>Classically described in 4 stages:</p>
+        <ol>
+            <li><strong>Stage of Congestion (Day 1-2):</strong>
+                <ul>
+                    <li><em>Gross:</em> Heavy, boggy, red lung.</li>
+                    <li><em>Microscopy:</em> Vascular engorgement, intra-alveolar fluid with few neutrophils and many bacteria.</li>
+                </ul>
+            </li>
+            <li><strong>Stage of Red Hepatization (Day 3-4):</strong>
+                <ul>
+                    <li><em>Gross:</em> Lung is solid, red, and liver-like ("Hepatization").</li>
+                    <li><em>Microscopy:</em> Alveoli packed with <span class="highlight-green">Neutrophils, RBCs, and Fibrin</span>.</li>
+                </ul>
+            </li>
+            <li><strong>Stage of Grey Hepatization (Day 5-7):</strong>
+                <ul>
+                    <li><em>Gross:</em> Lung remains solid but turns grey-brown.</li>
+                    <li><em>Microscopy:</em> RBCs disintegrate. Fibrino-purulent exudate persists. Macrophages appear.</li>
+                </ul>
+            </li>
+            <li><strong>Stage of Resolution (Day 8+):</strong>
+                <ul>
+                    <li><em>Gross:</em> Normal architecture restored.</li>
+                    <li><em>Microscopy:</em> Enzymatic digestion of exudate, resorption by macrophages, or expectoration.</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <h3>Complications</h3>
+    <ul>
+        <li><strong>Lung Abscess:</strong> Tissue necrosis and cavitation.</li>
+        <li><strong>Empyema:</strong> Pus in the pleural cavity.</li>
+        <li><strong>Organization:</strong> Fibrosis causing solid lung tissue (Carnification).</li>
+        <li><strong>Bacteremic Dissemination:</strong> Meningitis, Arthritis, Endocarditis.</li>
+    </ul>
+
+    <hr>
+
+    <h2>2. LUNG ABSCESS</h2>
+    
+    <p><strong>Definition:</strong> A localized area of suppurative necrosis within the pulmonary parenchyma, resulting in the formation of one or more large cavities (>2 cm).</p>
+
+    <h3>Etiology</h3>
+    <ul>
+        <li><strong>Aspiration:</strong> Infective material from carious teeth/tonsils (Anaerobes: <em>Bacteroides, Fusobacterium</em>). Common in alcoholics/coma.</li>
+        <li><strong>Post-Pneumonic:</strong> <em>S. aureus, Klebsiella, Pseudomonas</em>.</li>
+        <li><strong>Septic Embolism:</strong> From infective endocarditis or thrombophlebitis.</li>
+        <li><strong>Neoplasms:</strong> Bronchial obstruction by cancer (10-15% cases).</li>
+    </ul>
+
+    <h3>Morphology</h3>
+    <ul>
+        <li><strong>Gross:</strong> Cavity varying in size (few mm to 6 cm).
+            <ul>
+                <li><em>Aspiration:</em> Usually right lung (vertical bronchus), single.</li>
+                <li><em>Post-pneumonic/Septic:</em> Multiple, basal.</li>
+                <li>Cavity contains pus and air (<span class="highlight-neon">Air-fluid level</span> on X-ray).</li>
+            </ul>
+        </li>
+        <li><strong>Microscopy:</strong> Suppurative destruction of lung parenchyma with central liquefactive necrosis. Chronic cases show a fibrous wall.</li>
+    </ul>
+
+    <h3>Complications</h3>
+    <ul>
+        <li>Rupture into pleura (Empyema, Pneumothorax).</li>
+        <li>Hemorrhage (Hemoptysis).</li>
+        <li>Brain Abscess (Metastatic).</li>
+        <li>Secondary Amyloidosis (in chronic cases).</li>
+    </ul>
+
+    <hr>
+
+    <h2>3. OBSTRUCTIVE AIRWAY DISEASE (COPD) & BRONCHIECTASIS</h2>
+    
+    <p><strong>Definition:</strong> Diseases characterized by an increase in resistance to airflow due to partial or complete obstruction at any level.</p>
+
+    <h3>A. Chronic Bronchitis</h3>
+    <ul>
+        <li><strong>Definition:</strong> Persistent productive cough for at least 3 consecutive months in at least 2 consecutive years.</li>
+        <li><strong>Pathogenesis:</strong> Inhalation of irritants (Tobacco smoke, dust) &rarr; Hypertrophy of mucus glands + Goblet cell metaplasia &rarr; Mucus hypersecretion &rarr; Airway obstruction.</li>
+        <li><strong>Morphology:</strong>
+            <ul>
+                <li><em>Gross:</em> Hyperemic, edematous mucosa with mucopurulent secretions.</li>
+                <li><em>Microscopy:</em> Enlargement of mucus-secreting glands. <span class="highlight-green">Reid Index > 0.4</span> (Ratio of gland layer thickness to bronchial wall thickness). Squamous metaplasia.</li>
+            </ul>
+        </li>
+        <li><strong>Clinical:</strong> "Blue Bloaters" (Cyanosis, edema, hypercapnia).</li>
+    </ul>
+
+    <h3>B. Emphysema</h3>
+    <ul>
+        <li><strong>Definition:</strong> Abnormal permanent enlargement of airspaces distal to the terminal bronchiole, accompanied by destruction of their walls without obvious fibrosis.</li>
+        <li><strong>Pathogenesis:</strong> Protease-Antiprotease Imbalance.
+            <ul>
+                <li>Smoking recruits neutrophils &rarr; Release <strong>Elastase</strong>.</li>
+                <li>Smoke inhibits <strong>&alpha;1-Antitrypsin</strong> (the anti-elastase).</li>
+                <li>Result: Destruction of alveolar elastic tissue.</li>
+            </ul>
+        </li>
+        <li><strong>Types:</strong>
+            <ul>
+                <li><strong>Centriacinar (Centrilobular):</strong> Affects respiratory bronchioles (proximal). Upper lobes. Common in <strong>Smokers</strong>.</li>
+                <li><strong>Panacinar (Panlobular):</strong> Affects entire acinus. Lower lobes. Associated with <span class="highlight-neon">&alpha;1-Antitrypsin deficiency</span>.</li>
+                <li><strong>Paraseptal (Distal Acinar):</strong> Subpleural bullae. Cause of spontaneous pneumothorax.</li>
+            </ul>
+        </li>
+        <li><strong>Clinical:</strong> "Pink Puffers" (Dyspnea, barrel chest, thin).</li>
+    </ul>
+
+    <h3>C. Bronchiectasis</h3>
+    <ul>
+        <li><strong>Definition:</strong> Permanent dilation of bronchi and bronchioles caused by destruction of muscle and elastic tissue resulting from or associated with chronic necrotizing infections.</li>
+        <li><strong>Etiology:</strong>
+            <ul>
+                <li><em>Obstruction:</em> Tumor, foreign body.</li>
+                <li><em>Congenital:</em> Cystic Fibrosis, Kartagener Syndrome (Immotile cilia).</li>
+                <li><em>Infection:</em> Necrotizing pneumonia (TB, Staph).</li>
+            </ul>
+        </li>
+        <li><strong>Pathogenesis:</strong> Obstruction &rarr; Atelectasis &rarr; Retention of secretions &rarr; Infection &rarr; Wall destruction &rarr; Dilation.</li>
+        <li><strong>Morphology:</strong>
+            <ul>
+                <li><em>Gross:</em> Lower lobes. Airways are dilated (up to 4x normal) and cylindrical/saccular. Can be traced to pleural surface.</li>
+                <li><em>Microscopy:</em> Ulceration of mucosa, intense acute and chronic inflammation, fibrosis.</li>
+            </ul>
+        </li>
+        <li><strong>Clinical:</strong> Cough with copious foul-smelling sputum, hemoptysis, clubbing.</li>
+    </ul>
+
+    <hr>
+
+    <h2>4. TUBERCULOSIS (TB)</h2>
+    
+    <p><strong>Etiology:</strong> <em>Mycobacterium tuberculosis</em>. Acid-fast bacilli.</p>
+
+    <h3>A. Primary Tuberculosis</h3>
+    <ul>
+        <li><strong>Definition:</strong> Infection in a previously unexposed host.</li>
+        <li><strong>Pathology (Ghon Complex):</strong>
+            <ol>
+                <li><strong>Ghon Focus:</strong> Subpleural caseous granuloma (usually lower part of upper lobe or upper part of lower lobe).</li>
+                <li><strong>Lymph Node:</strong> Caseation of draining hilar lymph nodes.</li>
+            </ol>
+        </li>
+        <li><strong>Fate:</strong> 95% heal by fibrosis and calcification (Ranke complex). 5% progress (Progressive Primary TB).</li>
+    </ul>
+
+    <h3>B. Secondary Tuberculosis (Reactivation)</h3>
+    <ul>
+        <li><strong>Definition:</strong> Infection in a previously sensitized host (Reactivation or Reinfection).</li>
+        <li><strong>Site:</strong> Apical lobes (high oxygen tension favor bacilli).</li>
+        <li><strong>Morphology:</strong>
+            <ul>
+                <li><strong>Gross:</strong> Central caseation, cavitation (fibrocaseous TB).</li>
+                <li><strong>Microscopy:</strong> <span class="highlight-green">Caseating Granulomas</span> (Epithelioid cells, Langhans giant cells, Lymphocytes, Central necrosis).</li>
+            </ul>
+        </li>
+        <li><strong>Complications:</strong>
+            <ul>
+                <li><strong>Miliary TB:</strong> Hematogenous spread to liver, spleen, kidneys (millet seed-like nodules).</li>
+                <li><strong>Cavitary TB:</strong> Erosion into bronchus (highly infectious).</li>
+                <li>Amyloidosis.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <hr>
+
+    <h2>5. OCCUPATIONAL LUNG DISEASES (PNEUMOCONIOSIS)</h2>
+    
+    <p>Lung reaction to inhalation of mineral dusts, organic dusts, fumes, and vapors.</p>
+
+    <h3>A. Silicosis</h3>
+    <ul>
+        <li><strong>Exposure:</strong> Sandblasting, mining, stone cutting, glass manufacturing.</li>
+        <li><strong>Pathogenesis:</strong> Inhaled silica particles are phagocytosed by macrophages &rarr; Macrophages die/activate &rarr; Release fibrogenic cytokines (TNF, IL-1) &rarr; Collagen deposition.</li>
+        <li><strong>Morphology:</strong>
+            <ul>
+                <li><strong>Silicotic Nodules:</strong> Concentric, whorled hyalinized collagen fibers.</li>
+                <li>Upper zones of lungs.</li>
+                <li>"Eggshell calcification" of hilar lymph nodes.</li>
+            </ul>
+        </li>
+        <li><strong>Complications:</strong> Increased susceptibility to Tuberculosis (Silico-tuberculosis), Caplan Syndrome (Rheumatoid arthritis + nodules).</li>
+    </ul>
+
+    <h3>B. Asbestosis</h3>
+    <ul>
+        <li><strong>Exposure:</strong> Insulation, shipbuilding, construction.</li>
+        <li><strong>Pathogenesis:</strong> Direct toxicity + macrophage activation.</li>
+        <li><strong>Morphology:</strong>
+            <ul>
+                <li>Diffuse interstitial fibrosis (lower lobes).</li>
+                <li><strong>Asbestos Bodies (Ferruginous Bodies):</strong> Golden-brown, beaded rods with a translucent center (iron-coated fibers).</li>
+                <li><strong>Pleural Plaques:</strong> Collagenous plaques on parietal pleura (most common manifestation).</li>
+            </ul>
+        </li>
+        <li><strong>Complications:</strong> Bronchogenic Carcinoma (most common malignancy), <span class="highlight-neon">Mesothelioma</span> (most specific malignancy).</li>
+    </ul>
+
+    <h3>C. Coal Worker's Pneumoconiosis (CWP)</h3>
+    <ul>
+        <li><strong>Simple CWP:</strong> Coal macules and nodules.</li>
+        <li><strong>Complicated CWP:</strong> Progressive Massive Fibrosis (PMF) - Blackened scars > 2cm.</li>
+    </ul>
+
+    <hr>
+
+    <h2>6. TUMORS OF THE LUNG AND PLEURA</h2>
+
+    <h3>A. Bronchogenic Carcinoma</h3>
+    <p>Most common cancer mortality worldwide.
+    <br><strong>Etiology:</strong> Smoking (85-90% cases), Radon, Asbestos, Air pollution.
+    <br><strong>Genetics:</strong> p53 (Squamous/Small cell), <strong>EGFR/ALK/KRAS</strong> (Adenocarcinoma).</p>
+
+    <div class="hand-drawn-box">
+        <h3>WHO Classification (2021)</h3>
+        <ol>
+            <li><strong>Adenocarcinoma (Most common):</strong> Glandular differentiation. Peripheral location. Common in non-smokers/females. Markers: <span class="highlight-neon">TTF-1</span>.</li>
+            <li><strong>Squamous Cell Carcinoma:</strong> Keratinization, Intercellular bridges. Central location. Cavitation common. Smoking-associated. Markers: p40, p63.</li>
+            <li><strong>Small Cell Carcinoma:</strong> Neuroendocrine. Central. Small blue cells, salt-and-pepper chromatin, necrosis. Paraneoplastic syndromes (ACTH, ADH). Worst prognosis.</li>
+            <li><strong>Large Cell Carcinoma:</strong> Undifferentiated. Diagnosis of exclusion.</li>
+        </ol>
+    </div>
+
+    <p><strong>Metastasis:</strong>
+        <br>&bull; <em>Lymphatic:</em> Hilar, mediastinal nodes.
+        <br>&bull; <em>Hematogenous:</em> Adrenals (>50%), Liver, Brain, Bone.</p>
+
+    <p><strong>Complications:</strong> Pancoast tumor (Horner syndrome), SVC syndrome, Paraneoplastic syndromes (Cushing, SIADH, Hypercalcemia).</p>
+
+    <h3>B. Pleural Tumors: Malignant Mesothelioma</h3>
+    <ul>
+        <li><strong>Etiology:</strong> Strong association with <span class="highlight-green">Asbestos</span> exposure (latent period 25-40 years).</li>
+        <li><strong>Morphology:</strong> Diffuse lesion spreading widely in the pleural space, encasing the lung ("rind").
+            <br><em>Microscopy:</em> Biphasic pattern (Epithelioid and Sarcomatoid cells).</li>
+    </ul>
+
+    <hr>
+
+    <h2 style="color: #d32f2f; border-color: #d32f2f;">IMPORTANT UNIVERSITY QUESTIONS</h2>
+
+    <div class="qa-section">
+        <h3>Q1: Define Pneumonia. Describe the Stages of Lobar Pneumonia.</h3>
+        <p><strong>Introduction:</strong> Pneumonia is the inflammation of the lung parenchyma. Lobar pneumonia affects a large portion of a lobe, typically caused by <em>Streptococcus pneumoniae</em>.</p>
+        <p><strong>Body:</strong>
+            <br><strong>Stages:</strong>
+            <ol>
+                <li><em>Congestion (1-2 days):</em> Vascular engorgement, fluid exudate, bacteria present. Lung is heavy/red.</li>
+                <li><em>Red Hepatization (3-4 days):</em> Massive confluent exudation of neutrophils, RBCs, and fibrin. Lung is solid, liver-like, and red.</li>
+                <li><em>Grey Hepatization (5-7 days):</em> RBCs disintegrate, fibrin persists. Lung is grey-brown and solid.</li>
+                <li><em>Resolution (8+ days):</em> Enzymatic digestion of exudate, resorption, and restoration of architecture.</li>
+            </ol>
+        </p>
+        <p><strong>Conclusion:</strong> With antibiotics, these classical stages are rarely seen in full sequence today.</p>
+    </div>
+
+    <div class="qa-section">
+        <h3>Q2: Classify Bronchogenic Carcinoma. Discuss the pathogenesis and morphology of Adenocarcinoma.</h3>
+        <p><strong>Introduction:</strong> Bronchogenic carcinoma is the leading cause of cancer death. It is classified into Small Cell and Non-Small Cell types.</p>
+        <p><strong>Body:</strong>
+            <br><strong>Classification:</strong> Adenocarcinoma, Squamous Cell Carcinoma, Small Cell Carcinoma, Large Cell Carcinoma.
+            <br><strong>Adenocarcinoma:</strong>
+            <ul>
+                <li><em>Pathogenesis:</em> Associated with driver mutations in <strong>EGFR, ALK, ROS1</strong> (targetable) or KRAS (smoking). Often arises from precursor Atypical Adenomatous Hyperplasia (AAH).</li>
+                <li><em>Morphology:</em> Peripherally located. Forms glands or produces mucin. Growth patterns include Acinar, Papillary, and Lepidic (growth along alveolar septa, formerly Bronchioloalveolar Ca). Immunohistochemistry shows TTF-1 positivity.</li>
+            </ul>
+        </p>
+        <p><strong>Conclusion:</strong> Adenocarcinoma is the most common subtype in non-smokers and has specific targeted therapy options.</p>
+    </div>
+
+</div>
+
+</body>
+</html>

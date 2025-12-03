@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBBS Pathology Notes: Hepatobiliary System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-yellow: #f4ff40; /* Neon yellowish highlighter */
+            --marker-green: #daffb3; /* Natural light green marker */
+            --ink-color: #2c2c2c; /* Dark grey/black ink look */
+            --paper-white: #ffffff; /* Pure white page */
+            --box-bg: #fffef0; /* Subtle warm tint for boxes */
+            --border-color: #333;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #525659; /* Grey background behind the paper */
+            font-family: 'Kalam', cursive;
+            color: var(--ink-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            line-height: 1.6;
+            font-size: 18px; /* Readable handwritten size */
+        }
+
+        /* A4 Paper Simulation */
+        .page-container {
+            background-color: var(--paper-white);
+            width: 210mm; /* A4 width */
+            min-height: 297mm; /* A4 height minimum */
+            padding: 25mm; /* Standard margins */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 32px;
+            text-align: center;
+            text-decoration: underline;
+            text-decoration-color: var(--neon-yellow);
+            text-decoration-thickness: 5px;
+            margin-bottom: 40px;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            font-size: 26px;
+            border-bottom: 3px solid var(--marker-green);
+            padding-bottom: 5px;
+            margin-top: 40px;
+            color: #1a1a1a;
+            display: inline-block;
+            width: 100%;
+        }
+
+        h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-top: 25px;
+            color: #333;
+            text-decoration: underline;
+        }
+
+        h4 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-top: 15px;
+            color: #444;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin-bottom: 15px;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* Highlighting Classes */
+        .highlight-neon {
+            background-color: var(--neon-yellow);
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .highlight-green {
+            background-color: var(--marker-green);
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        strong {
+            font-weight: 700;
+        }
+
+        /* Hand-drawn Box Style */
+        .hand-drawn-box {
+            border: 2px solid var(--border-color);
+            /* Irregular border radius for hand-drawn effect */
+            border-radius: 2px 20px 3px 25px / 25px 3px 20px 2px;
+            padding: 20px;
+            margin: 25px 0;
+            background-color: var(--box-bg); 
+            box-shadow: 3px 4px 0px rgba(0,0,0,0.1);
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 20px 0;
+            font-size: 16px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: var(--marker-green);
+            font-weight: bold;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        tr td:last-child, tr th:last-child {
+            border-right: none;
+        }
+
+        /* Model Answer Section */
+        .qa-section {
+            border-left: 4px solid var(--neon-yellow);
+            padding-left: 20px;
+            margin-top: 30px;
+        }
+
+        /* Print Settings */
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+            .page-container {
+                width: 100%;
+                box-shadow: none;
+                margin: 0;
+                padding: 15mm;
+            }
+            /* Ensure background colors print */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            h1, h2, h3 {
+                page-break-after: avoid;
+            }
+            table, .hand-drawn-box, li {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 800px) {
+            .page-container {
+                width: 100%;
+                padding: 15px;
+            }
+            table {
+                font-size: 14px;
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-container">
+
+    <h1>TOPIC 02: HEPATOBILIARY SYSTEM</h1>
+
+    <p><strong>Syllabus Scope:</strong> Bilirubin metabolism, Jaundice, Hepatic Failure, Viral/Toxic Hepatitis, Alcoholic Liver Disease, and Portal Hypertension.</p>
+
+    <h2>1. BILIRUBIN METABOLISM AND JAUNDICE</h2>
+    <p><strong>Definition:</strong> Jaundice (icterus) is a yellowish discoloration of the skin and sclerae due to elevated serum bilirubin levels (usually >2.5 mg/dL). The normal range is 0.3-1.2 mg/dL.</p>
+
+    <div class="hand-drawn-box">
+        <h3>Steps of Bilirubin Metabolism</h3>
+        <ol>
+            <li><strong>Formation:</strong> Heme (from senescent RBCs) is broken down by <span class="highlight-green">Heme Oxygenase</span> to Biliverdin, which is reduced to <strong>Unconjugated Bilirubin (UCB)</strong> by Biliverdin Reductase. It is water-insoluble.</li>
+            <li><strong>Transport:</strong> UCB binds to <strong>Albumin</strong> in plasma and is transported to the liver.</li>
+            <li><strong>Uptake:</strong> UCB dissociates from albumin and enters hepatocytes via carrier proteins (OATP).</li>
+            <li><strong>Conjugation:</strong> In the endoplasmic reticulum, <span class="highlight-neon">UGT1A1 (Uridine Glucuronyl Transferase)</span> conjugates bilirubin with glucuronic acid to form water-soluble <strong>Conjugated Bilirubin (CB)</strong>.</li>
+            <li><strong>Excretion:</strong> CB is actively secreted into bile canaliculi by MRP2 transporters (Rate-limiting step).</li>
+            <li><strong>Gut Fate:</strong> Gut bacteria convert CB into <strong>Urobilinogen</strong>. 80% is excreted in feces as Stercobilin (brown color); 20% is reabsorbed (Enterohepatic circulation) and excreted in urine as Urobilin.</li>
+        </ol>
+    </div>
+
+    <h3>Classification and Pathogenesis of Jaundice</h3>
+    <ul>
+        <li><strong>Pre-hepatic (Hemolytic):</strong> Excess heme breakdown overwhelms the liver's capacity.
+            <ul>
+                <li><em>Type:</em> Unconjugated Hyperbilirubinemia.</li>
+                <li><em>Urine:</em> No bilirubin (Acholuric jaundice), High Urobilinogen.</li>
+            </ul>
+        </li>
+        <li><strong>Hepatic (Hepatocellular):</strong> Liver cell dysfunction (Hepatitis, Cirrhosis).
+            <ul>
+                <li><em>Type:</em> Mixed (Both Conjugated and Unconjugated raised).</li>
+                <li><em>Urine:</em> Bilirubin present, Urobilinogen normal/decreased.</li>
+            </ul>
+        </li>
+        <li><strong>Post-hepatic (Obstructive):</strong> Blockage of bile duct (Gallstones, Cancer).
+            <ul>
+                <li><em>Type:</em> Conjugated Hyperbilirubinemia.</li>
+                <li><em>Clinical:</em> Pale (clay-colored) stools, Dark urine, Itching (Pruritus).</li>
+                <li><em>Urine:</em> Bilirubin present, Urobilinogen absent.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>Distinction: Direct vs Indirect Hyperbilirubinemia</h3>
+    <table border="1">
+        <tr>
+            <th>Feature</th>
+            <th>Unconjugated (Indirect)</th>
+            <th>Conjugated (Direct)</th>
+        </tr>
+        <tr>
+            <td><strong>Water Solubility</strong></td>
+            <td>Insoluble (Fat soluble).</td>
+            <td>Soluble.</td>
+        </tr>
+        <tr>
+            <td><strong>Urine Excretion</strong></td>
+            <td><strong>Absent</strong> (Cannot pass filter).</td>
+            <td><strong>Present</strong> (Dark urine).</td>
+        </tr>
+        <tr>
+            <td><strong>Toxicity</strong></td>
+            <td>Neurotoxic (Kernicterus in infants).</td>
+            <td>Not neurotoxic.</td>
+        </tr>
+        <tr>
+            <td><strong>Etiology</strong></td>
+            <td>Hemolysis, Crigler-Najjar, Gilbert syndrome.</td>
+            <td>Bile duct obstruction, Dubin-Johnson, Rotor syndrome.</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h2>2. HEPATIC FAILURE</h2>
+    <p><strong>Definition:</strong> Loss of 80-90% of hepatic functional capacity. It is the end-point of progressive liver damage.</p>
+
+    <h3>Pathophysiology</h3>
+    <ul>
+        <li><strong>Massive Necrosis:</strong> Viral (Hep B, E), Drugs (Acetaminophen/Paracetamol), Toxins (Amanita phalloides).</li>
+        <li><strong>Chronic Liver Disease:</strong> Cirrhosis leading to decompensation.</li>
+        <li><strong>Hepatic Dysfunction without Necrosis:</strong> Acute Fatty Liver of Pregnancy, Reye Syndrome.</li>
+    </ul>
+
+    <h3>Clinical Manifestations</h3>
+    <ul>
+        <li><strong>Jaundice:</strong> Due to failure of bilirubin excretion.</li>
+        <li><strong>Coagulopathy:</strong> Bleeding tendency due to impaired synthesis of clotting factors (II, VII, IX, X).</li>
+        <li><strong>Hypoalbuminemia:</strong> Edema and ascites.</li>
+        <li><strong>Hyperammonemia:</strong> Impaired urea cycle.</li>
+        <li><strong>Fetor Hepaticus:</strong> Musty "sweet" breath odor due to mercaptans.</li>
+        <li><strong>Palmar Erythema & Spider Angiomas:</strong> Due to hyperestrogenism (failure to degrade estrogen).</li>
+    </ul>
+
+    <h3>Complications and Consequences</h3>
+    <ol>
+        <li><strong>Hepatic Encephalopathy:</strong> Confusion, Asterixis (flapping tremor), Coma. Caused by accumulation of neurotoxins like <span class="highlight-neon">Ammonia</span> and false neurotransmitters.</li>
+        <li><strong>Hepatorenal Syndrome:</strong> Functional renal failure in advanced liver disease due to renal vasoconstriction.</li>
+        <li><strong>Hepatopulmonary Syndrome:</strong> Hypoxia due to intrapulmonary vascular dilations.</li>
+    </ol>
+
+    <hr>
+
+    <h2>3. VIRAL AND TOXIC HEPATITIS</h2>
+
+    <div class="hand-drawn-box">
+        <h3>A. Viral Hepatitis (The Hepatotropic Viruses)</h3>
+        <p><strong>1. Hepatitis A (HAV):</strong>
+            <br><em>Genome:</em> RNA (Picornavirus).
+            <br><em>Route:</em> Fecal-Oral.
+            <br><em>Course:</em> Acute only. Never chronic. Benign self-limiting.
+        </p>
+        <p><strong>2. Hepatitis B (HBV):</strong>
+            <br><em>Genome:</em> <span class="highlight-green">DNA</span> (Hepadnavirus).
+            <br><em>Route:</em> Parenteral, Sexual, Vertical.
+            <br><em>Course:</em> Acute, Chronic (5-10%), Fulminant, Carrier state, HCC.
+            <br><em>Serology:</em> HBsAg (Infection), Anti-HBs (Immunity), HBeAg (Active replication/infectivity).
+        </p>
+        <p><strong>3. Hepatitis C (HCV):</strong>
+            <br><em>Genome:</em> RNA (Flavivirus).
+            <br><em>Route:</em> Parenteral (IV drug abuse, transfusion).
+            <br><em>Course:</em> <strong>Chronic (80%)</strong>. Major cause of Cirrhosis.
+        </p>
+        <p><strong>4. Hepatitis D (HDV):</strong> Defective RNA virus. Requires HBsAg for replication. (Coinfection vs Superinfection).
+        </p>
+        <p><strong>5. Hepatitis E (HEV):</strong> RNA virus. Fecal-oral. High mortality in <strong>Pregnancy</strong> (Fulminant failure).</p>
+    </div>
+
+    <h3>B. Toxic Hepatitis (Drug-Induced Liver Injury - DILI)</h3>
+    <ul>
+        <li><strong>Predictable (Intrinsic):</strong> Dose-dependent. E.g., <span class="highlight-neon">Acetaminophen (Paracetamol)</span> causes centrilobular necrosis.</li>
+        <li><strong>Idiosyncratic:</strong> Unpredictable. E.g., Halothane, Isoniazid, Chlorpromazine.</li>
+    </ul>
+
+    <h3>Pathology (Morphology)</h3>
+    <ul>
+        <li><strong>Acute Hepatitis:</strong>
+            <ul>
+                <li><strong>Ballooning Degeneration:</strong> Swollen hepatocytes.</li>
+                <li><strong>Spotty Necrosis:</strong> Focal cell death.</li>
+                <li><strong>Councilman Bodies:</strong> Eosinophilic apoptotic bodies.</li>
+                <li><strong>Inflammation:</strong> Lymphocytic infiltrate in portal tracts and lobules.</li>
+            </ul>
+        </li>
+        <li><strong>Chronic Hepatitis:</strong>
+            <ul>
+                <li><span class="highlight-neon">Interface Hepatitis</span> (Piecemeal necrosis): Inflammation spilling from portal tracts into parenchyma.</li>
+                <li><strong>Fibrosis:</strong> Portal bridging fibrosis leading to cirrhosis.</li>
+                <li><strong>Ground Glass Hepatocytes:</strong> Seen in Chronic Hep B (HBsAg accumulation).</li>
+                <li><strong>Fatty Change & Lymphoid Aggregates:</strong> Common in Hep C.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <hr>
+
+    <h2>4. ALCOHOLIC LIVER DISEASE (ALD)</h2>
+    <p>Three sequential morphological patterns:</p>
+
+    <h3>1. Hepatic Steatosis (Fatty Liver)</h3>
+    <ul>
+        <li><strong>Pathogenesis:</strong> Alcohol increases NADH/NAD+ ratio &#8594; Increased lipid synthesis & Decreased lipid oxidation.</li>
+        <li><strong>Morphology:</strong> Liver is large, yellow, greasy. Microvesicular and Macrovesicular fat droplets displace the nucleus.</li>
+        <li><strong>Outcome:</strong> Reversible with abstinence.</li>
+    </ul>
+
+    <h3>2. Alcoholic Hepatitis</h3>
+    <ul>
+        <li><strong>Pathogenesis:</strong> Direct toxicity of Acetaldehyde and ROS causing lipid peroxidation.</li>
+        <li><strong>Morphology:</strong>
+            <ul>
+                <li><strong>Hepatocyte Swelling (Ballooning):</strong> Due to water/protein accumulation.</li>
+                <li><span class="highlight-green">Mallory-Denk Bodies:</span> Clumped eosinophilic intermediate filaments (cytokeratin) in cytoplasm.</li>
+                <li><strong>Neutrophilic Infiltration:</strong> Around dying hepatocytes.</li>
+                <li><strong>Perivenular Fibrosis:</strong> Fibrosis around central vein (Chicken-wire fence pattern).</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>3. Alcoholic Cirrhosis</h3>
+    <ul>
+        <li><strong>Morphology:</strong> Final irreversible stage. Early on, liver is large/fatty (micronodular). Later, it shrinks and becomes hard/hobnailed (Laennec’s cirrhosis).</li>
+        <li><strong>Microscopy:</strong> Diffuse nodules of regenerating hepatocytes surrounded by fibrous bands. Loss of normal architecture.</li>
+    </ul>
+
+    <hr>
+
+    <h2>5. PORTAL HYPERTENSION</h2>
+    <p><strong>Definition:</strong> Increased resistance to portal blood flow.</p>
+
+    <h3>Etiology</h3>
+    <ul>
+        <li><strong>Pre-hepatic:</strong> Portal vein thrombosis.</li>
+        <li><strong>Intra-hepatic:</strong> <span class="highlight-neon">Cirrhosis</span> (Most common), Schistosomiasis.</li>
+        <li><strong>Post-hepatic:</strong> Budd-Chiari syndrome (Hepatic vein thrombosis), Right heart failure.</li>
+    </ul>
+
+    <h3>Pathogenesis</h3>
+    <ul>
+        <li><strong>Mechanical Obstruction:</strong> Fibrosis and regenerative nodules compress sinusoids.</li>
+        <li><strong>Increased Resistance:</strong> Contraction of Vascular Smooth Muscle cells and Stellate cells (due to decrease in NO).</li>
+        <li><strong>Hyperdynamic Circulation:</strong> Splanchnic arterial vasodilation leads to increased portal inflow.</li>
+    </ul>
+
+    <h3>Complications</h3>
+    <ol>
+        <li><strong>Ascites:</strong> Accumulation of fluid in peritoneal cavity due to hydrostatic pressure and hypoalbuminemia.</li>
+        <li><strong>Portosystemic Shunts:</strong> Collateral vessels form where portal and systemic circulation share capillary beds.
+            <ul>
+                <li><em>Esophagus:</em> <span class="highlight-green">Esophageal Varices</span> (Risk of massive hematemesis).</li>
+                <li><em>Rectum:</em> Hemorrhoids.</li>
+                <li><em>Umbilicus:</em> Caput Medusae.</li>
+            </ul>
+        </li>
+        <li><strong>Splenomegaly:</strong> Congestive enlargement (Hypersplenism).</li>
+        <li><strong>Hepatic Encephalopathy:</strong> Shunting of ammonia-rich blood away from the liver to the brain.</li>
+    </ol>
+
+    <hr>
+
+    <h2 style="color: #d32f2f; border-color: #d32f2f;">IMPORTANT UNIVERSITY QUESTIONS</h2>
+
+    <div class="qa-section">
+        <h3>Q1: Define Cirrhosis. Discuss the Pathogenesis and Complications of Portal Hypertension.</h3>
+        <p><strong>Introduction:</strong> Cirrhosis is a diffuse process characterized by fibrosis and conversion of normal liver architecture into structurally abnormal nodules. It is the end-stage of chronic liver damage.</p>
+        <p><strong>Body:</strong>
+            <br><strong>Pathogenesis of Portal Hypertension:</strong> It primarily results from increased resistance to portal flow at the level of sinusoids (due to fibrosis and contraction of stellate cells). Secondary to this, there is an increase in portal blood flow due to splanchnic vasodilation.
+            <br><strong>Complications:</strong>
+            <ol>
+                <li><em>Ascites:</em> Fluid retention in the abdomen.</li>
+                <li><em>Portosystemic Shunts:</em> Especially esophageal varices which can rupture causing fatal hematemesis.</li>
+                <li><em>Congestive Splenomegaly:</em> Can lead to thrombocytopenia.</li>
+                <li><em>Hepatic Encephalopathy:</em> Due to bypass of toxins.</li>
+            </ol>
+        </p>
+        <p><strong>Conclusion:</strong> Portal hypertension is the major cause of death in cirrhosis due to variceal bleeding.</p>
+    </div>
+
+    <div class="qa-section">
+        <h3>Q2: Differentiate between Hepatitis A, B, and C.</h3>
+        <p><strong>Introduction:</strong> Viral hepatitis is liver inflammation caused by hepatotropic viruses.</p>
+        <p><strong>Body:</strong>
+            <table border="1">
+                <tr>
+                    <th>Feature</th>
+                    <th>Hepatitis A</th>
+                    <th>Hepatitis B</th>
+                    <th>Hepatitis C</th>
+                </tr>
+                <tr>
+                    <td><strong>Virus Type</strong></td>
+                    <td>RNA (Picornavirus)</td>
+                    <td>DNA (Hepadnavirus)</td>
+                    <td>RNA (Flavivirus)</td>
+                </tr>
+                <tr>
+                    <td><strong>Transmission</strong></td>
+                    <td>Fecal-Oral</td>
+                    <td>Blood, Sexual, Perinatal</td>
+                    <td>Blood (IV drugs, transfusion)</td>
+                </tr>
+                <tr>
+                    <td><strong>Chronicity</strong></td>
+                    <td>None (Never chronic)</td>
+                    <td>5-10%</td>
+                    <td>>80% (Highly chronic)</td>
+                </tr>
+                <tr>
+                    <td><strong>Complications</strong></td>
+                    <td>Fulminant Hepatitis (rare)</td>
+                    <td>Cirrhosis, HCC</td>
+                    <td>Cirrhosis, HCC</td>
+                </tr>
+            </table>
+        </p>
+        <p><strong>Conclusion:</strong> Hep A is benign and self-limiting, while Hep B and C are major causes of chronic liver disease and cancer.</p>
+    </div>
+
+</div>
+
+</body>
+</html>

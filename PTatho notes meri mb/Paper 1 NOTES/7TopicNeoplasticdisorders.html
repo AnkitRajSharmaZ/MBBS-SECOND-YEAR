@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBBS Pathology Notes: Neoplasia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-yellow: #f4ff40; /* Neon yellowish */
+            --marker-green: #daffb3; /* Natural light green marker */
+            --ink-color: #2c2c2c; /* Dark grey/black ink look */
+            --paper-white: #ffffff; /* Pure white page */
+            --box-bg: #f9f9f9;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #e0e0e0; /* Background behind the paper */
+            font-family: 'Kalam', cursive;
+            color: var(--ink-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            line-height: 1.6;
+            font-size: 18px; /* Readable handwritten size */
+        }
+
+        /* A4 Paper Simulation */
+        .page-container {
+            background-color: var(--paper-white);
+            width: 210mm; /* A4 width */
+            min-height: 297mm; /* A4 height minimum */
+            padding: 25mm; /* Standard margins */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 32px;
+            text-align: center;
+            text-decoration: underline;
+            text-decoration-color: var(--neon-yellow);
+            text-decoration-thickness: 4px;
+            margin-bottom: 30px;
+            color: #000;
+        }
+
+        h2 {
+            font-size: 26px;
+            border-bottom: 2px solid var(--marker-green);
+            padding-bottom: 5px;
+            margin-top: 30px;
+            color: #1a1a1a;
+        }
+
+        h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin-bottom: 15px;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* Highlighting Classes */
+        .highlight-neon {
+            background-color: var(--neon-yellow);
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .highlight-green {
+            background-color: var(--marker-green);
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+
+        strong {
+            font-weight: 700;
+        }
+
+        /* Hand-drawn Box Style */
+        .hand-drawn-box {
+            border: 2px solid #333;
+            /* Irregular border radius for hand-drawn effect */
+            border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+            padding: 20px;
+            margin: 20px 0;
+            background-color: #fffef0; /* Very subtle yellow tint for box content */
+            box-shadow: 2px 3px 5px rgba(0,0,0,0.05);
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 16px;
+        }
+
+        th, td {
+            border: 2px solid #333;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+            /* Slight irregularity for table cells */
+            border-radius: 2px; 
+        }
+
+        th {
+            background-color: var(--marker-green);
+            font-weight: bold;
+        }
+
+        /* Print Settings */
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+            .page-container {
+                width: 100%;
+                box-shadow: none;
+                padding: 15mm; /* Adjust for printer margins */
+            }
+            /* Ensure background colors print */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            /* Page break handling */
+            h1, h2 {
+                page-break-after: avoid;
+            }
+            table, .hand-drawn-box {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 800px) {
+            .page-container {
+                width: 100%;
+                padding: 15px;
+            }
+            table {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-container">
+
+    <h1>CHAPTER: NEOPLASIA</h1>
+
+    <h2>1. DEFINITION AND NOMENCLATURE</h2>
+
+    <h3>Definitions</h3>
+    <ul>
+        <li><span class="highlight-neon">Neoplasia:</span> Literally means "new growth". A neoplasm is an abnormal mass of tissue, the growth of which exceeds and is uncoordinated with that of the normal tissues and persists in the same excessive manner after cessation of the stimuli which evoked the change (<span class="highlight-green">Willis’ Definition</span>).</li>
+        <li><strong>Modern Definition:</strong> A disorder of cell growth triggered by a series of acquired mutations affecting a single cell and its clonal progeny.</li>
+        <li><strong>Oncology:</strong> The study of tumors or neoplasms (Greek <em>oncos</em> = tumor).</li>
+    </ul>
+
+    <div class="hand-drawn-box">
+        <h3>Nomenclature</h3>
+        <p>All tumors have two basic components:</p>
+        <ol>
+            <li><strong>Parenchyma:</strong> Transformed or neoplastic cells (determines the biological behavior).</li>
+            <li><strong>Stroma:</strong> Supporting, host-derived non-neoplastic connective tissue, blood vessels, and inflammatory cells.</li>
+        </ol>
+    </div>
+
+    <h3>General Rules:</h3>
+    <ul>
+        <li><strong>Benign Tumors:</strong> Suffix <span class="highlight-neon">"-oma"</span> attached to the cell of origin.
+            <ul>
+                <li><em>Fibrous tissue:</em> Fibroma</li>
+                <li><em>Cartilage:</em> Chondroma</li>
+                <li><em>Glandular epithelium:</em> Adenoma (forming glands or derived from glands)</li>
+                <li><em>Squamous epithelium:</em> Papilloma (finger-like projections)</li>
+            </ul>
+        </li>
+        <li><strong>Malignant Tumors:</strong>
+            <ul>
+                <li><span class="highlight-neon">Sarcoma:</span> Malignant tumor arising from solid <strong>mesenchymal</strong> tissue (e.g., Fibrosarcoma, Chondrosarcoma, Osteosarcoma).</li>
+                <li><span class="highlight-neon">Carcinoma:</span> Malignant tumor arising from <strong>epithelial</strong> cells (e.g., Squamous cell carcinoma, Adenocarcinoma).</li>
+                <li><strong>Leukemia/Lymphoma:</strong> Malignant tumors of blood-forming cells.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>Special Categories:</h3>
+    <ul>
+        <li><strong>Mixed Tumors:</strong> Divergent differentiation of a single neoplastic clone creating different morphologic patterns (e.g., <span class="highlight-green">Pleomorphic Adenoma</span> of the salivary gland—contains epithelial elements dispersed in a myxoid stroma).</li>
+        <li><strong>Teratoma:</strong> Tumors containing mature or immature cells or tissues representative of more than one germ cell layer (ectoderm, mesoderm, endoderm). Originates from <strong>totipotent germ cells</strong> (e.g., Dermoid cyst of the ovary).</li>
+        <li><strong>Hamartoma:</strong> A disorganized mass of cells indigenous to the particular site (e.g., Pulmonary hamartoma). Considered a developmental malformation.</li>
+        <li><strong>Choristoma:</strong> A heterotopic rest of cells; normal tissue in an abnormal site (e.g., Pancreatic tissue in the stomach wall).</li>
+    </ul>
+
+    <div class="hand-drawn-box" style="border-color: #d32f2f;">
+        <strong>Misnomers (Malignant tumors ending in -oma):</strong>
+        <ul>
+            <li>Melanoma (Skin cancer)</li>
+            <li>Seminoma (Testicular cancer)</li>
+            <li>Lymphoma (Lymphocyte cancer)</li>
+            <li>Mesothelioma (Pleural cancer)</li>
+            <li>Hepatoma (Hepatocellular carcinoma)</li>
+        </ul>
+    </div>
+
+    <hr>
+
+    <h2>2. CHARACTERISTICS OF NEOPLASIA</h2>
+    <p>The distinction between benign and malignant tumors is based on four fundamental features:</p>
+
+    <h3>A. Differentiation and Anaplasia</h3>
+    <ul>
+        <li><strong>Differentiation:</strong> The extent to which neoplastic parenchymal cells resemble the corresponding normal parenchymal cells, both morphologically and functionally.
+            <ul>
+                <li><strong>Benign tumors:</strong> Well-differentiated (closely resemble normal cells).</li>
+                <li><strong>Malignant tumors:</strong> Range from well-differentiated to undifferentiated.</li>
+            </ul>
+        </li>
+        <li><span class="highlight-neon">Anaplasia:</span> Lack of differentiation. It is a hallmark of malignancy. Morphologic features of anaplasia include:
+            <ol>
+                <li><strong>Pleomorphism:</strong> Variation in size and shape of cells and nuclei.</li>
+                <li><strong>Abnormal Nuclear Morphology:</strong>
+                    <ul>
+                        <li><strong>Hyperchromasia:</strong> Darkly stained nuclei (due to increased DNA).</li>
+                        <li><strong>Increased N:C Ratio:</strong> Nuclear-to-cytoplasmic ratio approaches 1:1 (Normal is 1:4 or 1:6).</li>
+                        <li>Irregular nuclear membrane and prominent nucleoli.</li>
+                    </ul>
+                </li>
+                <li><strong>Mitoses:</strong> High proliferative activity. Presence of <strong>atypical, bizarre mitotic figures</strong> (e.g., tripolar or multipolar spindles).</li>
+                <li><strong>Loss of Polarity:</strong> Disorganized orientation of cells.</li>
+                <li><strong>Tumor Giant Cells:</strong> Large cells with single huge polymorphic nucleus or multiple nuclei.</li>
+            </ol>
+        </li>
+    </ul>
+
+    <h3>B. Rate of Growth</h3>
+    <ul>
+        <li><strong>Benign:</strong> Usually grow slowly. Mitoses are rare.</li>
+        <li><strong>Malignant:</strong> Correlates with the level of differentiation. Rapidly growing tumors are often poorly differentiated. They may contain central areas of ischemic necrosis because the blood supply cannot keep up with the growth.</li>
+    </ul>
+
+    <h3>C. Local Invasion</h3>
+    <ul>
+        <li><strong>Benign:</strong> Grow as cohesive, expansile masses. They develop a compressed fibrous rim called a <strong>capsule</strong> (derived from the stroma). They do <strong>not</strong> invade or infiltrate surrounding tissue. This makes them discrete and easily palpable/movable.</li>
+        <li><strong>Malignant:</strong> Poorly demarcated, infiltrative, and invasive. They lack a well-defined capsule. They penetrate and destroy surrounding tissue (crab-like feet). Next to metastasis, invasiveness is the most reliable feature of malignancy.
+            <ul>
+                <li><em>Carcinoma in situ:</em> A pre-invasive stage where dysplastic changes involve the full thickness of the epithelium but <strong>do not penetrate the basement membrane</strong>.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>D. Metastasis</h3>
+    <p>The spread of a tumor to sites that are physically discontinuous with the primary tumor. This is the <span class="highlight-neon">unequivocal mark of malignancy</span>.</p>
+    <ul>
+        <li><strong>Benign tumors</strong> do <em>not</em> metastasize.</li>
+        <li><strong>Malignant tumors</strong> metastasize (with rare exceptions like Gliomas of CNS and Basal Cell Carcinoma of skin which invade but rarely metastasize).</li>
+    </ul>
+
+    <hr>
+
+    <h2>3. DIFFERENCES BETWEEN BENIGN AND MALIGNANT NEOPLASMS</h2>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Feature</th>
+                <th>Benign Tumors</th>
+                <th>Malignant Tumors</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Differentiation</strong></td>
+                <td>Well-differentiated; structure typical of tissue of origin.</td>
+                <td>Some lack of differentiation (anaplasia); structure often atypical.</td>
+            </tr>
+            <tr>
+                <td><strong>Rate of Growth</strong></td>
+                <td>Usually progressive and slow; mitotic figures are rare and normal.</td>
+                <td>Erratic, may be slow to rapid; mitotic figures may be numerous and abnormal.</td>
+            </tr>
+            <tr>
+                <td><strong>Local Invasion</strong></td>
+                <td>Usually cohesive, expansile, well-demarcated masses; <span class="highlight-green">Encapsulated</span>.</td>
+                <td>Locally invasive, infiltrating surrounding tissue; <span class="highlight-neon">Not encapsulated</span>.</td>
+            </tr>
+            <tr>
+                <td><strong>Metastasis</strong></td>
+                <td><strong>Absent.</strong></td>
+                <td><strong>Frequent</strong> (more likely with large, undifferentiated primary tumors).</td>
+            </tr>
+            <tr>
+                <td><strong>Gross Appearance</strong></td>
+                <td>Smooth surface, round/oval, cut surface is uniform.</td>
+                <td>Irregular surface, cut surface shows hemorrhage and necrosis.</td>
+            </tr>
+            <tr>
+                <td><strong>Prognosis</strong></td>
+                <td>Good; usually cured by surgical removal.</td>
+                <td>Poor; can be fatal if untreated or disseminated.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h2>4. PATHWAYS OF SPREAD (METASTASIS)</h2>
+
+    <div class="hand-drawn-box">
+        <h3>1. Lymphatic Spread</h3>
+        <ul>
+            <li>Most common pathway for <strong>Carcinomas</strong>.</li>
+            <li>Tumor cells travel via lymphatic vessels to regional lymph nodes.</li>
+            <li><span class="highlight-green">Sentinel Lymph Node:</span> The first node in a regional lymphatic basin that receives lymph flow from the primary tumor.</li>
+            <li><em>Examples:</em>
+                <ul>
+                    <li>Breast cancer &rarr; Axillary lymph nodes.</li>
+                    <li>Lung cancer &rarr; Bronchial/Mediastinal lymph nodes.</li>
+                </ul>
+            </li>
+            <li><em>Exceptions:</em> <strong>Skip metastasis</strong> may occur due to venous-lymphatic anastomoses.</li>
+        </ul>
+    </div>
+
+    <div class="hand-drawn-box">
+        <h3>2. Hematogenous Spread</h3>
+        <ul>
+            <li>Typical of <strong>Sarcomas</strong>, but also seen in carcinomas (e.g., Renal Cell Carcinoma, Hepatocellular Carcinoma).</li>
+            <li>Arteries are resistant to penetration; <strong>veins</strong> are invaded more easily.</li>
+            <li>Tumor cells follow venous flow; mostly lodging in the first capillary bed encountered.</li>
+            <li><span class="highlight-neon">Common Sites:</span> <strong>Liver</strong> and <strong>Lungs</strong> (because all portal blood flows to liver, and all caval blood flows to lungs).</li>
+            <li><em>Specific preferences (Seed and Soil theory):</em>
+                <ul>
+                    <li>Prostate cancer &rarr; <strong>Bone</strong> (vertebrae).</li>
+                    <li>Lung cancer &rarr; <strong>Adrenals</strong> and Brain.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="hand-drawn-box">
+        <h3>3. Seeding of Body Cavities and Surfaces</h3>
+        <ul>
+            <li>Occurs when a malignant neoplasm penetrates into a natural "open field".</li>
+            <li>Common in the <strong>peritoneal cavity</strong>.</li>
+            <li><em>Example:</em> <strong>Ovarian Carcinoma</strong> (spreads to peritoneal surfaces causing massive ascites); <strong>Krukenberg tumor</strong> (gastric carcinoma spreading to ovaries).</li>
+            <li><em>Pseudomyxoma peritonei:</em> Gelatinous neoplastic mass filling the peritoneum (from appendiceal/ovarian mucinous tumors).</li>
+        </ul>
+    </div>
+
+    <hr>
+
+    <h2>5. MOLECULAR BASIS OF CANCER (CARCINOGENESIS)</h2>
+    <p>Cancer is a genetic disease caused by non-lethal genetic damage (mutations).</p>
+    <p><strong>Four classes of normal regulatory genes are the principal targets:</strong></p>
+    <ol>
+        <li><strong>Proto-oncogenes</strong> (promote growth).</li>
+        <li><strong>Tumor Suppressor Genes</strong> (inhibit growth).</li>
+        <li><strong>Genes regulating Apoptosis</strong> (programmed cell death).</li>
+        <li><strong>DNA Repair Genes.</strong></li>
+    </ol>
+
+    <h3>The Hallmarks of Cancer</h3>
+    <p>Malignant tumors exhibit eight fundamental changes in cell physiology:</p>
+
+    <h4>1. Self-Sufficiency in Growth Signals (Oncogenes)</h4>
+    <ul>
+        <li>Tumors proliferate without external stimuli.</li>
+        <li><strong>Proto-oncogenes:</strong> Normal cellular genes promoting growth.</li>
+        <li><strong>Oncogenes:</strong> Mutated/activated proto-oncogenes that are constitutively active.</li>
+        <li><strong>Mechanisms:</strong>
+            <ul>
+                <li><em>Growth Factors:</em> e.g., <strong>PDGF</strong> (Astrocytoma), <strong>TGF-&alpha;</strong> (Astrocytomas).</li>
+                <li><em>Growth Factor Receptors:</em> Overexpression of <strong>ERBB1 (EGFR)</strong> in lung cancer; <strong>ERBB2 (HER2/neu)</strong> in breast cancer.</li>
+                <li><em>Signal Transduction Proteins:</em>
+                    <ul>
+                        <li><span class="highlight-neon">RAS mutation:</span> Most common abnormality in proto-oncogenes (Point mutation). Found in 15-20% of all human tumors (Colon, Pancreas). Causes continuous stimulation of cell proliferation.</li>
+                        <li><strong>ABL:</strong> <strong>t(9;22)</strong> translocation (Philadelphia chromosome) in <strong>CML</strong>. Forms <strong>BCR-ABL</strong> hybrid protein with tyrosine kinase activity.</li>
+                    </ul>
+                </li>
+                <li><em>Nuclear Transcription Factors:</em> <strong>MYC</strong> oncogene. <strong>t(8;14)</strong> translocation in <strong>Burkitt Lymphoma</strong>.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h4>2. Insensitivity to Growth-Inhibitory Signals (Tumor Suppressor Genes)</h4>
+    <ul>
+        <li>Tumor suppressor genes (TSGs) normally apply brakes to cell proliferation.</li>
+        <li><strong>Knudson’s Two-Hit Hypothesis:</strong> Both alleles of the TSG must be inactivated for tumor development.</li>
+        <li><span class="highlight-neon">RB (Retinoblastoma) Gene:</span> The "Governor of the cell cycle". Located on <strong>13q14</strong>. Loss leads to Retinoblastoma and Osteosarcoma.
+            <ul>
+                <li>Normally, Rb protein holds the E2F transcription factor. When phosphorylated (inactive), it releases E2F, allowing cell cycle progression (G1 to S phase). In cancer, Rb is mutated or sequestered (e.g., by HPV E7 protein).</li>
+            </ul>
+        </li>
+        <li><span class="highlight-neon">TP53 Gene:</span> The "<strong>Guardian of the Genome</strong>". Located on <strong>17p</strong>.
+            <ul>
+                <li>Most common genetic mutation in human cancer (>50% cases).</li>
+                <li>Functions: Cell cycle arrest (to repair DNA) or Apoptosis (if damage is irreparable).</li>
+                <li>Loss of p53 leads to survival of cells with DNA damage.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h4>3. Evasion of Cell Death (Apoptosis)</h4>
+    <ul>
+        <li>Cancer cells avoid programmed cell death.</li>
+        <li><strong>BCL2:</strong> An anti-apoptotic gene. Overexpressed in <strong>Follicular Lymphoma</strong> via <strong>t(14;18)</strong> translocation. It prevents cytochrome c release from mitochondria, keeping the cell alive indefinitely.</li>
+    </ul>
+
+    <h4>4. Limitless Replicative Potential</h4>
+    <ul>
+        <li>Normal cells have finite divisions (Hayflick limit) due to telomere shortening.</li>
+        <li>Cancer cells reactivate <strong>Telomerase</strong>, maintaining telomere length and allowing indefinite division (immortality).</li>
+    </ul>
+
+    <h4>5. Sustained Angiogenesis</h4>
+    <ul>
+        <li>Tumors cannot grow beyond 1-2 mm without blood supply.</li>
+        <li>Tumors produce angiogenic factors like <strong>VEGF</strong> (Vascular Endothelial Growth Factor) and <strong>FGF</strong> to sprout new vessels.</li>
+    </ul>
+
+    <h4>6. Ability to Invade and Metastasize</h4>
+    <ul>
+        <li><strong>Invasion of ECM:</strong>
+            <ol>
+                <li><strong>Loosening:</strong> Loss of <strong>E-cadherin</strong> adhesion molecules.</li>
+                <li><strong>Degradation:</strong> Secretion of proteolytic enzymes like <strong>Matrix Metalloproteinases (MMPs)</strong> (especially Type IV collagenase) to breach the basement membrane.</li>
+                <li><strong>Migration:</strong> Movement through the degraded matrix (autocrine motility factors).</li>
+            </ol>
+        </li>
+    </ul>
+
+    <h4>7. Genomic Instability</h4>
+    <ul>
+        <li>Defects in DNA repair genes (e.g., <strong>BRCA1/BRCA2</strong> in breast cancer; Mismatch repair genes in HNPCC/Lynch syndrome).</li>
+    </ul>
+
+    <h4>8. Reprogramming Energy Metabolism (Warburg Effect)</h4>
+    <ul>
+        <li>Cancer cells prefer <strong>aerobic glycolysis</strong> (converting glucose to lactate even in the presence of oxygen) to synthesize cellular building blocks rapidly.</li>
+    </ul>
+
+    <hr>
+
+    <h2>6. ETIOLOGY OF CANCER: CARCINOGENESIS</h2>
+
+    <h3>A. Chemical Carcinogenesis</h3>
+    <p>It is a multistep process:</p>
+    <ol>
+        <li><strong>Initiation:</strong> Exposure to a carcinogen causes permanent DNA damage (mutation). It is rapid and irreversible. The cell is "initiated".</li>
+        <li><strong>Promotion:</strong> Induces proliferation of initiated cells. Promoters are non-tumorigenic by themselves (e.g., Hormones, Phorbol esters).</li>
+        <li><strong>Progression:</strong> Acquiring further mutations, leading to invasive cancer.</li>
+    </ol>
+
+    <div class="hand-drawn-box">
+        <strong>Types of Chemical Carcinogens:</strong>
+        <ul>
+            <li><strong>Direct-Acting:</strong> Do not require metabolic conversion (e.g., Alkylating agents used in chemotherapy).</li>
+            <li><strong>Indirect-Acting (Procarcinogens):</strong> Require metabolic conversion (usually by Cytochrome P-450 in the liver).
+                <ul>
+                    <li><span class="highlight-green">Polycyclic Hydrocarbons:</span> Tobacco smoke (Lung cancer), Soot (Scrotal cancer).</li>
+                    <li><span class="highlight-green">Aromatic Amines/Azo Dyes:</span> Beta-naphthylamine (Rubber industry &rarr; <strong>Bladder cancer</strong>).</li>
+                    <li><span class="highlight-green">Aflatoxin B1:</span> Produced by <em>Aspergillus flavus</em> (fungus on improperly stored grains) &rarr; <strong>Hepatocellular Carcinoma</strong> (signature mutation in TP53).</li>
+                    <li><span class="highlight-green">Nitrosamines:</span> Preservatives in food &rarr; Gastric cancer.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <h3>B. Radiation Carcinogenesis</h3>
+    <ul>
+        <li><strong>Ultraviolet (UV) Rays:</strong> UVB is the most carcinogenic. Causes formation of <strong>pyrimidine dimers</strong> in DNA. Associated with <strong>Squamous cell carcinoma, Basal cell carcinoma, and Melanoma</strong>. <em>Xeroderma pigmentosum</em> patients (defect in nucleotide excision repair) are highly susceptible.</li>
+        <li><strong>Ionizing Radiation (X-rays, Gamma rays):</strong> Causes chromosome breakage and translocations. Associated with <strong>Leukemia</strong> (AML, CML) and Thyroid cancer (Papillary carcinoma).</li>
+    </ul>
+
+    <h3>C. Microbial Carcinogenesis</h3>
+    <p><strong>Oncogenic Viruses:</strong></p>
+    <ol>
+        <li><strong>Human Papillomavirus (HPV):</strong> Types 16, 18 (High risk). Causes <strong>Cervical Carcinoma</strong>.
+            <ul>
+                <li>Mechanism: Viral protein <strong>E6 degrades p53</strong>; Viral protein <strong>E7 binds/inactivates RB</strong>.</li>
+            </ul>
+        </li>
+        <li><strong>Epstein-Barr Virus (EBV):</strong>
+            <ul>
+                <li><strong>Burkitt Lymphoma</strong> (African/Endemic).</li>
+                <li>Nasopharyngeal Carcinoma.</li>
+                <li>Hodgkin Lymphoma.</li>
+                <li>Mechanism: Infects B cells, latent infection genes (<strong>LMP-1</strong>, EBNA-2) drive proliferation.</li>
+            </ul>
+        </li>
+        <li><strong>Hepatitis B (HBV) and C (HCV):</strong> Cause <strong>Hepatocellular Carcinoma</strong> via chronic inflammation and regenerative hyperplasia. <strong>HBx</strong> protein of HBV disrupts normal growth control.</li>
+        <li><strong>HTLV-1:</strong> Adult T-cell Leukemia/Lymphoma.</li>
+    </ol>
+
+    <p><strong>Oncogenic Bacteria:</strong></p>
+    <ul>
+        <li><strong>Helicobacter pylori:</strong> First bacterium classified as a carcinogen.
+            <ul>
+                <li>Causes <strong>Gastric Adenocarcinoma</strong> and <strong>MALT Lymphoma</strong>.</li>
+                <li>Mechanism: Chronic gastritis &rarr; atrophy &rarr; metaplasia &rarr; dysplasia &rarr; cancer. Virulence factor <strong>CagA</strong>.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <hr>
+
+    <h2>7. EFFECTS OF TUMOR ON THE HOST</h2>
+
+    <h3>1. Local Effects</h3>
+    <ul>
+        <li>Compression of vital organs (e.g., Pituitary adenoma compressing normal gland).</li>
+        <li>Obstruction of ducts/gut (e.g., Colon cancer causing intestinal obstruction).</li>
+        <li>Ulceration and bleeding (e.g., Gastric cancer causing melena, Bladder cancer causing hematuria).</li>
+        <li>Infarction/Rupture.</li>
+    </ul>
+
+    <h3>2. Cancer Cachexia</h3>
+    <ul>
+        <li>A progressive loss of body fat and lean body mass accompanied by profound weakness, anorexia, and anemia.</li>
+        <li>Not caused by nutritional demand of the tumor alone.</li>
+        <li><strong>Mechanism:</strong> Mediated by soluble factors like <span class="highlight-neon">TNF-alpha (Cachectin)</span>, IL-1, and IL-6 produced by the host immune system or tumor. These cause muscle wasting and appetite suppression.</li>
+    </ul>
+
+    <h3>3. Paraneoplastic Syndromes</h3>
+    <p>Symptom complexes in cancer patients that cannot be explained by the local or distant spread of the tumor or by the elaboration of hormones indigenous to the tissue of origin. Occurs in 10-15% of patients. Important for diagnosis.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Syndrome</th>
+                <th>Causal Mechanism</th>
+                <th>Associated Cancers</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Cushing Syndrome</strong></td>
+                <td>Ectopic <strong>ACTH</strong></td>
+                <td><strong>Small Cell Carcinoma of Lung</strong></td>
+            </tr>
+            <tr>
+                <td><strong>Hypercalcemia</strong></td>
+                <td><strong>PTH-related protein (PTHrP)</strong>, TGF-&alpha;</td>
+                <td><strong>Squamous Cell Carcinoma of Lung</strong>, Breast Ca, Renal Ca</td>
+            </tr>
+            <tr>
+                <td><strong>SIADH</strong> (Hyponatremia)</td>
+                <td>Ectopic <strong>ADH</strong></td>
+                <td><strong>Small Cell Carcinoma of Lung</strong></td>
+            </tr>
+            <tr>
+                <td><strong>Polycythemia</strong></td>
+                <td>Erythropoietin</td>
+                <td>Renal Cell Carcinoma, Hepatocellular Carcinoma</td>
+            </tr>
+            <tr>
+                <td><strong>Hypoglycemia</strong></td>
+                <td>Insulin-like substance</td>
+                <td>Fibrosarcoma, Hepatocellular Ca</td>
+            </tr>
+            <tr>
+                <td><strong>Carcinoid Syndrome</strong></td>
+                <td>Serotonin, Bradykinin</td>
+                <td>Bronchial Carcinoid</td>
+            </tr>
+            <tr>
+                <td><strong>Acanthosis Nigricans</strong></td>
+                <td>Immunologic/EGF</td>
+                <td>Gastric Carcinoma</td>
+            </tr>
+            <tr>
+                <td><strong>Trousseau Phenomenon</strong></td>
+                <td>Hypercoagulability (Migratory thrombophlebitis)</td>
+                <td><strong>Pancreatic Carcinoma</strong>, Lung Ca</td>
+            </tr>
+            <tr>
+                <td><strong>Hypertrophic Osteoarthropathy</strong></td>
+                <td>Unknown (Clubbing)</td>
+                <td>Bronchogenic Carcinoma</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h2>8. IMMUNOLOGY OF CANCER</h2>
+
+    <div class="hand-drawn-box">
+        <strong>Tumor Antigens:</strong>
+        <ul>
+            <li><strong>Tumor-Specific Antigens:</strong> Present only on tumor cells (e.g., products of mutated oncogenes like RAS, p53).</li>
+            <li><strong>Tumor-Associated Antigens:</strong> Present on tumor cells and some normal cells (e.g., Oncofetal antigens).
+                <ul>
+                    <li><strong>CEA (Carcinoembryonic Antigen):</strong> Colon, Pancreas cancer.</li>
+                    <li><strong>AFP (Alpha-Fetoprotein):</strong> Liver cancer, Germ cell tumors.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <p><strong>Antitumor Effector Mechanisms:</strong></p>
+    <ol>
+        <li><strong>Cytotoxic T Lymphocytes (CD8+):</strong> Major mechanism. Recognize peptides presented by MHC Class I.</li>
+        <li><strong>Natural Killer (NK) Cells:</strong> First line of defense. Kill tumors with reduced MHC Class I expression (which tumors often do to evade CTLs).</li>
+        <li><strong>Macrophages:</strong> Activated by IFN-gamma.</li>
+    </ol>
+
+    <p><strong>Immune Evasion by Tumors:</strong></p>
+    <ul>
+        <li>Selective outgrowth of antigen-negative variants.</li>
+        <li>Loss or reduced expression of MHC molecules.</li>
+        <li>Suppression of immune response (secretion of <strong>TGF-&beta;</strong>, activation of regulatory T cells).</li>
+        <li>Expression of inhibitory proteins (e.g., <strong>PD-L1</strong> binding to PD-1 on T-cells, inhibiting T-cell killing).</li>
+    </ul>
+
+    <hr>
+
+    <h2 style="color: #d32f2f; border-color: #d32f2f;">9. IMPORTANT UNIVERSITY QUESTIONS</h2>
+
+    <div class="hand-drawn-box">
+        <h3>Q1: Define Neoplasia. Classify tumors and tabulate the differences between Benign and Malignant tumors.</h3>
+        
+        <p><strong>Answer Framework:</strong></p>
+        <ol>
+            <li><strong>Introduction:</strong> Begin with the definition of Neoplasia (Willis' definition and the modern genetic definition). Explain that "tumor" essentially means a swelling but is equated with neoplasm.</li>
+            <li><strong>Classification:</strong>
+                <ul>
+                    <li>Create a flowchart or list dividing tumors based on biologic behavior (Benign, Malignant).</li>
+                    <li>Classify based on histogenesis (Epithelial vs Mesenchymal).</li>
+                    <li>Mention mixed tumors (Pleomorphic adenoma) and Teratomas.</li>
+                </ul>
+            </li>
+            <li><strong>Differences:</strong> Draw a large, clean table comparing Benign and Malignant tumors.
+                <ul>
+                    <li><em>Key headings:</em> Mode of growth (Expansion vs Infiltration), Capsule (Present vs Absent), Differentiation (Well vs Anaplastic), Mitosis (Rare/Normal vs Numerous/Atypical), Metastasis (Never vs Frequent).</li>
+                </ul>
+            </li>
+            <li><strong>Conclusion:</strong> Emphasize that metastasis is the most definitive sign of malignancy.</li>
+        </ol>
+    </div>
+
+    <div class="hand-drawn-box">
+        <h3>Q2: Discuss the Molecular Basis of Cancer (Hallmarks of Cancer).</h3>
+        
+        <p><strong>Answer Framework:</strong></p>
+        <ol>
+            <li><strong>Introduction:</strong> State that cancer is a genetic disease involving mutations in regulatory genes.</li>
+            <li><strong>The Hallmarks:</strong> List and briefly explain the 8 hallmarks:
+                <ul>
+                    <li><em>Self-sufficiency in growth signals:</em> Discuss Oncogenes (RAS, MYC). Explain how they lead to constitutive growth.</li>
+                    <li><em>Insensitivity to anti-growth signals:</em> Discuss Tumor Suppressor Genes. Explain the "Two-hit hypothesis" using RB gene (Governor) and p53 (Guardian).</li>
+                    <li><em>Evasion of Apoptosis:</em> Explain the BCL2 mechanism (mitochondrial pathway).</li>
+                    <li><em>Limitless Replicative Potential:</em> Explain Telomerase reactivation preventing senescence.</li>
+                    <li><em>Sustained Angiogenesis:</em> Role of VEGF.</li>
+                    <li><em>Invasion and Metastasis:</em> Steps—detachment (E-cadherin loss), degradation (MMPs), migration.</li>
+                    <li><em>Genomic Instability:</em> Defects in DNA repair.</li>
+                    <li><em>Reprogramming Metabolism:</em> Warburg effect.</li>
+                </ul>
+            </li>
+            <li><strong>Summary:</strong> Use a schematic diagram concept (e.g., a cell with arrows indicating these pathways) to summarize.</li>
+        </ol>
+    </div>
+
+    <div class="hand-drawn-box">
+        <h3>Q3: Define Metastasis. Describe the routes of spread of malignant tumors with examples.</h3>
+        
+        <p><strong>Answer Framework:</strong></p>
+        <ol>
+            <li><strong>Definition:</strong> Define metastasis as the spread of tumor to discontinuous sites.</li>
+            <li><strong>Routes of Spread:</strong> Use subheadings for each route.
+                <ul>
+                    <li><em>Lymphatic Spread:</em> Explain it's common for carcinomas. Describe the "Sentinel Lymph Node" concept. Give examples (Breast to Axilla). Mention Virchow’s node (Gastric Ca).</li>
+                    <li><em>Hematogenous Spread:</em> Explain it's common for sarcomas. Explain the venous route. Discuss the "Seed and Soil" theory vs anatomical drainage. Give examples: Prostatic Ca to Vertebrae (Batson’s plexus), GI Ca to Liver.</li>
+                    <li><em>Transcoelomic Spread:</em> Seeding of body cavities. Example: Krukenberg tumor, Peritoneal carcinomatosis.</li>
+                </ul>
+            </li>
+            <li><strong>Mechanism:</strong> Briefly mention the invasion-metastasis cascade (Invasion of ECM &rarr; Intravasation &rarr; Circulation &rarr; Extravasation &rarr; Colonization).</li>
+        </ol>
+    </div>
+
+    <div class="hand-drawn-box">
+        <h3>Q4: Write a short note on Chemical Carcinogenesis.</h3>
+        
+        <p><strong>Answer Framework:</strong></p>
+        <ol>
+            <li><strong>Mechanism:</strong> Explain the steps: Initiation (mutation, irreversible) &rarr; Promotion (proliferation, reversible).</li>
+            <li><strong>Classification:</strong>
+                <ul>
+                    <li><em>Direct Acting:</em> Alkylating agents.</li>
+                    <li><em>Indirect Acting (Procarcinogens):</em> Require metabolic activation.</li>
+                </ul>
+            </li>
+            <li><strong>Important Carcinogens & Associations:</strong> Create a table.
+                <ul>
+                    <li>Polycyclic hydrocarbons (Smoking) &rarr; Lung cancer.</li>
+                    <li>Aromatic amines (Dye industry) &rarr; Bladder cancer.</li>
+                    <li>Aflatoxin B1 &rarr; Liver cancer.</li>
+                    <li>Nitrosamines &rarr; Gastric cancer.</li>
+                    <li>Asbestos &rarr; Mesothelioma/Lung cancer.</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <div class="hand-drawn-box">
+        <h3>Q5: Define Paraneoplastic Syndrome. Enumerate the common syndromes and the associated tumors.</h3>
+        
+        <p><strong>Answer Framework:</strong></p>
+        <ol>
+            <li><strong>Definition:</strong> Signs/symptoms in cancer patients not explained by local tumor spread or native hormone production.</li>
+            <li><strong>Significance:</strong> May be the earliest sign of cancer; may mimic metastasis; can be lethal.</li>
+            <li><strong>Classification/Examples:</strong> Group them by system.
+                <ul>
+                    <li><em>Endocrine:</em> Cushing (Lung Ca), SIADH (Lung Ca), Hypercalcemia (PTHrP in Squamous cell Ca).</li>
+                    <li><em>Neuromuscular:</em> Myasthenia gravis (Thymoma).</li>
+                    <li><em>Dermatologic:</em> Acanthosis Nigricans (Gastric Ca).</li>
+                    <li><em>Hematologic:</em> Trousseau’s sign (Pancreatic Ca).</li>
+                    <li><em>Osseous:</em> Hypertrophic Osteoarthropathy (Bronchogenic Ca).</li>
+                </ul>
+            </li>
+            <li><strong>Conclusion:</strong> Treat the underlying malignancy to resolve the syndrome.</li>
+        </ol>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBBS Pathology Notes: Bone and Soft Tissue</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-yellow: #f4ff40; /* Neon yellowish highlighter */
+            --marker-green: #daffb3; /* Natural light green marker */
+            --ink-color: #2c2c2c; /* Dark grey/black ink look */
+            --paper-white: #ffffff; /* Pure white page */
+            --box-bg: #fffef0; /* Subtle warm tint for boxes */
+            --border-color: #333;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #525659; /* Grey background behind the paper */
+            font-family: 'Kalam', cursive;
+            color: var(--ink-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            line-height: 1.6;
+            font-size: 18px; /* Readable handwritten size */
+        }
+
+        /* A4 Paper Simulation */
+        .page-container {
+            background-color: var(--paper-white);
+            width: 210mm; /* A4 width */
+            min-height: 297mm; /* A4 height minimum */
+            padding: 25mm; /* Standard margins */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 32px;
+            text-align: center;
+            text-decoration: underline;
+            text-decoration-color: var(--neon-yellow);
+            text-decoration-thickness: 5px;
+            margin-bottom: 40px;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            font-size: 26px;
+            border-bottom: 3px solid var(--marker-green);
+            padding-bottom: 5px;
+            margin-top: 40px;
+            color: #1a1a1a;
+            display: inline-block;
+            width: 100%;
+        }
+
+        h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-top: 25px;
+            color: #333;
+            text-decoration: underline;
+        }
+
+        h4 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-top: 15px;
+            color: #444;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin-bottom: 15px;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* Highlighting Classes */
+        .highlight-neon {
+            background-color: var(--neon-yellow);
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .highlight-green {
+            background-color: var(--marker-green);
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        strong {
+            font-weight: 700;
+        }
+
+        /* Hand-drawn Box Style */
+        .hand-drawn-box {
+            border: 2px solid var(--border-color);
+            /* Irregular border radius for hand-drawn effect */
+            border-radius: 2px 20px 3px 25px / 25px 3px 20px 2px;
+            padding: 20px;
+            margin: 25px 0;
+            background-color: var(--box-bg); 
+            box-shadow: 3px 4px 0px rgba(0,0,0,0.1);
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 20px 0;
+            font-size: 16px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: var(--marker-green);
+            font-weight: bold;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        tr td:last-child, tr th:last-child {
+            border-right: none;
+        }
+
+        /* Model Answer Section */
+        .qa-section {
+            border-left: 4px solid var(--neon-yellow);
+            padding-left: 20px;
+            margin-top: 30px;
+        }
+
+        /* Print Settings */
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+            .page-container {
+                width: 100%;
+                box-shadow: none;
+                margin: 0;
+                padding: 15mm;
+            }
+            /* Ensure background colors print */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            h1, h2, h3 {
+                page-break-after: avoid;
+            }
+            table, .hand-drawn-box, li {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 800px) {
+            .page-container {
+                width: 100%;
+                padding: 15px;
+            }
+            table {
+                font-size: 14px;
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-container">
+
+    <h1>TOPIC 10: BONE AND SOFT TISSUE</h1>
+
+    <p><strong>Syllabus Scope:</strong> Osteomyelitis, Bone Tumors (Osteosarcoma, Ewing's, Giant Cell Tumor), Paget's Disease of Bone.</p>
+
+    <h2>1. OSTEOMYELITIS</h2>
+    <p><strong>Definition:</strong> Inflammation of the bone and marrow, virtually always implying infection.</p>
+
+    <h3>Classification</h3>
+    <ol>
+        <li><strong>Pyogenic Osteomyelitis:</strong> Caused by bacteria.</li>
+        <li><strong>Tuberculous Osteomyelitis:</strong> Caused by TB (Pott's spine).</li>
+        <li><strong>Chronic Sclerosing Osteomyelitis (Garré's):</strong> Extensive new bone formation.</li>
+    </ol>
+
+    <h3>Etiology</h3>
+    <ul>
+        <li><strong>Staphylococcus aureus:</strong> Most common cause (80-90%) due to cell wall receptors binding bone matrix.</li>
+        <li><strong>Escherichia coli / Pseudomonas:</strong> IV drug abusers, urinary tract infections.</li>
+        <li><strong>Salmonella:</strong> Patients with <span class="highlight-neon">Sickle Cell Disease</span>.</li>
+        <li><strong>Haemophilus influenzae / Group B Strep:</strong> Neonates.</li>
+    </ul>
+
+    <h3>Pathogenesis</h3>
+    <p>Routes of infection:</p>
+    <ol>
+        <li><strong>Hematogenous spread:</strong> Most common in children. Affects the <strong>Metaphysis</strong> of long bones (rich vascular supply, sluggish flow).</li>
+        <li><strong>Direct extension:</strong> From adjacent soft tissue infection.</li>
+        <li><strong>Traumatic implantation:</strong> Compound fractures, orthopedic surgery.</li>
+    </ol>
+
+    <div class="hand-drawn-box">
+        <h3>Pathology (Morphology & Sequence)</h3>
+        <ul>
+            <li><strong>Acute Stage (First 48 hrs):</strong> Bacteria proliferate &rarr; Neutrophilic inflammation &rarr; Increased intramedullary pressure &rarr; Thrombosis of vessels &rarr; <strong>Ischemic Necrosis of Bone</strong>.</li>
+            <li><strong>Spread:</strong> Pus lifts the periosteum (Subperiosteal abscess), disrupting blood supply further.</li>
+            <li><strong>Sequestrum:</strong> A piece of <strong>dead bone</strong> separated from viable bone. It acts as a foreign body preventing healing.</li>
+            <li><strong>Involucrum:</strong> A sleeve of <strong>new living bone</strong> formed by the elevated periosteum that surrounds the sequestrum.</li>
+            <li><strong>Cloaca:</strong> Sinus tract in the involucrum allowing pus to drain.</li>
+        </ul>
+    </div>
+
+    <h3>Complications</h3>
+    <ul>
+        <li>Pathologic fracture.</li>
+        <li>Secondary Amyloidosis (AA type).</li>
+        <li>Sinus tract formation.</li>
+        <li>Squamous Cell Carcinoma in the sinus tract (Marjolin's ulcer).</li>
+        <li>Septic arthritis (if metaphysis is intracapsular e.g., hip in infants).</li>
+    </ul>
+
+    <h3>Radiologic Features</h3>
+    <ul>
+        <li><strong>Early (<10 days):</strong> Soft tissue swelling, no bony changes.</li>
+        <li><strong>Late:</strong> Lytic bone destruction (Sequestrum is dense/white; surrounding bone is osteoporotic) + New bone formation (Involucrum).</li>
+    </ul>
+
+    <hr>
+
+    <h2>2. BONE TUMORS</h2>
+    <p>Classified based on the matrix they produce.</p>
+
+    <h3>Classification</h3>
+    <table border="1">
+        <tr>
+            <th>Cell Origin</th>
+            <th>Benign</th>
+            <th>Malignant</th>
+        </tr>
+        <tr>
+            <td><strong>Bone forming</strong></td>
+            <td>Osteoma, Osteoid Osteoma</td>
+            <td><strong>Osteosarcoma</strong></td>
+        </tr>
+        <tr>
+            <td><strong>Cartilage forming</strong></td>
+            <td>Osteochondroma, Chondroma</td>
+            <td>Chondrosarcoma</td>
+        </tr>
+        <tr>
+            <td><strong>Unknown</strong></td>
+            <td>Giant Cell Tumor (GCT)</td>
+            <td><strong>Ewing Sarcoma</strong></td>
+        </tr>
+    </table>
+
+    <div class="hand-drawn-box">
+        <h3>A. Osteosarcoma (Osteogenic Sarcoma)</h3>
+        <p>Most common primary malignant bone tumor (after myeloma/lymphoma).</p>
+        <ul>
+            <li><strong>Epidemiology:</strong> Bimodal age distribution. 75% in <span class="highlight-neon">Teenagers (10-20 yrs)</span>; second peak in Elderly (Paget's disease, radiation).</li>
+            <li><strong>Site:</strong> <strong>Metaphysis</strong> of long bones (Distal Femur > Proximal Tibia > Proximal Humerus) - "Around the knee".</li>
+            <li><strong>Genetics:</strong> Mutations in <strong>RB</strong> gene (Retinoblastoma) and <strong>TP53</strong> (Li-Fraumeni syndrome).</li>
+            <li><strong>Morphology:</strong>
+                <ul>
+                    <li><em>Gross:</em> Large, destructive, gritty, grey-white mass with hemorrhage/cystic degeneration. Invades medullary canal and soft tissue.</li>
+                    <li><em>Microscopy:</em> Malignant mesenchymal cells producing <span class="highlight-green">Osteoid Matrix</span> (pink, lace-like material) - <strong>Diagnostic feature</strong>. Pleomorphic cells, abnormal mitoses.</li>
+                </ul>
+            </li>
+            <li><strong>Radiology:</strong>
+                <ul>
+                    <li><strong>Codman's Triangle:</strong> Lifting of periosteum by tumor creates a triangular angle.</li>
+                    <li><strong>Sunburst Appearance:</strong> Spicules of new bone radiating perpendicular to the shaft.</li>
+                </ul>
+            </li>
+            <li><strong>Spread:</strong> Hematogenous to Lungs (early).</li>
+        </ul>
+    </div>
+
+    <div class="hand-drawn-box">
+        <h3>B. Giant Cell Tumor (Osteoclastoma)</h3>
+        <ul>
+            <li><strong>Epidemiology:</strong> Adults (20-40 yrs).</li>
+            <li><strong>Site:</strong> <strong>Epiphysis</strong> of long bones (Distal Femur, Proximal Tibia). Arises <em>only after epiphyseal closure</em>.</li>
+            <li><strong>Morphology:</strong>
+                <ul>
+                    <li><em>Gross:</em> "Soap-bubble" appearance on X-ray. Lytic, eccentric lesion. Brown color due to hemorrhage.</li>
+                    <li><em>Microscopy:</em> Uniform oval mononuclear stromal cells (Neoplastic) + Numerous <span class="highlight-neon">Osteoclast-like Giant Cells</span> (Reactive).</li>
+                </ul>
+            </li>
+            <li><strong>Behavior:</strong> "Locally aggressive" benign tumor. High recurrence rate.</li>
+        </ul>
+    </div>
+
+    <div class="hand-drawn-box">
+        <h3>C. Ewing Sarcoma</h3>
+        <ul>
+            <li><strong>Epidemiology:</strong> Children (5-15 yrs). Second most common pediatric bone sarcoma.</li>
+            <li><strong>Site:</strong> <strong>Diaphysis</strong> of long bones (Femur, Tibia, Pelvis).</li>
+            <li><strong>Genetics:</strong> Translocation <strong>t(11;22)</strong> forming <span class="highlight-green">EWS-FLI1</span> fusion protein.</li>
+            <li><strong>Morphology:</strong>
+                <ul>
+                    <li><em>Gross:</em> Soft, white, necrotic mass arising in medullary cavity.</li>
+                    <li><em>Microscopy:</em> Sheets of <strong>Small Round Blue Cells</strong>. <span class="highlight-green">Homer-Wright Rosettes</span> (cells circling a central fibrillary core). PAS positive (Glycogen).</li>
+                </ul>
+            </li>
+            <li><strong>Radiology:</strong> <strong>"Onion-skin"</strong> appearance (layered periosteal reaction).</li>
+            <li><strong>Spread:</strong> Early hematogenous spread to lungs/bones.</li>
+        </ul>
+    </div>
+
+    <h3>D. Metastatic Bone Tumors</h3>
+    <ul>
+        <li>More common than primary tumors.</li>
+        <li><strong>Primary sites:</strong> Prostate, Breast, Kidney, Lung, Thyroid ("PB KLT").</li>
+        <li><strong>Types:</strong>
+            <ul>
+                <li><em>Osteoblastic (Sclerotic):</em> Prostate cancer.</li>
+                <li><em>Osteolytic (Lytic):</em> Kidney, Lung, Melanoma.</li>
+                <li><em>Mixed:</em> Breast.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <hr>
+
+    <h2>3. PAGET'S DISEASE OF BONE (OSTEITIS DEFORMANS)</h2>
+    <p><strong>Definition:</strong> A chronic disorder of bone remodeling characterized by excessive bone resorption followed by disorganized and excessive bone formation, leading to enlarged, weak, and deformed bones.</p>
+
+    <h3>Etiology</h3>
+    <ul>
+        <li><strong>Viral:</strong> Paramyxovirus (Measles, RSV) antigens found in osteoclasts.</li>
+        <li><strong>Genetic:</strong> Mutations in <strong>SQSTM1</strong> gene (enhances NF-&kappa;B signaling).</li>
+    </ul>
+
+    <h3>Pathogenesis (3 Phases)</h3>
+    <ol>
+        <li><strong>Osteolytic Phase:</strong> Frenzied osteoclastic activity. Massive resorption.</li>
+        <li><strong>Mixed Phase:</strong> Osteoblasts start forming new bone while resorption continues.</li>
+        <li><strong>Osteosclerotic Phase (Burned-out):</strong> Osteoblastic activity dominates. Bone is hypervascular and dense but structurally weak.</li>
+    </ol>
+
+    <h3>Morphology</h3>
+    <ul>
+        <li><strong>Microscopy:</strong> The hallmark is the <span class="highlight-neon">Mosaic Pattern</span> of lamellar bone (Jigsaw puzzle appearance) due to irregular cement lines. Marrow shows fibrosis and increased vascularity.</li>
+        <li><strong>Gross:</strong> Bones are thickened, enlarged, and bowed (e.g., Tibia, Femur, Skull).</li>
+    </ul>
+
+    <h3>Clinical Manifestations</h3>
+    <ul>
+        <li><strong>Pain:</strong> Deep bone pain, warmth over bone (hypervascularity).</li>
+        <li><strong>Deformity:</strong> Leontiasis ossea (Lion face), Platybasia (skull base flattening), Bowing of legs.</li>
+        <li><strong>Fractures:</strong> Chalk-stick fractures.</li>
+        <li><strong>High-output Heart Failure:</strong> Due to AV shunting in vascular bone.</li>
+    </ul>
+
+    <h3>Radiologic Features</h3>
+    <ul>
+        <li>Thickened cortex, coarsened trabeculae, bone enlargement. "Cotton wool" appearance of skull.</li>
+    </ul>
+
+    <h3>Complications</h3>
+    <ul>
+        <li><strong>Sarcoma:</strong> Osteosarcoma occurs in 1% of cases (very poor prognosis).</li>
+        <li>Nerve compression (Deafness due to VIII nerve compression).</li>
+        <li>Heart failure.</li>
+    </ul>
+
+    <hr>
+
+    <h2 style="color: #d32f2f; border-color: #d32f2f;">IMPORTANT UNIVERSITY QUESTIONS</h2>
+
+    <div class="qa-section">
+        <h3>Q1: Classify Bone Tumors. Describe the pathogenesis and morphology of Osteosarcoma.</h3>
+        <p><strong>Introduction:</strong> Bone tumors are classified based on the matrix produced by the tumor cells. Osteosarcoma is the most common primary malignancy of bone.</p>
+        <p><strong>Body:</strong>
+            <br><strong>Classification:</strong> Osteogenic (Osteosarcoma), Chondrogenic (Chondrosarcoma), Ewing Sarcoma, Giant Cell Tumor.
+            <br><strong>Osteosarcoma:</strong>
+            <ul>
+                <li><em>Pathogenesis:</em> Arises from primitive mesenchymal cells. Mutations in RB and p53 genes are common.</li>
+                <li><em>Morphology:</em> It is a metaphyseal tumor (distal femur/proximal tibia).
+                    <br>- <strong>Gross:</strong> Large, destructive, gritty mass penetrating the cortex.
+                    <br>- <strong>Microscopy:</strong> Pleomorphic malignant cells producing <strong>Osteoid</strong> (unmineralized bone matrix).</li>
+                <li><em>Radiology:</em> Codman's Triangle (periosteal elevation) and Sunburst appearance.</li>
+            </ul>
+        </p>
+        <p><strong>Conclusion:</strong> It is aggressive but responds well to neoadjuvant chemotherapy and limb-sparing surgery.</p>
+    </div>
+
+    <div class="qa-section">
+        <h3>Q2: Discuss the phases and complications of Paget's Disease of Bone.</h3>
+        <p><strong>Introduction:</strong> Paget's disease (Osteitis Deformans) is a disorder of uncoupled bone remodeling resulting in weak, woven bone.</p>
+        <p><strong>Body:</strong>
+            <br><strong>Phases:</strong>
+            <ol>
+                <li><em>Lytic:</em> Dominant osteoclast resorption.</li>
+                <li><em>Mixed:</em> Osteoblasts lay down woven bone alongside resorption.</li>
+                <li><em>Sclerotic:</em> Dense, mineralized, mosaic bone with little cellular activity.</li>
+            </ol>
+            <br><strong>Morphology:</strong> <strong>Mosaic pattern</strong> of cement lines is pathognomonic.
+            <br><strong>Complications:</strong> Pathologic fractures, nerve compression (deafness), high-output cardiac failure, and malignant transformation to Osteosarcoma.</p>
+        <p><strong>Conclusion:</strong> It is often an incidental radiological finding in the elderly (elevated Alkaline Phosphatase with normal Calcium).</p>
+    </div>
+
+</div>
+
+</body>
+</html>

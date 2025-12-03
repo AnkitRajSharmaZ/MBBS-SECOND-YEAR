@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBBS Pathology Notes: Cardiovascular System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-yellow: #f4ff40; /* Neon yellowish highlighter */
+            --marker-green: #daffb3; /* Natural light green marker */
+            --ink-color: #2c2c2c; /* Dark grey/black ink look */
+            --paper-white: #ffffff; /* Pure white page */
+            --box-bg: #fffef0; /* Subtle warm tint for boxes */
+            --border-color: #333;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #525659; /* Grey background behind the paper */
+            font-family: 'Kalam', cursive;
+            color: var(--ink-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            line-height: 1.6;
+            font-size: 18px; /* Readable handwritten size */
+        }
+
+        /* A4 Paper Simulation */
+        .page-container {
+            background-color: var(--paper-white);
+            width: 210mm; /* A4 width */
+            min-height: 297mm; /* A4 height minimum */
+            padding: 25mm; /* Standard margins */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 32px;
+            text-align: center;
+            text-decoration: underline;
+            text-decoration-color: var(--neon-yellow);
+            text-decoration-thickness: 5px;
+            margin-bottom: 40px;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            font-size: 26px;
+            border-bottom: 3px solid var(--marker-green);
+            padding-bottom: 5px;
+            margin-top: 40px;
+            color: #1a1a1a;
+            display: inline-block;
+            width: 100%;
+        }
+
+        h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-top: 25px;
+            color: #333;
+            text-decoration: underline;
+        }
+
+        h4 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-top: 15px;
+            color: #444;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin-bottom: 15px;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* Highlighting Classes */
+        .highlight-neon {
+            background-color: var(--neon-yellow);
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .highlight-green {
+            background-color: var(--marker-green);
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        strong {
+            font-weight: 700;
+        }
+
+        /* Hand-drawn Box Style */
+        .hand-drawn-box {
+            border: 2px solid var(--border-color);
+            /* Irregular border radius for hand-drawn effect */
+            border-radius: 2px 20px 3px 25px / 25px 3px 20px 2px;
+            padding: 20px;
+            margin: 25px 0;
+            background-color: var(--box-bg); 
+            box-shadow: 3px 4px 0px rgba(0,0,0,0.1);
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 20px 0;
+            font-size: 16px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: var(--marker-green);
+            font-weight: bold;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        tr td:last-child, tr th:last-child {
+            border-right: none;
+        }
+
+        /* Model Answer Section */
+        .qa-section {
+            border-left: 4px solid var(--neon-yellow);
+            padding-left: 20px;
+            margin-top: 30px;
+        }
+
+        /* Print Settings */
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+            .page-container {
+                width: 100%;
+                box-shadow: none;
+                margin: 0;
+                padding: 15mm;
+            }
+            /* Ensure background colors print */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            h1, h2, h3 {
+                page-break-after: avoid;
+            }
+            table, .hand-drawn-box, li {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 800px) {
+            .page-container {
+                width: 100%;
+                padding: 15px;
+            }
+            table {
+                font-size: 14px;
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-container">
+
+    <h1>TOPIC 04: CARDIOVASCULAR SYSTEM</h1>
+
+    <p><strong>Syllabus Scope:</strong> Arteriosclerosis, Aneurysms, Heart Failure, Rheumatic Fever, Ischemic Heart Disease.</p>
+
+    <h2>1. ARTERIOSCLEROSIS</h2>
+
+    <p><strong>Definition:</strong> Arteriosclerosis literally means "hardening of the arteries". It is a generic term reflecting arterial wall thickening and loss of elasticity.</p>
+
+    <div class="hand-drawn-box">
+        <h3>Distinction: Arteriosclerosis vs. Atherosclerosis</h3>
+        <ul>
+            <li><strong>Arteriosclerosis:</strong> A broad umbrella term for any hardening of arteries. It includes 3 types:
+                <ol>
+                    <li><span class="highlight-green">Arteriolosclerosis</span> (Small arteries/arterioles).</li>
+                    <li><span class="highlight-green">Mönckeberg Medial Sclerosis</span> (Muscular arteries).</li>
+                    <li><span class="highlight-green">Atherosclerosis</span> (Large/Medium arteries).</li>
+                </ol>
+            </li>
+            <li><strong>Atherosclerosis:</strong> A <em>specific</em> type of arteriosclerosis characterized by the formation of <span class="highlight-neon">Atheromas</span> (fibrofatty plaques) in the intima.</li>
+        </ul>
+    </div>
+
+    <h3>Types and Pathology</h3>
+
+    <h4>1. Mönckeberg Medial Sclerosis</h4>
+    <ul>
+        <li><strong>Definition:</strong> Calcific deposits in muscular arteries (e.g., Radial, Ulnar) in people >50 years.</li>
+        <li><strong>Pathology:</strong> Ring-like calcifications in the <strong>media</strong> of the arteries. They do <em>not</em> encroach on the lumen and are clinically insignificant (incidental finding on X-ray).</li>
+    </ul>
+
+    <h4>2. Arteriolosclerosis</h4>
+    <p>Affects small arteries and arterioles, typically associated with <strong>Hypertension</strong> and <strong>Diabetes</strong>. Two morphologic variants:</p>
+    <ul>
+        <li><strong>Hyaline Arteriolosclerosis:</strong>
+            <ul>
+                <li><em>Pathogenesis:</em> Plasma protein leakage across injured endothelium + increased smooth muscle cell (SMC) matrix synthesis.</li>
+                <li><em>Microscopy:</em> Homogeneous, pink, hyaline thickening of the wall with luminal narrowing.</li>
+                <li><em>Association:</em> Benign Hypertension, Diabetes, Aging.</li>
+            </ul>
+        </li>
+        <li><strong>Hyperplastic Arteriolosclerosis:</strong>
+            <ul>
+                <li><em>Pathogenesis:</em> Severe/Malignant Hypertension.</li>
+                <li><em>Microscopy:</em> <span class="highlight-neon">"Onion-skin"</span> appearance due to concentric lamination of smooth muscle cells and thickened basement membrane. Fibrinoid necrosis may be present.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h4>3. Atherosclerosis</h4>
+    <ul>
+        <li><strong>Definition:</strong> Disease of large/medium arteries characterized by intimal lesions called <strong>Atheromas</strong> (fibrous cap + necrotic lipid core).</li>
+        <li><strong>Pathogenesis (Response to Injury Hypothesis):</strong>
+            <ol>
+                <li><strong>Chronic Endothelial Injury:</strong> Due to Hyperlipidemia, HTN, Smoking, Homocysteine.</li>
+                <li><strong>Endothelial Dysfunction:</strong> Increased permeability, adhesion of leukocytes.</li>
+                <li><strong>Macrophage Activation:</strong> Monocytes adhere, enter intima, become macrophages, and engulf oxidized LDL to become <span class="highlight-green">Foam Cells</span>.</li>
+                <li><strong>SMC Proliferation:</strong> Smooth muscle cells migrate from media to intima, proliferate, and deposit extracellular matrix (Collagen).</li>
+            </ol>
+        </li>
+        <li><strong>Morphology:</strong>
+            <ul>
+                <li><em>Fatty Streak:</em> Early lesion. Lipid-filled foam cells. Flat, yellow spots.</li>
+                <li><em>Atheromatous Plaque:</em> Raised white-yellow lesion. 
+                    <br>- <strong>Fibrous Cap:</strong> SMCs, collagen.
+                    <br>- <strong>Necrotic Core:</strong> Lipid, debris, foam cells, calcium.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <hr>
+
+    <h2>2. ANEURYSMS</h2>
+
+    <p><strong>Definition:</strong> A localized abnormal dilation of a blood vessel or the heart.</p>
+
+    <h3>Etiology and Pathogenesis</h3>
+    <p>Aneurysms form when the structure or function of the connective tissue within the vascular wall is compromised.</p>
+    <ul>
+        <li><strong>Atherosclerosis:</strong> Major cause of <strong>Abdominal Aortic Aneurysms (AAA)</strong>. Plaque compresses media &rarr; nutrient/waste diffusion blocked &rarr; medial degeneration &rarr; weakening.</li>
+        <li><strong>Hypertension:</strong> Major cause of <strong>Thoracic Aortic Aneurysms</strong>. Increases wall stress.</li>
+        <li><strong>Cystic Medial Degeneration:</strong> Loss of elastic fibers and SMCs (seen in Marfan syndrome, scurvy).</li>
+        <li><strong>Infections (Mycotic):</strong> Embolization of septic thrombi (e.g., Salmonella, Syphilis).</li>
+        <li><strong>Syphilis (Tertiary):</strong> Obliterative endarteritis of vasa vasorum &rarr; Ischemic destruction of media &rarr; "Tree-bark" appearance.</li>
+    </ul>
+
+    <h3>Types and Pathology</h3>
+    <ol>
+        <li><strong>True Aneurysm:</strong> Involves all 3 layers (Intima, Media, Adventitia).
+            <ul>
+                <li><em>Saccular:</em> Spherical outpouching (5-20 cm).</li>
+                <li><em>Fusiform:</em> Diffuse, circumferential dilation.</li>
+            </ul>
+        </li>
+        <li><strong>False Aneurysm (Pseudoaneurysm):</strong> A breach in the vascular wall leading to an extravascular hematoma (pulsating hematoma) contained by extravascular connective tissue.</li>
+        <li><strong>Dissecting Aneurysm (Aortic Dissection):</strong> Blood enters the wall through an intimal tear and dissects between laminar planes of the media. (Type A: Ascending aorta, Type B: Descending).</li>
+    </ol>
+
+    <h3>Complications</h3>
+    <ul>
+        <li><strong>Rupture:</strong> Massive hemorrhage (Fatal). Risk correlates with size (>5-6 cm).</li>
+        <li><strong>Obstruction:</strong> Compression of branch vessels (Ischemia of kidneys/legs).</li>
+        <li><strong>Embolism:</strong> From mural thrombus within the aneurysm sac.</li>
+        <li><strong>Compression:</strong> Of adjacent structures (ureter, vertebrae).</li>
+    </ul>
+
+    <hr>
+
+    <h2>3. HEART FAILURE (CONGESTIVE CARDIAC FAILURE)</h2>
+    <p><strong>Definition:</strong> A clinical syndrome where the heart is unable to pump blood at a rate sufficient to meet the metabolic demands of the tissues, or can do so only at elevated filling pressures.</p>
+
+    <h3>Etiology</h3>
+    <ul>
+        <li><strong>Systolic Dysfunction (Pump failure):</strong> IHD, Dilated Cardiomyopathy, Valvular regurgitation.</li>
+        <li><strong>Diastolic Dysfunction (Filling failure):</strong> LV Hypertrophy, Fibrosis, Amyloidosis, Constrictive Pericarditis.</li>
+    </ul>
+
+    <h3>Pathophysiology (Compensatory Mechanisms)</h3>
+    <ol>
+        <li><strong>Frank-Starling Mechanism:</strong> Increased end-diastolic volume (dilation) stretches fibers to increase contractility.</li>
+        <li><strong>Myocardial Hypertrophy:</strong>
+            <ul>
+                <li><em>Pressure Overload:</em> <span class="highlight-neon">Concentric Hypertrophy</span> (Wall thickens, lumen normal/small).</li>
+                <li><em>Volume Overload:</em> <span class="highlight-green">Eccentric Hypertrophy</span> (Wall thickens + Chamber dilation).</li>
+            </ul>
+        </li>
+        <li><strong>Neurohumoral Activation:</strong> RAAS activation, Sympathetic nervous system, ANP/BNP release.</li>
+    </ol>
+
+    <h3>Pathology and Clinical Features</h3>
+    
+    <h4>Left-Sided Heart Failure</h4>
+    <ul>
+        <li><strong>Pathology:</strong> Backpressure into pulmonary veins.
+            <ul>
+                <li><em>Lungs:</em> Heavy, wet. <strong>Pulmonary Edema</strong>.</li>
+                <li><em>Microscopy:</em> <strong>Heart Failure Cells</strong> (Hemosiderin-laden macrophages in alveoli).</li>
+            </ul>
+        </li>
+        <li><strong>Clinical:</strong> Dyspnea, Orthopnea, Paroxysmal Nocturnal Dyspnea (PND), Cough, Crepitations.</li>
+    </ul>
+
+    <h4>Right-Sided Heart Failure</h4>
+    <ul>
+        <li><strong>Etiology:</strong> Most commonly secondary to Left Heart Failure. Pure right failure = Cor Pulmonale.</li>
+        <li><strong>Pathology:</strong> Systemic venous congestion.
+            <ul>
+                <li><em>Liver:</em> <span class="highlight-neon">Nutmeg Liver</span> (Chronic Passive Congestion). Centrilobular necrosis.</li>
+                <li><em>Spleen:</em> Congestive Splenomegaly.</li>
+                <li><em>Subcutaneous Tissue:</em> Peripheral Edema (Anasarca).</li>
+            </ul>
+        </li>
+        <li><strong>Clinical:</strong> Distended Neck Veins (JVP), Hepatomegaly, Ascites, Pitting Edema.</li>
+    </ul>
+
+    <hr>
+
+    <h2>4. RHEUMATIC FEVER (RF) & RHEUMATIC HEART DISEASE (RHD)</h2>
+    
+    <p><strong>Definition:</strong> An acute, immunologically mediated, multisystem inflammatory disease occurring a few weeks after an episode of Group A Streptococcal pharyngitis.</p>
+
+    <h3>Etiology and Pathogenesis</h3>
+    <ul>
+        <li><strong>Cause:</strong> Group A Beta-Hemolytic Streptococcus (Pharyngitis).</li>
+        <li><strong>Mechanism:</strong> <span class="highlight-neon">Molecular Mimicry</span> (Type II Hypersensitivity). Antibodies against Streptococcal M-protein cross-react with host antigens in the heart (myosin, valves), joints, and brain.</li>
+    </ul>
+
+    <h3>Pathology (Morphology)</h3>
+    <ol>
+        <li><strong>Acute Phase (Pancarditis):</strong> Inflammation of all three layers.
+            <ul>
+                <li><strong>Aschoff Bodies:</strong> The pathognomonic lesion. Foci of fibrinoid necrosis surrounded by lymphocytes, plasma cells, and macrophages.</li>
+                <li><strong>Anitschkow Cells:</strong> Activated macrophages in Aschoff bodies ("Caterpillar cells" due to chromatin pattern).</li>
+                <li><strong>Endocarditis:</strong> Small, warty vegetations (<strong>Verrucae</strong>) along the lines of closure of valves (Mitral > Aortic).</li>
+            </ul>
+        </li>
+        <li><strong>Chronic Phase (RHD):</strong>
+            <ul>
+                <li>Organization of inflammation leads to fibrosis.</li>
+                <li><strong>Mitral Stenosis:</strong> Leaflet thickening, commissural fusion, shortening of chordae tendineae ("Fish-mouth" or "Buttonhole" stenosis).</li>
+                <li><strong>MacCallum's Patch:</strong> Subendocardial thickening in the left atrium.</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h3>Diagnosis (Jones Criteria)</h3>
+    <p>Evidence of preceding Strep infection + 2 Major OR 1 Major + 2 Minor criteria.</p>
+    <ul>
+        <li><strong>Major:</strong> Carditis, Migratory Polyarthritis, Sydenham Chorea, Erythema Marginatum, Subcutaneous Nodules.</li>
+        <li><strong>Minor:</strong> Fever, Arthralgia, Elevated ESR/CRP, Prolonged PR interval.</li>
+    </ul>
+
+    <hr>
+
+    <h2>5. ISCHEMIC HEART DISEASE (IHD)</h2>
+    <p><strong>Definition:</strong> A group of syndromes resulting from myocardial ischemia, an imbalance between blood supply (perfusion) and myocardial oxygen demand.</p>
+
+    <h3>Epidemiology and Risk Factors</h3>
+    <ul>
+        <li>Leading cause of death globally.</li>
+        <li><strong>Risk Factors:</strong>
+            <ul>
+                <li><em>Major (Modifiable):</em> Dyslipidemia (High LDL, Low HDL), Hypertension, Smoking, Diabetes.</li>
+                <li><em>Major (Non-modifiable):</em> Age, Gender (Male > Female pre-menopause), Genetics.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>Pathophysiology</h3>
+    <p>90% cases are due to <strong>Coronary Atherosclerosis</strong>.
+    <br><strong>Acute Coronary Syndromes (ACS):</strong> Triggered by <span class="highlight-neon">Acute Plaque Change</span> (Rupture/Erosion) &rarr; Superimposed Thrombosis &rarr; Occlusion.</p>
+
+    <h3>Clinical Presentations</h3>
+    <ol>
+        <li><strong>Angina Pectoris:</strong> Transient ischemia (no necrosis).
+            <ul>
+                <li><em>Stable:</em> Exertional, relieved by rest (Fixed stenosis).</li>
+                <li><em>Unstable:</em> At rest, increasing frequency (Plaque disruption). Pre-infarction.</li>
+                <li><em>Prinzmetal:</em> Vasospasm.</li>
+            </ul>
+        </li>
+        <li><strong>Myocardial Infarction (MI):</strong> Irreversible necrosis.</li>
+        <li><strong>Chronic IHD:</strong> Heart failure due to ischemic damage.</li>
+        <li><strong>Sudden Cardiac Death:</strong> Fatal arrhythmia (V-fib).</li>
+    </ol>
+
+    <h3>Morphology of Myocardial Infarction (Timeline)</h3>
+    <p>Evolution of ischemic necrosis.</p>
+
+    <table border="1">
+        <tr>
+            <th>Time</th>
+            <th>Gross Appearance</th>
+            <th>Microscopic Appearance</th>
+        </tr>
+        <tr>
+            <td><strong>0-4 Hours</strong></td>
+            <td>None (Normal).</td>
+            <td>None or Waviness of fibers.</td>
+        </tr>
+        <tr>
+            <td><strong>4-12 Hours</strong></td>
+            <td>Dark mottling (occasional).</td>
+            <td><strong>Coagulative Necrosis</strong> (loss of nuclei), Edema, Hemorrhage.</td>
+        </tr>
+        <tr>
+            <td><strong>12-24 Hours</strong></td>
+            <td>Dark mottling (Red-Blue).</td>
+            <td>Pyknosis of nuclei, Hypereosinophilia, <span class="highlight-green">Neutrophilic Infiltration</span> begins.</td>
+        </tr>
+        <tr>
+            <td><strong>1-3 Days</strong></td>
+            <td>Mottling with yellow-tan center.</td>
+            <td>Coagulative necrosis (loss of striations), <strong>Dense Neutrophilic infiltrate</strong>.</td>
+        </tr>
+        <tr>
+            <td><strong>3-7 Days</strong></td>
+            <td>Hyperemic border, yellow soft center.</td>
+            <td><strong>Macrophage</strong> infiltration (phagocytosis of debris).</td>
+        </tr>
+        <tr>
+            <td><strong>7-10 Days</strong></td>
+            <td>Maximally yellow-tan and soft.</td>
+            <td><strong>Granulation Tissue</strong> formation at margins.</td>
+        </tr>
+        <tr>
+            <td><strong>2-8 Weeks</strong></td>
+            <td>Grey-white scar.</td>
+            <td>Collagen deposition (Fibrosis).</td>
+        </tr>
+        <tr>
+            <td><strong>> 2 Months</strong></td>
+            <td>Dense white scar.</td>
+            <td>Dense collagenous scar.</td>
+        </tr>
+    </table>
+
+    <h3>Diagnostic Tests</h3>
+    <ul>
+        <li><strong>Cardiac Troponins (TnI, TnT):</strong> Gold standard. Rise in 3-4 hrs, peak 24-48 hrs, persist 7-10 days.</li>
+        <li><strong>CK-MB:</strong> Rises in 4 hrs, peaks 24 hrs, normal by 72 hrs (Useful for <span class="highlight-neon">Re-infarction</span>).</li>
+        <li><strong>ECG:</strong> ST-segment elevation (STEMI), T-wave inversion, Q waves.</li>
+    </ul>
+
+    <h3>Complications of MI</h3>
+    <ul>
+        <li><strong>Arrhythmias:</strong> Most common cause of death in first few hours.</li>
+        <li><strong>Cardiogenic Shock:</strong> If >40% LV is infarcted.</li>
+        <li><strong>Myocardial Rupture (Day 3-7):</strong> Free wall (Tamponade), Septum (VSD), Papillary muscle (Mitral Regurgitation).</li>
+        <li><strong>Ventricular Aneurysm:</strong> Late complication.</li>
+        <li><strong>Mural Thrombus:</strong> Risk of embolism.</li>
+    </ul>
+
+    <hr>
+
+    <h2 style="color: #d32f2f; border-color: #d32f2f;">IMPORTANT UNIVERSITY QUESTIONS</h2>
+
+    <div class="qa-section">
+        <h3>Q1: Define Rheumatic Fever. Describe the genesis and morphology of Aschoff Bodies.</h3>
+        <p><strong>Introduction:</strong> Rheumatic fever is an immune-mediated inflammatory disease following Group A Streptococcal infection. It is a major cause of acquired valvular disease.</p>
+        <p><strong>Body:</strong>
+            <br><strong>Pathogenesis:</strong> It is a Type II Hypersensitivity reaction involving molecular mimicry. Antibodies against Strep M-protein cross-react with cardiac antigens (myosin, laminar).
+            <br><strong>Aschoff Body (Morphology):</strong>
+            <ul>
+                <li>It is the pathognomonic granulomatous lesion of RF, found in the myocardium/interstitium.</li>
+                <li><em>Composition:</em> Central fibrinoid necrosis surrounded by lymphocytes (T-cells), plasma cells, and activated macrophages.</li>
+                <li><em>Anitschkow Cells:</em> Specialized macrophages with abundant cytoplasm and central round nucleus with chromatin condensed into a wavy ribbon ("Caterpillar cells"). In cross-section, they look like "Owl eyes".</li>
+                <li><em>Aschoff Giant Cells:</em> Multinucleated giant cells derived from macrophages.</li>
+            </ul>
+        </p>
+        <p><strong>Conclusion:</strong> Aschoff bodies eventually heal by fibrosis, contributing to the scarring of RHD.</p>
+    </div>
+
+    <div class="qa-section">
+        <h3>Q2: Describe the sequential morphological changes in Myocardial Infarction.</h3>
+        <p><strong>Introduction:</strong> Myocardial infarction is coagulative necrosis of the heart muscle due to ischemia. The morphology changes predictably over time.</p>
+        <p><strong>Body:</strong>
+            <br><strong>Gross & Microscopic Evolution:</strong>
+            <ul>
+                <li><em>0-12 Hours:</em> Grossly normal or mild mottling. Micro: Waviness of fibers (1-3 hrs) followed by onset of coagulative necrosis.</li>
+                <li><em>12-24 Hours:</em> Grossly dark mottling. Micro: Pyknosis of nuclei, intense eosinophilia, and early neutrophilic infiltrate.</li>
+                <li><em>1-3 Days:</em> Grossly yellow-tan center. Micro: Peak neutrophilic infiltration causing disintegration of myofibers.</li>
+                <li><em>3-7 Days:</em> Grossly hyperemic border. Micro: Macrophages replace neutrophils to clear debris.</li>
+                <li><em>1-2 Weeks:</em> Grossly red-grey margins. Micro: Granulation tissue (new vessels, fibroblasts) fills the defect.</li>
+                <li><em>> 2 Months:</em> Grossly white scar. Micro: Dense collagenous fibrosis.</li>
+            </ul>
+        </p>
+        <p><strong>Conclusion:</strong> Dating an infarct is crucial for medicolegal purposes and correlating with clinical complications (e.g., rupture occurs when the wall is softest at 3-7 days).</p>
+    </div>
+
+</div>
+
+</body>
+</html>

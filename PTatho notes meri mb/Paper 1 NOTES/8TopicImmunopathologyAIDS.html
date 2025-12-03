@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBBS Pathology Notes: Immunopathology & AIDS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-yellow: #f4ff40; /* Neon yellowish highlighter */
+            --marker-green: #daffb3; /* Natural light green marker */
+            --ink-color: #2c2c2c; /* Dark grey/black ink look */
+            --paper-white: #ffffff; /* Pure white page */
+            --box-bg: #fffef0; /* Subtle warm tint for boxes */
+            --border-color: #333;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #525659; /* Grey background behind the paper */
+            font-family: 'Kalam', cursive;
+            color: var(--ink-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            line-height: 1.6;
+            font-size: 18px; /* Readable handwritten size */
+        }
+
+        /* A4 Paper Simulation */
+        .page-container {
+            background-color: var(--paper-white);
+            width: 210mm; /* A4 width */
+            min-height: 297mm; /* A4 height minimum */
+            padding: 25mm; /* Standard margins */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 32px;
+            text-align: center;
+            text-decoration: underline;
+            text-decoration-color: var(--neon-yellow);
+            text-decoration-thickness: 5px;
+            margin-bottom: 40px;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            font-size: 26px;
+            border-bottom: 3px solid var(--marker-green);
+            padding-bottom: 5px;
+            margin-top: 40px;
+            color: #1a1a1a;
+            display: inline-block;
+            width: 100%;
+        }
+
+        h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-top: 25px;
+            color: #333;
+            text-decoration: underline;
+        }
+
+        h4 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-top: 15px;
+            color: #444;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin-bottom: 15px;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* Highlighting Classes */
+        .highlight-neon {
+            background-color: var(--neon-yellow);
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .highlight-green {
+            background-color: var(--marker-green);
+            padding: 2px 5px;
+            border-radius: 4px;
+        }
+
+        strong {
+            font-weight: 700;
+        }
+
+        /* Hand-drawn Box Style */
+        .hand-drawn-box {
+            border: 2px solid var(--border-color);
+            /* Irregular border radius for hand-drawn effect */
+            border-radius: 2px 20px 3px 25px / 25px 3px 20px 2px;
+            padding: 20px;
+            margin: 25px 0;
+            background-color: var(--box-bg); 
+            box-shadow: 3px 4px 0px rgba(0,0,0,0.1);
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 20px 0;
+            font-size: 16px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: var(--marker-green);
+            font-weight: bold;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        tr td:last-child, tr th:last-child {
+            border-right: none;
+        }
+
+        /* Model Answer Section */
+        .qa-section {
+            border-left: 4px solid var(--neon-yellow);
+            padding-left: 20px;
+            margin-top: 30px;
+        }
+
+        /* Print Settings */
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+            .page-container {
+                width: 100%;
+                box-shadow: none;
+                margin: 0;
+                padding: 15mm;
+            }
+            /* Ensure background colors print */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            h1, h2, h3 {
+                page-break-after: avoid;
+            }
+            table, .hand-drawn-box, li {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 800px) {
+            .page-container {
+                width: 100%;
+                padding: 15px;
+            }
+            table {
+                font-size: 14px;
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-container">
+
+    <h1>TOPIC 8: IMMUNOPATHOLOGY AND AIDS</h1>
+
+    <p><strong>Syllabus Focus:</strong> Immunity, Hypersensitivity, HLA & Transplant, Autoimmunity (SLE, RA, etc.), and HIV/AIDS.</p>
+
+    <h2>1. PRINCIPLES AND MECHANISMS OF IMMUNITY</h2>
+
+    <p><strong>Definition:</strong> Immunity is the resistance exhibited by the host against invasion by foreign antigens, including microorganisms.</p>
+
+    <div class="hand-drawn-box">
+        <h3>Types of Immunity</h3>
+        <p><strong>1. Innate (Natural/Native) Immunity:</strong></p>
+        <ul>
+            <li>First line of defense; present from birth.</li>
+            <li><strong>Characteristics:</strong> Non-specific, rapid response, <span class="highlight-neon">No memory</span>.</li>
+            <li><strong>Components:</strong>
+                <ul>
+                    <li><em>Physical Barriers:</em> Skin, mucous membranes.</li>
+                    <li><em>Cells:</em> Neutrophils, Macrophages, NK cells, Dendritic cells.</li>
+                    <li><em>Proteins:</em> Complement system, C-reactive protein (CRP).</li>
+                </ul>
+            </li>
+            <li><strong>Mechanism:</strong> Recognizes "Pathogen-Associated Molecular Patterns" (PAMPs) via "Pattern Recognition Receptors" (e.g., <span class="highlight-green">Toll-like Receptors/TLRs</span>).</li>
+        </ul>
+
+        <p><strong>2. Adaptive (Acquired) Immunity:</strong></p>
+        <ul>
+            <li>Second line of defense; develops after exposure.</li>
+            <li><strong>Characteristics:</strong> Specific, diverse, <span class="highlight-neon">Immunologic Memory</span>, Self-tolerance.</li>
+            <li><strong>Types:</strong>
+                <ul>
+                    <li><strong>Humoral Immunity:</strong> Mediated by <span class="highlight-green">B-cells</span> & Antibodies (extracellular microbes).</li>
+                    <li><strong>Cell-Mediated Immunity (CMI):</strong> Mediated by <span class="highlight-green">T-cells</span> (intracellular microbes like viruses, TB).</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <h3>Cells of the Immune System</h3>
+    <ul>
+        <li><strong>T Lymphocytes (60-70% of blood lymphocytes):</strong> Mature in Thymus.
+            <ul>
+                <li><strong>CD4+ Helper T Cells:</strong> The "Generals". Recognize antigen with <span class="highlight-neon">MHC Class II</span>. Secrete cytokines to activate B cells and Macrophages.</li>
+                <li><strong>CD8+ Cytotoxic T Cells:</strong> The "Soldiers". Recognize antigen with <span class="highlight-neon">MHC Class I</span>. Directly kill infected cells.</li>
+            </ul>
+        </li>
+        <li><strong>B Lymphocytes (10-20%):</strong> Mature in Bone Marrow. Differentiate into <strong>Plasma cells</strong> to secrete antibodies (IgM, G, A, E, D).</li>
+        <li><strong>Natural Killer (NK) Cells:</strong> Part of innate immunity. Kill tumor/virus cells that have <em>lost</em> MHC Class I.</li>
+        <li><strong>Antigen Presenting Cells (APCs):</strong> Dendritic cells (most potent), Macrophages, B cells.</li>
+    </ul>
+
+    <hr>
+
+    <h2>2. HYPERSENSITIVITY REACTIONS</h2>
+    <p><strong>Definition:</strong> An exaggerated or injurious immune response to an antigen resulting in tissue damage.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Mechanism</th>
+                <th>Mediators</th>
+                <th>Examples</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Type I (Immediate/ Anaphylactic)</strong></td>
+                <td><strong>IgE-mediated.</strong> Antigen binds to IgE on sensitized <span class="highlight-green">Mast cells</span> & Basophils &rarr; Degranulation.</td>
+                <td>Histamine (vasodilation, permeability), Leukotrienes, Prostaglandins.</td>
+                <td>Anaphylaxis, Bronchial Asthma, Allergic Rhinitis (Hay fever), Urticaria.</td>
+            </tr>
+            <tr>
+                <td><strong>Type II (Antibody-Mediated/ Cytotoxic)</strong></td>
+                <td><strong>IgG or IgM</strong> binds to fixed antigens on cells/tissues. Causes injury by:<br>1. Phagocytosis (Opsonization).<br>2. Inflammation (Complement).<br>3. Cellular dysfunction.</td>
+                <td>Antibodies, Complement (C3b, MAC).</td>
+                <td>Transfusion reactions, Erythroblastosis fetalis, <span class="highlight-neon">Goodpasture Syndrome</span>, Myasthenia Gravis, Graves' Disease.</td>
+            </tr>
+            <tr>
+                <td><strong>Type III (Immune Complex)</strong></td>
+                <td><strong>Antigen-Antibody Complexes</strong> form in circulation and deposit in vessels/tissues &rarr; Activate Complement &rarr; Inflammation (Neutrophils).</td>
+                <td>Immune complexes, C5a, Neutrophil enzymes.</td>
+                <td><span class="highlight-neon">SLE</span>, Serum Sickness, Arthus Reaction, Post-streptococcal Glomerulonephritis (PSGN).</td>
+            </tr>
+            <tr>
+                <td><strong>Type IV (Cell-Mediated/ Delayed)</strong></td>
+                <td><strong>T-cell mediated.</strong> No antibodies.<br>1. <strong>CD4+ (Delayed):</strong> Release cytokines (IFN-&gamma;) &rarr; Macrophage activation &rarr; <span class="highlight-green">Granuloma</span>.<br>2. <strong>CD8+ (Cytotoxicity):</strong> Direct killing.</td>
+                <td>Th1/Th17 cells, Cytokines (IFN-&gamma;, TNF), CD8+ T cells.</td>
+                <td><span class="highlight-neon">Tuberculosis</span>, Contact Dermatitis, Type 1 Diabetes, Rheumatoid Arthritis, Graft Rejection.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h2>3. HLA SYSTEM AND TRANSPLANTATION</h2>
+    
+    <h3>The HLA System (MHC)</h3>
+    <p>The <strong>Major Histocompatibility Complex (MHC)</strong> in humans is called <strong>HLA (Human Leukocyte Antigen)</strong>. Genes are on Chromosome 6.</p>
+    <ul>
+        <li><strong>MHC Class I (HLA-A, B, C):</strong> Present on <em>all nucleated cells</em> and platelets. Recognized by <span class="highlight-green">CD8+ T cells</span>.</li>
+        <li><strong>MHC Class II (HLA-DP, DQ, DR):</strong> Present on <em>APCs</em> (Dendritic cells, Macrophages, B cells). Recognized by <span class="highlight-green">CD4+ T cells</span>.</li>
+        <li><strong>Significance:</strong> Essential for antigen presentation, transplant matching, and disease associations (e.g., <strong>HLA-B27</strong> & Ankylosing Spondylitis).</li>
+    </ul>
+
+    <div class="hand-drawn-box">
+        <h3>Mechanisms of Transplant Rejection</h3>
+        <p>Rejection is the immune destruction of the graft by the host.</p>
+        <ol>
+            <li><strong>Hyperacute Rejection:</strong>
+                <ul>
+                    <li><strong>Time:</strong> Minutes to hours (on the operating table).</li>
+                    <li><strong>Cause:</strong> <span class="highlight-neon">Preformed antibodies</span> in the recipient against donor antigens (e.g., ABO mismatch).</li>
+                    <li><strong>Morphology:</strong> Thrombosis of graft vessels, ischemic necrosis. The kidney becomes cyanotic and flaccid.</li>
+                </ul>
+            </li>
+            <li><strong>Acute Rejection:</strong>
+                <ul>
+                    <li><strong>Time:</strong> Days to weeks (or months if immunosuppression stops).</li>
+                    <li><strong>Mechanism:</strong> 
+                        <ul>
+                            <li><em>Acute Cellular:</em> T-cells destroy graft parenchyma (Tubulitis in kidney).</li>
+                            <li><em>Acute Humoral:</em> Antibodies cause vasculitis (Necrotizing vasculitis).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Treatment:</strong> Responds well to immunosuppression.</li>
+                </ul>
+            </li>
+            <li><strong>Chronic Rejection:</strong>
+                <ul>
+                    <li><strong>Time:</strong> Months to years.</li>
+                    <li><strong>Mechanism:</strong> Chronic inflammation leading to <span class="highlight-neon">Fibrosis</span> and Arteriolosclerosis (thickening of vessel walls).</li>
+                    <li><strong>Result:</strong> Progressive loss of organ function (e.g., rising creatinine). Irreversible.</li>
+                </ul>
+            </li>
+        </ol>
+        <p><strong>Graft Versus Host Disease (GVHD):</strong> Seen in Bone Marrow Transplants. Donor T-cells attack the immunodeficient Recipient. Targets: Skin (rash), Liver (jaundice), Gut (diarrhea).</p>
+    </div>
+
+    <hr>
+
+    <h2>4. AUTOIMMUNITY</h2>
+    <p><strong>Definition:</strong> Immune reaction against self-antigens due to a loss of <strong>Self-Tolerance</strong>.</p>
+    
+    <h3>Mechanisms of Tolerance</h3>
+    <ul>
+        <li><strong>Central Tolerance:</strong> Deletion of self-reactive T and B clones during maturation in Thymus and Bone Marrow (Negative selection).</li>
+        <li><strong>Peripheral Tolerance:</strong> Silencing of self-reactive cells that escape to the periphery via <strong>Anergy</strong> (inactivation), <strong>Suppression</strong> (by <span class="highlight-green">Regulatory T cells / Tregs</span>), or <strong>Apoptosis</strong>.</li>
+    </ul>
+
+    <h3>Pathogenesis of Autoimmunity</h3>
+    <ul>
+        <li><strong>Genetic Susceptibility:</strong> Strong association with HLA genes (e.g., HLA-DR3 in SLE).</li>
+        <li><strong>Environmental Triggers:</strong>
+            <ul>
+                <li><em>Infections:</em> Molecular Mimicry (microbial antigens resemble self-antigens, e.g., Rheumatic Fever).</li>
+                <li><em>Tissue Injury:</em> Exposure of sequestered antigens (e.g., sperm, eye lens).</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>Enumeration of Autoimmune Disorders</h3>
+    <ul>
+        <li><strong>Systemic:</strong> SLE, Rheumatoid Arthritis, Sjogren Syndrome, Systemic Sclerosis, Polyarteritis Nodosa.</li>
+        <li><strong>Organ-Specific:</strong> Hashimoto Thyroiditis, Graves' Disease, Type 1 Diabetes, Myasthenia Gravis, Pernicious Anemia.</li>
+    </ul>
+
+    <hr>
+
+    <h2>5. SYSTEMIC LUPUS ERYTHEMATOSUS (SLE)</h2>
+    <p><strong>Definition:</strong> A chronic, multisystem autoimmune disease characterized by a vast array of autoantibodies, particularly <strong>Antinuclear Antibodies (ANAs)</strong>.</p>
+
+    <h3>Etiology and Pathogenesis</h3>
+    <ol>
+        <li><strong>Genetic Factors:</strong> Familial association; HLA-DR2, HLA-DR3; Deficiency of Complement (C1q, C2, C4).</li>
+        <li><strong>Environmental Factors:</strong> <span class="highlight-neon">UV Radiation</span> (damages DNA, induces apoptosis), Drugs (Procainamide, Hydralazine), Sex Hormones (Estrogen - more common in females).</li>
+        <li><strong>Immunologic Mechanism:</strong>
+            <ul>
+                <li>Failure of self-tolerance in B and T cells.</li>
+                <li>Defective clearance of <strong>Apoptotic bodies</strong> (nuclear material persists).</li>
+                <li><strong>Type III Hypersensitivity:</strong> Antigen-Antibody complexes deposit in tissues (Kidney, Skin).</li>
+                <li><strong>Type II Hypersensitivity:</strong> Autoantibodies against blood cells (RBCs, Platelets).</li>
+            </ul>
+        </li>
+    </ol>
+
+    <div class="hand-drawn-box">
+        <strong>Important Autoantibodies in SLE:</strong>
+        <ul>
+            <li><strong>ANA (Antinuclear Antibody):</strong> Sensitive but not specific. Best screening test.</li>
+            <li><strong>Anti-dsDNA:</strong> Highly specific for SLE; correlates with disease activity and nephritis.</li>
+            <li><strong>Anti-Smith (Anti-Sm):</strong> Highly specific for SLE.</li>
+            <li><strong>Antiphospholipid Antibodies:</strong> Associated with thrombosis and fetal loss (secondary APLA syndrome).</li>
+        </ul>
+    </div>
+
+    <h3>Morphology (Pathology)</h3>
+    <ol>
+        <li><strong>Kidney (Lupus Nephritis):</strong> Most serious complication. Deposition of immune complexes in glomeruli.
+            <ul>
+                <li><em>Class I:</em> Minimal mesangial.</li>
+                <li><em>Class II:</em> Mesangial proliferative.</li>
+                <li><em>Class III:</em> Focal proliferative.</li>
+                <li><em>Class IV:</em> <strong>Diffuse proliferative</strong> (Most common and severe; "Wire-loop" lesions).</li>
+                <li><em>Class V:</em> Membranous.</li>
+                <li><em>Class VI:</em> Advanced sclerosing.</li>
+            </ul>
+        </li>
+        <li><strong>Skin:</strong> <span class="highlight-green">Malar (Butterfly) Rash</span> over face. Microscopy shows liquefactive degeneration of the basal layer and edema. Immunofluorescence shows "Lupus Band Test" (Ig/Complement at dermo-epidermal junction).</li>
+        <li><strong>Heart:</strong> <span class="highlight-neon">Libman-Sacks Endocarditis</span> (Sterile, warty vegetations on <em>both</em> sides of valves). Pericarditis is the most common cardiac finding.</li>
+        <li><strong>Joints:</strong> Non-erosive synovitis (little deformity compared to RA).</li>
+        <li><strong>LE Cell:</strong> A neutrophil or macrophage that has engulfed the denatured nuclear material (hematoxylin body) of another cell.</li>
+    </ol>
+
+    <p><strong>Clinical Features:</strong> Young female, butterfly rash, fever, joint pain, photosensitivity, proteinuria, pleuritis.</p>
+
+    <hr>
+
+    <h2>6. HIV AND AIDS</h2>
+    <p><strong>Definition:</strong> AIDS is caused by the retrovirus <strong>HIV (Human Immunodeficiency Virus)</strong>, leading to profound immunosuppression due to the depletion of <span class="highlight-neon">CD4+ T cells</span>.</p>
+
+    <h3>Etiology</h3>
+    <ul>
+        <li><strong>Agent:</strong> HIV-1 (Global) and HIV-2 (West Africa).</li>
+        <li><strong>Structure:</strong> RNA virus with enzyme Reverse Transcriptase. Envelope has glycoproteins <span class="highlight-green">gp120</span> and <span class="highlight-green">gp41</span>.</li>
+        <li><strong>Transmission:</strong> Sexual contact (most common), Parenteral (blood sharing), Vertical (Mother-to-child).</li>
+    </ul>
+
+    <h3>Pathogenesis</h3>
+    <ol>
+        <li><strong>Binding and Entry:</strong> HIV <strong>gp120</strong> binds to <strong>CD4 molecule</strong> on T-cells, Macrophages, Dendritic cells. Requires co-receptors (<span class="highlight-neon">CCR5</span> or <span class="highlight-neon">CXCR4</span>).</li>
+        <li><strong>Reverse Transcription:</strong> Viral RNA &rarr; DNA (using Reverse Transcriptase).</li>
+        <li><strong>Integration:</strong> Viral DNA integrates into Host Genome (Provirus).</li>
+        <li><strong>Replication:</strong> When the T-cell is activated (e.g., by infection), the virus replicates, buds out, and kills the cell.</li>
+        <li><strong>Mechanisms of CD4 Loss:</strong> Direct lysis by virus, destruction by CD8+ T cells, apoptosis, loss of precursors in thymus.</li>
+        <li><strong>Result:</strong> CD4 count drops. Inversion of CD4:CD8 ratio (Normal 2:1 &rarr; becomes 0.5:1). Loss of help for B cells and Macrophages.</li>
+    </ol>
+
+    <div class="hand-drawn-box">
+        <h3>Natural History (Stages)</h3>
+        <ol>
+            <li><strong>Acute Retroviral Syndrome (3-6 weeks):</strong> Flu-like symptoms (fever, sore throat), high viremia, transient drop in CD4.</li>
+            <li><strong>Chronic (Latent) Phase (7-10 years):</strong> Asymptomatic or minor infections. Virus replicates in lymph nodes. CD4 slowly declines.</li>
+            <li><strong>Crisis Phase (AIDS):</strong> <strong>CD4 count < 200 cells/&mu;L</strong>. Breakdown of host defense. Appearance of "AIDS-defining illnesses".</li>
+        </ol>
+    </div>
+
+    <h3>Pathology (Clinical Manifestations)</h3>
+    <ul>
+        <li><strong>Opportunistic Infections:</strong>
+            <ul>
+                <li><em>Protozoa:</em> Toxoplasmosis (CNS), Cryptosporidiosis (Diarrhea).</li>
+                <li><em>Fungi:</em> <span class="highlight-green">Pneumocystis jiroveci (PCP)</span> pneumonia, Candidiasis (Oral thrush/Esophagitis), Cryptococcus (Meningitis).</li>
+                <li><em>Viruses:</em> CMV (Retinitis), HSV, VZV.</li>
+                <li><em>Bacteria:</em> <strong>Tuberculosis</strong> (M. tuberculosis & M. avium complex).</li>
+            </ul>
+        </li>
+        <li><strong>Tumors (Neoplasms):</strong>
+            <ul>
+                <li><strong>Kaposi Sarcoma:</strong> Vascular tumor caused by <span class="highlight-neon">HHV-8</span>. Red-purple patches on skin/mouth.</li>
+                <li><strong>Non-Hodgkin Lymphoma:</strong> High-grade B-cell lymphomas (Burkitt, DLBCL) linked to EBV.</li>
+                <li><strong>Cervical Carcinoma:</strong> Invasive cancer due to HPV.</li>
+            </ul>
+        </li>
+        <li><strong>CNS Involvement:</strong> AIDS-Dementia Complex (directly by HIV in microglia).</li>
+    </ul>
+
+    <hr>
+
+    <h2>7. OTHER AUTOIMMUNE DISEASES (BRIEF)</h2>
+    <ul>
+        <li><strong>Rheumatoid Arthritis (RA):</strong> Chronic systemic inflammation affecting joints. Mediated by CD4+ Th1/Th17 cells. Formation of <strong>Pannus</strong> (granulation tissue) destroys cartilage/bone. Marker: <span class="highlight-neon">Anti-CCP</span> and Rheumatoid Factor.</li>
+        <li><strong>Sjögren Syndrome:</strong> Destruction of lacrimal (dry eyes) and salivary glands (dry mouth) by T-cells. Marker: <span class="highlight-neon">Anti-SS-A (Ro)</span> and Anti-SS-B (La).</li>
+        <li><strong>Systemic Sclerosis (Scleroderma):</strong> Excessive <strong>Fibrosis</strong> of skin and organs. Endothelial injury &rarr; vascular damage &rarr; fibroblast activation. Marker: <span class="highlight-neon">Anti-Scl-70</span> (Diffuse) and Anti-Centromere (CREST).</li>
+    </ul>
+
+    <hr>
+
+    <h2 style="color: #d32f2f; border-color: #d32f2f;">IMPORTANT UNIVERSITY QUESTIONS</h2>
+
+    <div class="qa-section">
+        <h3>Q1: Define Hypersensitivity. Classify it and describe Type I Hypersensitivity in detail.</h3>
+        <p><strong>Introduction:</strong> Hypersensitivity is an exaggerated or injurious immune response to an antigen that results in tissue damage. It is classified into four types (Gell and Coombs classification).</p>
+        <p><strong>Body:</strong>
+            <br><strong>Classification:</strong> Type I (Immediate), Type II (Antibody-mediated), Type III (Immune Complex), Type IV (Cell-mediated).
+            <br><strong>Type I Hypersensitivity:</strong>
+            <br><em>Mechanism:</em> It is mediated by <strong>IgE antibodies</strong> attached to mast cells. Upon re-exposure to an allergen (e.g., pollen, dust), the antigen cross-links the IgE, causing mast cell degranulation.
+            <br><em>Mediators:</em>
+            <ul>
+                <li>Primary (Immediate): Histamine (vasodilation, bronchospasm), Proteases.</li>
+                <li>Secondary (Late phase): Leukotrienes (LTC4, LTD4), Prostaglandins.</li>
+            </ul>
+            <br><em>Clinical Examples:</em> Anaphylaxis (Systemic shock), Bronchial Asthma, Allergic Rhinitis.
+        </p>
+        <p><strong>Conclusion:</strong> Type I reactions are rapid and potentially fatal (anaphylaxis) requiring immediate epinephrine. They are driven by Th2 response and IgE production.</p>
+    </div>
+
+    <div class="qa-section">
+        <h3>Q2: Discuss the Pathogenesis and Morphology of Systemic Lupus Erythematosus (SLE).</h3>
+        <p><strong>Introduction:</strong> SLE is a multisystem autoimmune disorder caused by a wide array of autoantibodies, primarily antinuclear antibodies (ANAs).</p>
+        <p><strong>Body:</strong>
+            <br><strong>Pathogenesis:</strong> It involves a breakdown of self-tolerance.
+            <ul>
+                <li><em>Genetic:</em> HLA-DR2/DR3 linkage.</li>
+                <li><em>Environmental:</em> UV light induces apoptosis of cells, exposing nuclear antigens.</li>
+                <li><em>Mechanism:</em> Defective clearance of apoptotic bodies leads to persistence of nuclear antigens. B-cells produce Anti-dsDNA and Anti-Sm antibodies. These form <strong>Immune Complexes (Type III reaction)</strong> which deposit in small vessels and glomeruli, activating complement and causing inflammation.</li>
+            </ul>
+            <br><strong>Morphology:</strong>
+            <ul>
+                <li><em>Kidney:</em> Lupus Nephritis (Class I-VI). "Wire-loop" lesions in diffuse proliferative type.</li>
+                <li><em>Skin:</em> Malar butterfly rash. Liquefactive degeneration of basal cells.</li>
+                <li><em>Heart:</em> Libman-Sacks endocarditis (vegetations on both sides of valves).</li>
+            </ul>
+        </p>
+        <p><strong>Conclusion:</strong> SLE is a prototype of immune complex disease. Renal failure is a common cause of death.</p>
+    </div>
+
+    <div class="qa-section">
+        <h3>Q3: Write a short note on the Pathogenesis of AIDS.</h3>
+        <p><strong>Introduction:</strong> AIDS is the end-stage of HIV infection, characterized by profound immunodeficiency due to the loss of CD4+ T cells.</p>
+        <p><strong>Body:</strong> The HIV virus (gp120) binds to the CD4 receptor and CCR5/CXCR4 co-receptors on T-helper cells. The viral RNA is reverse-transcribed and integrated into the host DNA.
+        <br><strong>Mechanisms of T-cell Loss:</strong>
+        <ol>
+            <li>Direct cytopathic effect (lysis) during viral budding.</li>
+            <li>Killing of infected CD4 cells by CD8+ Cytotoxic T cells.</li>
+            <li>Chronic activation causing apoptosis.</li>
+        </ol>
+        <br>When the CD4 count falls below <strong>200/&mu;L</strong>, cell-mediated immunity fails, allowing opportunistic infections (TB, Pneumocystis) and tumors (Kaposi sarcoma) to develop.</p>
+        <p><strong>Conclusion:</strong> The hallmark of HIV pathogenesis is the progressive depletion of CD4+ T cells and inversion of the CD4:CD8 ratio.</p>
+    </div>
+
+</div>
+
+</body>
+</html>

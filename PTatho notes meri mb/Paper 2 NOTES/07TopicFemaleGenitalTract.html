@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBBS Pathology Notes: Female Genital Tract</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-yellow: #f4ff40; /* Neon yellowish highlighter */
+            --marker-green: #daffb3; /* Natural light green marker */
+            --ink-color: #2c2c2c; /* Dark grey/black ink look */
+            --paper-white: #ffffff; /* Pure white page */
+            --box-bg: #fffef0; /* Subtle warm tint for boxes */
+            --border-color: #333;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #525659; /* Grey background behind the paper */
+            font-family: 'Kalam', cursive;
+            color: var(--ink-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            line-height: 1.6;
+            font-size: 18px; /* Readable handwritten size */
+        }
+
+        /* A4 Paper Simulation */
+        .page-container {
+            background-color: var(--paper-white);
+            width: 210mm; /* A4 width */
+            min-height: 297mm; /* A4 height minimum */
+            padding: 25mm; /* Standard margins */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 32px;
+            text-align: center;
+            text-decoration: underline;
+            text-decoration-color: var(--neon-yellow);
+            text-decoration-thickness: 5px;
+            margin-bottom: 40px;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            font-size: 26px;
+            border-bottom: 3px solid var(--marker-green);
+            padding-bottom: 5px;
+            margin-top: 40px;
+            color: #1a1a1a;
+            display: inline-block;
+            width: 100%;
+        }
+
+        h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-top: 25px;
+            color: #333;
+            text-decoration: underline;
+        }
+
+        h4 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-top: 15px;
+            color: #444;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin-bottom: 15px;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* Highlighting Classes */
+        .highlight-neon {
+            background-color: var(--neon-yellow);
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .highlight-green {
+            background-color: var(--marker-green);
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        strong {
+            font-weight: 700;
+        }
+
+        /* Hand-drawn Box Style */
+        .hand-drawn-box {
+            border: 2px solid var(--border-color);
+            /* Irregular border radius for hand-drawn effect */
+            border-radius: 2px 20px 3px 25px / 25px 3px 20px 2px;
+            padding: 20px;
+            margin: 25px 0;
+            background-color: var(--box-bg); 
+            box-shadow: 3px 4px 0px rgba(0,0,0,0.1);
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 20px 0;
+            font-size: 16px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: var(--marker-green);
+            font-weight: bold;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        tr td:last-child, tr th:last-child {
+            border-right: none;
+        }
+
+        /* Model Answer Section */
+        .qa-section {
+            border-left: 4px solid var(--neon-yellow);
+            padding-left: 20px;
+            margin-top: 30px;
+        }
+
+        /* Print Settings */
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+            .page-container {
+                width: 100%;
+                box-shadow: none;
+                margin: 0;
+                padding: 15mm;
+            }
+            /* Ensure background colors print */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            h1, h2, h3 {
+                page-break-after: avoid;
+            }
+            table, .hand-drawn-box, li {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 800px) {
+            .page-container {
+                width: 100%;
+                padding: 15px;
+            }
+            table {
+                font-size: 14px;
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-container">
+
+    <h1>TOPIC 07: FEMALE GENITAL TRACT</h1>
+
+    <p><strong>Syllabus Scope:</strong> Carcinoma of Cervix, Endometrium, Leiomyoma/Sarcoma, Ovarian Tumors, and Gestational Trophoblastic Neoplasms.</p>
+
+    <h2>1. CARCINOMA OF THE CERVIX</h2>
+
+    <h3>Epidemiology and Risk Factors</h3>
+    <ul>
+        <li>One of the most common cancers in women worldwide (especially in developing countries).</li>
+        <li><strong>Peak Age:</strong> 45-55 years (Invasive carcinoma); CIN occurs earlier (30s).</li>
+        <li><strong>Risk Factors:</strong>
+            <ul>
+                <li><span class="highlight-neon">Human Papillomavirus (HPV):</span> The single most important factor. Detected in >99% of cases.</li>
+                <li>Early age of first intercourse and multiple sexual partners.</li>
+                <li>Multiparity (high number of births).</li>
+                <li>Oral contraceptive pills (long-term use).</li>
+                <li>Smoking (co-carcinogen).</li>
+                <li>Immunosuppression (HIV).</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>Etiology and Pathogenesis (Role of HPV)</h3>
+    <ul>
+        <li><strong>High-Risk HPV Types:</strong> <span class="highlight-green">HPV 16</span> (most common, SCC) and <span class="highlight-green">HPV 18</span> (Adenocarcinoma).</li>
+        <li><strong>Mechanism:</strong> HPV integrates its DNA into the host genome and expresses oncoproteins:
+            <ul>
+                <li><strong>E6 protein:</strong> Binds and degrades <span class="highlight-neon">p53</span> (tumor suppressor), preventing apoptosis.</li>
+                <li><strong>E7 protein:</strong> Binds <span class="highlight-neon">Retinoblastoma (RB)</span> protein, releasing E2F transcription factor, pushing cell into cell cycle.</li>
+            </ul>
+        </li>
+        <li><strong>Result:</strong> Uncontrolled cell proliferation and genomic instability.</li>
+    </ul>
+
+    <h3>Precursor Lesions: CIN (Cervical Intraepithelial Neoplasia)</h3>
+    <p>Pre-invasive stage arising at the <strong>Squamocolumnar Junction (Transformation Zone)</strong>.</p>
+    <ul>
+        <li><strong>CIN I (Mild Dysplasia / LSIL):</strong> Dysplastic cells in lower 1/3 of epithelium. <em>Koilocytic change</em> (viral effect) is prominent.</li>
+        <li><strong>CIN II (Moderate Dysplasia / HSIL):</strong> Dysplasia in lower 2/3.</li>
+        <li><strong>CIN III (Severe Dysplasia / Carcinoma in Situ / HSIL):</strong> Dysplasia involves full thickness of epithelium. Basement membrane is intact.</li>
+    </ul>
+
+    <h3>Pathology (Morphology)</h3>
+    <ul>
+        <li><strong>Gross:</strong>
+            <ul>
+                <li><em>Exophytic:</em> Fungating, cauliflower-like mass (most common).</li>
+                <li><em>Ulcerative:</em> Necrotic ulcer with indurated margins.</li>
+                <li><em>Infiltrative:</em> Stone-hard cervix ("Barrel cervix").</li>
+            </ul>
+        </li>
+        <li><strong>Microscopy:</strong>
+            <ul>
+                <li><strong>Squamous Cell Carcinoma (80%):</strong> Nests of malignant squamous cells invading the stroma. May show keratin pearls (well-differentiated) or be anaplastic.</li>
+                <li><strong>Adenocarcinoma (15%):</strong> Glandular pattern. Associated with HPV 18.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>Screening and Diagnosis</h3>
+    <ul>
+        <li><strong>Pap Smear (Screening):</strong> Exfoliative cytology to detect SIL (Squamous Intraepithelial Lesion).
+            <br><em>Bethesda System:</em> ASC-US, LSIL (Low grade), HSIL (High grade).</li>
+        <li><strong>Colposcopy:</strong> Visualization of cervix with acetic acid (acetowhite areas) and Iodine (Schiller test).</li>
+        <li><strong>Biopsy:</strong> Gold standard for diagnosis.</li>
+    </ul>
+
+    <hr>
+
+    <h2>2. CARCINOMA OF THE ENDOMETRIUM</h2>
+    <p>Most common invasive cancer of the female genital tract in developed countries. Divided into two pathogenic types.</p>
+
+    <div class="hand-drawn-box">
+        <h3>Classification: Type I vs Type II</h3>
+        <table>
+            <tr>
+                <th>Feature</th>
+                <th>Type I (Endometrioid)</th>
+                <th>Type II (Serous)</th>
+            </tr>
+            <tr>
+                <td><strong>Incidence</strong></td>
+                <td>Common (80%)</td>
+                <td>Uncommon (15%)</td>
+                
+
+[Image of Uterine Cancer types]
+
+            </tr>
+            <tr>
+                <td><strong>Age</strong></td>
+                <td>55-65 years</td>
+                <td>Older (65-75 years)</td>
+            </tr>
+            <tr>
+                <td><strong>Etiology</strong></td>
+                <td><span class="highlight-green">Unopposed Estrogen</span> (Obesity, Nulliparity, PCOS)</td>
+                <td>Estrogen Independent (Atrophy)</td>
+            </tr>
+            <tr>
+                <td><strong>Precursor</strong></td>
+                <td><strong>Endometrial Hyperplasia</strong> (EIN)</td>
+                <td>Serous Endometrial Intraepithelial Carcinoma (SEIC)</td>
+            </tr>
+            <tr>
+                <td><strong>Genetics</strong></td>
+                <td><span class="highlight-neon">PTEN</span>, PI3K, KRAS mutations</td>
+                <td><span class="highlight-neon">TP53</span> mutations</td>
+            </tr>
+            <tr>
+                <td><strong>Morphology</strong></td>
+                <td>Gland-forming (resembles endometrium)</td>
+                <td>Papillary, High grade</td>
+            </tr>
+            <tr>
+                <td><strong>Prognosis</strong></td>
+                <td>Good (spreads via lymphatics)</td>
+                <td>Poor (aggressive)</td>
+            </tr>
+        </table>
+    </div>
+
+    <h3>Pathology</h3>
+    <ul>
+        <li><strong>Gross:</strong> Polypoid, fungating mass filling the uterine cavity. Myometrial invasion may be present.</li>
+        <li><strong>Microscopy:</strong>
+            <ul>
+                <li><em>Endometrioid:</em> Closely packed, back-to-back irregular glands with no intervening stroma. Cribriforming is common.</li>
+                <li><em>Serous:</em> Papillary structures with high-grade nuclear atypia and Psammoma bodies.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>Clinical Features</h3>
+    <ul>
+        <li><strong>Post-menopausal bleeding</strong> (Cardinal symptom).</li>
+        <li>Diagnosis via Endometrial Biopsy / Curettage.</li>
+    </ul>
+
+    <hr>
+
+    <h2>3. MYOMETRIAL TUMORS: LEIOMYOMA & LEIOMYOSARCOMA</h2>
+
+    <h3>A. Leiomyoma (Fibroid)</h3>
+    <ul>
+        <li><strong>Definition:</strong> Benign smooth muscle tumor. Most common tumor in women (75% of reproductive age).</li>
+        <li><strong>Pathogenesis:</strong> Estrogen and Progesterone dependent (shrink after menopause). Genetics: <em>MED12</em> mutations.</li>
+        <li><strong>Morphology:</strong>
+            <ul>
+                <li><em>Gross:</em> Multiple, well-circumscribed, firm, grey-white masses. <span class="highlight-neon">Whorled</span> cut surface.
+                <br><em>Locations:</em> Intramural (wall), Submucosal (cavity), Subserosal (surface).</li>
+                <li><em>Microscopy:</em> Interlacing bundles of uniform smooth muscle cells with oval nuclei. No atypia, no necrosis.</li>
+            </ul>
+        </li>
+        <li><strong>Complications:</strong> Menorrhagia, Infertility, Pain, Red degeneration (in pregnancy).</li>
+    </ul>
+
+    <h3>B. Leiomyosarcoma</h3>
+    <ul>
+        <li><strong>Definition:</strong> Malignant smooth muscle tumor. Rare.</li>
+        <li><strong>Origin:</strong> Arises <strong>de novo</strong> from myometrium (DOES NOT arise from preexisting leiomyomas).</li>
+        <li><strong>Pathology:</strong>
+            <ul>
+                <li><em>Gross:</em> Solitary, soft, hemorrhagic, necrotic, fish-flesh mass.</li>
+                <li><em>Microscopy:</em> Diagnosed by presence of:
+                    1. <span class="highlight-neon">Tumor Necrosis</span>.
+                    2. Cytologic Atypia.
+                    3. Mitotic Activity (>10 mitoses/10 HPF).
+            </ul>
+        </li>
+        <li><strong>Prognosis:</strong> Poor. Spreads via blood to lungs.</li>
+    </ul>
+
+    <hr>
+
+    <h2>4. OVARIAN TUMORS</h2>
+    <p>Classified by the WHO based on cell of origin.</p>
+
+    <div class="hand-drawn-box">
+        <h3>WHO Classification</h3>
+        <ol>
+            <li><strong>Surface Epithelial Tumors (65-70%):</strong> Serous, Mucinous, Endometrioid, Brenner.</li>
+            <li><strong>Germ Cell Tumors (15-20%):</strong> Teratoma, Dysgerminoma, Yolk Sac Tumor, Choriocarcinoma.</li>
+            <li><strong>Sex Cord-Stromal Tumors (5-10%):</strong> Granulosa Cell Tumor, Fibroma, Sertoli-Leydig.</li>
+            <li><strong>Metastasis:</strong> Krukenberg Tumor (from Stomach).</li>
+        </ol>
+    </div>
+
+    <h3>1. Surface Epithelial Tumors</h3>
+    <ul>
+        <li><strong>Pathogenesis:</strong> "Incessant ovulation" theory (trauma to surface epithelium). BRCA1/BRCA2 mutations (High-grade serous).</li>
+        <li><strong>Serous Tumors:</strong> Most common.
+            <ul>
+                <li><em>Benign (Cystadenoma):</em> Smooth cyst wall, simple columnar lining.</li>
+                <li><em>Malignant (Cystadenocarcinoma):</em> Solid/cystic, papillary projections. Invasion of stroma. <span class="highlight-green">Psammoma bodies</span> (calcifications) are characteristic.</li>
+            </ul>
+        </li>
+        <li><strong>Mucinous Tumors:</strong> Large, multiloculated cysts filled with sticky gelatinous fluid. Lined by mucin-secreting epithelium. Rupture causes <em>Pseudomyxoma Peritonei</em> (Jelly belly).</li>
+    </ul>
+
+    <h3>2. Germ Cell Tumors</h3>
+    <ul>
+        <li><strong>Teratoma:</strong> Derived from all 3 germ layers.
+            <ul>
+                <li><em>Mature (Benign Cystic Teratoma / Dermoid Cyst):</em> Cyst containing hair, teeth, sebum (Rokitansky protuberance). Malignant transformation is rare (SCC).</li>
+                <li><em>Immature (Malignant):</em> Contains immature neuroepithelium.</li>
+            </ul>
+        </li>
+        <li><strong>Dysgerminoma:</strong> Female counterpart of Seminoma. Sheets of large vesicular cells with lymphocytes. Radiosensitive.</li>
+    </ul>
+
+    <h3>3. Sex Cord-Stromal Tumors</h3>
+    <ul>
+        <li><strong>Granulosa Cell Tumor:</strong> Produces Estrogen (precocious puberty or endometrial hyperplasia).
+            <br><em>Microscopy:</em> <span class="highlight-neon">Call-Exner Bodies</span> (follicle-like structures filled with eosinophilic material) and "Coffee-bean" nuclei.</li>
+        <li><strong>Fibroma:</strong> Benign. Associated with <strong>Meigs Syndrome</strong> (Ovarian fibroma + Ascites + Pleural effusion).</li>
+    </ul>
+
+    <hr>
+
+    <h2>5. GESTATIONAL TROPHOBLASTIC NEOPLASMS (GTN)</h2>
+    <p>Tumors arising from placental tissue (trophoblast).</p>
+
+    <h3>A. Hydatidiform Mole</h3>
+    <p>Characterized by cystic swelling of chorionic villi and variable trophoblastic proliferation.</p>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Feature</th>
+                <th>Complete Mole</th>
+                <th>Partial Mole</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Karyotype</strong></td>
+                <td><strong>46, XX</strong> (All paternal DNA). Empty egg + 1 sperm (duplicated).</td>
+                <td><strong>69, XXY</strong> (Triploid). Normal egg + 2 sperms.</td>
+            </tr>
+            <tr>
+                <td><strong>Fetal Parts</strong></td>
+                <td><strong>Absent</strong>.</td>
+                <td><strong>Present</strong>.</td>
+            </tr>
+            <tr>
+                <td><strong>Villi Edema</strong></td>
+                <td>Diffuse (All villi). "Bunch of grapes".</td>
+                <td>Focal (Some villi).</td>
+            </tr>
+            <tr>
+                <td><strong>hCG Levels</strong></td>
+                <td><span class="highlight-neon">Markedly Elevated</span>.</td>
+                <td>Mildly Elevated.</td>
+            </tr>
+            <tr>
+                <td><strong>Risk of Choriocarcinoma</strong></td>
+                <td>2.5% risk.</td>
+                <td>Very rare.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>B. Choriocarcinoma</h3>
+    <ul>
+        <li><strong>Definition:</strong> Highly malignant, aggressive tumor of trophoblasts.</li>
+        <li><strong>Etiology:</strong> 50% follow a Complete Mole, 25% follow abortion, 25% follow normal pregnancy.</li>
+        <li><strong>Pathology:</strong>
+            <ul>
+                <li><em>Gross:</em> Soft, fleshy, hemorrhagic, necrotic mass in uterus.</li>
+                <li><em>Microscopy:</em> Biphasic proliferation of Cytotrophoblasts and Syncytiotrophoblasts. <strong>Villi are ABSENT</strong> (Key feature distinguishing from mole). Extensive hemorrhage and necrosis.</li>
+            </ul>
+        </li>
+        <li><strong>Clinical Course:</strong> Rapid hematogenous spread (Lungs, Vagina, Brain). Produces very high <strong>Beta-hCG</strong>.
+            <br><em>Treatment:</em> remarkably sensitive to Chemotherapy (Methotrexate). Nearly 100% cure rate.</li>
+    </ul>
+
+    <hr>
+
+    <h2 style="color: #d32f2f; border-color: #d32f2f;">IMPORTANT UNIVERSITY QUESTIONS</h2>
+
+    <div class="qa-section">
+        <h3>Q1: Describe the Pathogenesis and Laboratory Diagnosis of Cervical Cancer.</h3>
+        <p><strong>Introduction:</strong> Cervical cancer is a preventable malignancy strongly associated with persistent high-risk HPV infection.</p>
+        <p><strong>Body:</strong>
+            <br><strong>Pathogenesis:</strong>
+            <ul>
+                <li>HPV (Types 16, 18) infects the basal cells at the Transformation Zone.</li>
+                <li>Viral oncoproteins E6 and E7 inactivate host tumor suppressors p53 and RB, respectively.</li>
+                <li>This leads to genomic instability and progression from CIN I (mild dysplasia) to CIN III (carcinoma in situ) to Invasive Carcinoma.</li>
+            </ul>
+            <br><strong>Laboratory Diagnosis:</strong>
+            <ol>
+                <li><em>Screening (Pap Smear):</em> Identifies dysplastic cells (High N:C ratio, hyperchromasia, koilocytes). Classified by Bethesda System.</li>
+                <li><em>Colposcopy:</em> Visualizes acetowhite lesions for targeted biopsy.</li>
+                <li><em>Biopsy:</em> Confirms invasion.</li>
+                <li><em>HPV DNA Testing:</em> Detection of high-risk viral types.</li>
+            </ol>
+        </p>
+        <p><strong>Conclusion:</strong> Vaccination (Gardasil) and screening have significantly reduced mortality.</p>
+    </div>
+
+    <div class="qa-section">
+        <h3>Q2: Classify Ovarian Tumors. Describe the morphology of Serous Cystadenocarcinoma and Teratoma.</h3>
+        <p><strong>Introduction:</strong> Ovarian tumors are diverse, classified by the WHO into Surface Epithelial, Germ Cell, and Sex Cord-Stromal tumors.</p>
+        <p><strong>Body:</strong>
+            <br><strong>1. Serous Cystadenocarcinoma (Epithelial):</strong>
+            <ul>
+                <li><em>Gross:</em> Large, bilateral, cystic masses with solid, friable papillary projections.</li>
+                <li><em>Microscopy:</em> Complex branching papillae lined by atypical stratified epithelium. Invasion of stroma is present. <strong>Psammoma bodies</strong> (concentric calcifications) are a hallmark.</li>
+            </ul>
+            <br><strong>2. Mature Cystic Teratoma (Germ Cell):</strong>
+            <ul>
+                <li><em>Gross:</em> Unilocular cyst containing sebaceous material ("gruel") and matted hair. A solid area called <em>Rokitansky protuberance</em> may contain teeth or bone.</li>
+                <li><em>Microscopy:</em> Tissues from Ectoderm (skin, brain), Mesoderm (cartilage, fat), and Endoderm (thyroid, respiratory lining). Usually benign.</li>
+            </ul>
+        </p>
+        <p><strong>Conclusion:</strong> Serous carcinoma is the most common malignant ovarian tumor, while Dermoid cyst is the most common benign one in young women.</p>
+    </div>
+
+    <div class="qa-section">
+        <h3>Q3: Differentiate between Complete and Partial Hydatidiform Mole.</h3>
+        <p><strong>Introduction:</strong> Hydatidiform moles are abnormal pregnancies characterized by trophoblastic proliferation and hydropic swelling of villi.</p>
+        <p><strong>Body:</strong>
+            <table border="1" style="border-collapse: collapse; width: 100%;">
+                <tr>
+                    <th>Feature</th>
+                    <th>Complete Mole</th>
+                    <th>Partial Mole</th>
+                </tr>
+                <tr>
+                    <td><strong>Genetics</strong></td>
+                    <td>46, XX (Diploid, androgenetic)</td>
+                    <td>69, XXY (Triploid)</td>
+                </tr>
+                <tr>
+                    <td><strong>Embryo/Fetus</strong></td>
+                    <td>Absent</td>
+                    <td>Present (abnormal)</td>
+                </tr>
+                <tr>
+                    <td><strong>Villi</strong></td>
+                    <td>All villi enlarged (hydropic)</td>
+                    <td>Mix of normal and edematous villi</td>
+                </tr>
+                <tr>
+                    <td><strong>Trophoblast Proliferation</strong></td>
+                    <td>Circumferential (Diffuse)</td>
+                    <td>Focal</td>
+                </tr>
+                <tr>
+                    <td><strong>Risk of Cancer</strong></td>
+                    <td>High (2.5% to ChorioCA)</td>
+                    <td>Low</td>
+                </tr>
+            </table>
+        </p>
+        <p><strong>Conclusion:</strong> Complete moles have a higher risk of persistent disease and require strict hCG monitoring.</p>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBBS Pathology Notes: Male Genital Tract</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-yellow: #f4ff40; /* Neon yellowish highlighter */
+            --marker-green: #daffb3; /* Natural light green marker */
+            --ink-color: #2c2c2c; /* Dark grey/black ink look */
+            --paper-white: #ffffff; /* Pure white page */
+            --box-bg: #fffef0; /* Subtle warm tint for boxes */
+            --border-color: #333;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #525659; /* Grey background behind the paper */
+            font-family: 'Kalam', cursive;
+            color: var(--ink-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            line-height: 1.6;
+            font-size: 18px; /* Readable handwritten size */
+        }
+
+        /* A4 Paper Simulation */
+        .page-container {
+            background-color: var(--paper-white);
+            width: 210mm; /* A4 width */
+            min-height: 297mm; /* A4 height minimum */
+            padding: 25mm; /* Standard margins */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 32px;
+            text-align: center;
+            text-decoration: underline;
+            text-decoration-color: var(--neon-yellow);
+            text-decoration-thickness: 5px;
+            margin-bottom: 40px;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            font-size: 26px;
+            border-bottom: 3px solid var(--marker-green);
+            padding-bottom: 5px;
+            margin-top: 40px;
+            color: #1a1a1a;
+            display: inline-block;
+            width: 100%;
+        }
+
+        h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-top: 25px;
+            color: #333;
+            text-decoration: underline;
+        }
+
+        h4 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-top: 15px;
+            color: #444;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin-bottom: 15px;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* Highlighting Classes */
+        .highlight-neon {
+            background-color: var(--neon-yellow);
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .highlight-green {
+            background-color: var(--marker-green);
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        strong {
+            font-weight: 700;
+        }
+
+        /* Hand-drawn Box Style */
+        .hand-drawn-box {
+            border: 2px solid var(--border-color);
+            /* Irregular border radius for hand-drawn effect */
+            border-radius: 2px 20px 3px 25px / 25px 3px 20px 2px;
+            padding: 20px;
+            margin: 25px 0;
+            background-color: var(--box-bg); 
+            box-shadow: 3px 4px 0px rgba(0,0,0,0.1);
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 20px 0;
+            font-size: 16px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: var(--marker-green);
+            font-weight: bold;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        tr td:last-child, tr th:last-child {
+            border-right: none;
+        }
+
+        /* Model Answer Section */
+        .qa-section {
+            border-left: 4px solid var(--neon-yellow);
+            padding-left: 20px;
+            margin-top: 30px;
+        }
+
+        /* Print Settings */
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+            .page-container {
+                width: 100%;
+                box-shadow: none;
+                margin: 0;
+                padding: 15mm;
+            }
+            /* Ensure background colors print */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            h1, h2, h3 {
+                page-break-after: avoid;
+            }
+            table, .hand-drawn-box, li {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 800px) {
+            .page-container {
+                width: 100%;
+                padding: 15px;
+            }
+            table {
+                font-size: 14px;
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-container">
+
+    <h1>TOPIC 06: MALE GENITAL TRACT</h1>
+
+    <p><strong>Syllabus Scope:</strong> Testicular Tumors, Benign Prostatic Hyperplasia (BPH), and Carcinoma of the Prostate.</p>
+
+    <h2>1. TESTICULAR TUMORS</h2>
+
+    <h3>Classification (WHO)</h3>
+    <p>Testicular tumors are broadly divided into two main groups:</p>
+    <ol>
+        <li><strong>Germ Cell Tumors (GCTs):</strong> 95% of cases. Aggressive but curable.
+            <ul>
+                <li><strong>Seminomatous Tumors:</strong> Seminoma (Classic), Spermatocytic Tumor.</li>
+                <li><strong>Non-Seminomatous GCTs (NSGCT):</strong> Embryonal Carcinoma, Yolk Sac Tumor, Choriocarcinoma, Teratoma (Mature, Immature).</li>
+            </ul>
+        </li>
+        <li><strong>Sex Cord-Stromal Tumors:</strong> Leydig cell tumor, Sertoli cell tumor (Mostly benign).</li>
+    </ol>
+
+    <h3>Etiology and Pathogenesis</h3>
+    <ul>
+        <li><strong>Cryptorchidism:</strong> Undescended testis increases risk 3-5 fold.</li>
+        <li><strong>Testicular Dysgenesis Syndrome (TDS):</strong> Association of cryptorchidism, hypospadias, and poor sperm quality.</li>
+        <li><strong>Genetics:</strong>
+            <ul>
+                <li><span class="highlight-neon">Isochromosome 12p [i(12p)]:</span> Found in virtually all GCTs (except Spermatocytic tumor).</li>
+                <li><strong>Germ Cell Neoplasia In Situ (GCNIS):</strong> The precursor lesion for most GCTs. Originates in utero.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>Pathology (Morphology)</h3>
+    <div class="hand-drawn-box">
+        <h4>1. Seminoma (Most Common)</h4>
+        <ul>
+            <li><strong>Gross:</strong> Homogeneous, bulky, lobulated, grey-white mass. No hemorrhage or necrosis.</li>
+            <li><strong>Microscopy:</strong> Sheets of uniform cells with <span class="highlight-green">clear cytoplasm</span> (glycogen), distinct cell borders, and central nuclei. The septa contain a <strong>lymphocytic infiltrate</strong>.</li>
+        </ul>
+    </div>
+    <div class="hand-drawn-box">
+        <h4>2. Non-Seminomatous Tumors</h4>
+        <ul>
+            <li><strong>Embryonal Carcinoma:</strong> Hemorrhagic and necrotic mass. Microscopy shows sheets of undifferentiated, pleomorphic cells forming glands/papillae.</li>
+            <li><strong>Yolk Sac Tumor:</strong> Most common in <span class="highlight-neon">infants/children</span>. Reticular network of cells. <span class="highlight-green">Schiller-Duvall Bodies</span> (glomeruloid structures) are pathognomonic.</li>
+            <li><strong>Choriocarcinoma:</strong> Highly aggressive. Contains Cytotrophoblasts and Syncytiotrophoblasts. Hemorrhage is prominent.</li>
+            <li><strong>Teratoma:</strong> Haphazard arrangement of tissues from all 3 germ layers (cartilage, epithelium, neural tissue).</li>
+        </ul>
+    </div>
+
+    <h3>Presenting Features</h3>
+    <ul>
+        <li>Painless enlargement of the testis ("Heaviness").</li>
+        <li>Acute pain (if hemorrhage/torsion occurs).</li>
+        <li>Metastatic symptoms (Back pain, dyspnea).</li>
+    </ul>
+
+    <h3>Diagnostic Tests (Tumor Markers)</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Tumor Type</th>
+                <th>hCG</th>
+                <th>AFP (Alpha-fetoprotein)</th>
+                <th>LDH</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Seminoma</strong></td>
+                <td>Elevated (15%)</td>
+                <td><span class="highlight-neon">Normal</span> (Never raised)</td>
+                <td>Elevated</td>
+            </tr>
+            <tr>
+                <td><strong>Yolk Sac Tumor</strong></td>
+                <td>Normal</td>
+                <td><span class="highlight-green">Elevated</span> (Always)</td>
+                <td>Elevated</td>
+            </tr>
+            <tr>
+                <td><strong>Choriocarcinoma</strong></td>
+                <td><span class="highlight-green">Very High</span></td>
+                <td>Normal</td>
+                <td>Elevated</td>
+            </tr>
+            <tr>
+                <td><strong>Embryonal Carcinoma</strong></td>
+                <td>Elevated</td>
+                <td>Elevated</td>
+                <td>Elevated</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Progression and Spread</h3>
+    <ul>
+        <li><strong>Lymphatic:</strong> Spread to Retroperitoneal (Para-aortic) nodes first. (Exceptions: Choriocarcinoma spreads via blood early).</li>
+        <li><strong>Hematogenous:</strong> Lungs (cannonball metastases), Liver, Brain.</li>
+        <li><strong>Difference:</strong> Seminomas spread via lymphatics first and are radiosensitive. NSGCTs spread early via blood and are radioresistant (need chemotherapy).</li>
+    </ul>
+
+    <hr>
+
+    <h2>2. BENIGN PROSTATIC HYPERPLASIA (BPH)</h2>
+    <p><strong>Definition:</strong> Non-malignant enlargement of the prostate due to hyperplasia of both stromal and epithelial elements.</p>
+
+    <h3>Pathogenesis (Hormonal Dependency)</h3>
+    <ul>
+        <li><strong>DHT (Dihydrotestosterone):</strong> The main mediator. Testosterone is converted to DHT by <span class="highlight-neon">Type 2 5-alpha-reductase</span> in stromal cells.</li>
+        <li>DHT binds to androgen receptors, stimulating growth factors (FGF, TGF-beta) that cause proliferation of stromal and glandular cells.</li>
+        <li>Estrogens may sensitize cells to androgens.</li>
+    </ul>
+
+    <h3>Pathology</h3>
+    <ul>
+        <li><strong>Zone:</strong> Arises in the <span class="highlight-green">Transition Zone</span> (Periurethral).</li>
+        <li><strong>Gross:</strong> Enlarged, nodular prostate. Weight increased (up to 100g). Cut surface shows milky fluid (glands) or solid grey areas (stroma).</li>
+        <li><strong>Microscopy:</strong> Nodules of hyperplastic glands (lined by two layers: inner columnar, outer basal) and hyperplastic fibromuscular stroma.</li>
+    </ul>
+
+    <h3>Clinical Features (Prostatism)</h3>
+    <ul>
+        <li><strong>Obstructive Symptoms:</strong> Hesitancy, weak stream, straining, dribbling, retention.</li>
+        <li><strong>Irritative Symptoms:</strong> Frequency, urgency, nocturia (due to bladder instability).</li>
+    </ul>
+
+    <h3>Diagnostic Tests</h3>
+    <ul>
+        <li><strong>Digital Rectal Exam (DRE):</strong> Enlarged, smooth, firm, rubbery, non-tender gland.</li>
+        <li><strong>Uroflowmetry:</strong> Decreased flow rate.</li>
+        <li><strong>PSA:</strong> Mildly elevated (usually < 4-10 ng/mL).</li>
+    </ul>
+
+    <hr>
+
+    <h2>3. CARCINOMA OF THE PROSTATE</h2>
+    <p><strong>Definition:</strong> Adenocarcinoma of the prostate. Most common cancer in men.</p>
+
+    <h3>Pathogenesis</h3>
+    <ul>
+        <li><strong>Hormonal:</strong> Androgens are essential for tumor survival (Castration induces regression).</li>
+        <li><strong>Genetics:</strong> <span class="highlight-green">TMPRSS2-ETS fusion gene</span> (commonest). BRCA2 mutations.</li>
+        <li><strong>Precursor:</strong> High-Grade Prostatic Intraepithelial Neoplasia (HGPIN).</li>
+    </ul>
+
+    <h3>Pathology</h3>
+    <ul>
+        <li><strong>Zone:</strong> Arises in the <span class="highlight-neon">Peripheral Zone</span> (Posterior). Palpable on DRE.</li>
+        <li><strong>Gross:</strong> Gritty, firm, ill-defined yellow-white lesion.</li>
+        <li><strong>Microscopy:</strong> Crowded, small glands lined by a <strong>single layer</strong> of cells (Basal layer is <span class="highlight-neon">ABSENT</span>). Nuclei have prominent nucleoli.</li>
+        <li><strong>Grading:</strong> <strong>Gleason System</strong> (Based on glandular architecture, not cytology).
+            <br>Score = Primary pattern (most dominant) + Secondary pattern. (e.g., 3+4 = 7). Score 6 is low grade, 8-10 is high grade.</li>
+    </ul>
+
+    <h3>Diagnostic Tests</h3>
+    <ul>
+        <li><strong>PSA (Prostate Specific Antigen):</strong> Elevated (> 4 ng/mL). Useful for screening and monitoring recurrence. (Note: PSA is organ-specific, not cancer-specific).</li>
+        <li><strong>DRE:</strong> Hard, nodular, irregular gland.</li>
+        <li><strong>Biopsy:</strong> Transrectal Ultrasound (TRUS) guided biopsy (Gold standard).</li>
+    </ul>
+
+    <h3>Spread</h3>
+    <ul>
+        <li><strong>Direct:</strong> Seminal vesicles, bladder base.</li>
+        <li><strong>Lymphatic:</strong> Obturator, iliac nodes.</li>
+        <li><strong>Hematogenous:</strong> <span class="highlight-green">Bone Metastasis</span> (Osteoblastic/Sclerotic lesions) to lumbar spine, pelvis, femur.</li>
+    </ul>
+
+    <hr>
+
+    <h2 style="color: #d32f2f; border-color: #d32f2f;">IMPORTANT UNIVERSITY QUESTIONS</h2>
+
+    <div class="qa-section">
+        <h3>Q1: Classify Testicular Tumors. Differentiate between Seminoma and Non-Seminomatous Germ Cell Tumors (NSGCT).</h3>
+        <p><strong>Introduction:</strong> Testicular tumors are the most common malignancy in young men. 95% are Germ Cell Tumors.</p>
+        <p><strong>Body:</strong>
+            <br><strong>Classification (WHO):</strong>
+            <ul>
+                <li><em>Germ Cell Tumors:</em> Seminoma, Embryonal Carcinoma, Yolk Sac Tumor, Choriocarcinoma, Teratoma.</li>
+                <li><em>Sex Cord-Stromal Tumors:</em> Leydig cell, Sertoli cell.</li>
+            </ul>
+            <br><strong>Differences:</strong>
+            <table border="1" style="width:100%">
+                <tr>
+                    <th>Feature</th>
+                    <th>Seminoma</th>
+                    <th>NSGCT</th>
+                </tr>
+                <tr>
+                    <td><strong>Age</strong></td>
+                    <td>30-40 years</td>
+                    <td>20-30 years</td>
+                </tr>
+                <tr>
+                    <td><strong>Pathology</strong></td>
+                    <td>Homogeneous, lobulated, clear cells.</td>
+                    <td>Heterogeneous, necrotic, hemorrhagic.</td>
+                </tr>
+                <tr>
+                    <td><strong>Tumor Markers</strong></td>
+                    <td>AFP is <strong>normal</strong>. hCG may be high.</td>
+                    <td>AFP/hCG often elevated.</td>
+                </tr>
+                <tr>
+                    <td><strong>Spread</strong></td>
+                    <td>Lymphatic (Late).</td>
+                    <td>Hematogenous (Early).</td>
+                </tr>
+                <tr>
+                    <td><strong>Radiosensitivity</strong></td>
+                    <td>Highly Sensitive.</td>
+                    <td>Radio-resistant (Chemo used).</td>
+                </tr>
+            </table>
+        </p>
+        <p><strong>Conclusion:</strong> Differentiation is crucial for treatment planning; Seminomas have a much better prognosis.</p>
+    </div>
+
+    <div class="qa-section">
+        <h3>Q2: Differentiate between Benign Prostatic Hyperplasia (BPH) and Prostatic Carcinoma.</h3>
+        <p><strong>Introduction:</strong> Both are common prostatic lesions in elderly men but differ in location and biological behavior.</p>
+        <p><strong>Body:</strong>
+            <table border="1" style="width:100%">
+                <tr>
+                    <th>Feature</th>
+                    <th>BPH</th>
+                    <th>Carcinoma</th>
+                </tr>
+                <tr>
+                    <td><strong>Location</strong></td>
+                    <td><strong>Transition Zone</strong> (Periurethral).</td>
+                    <td><strong>Peripheral Zone</strong> (Posterior).</td>
+                </tr>
+                <tr>
+                    <td><strong>Pathogenesis</strong></td>
+                    <td>DHT-mediated hyperplasia.</td>
+                    <td>Androgen-driven neoplasia (TMPRSS2-ETS).</td>
+                </tr>
+                <tr>
+                    <td><strong>Microscopy</strong></td>
+                    <td>Nodular hyperplasia. <strong>Two cell layers</strong> (Basal + Luminal).</td>
+                    <td>Adenocarcinoma. <strong>Single cell layer</strong> (Basal layer lost). Prominent nucleoli.</td>
+                </tr>
+                <tr>
+                    <td><strong>Clinical</strong></td>
+                    <td>Urinary obstruction (Early).</td>
+                    <td>Asymptomatic or Bone pain (Late).</td>
+                </tr>
+                <tr>
+                    <td><strong>DRE Finding</strong></td>
+                    <td>Firm, smooth, elastic.</td>
+                    <td>Hard, nodular, irregular.</td>
+                </tr>
+            </table>
+        </p>
+        <p><strong>Conclusion:</strong> BPH causes urinary symptoms early, whereas Cancer is often silent until metastasis, highlighting the need for PSA screening.</p>
+    </div>
+
+</div>
+
+</body>
+</html>

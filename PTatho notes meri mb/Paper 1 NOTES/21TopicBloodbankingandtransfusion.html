@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBBS Pathology Notes: Blood Banking & Transfusion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-yellow: #f4ff40; /* Neon yellowish highlighter */
+            --marker-green: #daffb3; /* Natural light green marker */
+            --ink-color: #2c2c2c; /* Dark grey/black ink look */
+            --paper-white: #ffffff; /* Pure white page */
+            --box-bg: #fffef0; /* Subtle warm tint for boxes */
+            --border-color: #333;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #525659; /* Grey background behind the paper */
+            font-family: 'Kalam', cursive;
+            color: var(--ink-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            line-height: 1.6;
+            font-size: 18px; /* Readable handwritten size */
+        }
+
+        /* A4 Paper Simulation */
+        .page-container {
+            background-color: var(--paper-white);
+            width: 210mm; /* A4 width */
+            min-height: 297mm; /* A4 height minimum */
+            padding: 25mm; /* Standard margins */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 32px;
+            text-align: center;
+            text-decoration: underline;
+            text-decoration-color: var(--neon-yellow);
+            text-decoration-thickness: 5px;
+            margin-bottom: 40px;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            font-size: 26px;
+            border-bottom: 3px solid var(--marker-green);
+            padding-bottom: 5px;
+            margin-top: 40px;
+            color: #1a1a1a;
+            display: inline-block;
+            width: 100%;
+        }
+
+        h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-top: 25px;
+            color: #333;
+            text-decoration: underline;
+        }
+
+        h4 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-top: 15px;
+            color: #444;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin-bottom: 15px;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* Highlighting Classes */
+        .highlight-neon {
+            background-color: var(--neon-yellow);
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .highlight-green {
+            background-color: var(--marker-green);
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        strong {
+            font-weight: 700;
+        }
+
+        /* Hand-drawn Box Style */
+        .hand-drawn-box {
+            border: 2px solid var(--border-color);
+            /* Irregular border radius for hand-drawn effect */
+            border-radius: 2px 20px 3px 25px / 25px 3px 20px 2px;
+            padding: 20px;
+            margin: 25px 0;
+            background-color: var(--box-bg); 
+            box-shadow: 3px 4px 0px rgba(0,0,0,0.1);
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 20px 0;
+            font-size: 16px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: var(--marker-green);
+            font-weight: bold;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        tr td:last-child, tr th:last-child {
+            border-right: none;
+        }
+
+        /* Model Answer Section */
+        .qa-section {
+            border-left: 4px solid var(--neon-yellow);
+            padding-left: 20px;
+            margin-top: 30px;
+        }
+
+        /* Print Settings */
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+            .page-container {
+                width: 100%;
+                box-shadow: none;
+                margin: 0;
+                padding: 15mm;
+            }
+            /* Ensure background colors print */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            h1, h2, h3 {
+                page-break-after: avoid;
+            }
+            table, .hand-drawn-box, li {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 800px) {
+            .page-container {
+                width: 100%;
+                padding: 15px;
+            }
+            table {
+                font-size: 14px;
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-container">
+
+    <h1>TOPIC 21: BLOOD BANKING AND TRANSFUSION</h1>
+
+    <p><strong>Syllabus Scope:</strong> ABO/Rh Systems, Compatibility Testing, Blood Components, Transfusion Reactions (Investigation), and Autologous Transfusion.</p>
+
+    <h2>1. BLOOD GROUP SYSTEMS</h2>
+
+    <h3>A. ABO Blood Group System</h3>
+    <p>Discovered by Karl Landsteiner. It is the most clinically significant system due to the presence of naturally occurring antibodies.</p>
+    <ul>
+        <li><strong>Principle (Landsteiner's Law):</strong> If an antigen is present on the RBC surface, the corresponding antibody is absent in the plasma. If an antigen is absent, the corresponding antibody is present.</li>
+        <li><strong>Antigens:</strong> Located on the RBC membrane. The basic precursor is the <span class="highlight-neon">H Antigen</span>.
+            <ul>
+                <li><em>Gene A:</em> Codes for N-acetylgalactosaminyltransferase &rarr; Adds N-acetylgalactosamine (A antigen).</li>
+                <li><em>Gene B:</em> Codes for Galactosyltransferase &rarr; Adds Galactose (B antigen).</li>
+                <li><em>Gene O:</em> Amorphic (No enzyme) &rarr; H antigen remains unchanged.</li>
+            </ul>
+        </li>
+        <li><strong>Bombay Phenotype (Oh):</strong> Rare individuals lack the H gene (hh). They have no H, A, or B antigens but possess anti-A, anti-B, and <span class="highlight-green">anti-H</span> antibodies. They can only receive Bombay blood.</li>
+    </ul>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Blood Group</th>
+                <th>Antigen on RBC</th>
+                <th>Antibody in Plasma</th>
+                <th>Genotype</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>A</strong></td>
+                <td>A</td>
+                <td>Anti-B (IgM)</td>
+                <td>AA or AO</td>
+            </tr>
+            <tr>
+                <td><strong>B</strong></td>
+                <td>B</td>
+                <td>Anti-A (IgM)</td>
+                <td>BB or BO</td>
+            </tr>
+            <tr>
+                <td><strong>AB</strong> (Universal Recipient)</td>
+                <td>A and B</td>
+                <td>None</td>
+                <td>AB</td>
+            </tr>
+            <tr>
+                <td><strong>O</strong> (Universal Donor)</td>
+                <td>None (H antigen)</td>
+                <td>Anti-A and Anti-B (IgM & IgG)</td>
+                <td>OO</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>B. Rh Blood Group System</h3>
+    <p>Second most important system. Highly immunogenic.</p>
+    <ul>
+        <li><strong>Antigens:</strong> D, C, E, c, e. The <strong>D antigen</strong> is the most immunogenic.</li>
+        <li><strong>Rh Positive (Rh+):</strong> Presence of D antigen (>85% population).</li>
+        <li><strong>Rh Negative (Rh-):</strong> Absence of D antigen.</li>
+        <li><strong>Clinical Significance:</strong>
+            <ul>
+                <li>Rh antibodies (Anti-D) are <strong>IgG</strong> and cross the placenta.</li>
+                <li>They result from immunization (pregnancy or transfusion).</li>
+                <li>Cause <span class="highlight-neon">Hemolytic Disease of Newborn (HDN)</span> and Delayed Hemolytic Transfusion Reactions.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <hr>
+
+    <h2>2. COMPATIBILITY TESTING (CROSS-MATCHING)</h2>
+
+    <h3>Indications</h3>
+    <ul>
+        <li>Before transfusion of whole blood or packed red cells.</li>
+        <li>To prevent transfusion reactions (Hemolysis).</li>
+        <li>To maximize the survival of transfused red cells.</li>
+    </ul>
+
+    <h3>Principles</h3>
+    <p>The test detects serological incompatibility between the donor and recipient. It involves:</p>
+    <ol>
+        <li><strong>ABO/Rh Grouping:</strong> Of both donor and recipient.</li>
+        <li><strong>Antibody Screening:</strong> Detection of unexpected antibodies in patient’s serum (Indirect Coombs Test).</li>
+        <li><strong>Cross-match:</strong> Mixing donor RBCs with patient serum.</li>
+    </ol>
+
+    <div class="hand-drawn-box">
+        <h3>Steps of Compatibility Testing</h3>
+        <p><strong>1. Major Cross-match (Essential):</strong></p>
+        <ul>
+            <li><strong>Mix:</strong> <span class="highlight-green">Patient's Serum + Donor's RBCs</span>.</li>
+            <li><strong>Purpose:</strong> Detects antibodies in the <strong>Patient</strong> that could destroy the donor cells. This prevents fatal acute hemolytic reactions.</li>
+        </ul>
+        <p><strong>2. Minor Cross-match (Obsolete):</strong></p>
+        <ul>
+            <li><strong>Mix:</strong> Patient's RBCs + Donor's Serum.</li>
+            <li><strong>Purpose:</strong> Detects antibodies in donor plasma. Rarely done now as donor units are screened for antibodies beforehand.</li>
+        </ul>
+        <p><strong>3. Phases of Testing:</strong></p>
+        <ul>
+            <li><em>Saline Phase (Room Temp):</em> Detects IgM antibodies (ABO incompatibility).</li>
+            <li><em>Albumin/Thermic Phase (37°C):</em> Detects IgG antibodies (Rh).</li>
+            <li><em>Antihuman Globulin (AHG) Phase (Coombs):</em> Detects incomplete antibodies (Kell, Duffy).</li>
+        </ul>
+    </div>
+
+    <hr>
+
+    <h2>3. BLOOD COMPONENTS AND CLINICAL USES</h2>
+    <p>Component therapy allows one unit of blood to benefit multiple patients ("Rationale of Component Therapy").</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Component</th>
+                <th>Composition</th>
+                <th>Storage / Shelf Life</th>
+                <th>Clinical Indications</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Whole Blood</strong></td>
+                <td>RBCs + Plasma + Platelets (non-functional) + WBCs.</td>
+                <td>2-6°C for 35-42 days (CPDA-1).</td>
+                <td>Massive Hemorrhage (loss >25% blood vol), Exchange Transfusion.</td>
+            </tr>
+            <tr>
+                <td><strong>Packed Red Blood Cells (PRBC)</strong></td>
+                <td>RBCs (Hct ~70-80%). Little plasma.</td>
+                <td>2-6°C for 35-42 days.</td>
+                <td>Chronic Anemia, Acute blood loss (with crystalloids), Thalassemia. Avoids volume overload.</td>
+            </tr>
+            <tr>
+                <td><strong>Fresh Frozen Plasma (FFP)</strong></td>
+                <td>All Coagulation factors (V, VIII) + Plasma proteins.</td>
+                <td>-30°C for 1 year. Thaw at 37°C before use.</td>
+                <td>Multiple coagulation factor deficiency (Liver disease), DIC, Warfarin overdose.</td>
+            </tr>
+            <tr>
+                <td><strong>Platelet Concentrate</strong></td>
+                <td>Platelets suspended in plasma (>5.5 x 10<sup>10</sup>/unit).</td>
+                <td>20-24°C with <strong>agitation</strong> for 5 days.</td>
+                <td>Thrombocytopenia (<10k-20k), Functional platelet defects, Bleeding.</td>
+            </tr>
+            <tr>
+                <td><strong>Cryoprecipitate</strong></td>
+                <td><span class="highlight-green">Factor VIII, Fibrinogen, vWF, Factor XIII</span>.</td>
+                <td>-30°C for 1 year.</td>
+                <td>Hemophilia A, von Willebrand Disease, Hypofibrinogenemia (DIC).</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h2>4. TRANSFUSION TRANSMITTED INFECTIONS (TTI)</h2>
+    <p>Mandatory screening is done for the "Big Five" in many countries.</p>
+    <ul>
+        <li><strong>Viral:</strong>
+            <ul>
+                <li><strong>HIV 1 & 2:</strong> Risk reduced by NAAT. Window period exists.</li>
+                <li><strong>Hepatitis B (HBV):</strong> HBsAg screening. Highest risk of TTI among viruses.</li>
+                <li><strong>Hepatitis C (HCV):</strong> Anti-HCV screening.</li>
+                <li><em>Others:</em> CMV (dangerous for neonates/immunocompromised), HTLV, West Nile Virus.</li>
+            </ul>
+        </li>
+        <li><strong>Bacterial:</strong>
+            <ul>
+                <li><strong>Syphilis (Treponema pallidum):</strong> Does not survive >72hrs at 4°C. Risk mainly with platelets.</li>
+                <li><em>Bacterial Contamination:</em> Skin flora (Staph) or <em>Yersinia enterocolitica</em> (grows at 4°C). Common in platelets (room temp storage).</li>
+            </ul>
+        </li>
+        <li><strong>Parasitic:</strong>
+            <ul>
+                <li><strong>Malaria:</strong> Can survive in stored blood. Screen donors for history/smear.</li>
+                <li>Babesiosis, Chagas disease, Leishmaniasis.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <hr>
+
+    <h2>5. TRANSFUSION REACTIONS AND INVESTIGATION</h2>
+
+    <h3>Classification</h3>
+    <ul>
+        <li><strong>Acute (Immediate):</strong> < 24 hours. (Hemolytic, Febrile, Allergic, TRALI, Sepsis).</li>
+        <li><strong>Delayed:</strong> > 24 hours. (Delayed Hemolytic, GVHD, Iron Overload).</li>
+        <li><strong>Immune vs. Non-Immune.</strong></li>
+    </ul>
+
+    <div class="hand-drawn-box">
+        <h3>A. Acute Hemolytic Transfusion Reaction (AHTR)</h3>
+        <ul>
+            <li><strong>Cause:</strong> <span class="highlight-neon">ABO Incompatibility</span> (Clerical error is #1 cause).</li>
+            <li><strong>Pathogenesis:</strong> Preformed IgM antibodies (Anti-A/B) bind donor RBCs &rarr; Fix Complement &rarr; <strong>Intravascular Hemolysis</strong>.</li>
+            <li><strong>Features:</strong> Fever, chills, <span class="highlight-green">Flank pain</span>, Hemoglobinuria (Red urine), Hypotension, DIC, Renal Failure.</li>
+        </ul>
+
+        <h3>B. Febrile Non-Hemolytic Reaction (Most Common)</h3>
+        <ul>
+            <li><strong>Cause:</strong> Cytokines (IL-1, IL-6) accumulated in bag or Recipient antibodies against Donor WBCs/HLA.</li>
+            <li><strong>Features:</strong> Fever (>1°C rise), chills. No hemolysis.</li>
+            <li><strong>Prevention:</strong> Leukoreduction.</li>
+        </ul>
+
+        <h3>C. Allergic / Anaphylactic Reaction</h3>
+        <ul>
+            <li><strong>Cause:</strong> Recipient has <span class="highlight-neon">IgA Deficiency</span> and has Anti-IgA antibodies reacting with donor IgA.</li>
+            <li><strong>Features:</strong> Urticaria, wheezing, shock. No fever.</li>
+        </ul>
+
+        <h3>D. TRALI (Transfusion Related Acute Lung Injury)</h3>
+        <ul>
+            <li><strong>Cause:</strong> Donor Anti-HLA antibodies activate recipient neutrophils in lungs.</li>
+            <li><strong>Features:</strong> Non-cardiogenic pulmonary edema (ARDS).</li>
+        </ul>
+    </div>
+
+    <h3>Steps in Investigation of Transfusion Reaction</h3>
+    <ol>
+        <li><span class="highlight-neon">STOP the transfusion immediately.</span> Maintain IV line with saline.</li>
+        <li><strong>Clerical Check:</strong> Check bag label, patient ID, and paperwork for errors.</li>
+        <li><strong>Sample Collection:</strong> Send blood bag, new patient blood sample (EDTA & Clot), and urine sample to lab.</li>
+        <li><strong>Visual Check:</strong>
+            <ul>
+                <li>Look for <strong>Pink/Red Plasma</strong> in post-transfusion sample (Hemoglobinemia = Intravascular hemolysis).</li>
+                <li>Look for red urine (Hemoglobinuria).</li>
+            </ul>
+        </li>
+        <li><strong>Serological Tests:</strong>
+            <ul>
+                <li><strong>Direct Antiglobulin Test (DAT/Coombs):</strong> Positive DAT indicates antibody coating on transfused RBCs.</li>
+                <li>Repeat ABO/Rh grouping on pre- and post-transfusion samples.</li>
+                <li>Repeat Cross-match (Major).</li>
+            </ul>
+        </li>
+        <li><strong>Others:</strong> Culture bag (if sepsis suspected), Bilirubin, LDH, Haptoglobin.</li>
+    </ol>
+
+    <hr>
+
+    <h2>6. AUTOLOGOUS TRANSFUSION</h2>
+    <p><strong>Definition:</strong> Collection and reinfusion of the patient's own blood.</p>
+
+    <h3>Indications</h3>
+    <ul>
+        <li>Elective major surgeries (Orthopedic - Hip/Knee replacement, Cardiac surgery).</li>
+        <li>Patients with <span class="highlight-green">Rare Blood Groups</span> (e.g., Bombay group) or multiple antibodies.</li>
+        <li>Religious beliefs (some Jehovah’s Witnesses may accept autologous cell salvage).</li>
+    </ul>
+
+    <h3>Principles and Advantages</h3>
+    <ul>
+        <li><strong>Safety:</strong> Eliminates risk of TTIs (HIV, Hep B/C) and Alloimmunization.</li>
+        <li>No risk of hemolytic, febrile, or allergic reactions.</li>
+        <li>Stimulates patient's bone marrow (Erythropoiesis).</li>
+    </ul>
+
+    <h3>Types / Procedures</h3>
+    <ol>
+        <li><strong>Preoperative Autologous Donation (PAD):</strong>
+            <ul>
+                <li>Patient donates blood weekly (up to 72 hrs before surgery).</li>
+                <li>Requires Hb > 11 g/dL. Oral iron is given.</li>
+            </ul>
+        </li>
+        <li><strong>Acute Normovolemic Hemodilution (ANH):</strong>
+            <ul>
+                <li>Blood is withdrawn in the OT just before surgery.</li>
+                <li>Volume is replaced with crystalloids/colloids (Hemodilution).</li>
+                <li>Blood is reinfused at the end of surgery. Preserves fresh platelets/factors.</li>
+            </ul>
+        </li>
+        <li><strong>Intraoperative Cell Salvage:</strong>
+            <ul>
+                <li>Blood lost in the surgical field is aspirated, washed, filtered, and reinfused immediately.</li>
+                <li>Contraindicated in cancer surgery or infection.</li>
+            </ul>
+        </li>
+    </ol>
+
+    <hr>
+
+    <h2 style="color: #d32f2f; border-color: #d32f2f;">IMPORTANT UNIVERSITY QUESTIONS</h2>
+
+    <div class="qa-section">
+        <h3>Q1: Enumerate Blood Components. Describe the Indications and Storage of Platelet Concentrate and FFP.</h3>
+        <p><strong>Introduction:</strong> Blood component therapy ensures optimal use of a single donation for multiple patients. It minimizes volume overload and transfusion reactions.</p>
+        <p><strong>Body:</strong>
+            <br><strong>Enumeration:</strong> Whole blood, Packed Red Cells, Platelet Concentrate (RDP/SDP), Fresh Frozen Plasma (FFP), Cryoprecipitate.
+            <br><strong>1. Platelet Concentrate:</strong>
+            <ul>
+                <li><em>Storage:</em> 20-24°C (Room Temp) with continuous agitation. Shelf life: 5 days.</li>
+                <li><em>Indications:</em> Thrombocytopenia (<10,000/uL prophylactic; <50,000/uL before surgery), DIC, Functional platelet defects.</li>
+            </ul>
+            <br><strong>2. Fresh Frozen Plasma (FFP):</strong>
+            <ul>
+                <li><em>Storage:</em> -30°C for 1 year. Thawed at 37°C.</li>
+                <li><em>Indications:</em> Liver disease (multiple factor deficiency), Warfarin reversal, DIC, Massive transfusion protocol.</li>
+            </ul>
+        </p>
+        <p><strong>Conclusion:</strong> Correct storage is vital; e.g., FFP loses Factor V and VIII if not frozen rapidly.</p>
+    </div>
+
+    <div class="qa-section">
+        <h3>Q2: Define Cross-matching. Describe the phases and importance of Major Cross-match.</h3>
+        <p><strong>Introduction:</strong> Cross-matching is the final check of compatibility between donor and recipient to prevent life-threatening hemolysis.</p>
+        <p><strong>Body:</strong>
+            <br><strong>Major Cross-match:</strong> Mixing <strong>Patient Serum</strong> with <strong>Donor RBCs</strong>.
+            <br><strong>Importance:</strong> It detects antibodies in the recipient that could destroy the transfused donor cells. This is crucial because the recipient's antibody volume is large compared to the donor's plasma.
+            <br><strong>Phases:</strong>
+            <ol>
+                <li><em>Saline Phase (RT):</em> Detects IgM (ABO) incompatibility.</li>
+                <li><em>Albumin/Incubation Phase (37°C):</em> Allows IgG antibodies (Rh) to bind.</li>
+                <li><em>AHG Phase (Coombs):</em> Uses Anti-Human Globulin to detect coated IgG antibodies (Kell, Duffy).</li>
+            </ol>
+        </p>
+        <p><strong>Conclusion:</strong> A compatible cross-match does not guarantee normal cell survival but prevents immediate acute hemolysis.</p>
+    </div>
+
+</div>
+
+</body>
+</html>

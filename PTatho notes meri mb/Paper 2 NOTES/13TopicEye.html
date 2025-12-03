@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBBS Pathology Notes: Retinoblastoma</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-yellow: #f4ff40; /* Neon yellowish highlighter */
+            --marker-green: #daffb3; /* Natural light green marker */
+            --ink-color: #2c2c2c; /* Dark grey/black ink look */
+            --paper-white: #ffffff; /* Pure white page */
+            --box-bg: #fffef0; /* Subtle warm tint for boxes */
+            --border-color: #333;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #525659; /* Grey background behind the paper */
+            font-family: 'Kalam', cursive;
+            color: var(--ink-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            line-height: 1.6;
+            font-size: 18px; /* Readable handwritten size */
+        }
+
+        /* A4 Paper Simulation */
+        .page-container {
+            background-color: var(--paper-white);
+            width: 210mm; /* A4 width */
+            min-height: 297mm; /* A4 height minimum */
+            padding: 25mm; /* Standard margins */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 32px;
+            text-align: center;
+            text-decoration: underline;
+            text-decoration-color: var(--neon-yellow);
+            text-decoration-thickness: 5px;
+            margin-bottom: 40px;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            font-size: 26px;
+            border-bottom: 3px solid var(--marker-green);
+            padding-bottom: 5px;
+            margin-top: 40px;
+            color: #1a1a1a;
+            display: inline-block;
+            width: 100%;
+        }
+
+        h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-top: 25px;
+            color: #333;
+            text-decoration: underline;
+        }
+
+        h4 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-top: 15px;
+            color: #444;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin-bottom: 15px;
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* Highlighting Classes */
+        .highlight-neon {
+            background-color: var(--neon-yellow);
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .highlight-green {
+            background-color: var(--marker-green);
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        strong {
+            font-weight: 700;
+        }
+
+        /* Hand-drawn Box Style */
+        .hand-drawn-box {
+            border: 2px solid var(--border-color);
+            /* Irregular border radius for hand-drawn effect */
+            border-radius: 2px 20px 3px 25px / 25px 3px 20px 2px;
+            padding: 20px;
+            margin: 25px 0;
+            background-color: var(--box-bg); 
+            box-shadow: 3px 4px 0px rgba(0,0,0,0.1);
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 20px 0;
+            font-size: 16px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: var(--marker-green);
+            font-weight: bold;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        tr td:last-child, tr th:last-child {
+            border-right: none;
+        }
+
+        /* Model Answer Section */
+        .qa-section {
+            border-left: 4px solid var(--neon-yellow);
+            padding-left: 20px;
+            margin-top: 30px;
+        }
+
+        /* Print Settings */
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+            .page-container {
+                width: 100%;
+                box-shadow: none;
+                margin: 0;
+                padding: 15mm;
+            }
+            /* Ensure background colors print */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            h1, h2, h3 {
+                page-break-after: avoid;
+            }
+            table, .hand-drawn-box, li {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 800px) {
+            .page-container {
+                width: 100%;
+                padding: 15px;
+            }
+            table {
+                font-size: 14px;
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-container">
+
+    <h1>TOPIC 13: RETINOBLASTOMA</h1>
+
+    <p><strong>Syllabus Scope:</strong> Etiology, Genetics, Pathogenesis, Pathology, Presentation, Sequelae, and Complications.</p>
+
+    <h2>1. INTRODUCTION</h2>
+    <p><strong>Definition:</strong> Retinoblastoma is the most common primary intraocular malignant tumor in children, arising from the retinal germ cells (neuroepithelial origin).
+    <br><strong>Incidence:</strong> 1 in 20,000 live births. 90% cases occur before 5 years of age.</p>
+
+    <hr>
+
+    <h2>2. ETIOLOGY AND GENETICS</h2>
+    <p>Retinoblastoma is the prototype of hereditary cancers caused by a mutation in a <strong>Tumor Suppressor Gene</strong>.</p>
+
+    <h3>The RB1 Gene</h3>
+    <ul>
+        <li><strong>Location:</strong> Chromosome <span class="highlight-neon">13q14</span>.</li>
+        <li><strong>Function:</strong> The <em>RB1</em> gene encodes the <strong>pRb protein</strong>, which is a negative regulator of the cell cycle.
+            <ul>
+                <li><em>Active pRb (Hypophosphorylated):</em> Binds to E2F transcription factor &rarr; Blocks cell cycle at G1-S checkpoint (Prevents division).</li>
+                <li><em>Inactive pRb (Hyperphosphorylated):</em> Releases E2F &rarr; Cell enters S phase (Division proceeds).</li>
+                <li><em>Mutation:</em> Loss of function &rarr; Uncontrolled cell proliferation.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <div class="hand-drawn-box">
+        <h3>Knudson's "Two-Hit" Hypothesis</h3>
+        <p>Alfred Knudson proposed that two mutational events ("hits") are required to inactivate both alleles of the <em>RB1</em> gene.</p>
+        <ol>
+            <li><strong>Hereditary / Familial Retinoblastoma (40%):</strong>
+                <ul>
+                    <li><strong>First Hit:</strong> Germline mutation (inherited from parent or de novo in germ cell). Present in <em>all</em> cells of the body.</li>
+                    <li><strong>Second Hit:</strong> Somatic mutation in a single retinal cell.</li>
+                    <li><em>Features:</em> Bilateral, Multifocal, Younger age (approx. 1 year), Family history may be present.</li>
+                </ul>
+            </li>
+            <li><strong>Sporadic Retinoblastoma (60%):</strong>
+                <ul>
+                    <li><strong>First Hit:</strong> Somatic mutation in one retinal cell.</li>
+                    <li><strong>Second Hit:</strong> Somatic mutation in the <em>same</em> retinal cell.</li>
+                    <li><em>Features:</em> Unilateral, Unifocal, Older age (approx. 2 years), No family history.</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <hr>
+
+    <h2>3. PATHOGENESIS</h2>
+    <ul>
+        <li><strong>Origin:</strong> Neuronal progenitor cells of the retina.</li>
+        <li>Loss of both <em>RB1</em> alleles leads to deregulation of the cell cycle (E2F release) and genomic instability.</li>
+        <li>Further mutations (e.g., <em>MYCN</em> amplification) drive tumor progression.</li>
+    </ul>
+
+    <hr>
+
+    <h2>4. PATHOLOGY (MORPHOLOGY)</h2>
+
+    <h3>Gross Appearance</h3>
+    <ul>
+        <li>Creamy-white or yellowish nodular mass arising from the retina.</li>
+        <li><strong>Growth Patterns:</strong>
+            <ul>
+                <li><em>Endophytic:</em> Grows inward into the vitreous humor. May seed the vitreous (floating clumps).</li>
+                <li><em>Exophytic:</em> Grows outward into the subretinal space. Causes retinal detachment.</li>
+            </ul>
+        </li>
+        <li>Advanced cases show chalky white calcification (dystrophic).</li>
+    </ul>
+
+    <h3>Microscopic Features</h3>
+    <ul>
+        <li><strong>Cells:</strong> Sheets of <strong>Small Round Blue Cells</strong> (undifferentiated) with hyperchromatic nuclei and scant cytoplasm. High mitotic activity.</li>
+        <li><strong>Rosettes (Diagnostic Features):</strong>
+            <ul>
+                <li><span class="highlight-green">Flexner-Wintersteiner Rosettes:</span> Specific for Retinoblastoma. Columnar cells arranged around a <strong>central lumen</strong>. Nuclei are basal.</li>
+                <li><span class="highlight-neon">Homer-Wright Rosettes:</span> Cells arranged around a central core of pink neurofibrillary material (neuropil). No lumen. (Also seen in Neuroblastoma).</li>
+            </ul>
+        </li>
+        <li><strong>Fleurettes:</strong> Flower-like arrangement of cells showing photoreceptor differentiation (better prognosis).</li>
+        <li><strong>Necrosis and Calcification:</strong> Extensive areas of necrosis with dystrophic calcification are characteristic.</li>
+    </ul>
+
+    <hr>
+
+    <h2>5. CLINICAL PRESENTATION</h2>
+    <p>Common signs in children:</p>
+    <ol>
+        <li><strong>Leukocoria (White Pupillary Reflex):</strong> The most common sign (60%). Also called "Cat's eye reflex". Seen when light shines on the pupil.</li>
+        <li><strong>Strabismus (Squint):</strong> Due to loss of central vision (20%).</li>
+        <li><strong>Red, painful eye:</strong> Secondary to glaucoma or inflammation.</li>
+        <li><strong>Poor vision.</strong></li>
+    </ol>
+
+    <hr>
+
+    <h2>6. SPREAD AND SEQUELAE</h2>
+
+    <h3>Routes of Spread</h3>
+    <ol>
+        <li><strong>Direct Extension:</strong>
+            <ul>
+                <li>Anteriorly into the anterior chamber (Hypopyon).</li>
+                <li>Posteriorly along the <strong>Optic Nerve</strong> to the Brain (most critical route).</li>
+                <li>Through the sclera into the orbit (Proptosis).</li>
+            </ul>
+        </li>
+        <li><strong>Hematogenous Metastasis:</strong> To Bones (Skull, long bones), Liver, Lungs, Lymph nodes.</li>
+        <li><strong>CSF Seeding:</strong> Via optic nerve sheath to subarachnoid space.</li>
+    </ol>
+
+    <h3>Sequelae and Complications</h3>
+    <ul>
+        <li><strong>Visual Loss:</strong> Blindness in the affected eye.</li>
+        <li><strong>Secondary Glaucoma:</strong> Tumor blocks outflow or causes neovascularization.</li>
+        <li><strong>Phthisis Bulbi:</strong> Atrophy and shrinkage of the eye in advanced necrosis.</li>
+        <li><strong>Trilateral Retinoblastoma:</strong> Bilateral Retinoblastoma + Pinealoblastoma (midline intracranial tumor). Very poor prognosis.</li>
+        <li><strong>Second Malignancies:</strong> Survivors of <em>hereditary</em> retinoblastoma have a markedly increased risk of developing other cancers later in life, especially <span class="highlight-neon">Osteosarcoma</span> and Soft Tissue Sarcomas.</li>
+    </ul>
+
+    <hr>
+
+    <h2 style="color: #d32f2f; border-color: #d32f2f;">IMPORTANT UNIVERSITY QUESTIONS</h2>
+
+    <div class="qa-section">
+        <h3>Q1: Discuss the Etiopathogenesis and Genetics of Retinoblastoma.</h3>
+        <p><strong>Introduction:</strong> Retinoblastoma is a malignant embryonic tumor of the retina, serving as the paradigm for hereditary cancers.</p>
+        <p><strong>Body:</strong>
+            <br><strong>Genetics (RB1 Gene):</strong>
+            <ul>
+                <li>The <em>RB1</em> gene is a tumor suppressor located on 13q14.</li>
+                <li>It encodes the pRb protein, which regulates the G1-S cell cycle checkpoint.</li>
+                <li>Loss of both alleles leads to unchecked proliferation.</li>
+            </ul>
+            <br><strong>Knudson's Two-Hit Hypothesis:</strong>
+            <ul>
+                <li><em>Familial Cases:</em> 1st hit is germline (inherited), 2nd hit is somatic. Result: Multiple tumors, bilateral, early onset.</li>
+                <li><em>Sporadic Cases:</em> Both hits are somatic mutations in the same cell. Result: Single tumor, unilateral, later onset.</li>
+            </ul>
+        </p>
+        <p><strong>Conclusion:</strong> Genetic counseling is crucial for bilateral cases due to the risk of transmission and second malignancies.</p>
+    </div>
+
+    <div class="qa-section">
+        <h3>Q2: Describe the Gross and Microscopic features of Retinoblastoma.</h3>
+        <p><strong>Introduction:</strong> Retinoblastoma presents as a soft, white intraocular mass.</p>
+        <p><strong>Body:</strong>
+            <br><strong>Gross:</strong>
+            <ul>
+                <li>Creamy white mass arising from the retina.</li>
+                <li>Can be <em>Endophytic</em> (growing into vitreous) or <em>Exophytic</em> (growing under retina).</li>
+                <li>Chalky calcification is common.</li>
+            </ul>
+            <br><strong>Microscopy:</strong>
+            <ul>
+                <li>Sheets of <strong>Small Round Blue Cells</strong> with high N:C ratio and mitoses.</li>
+                <li><strong>Flexner-Wintersteiner Rosettes:</strong> Diagnostic. Columnar cells around a true central lumen.</li>
+                <li><strong>Homer-Wright Rosettes:</strong> Cells around a fibrillary core.</li>
+                <li>Areas of necrosis and dystrophic calcification.</li>
+            </ul>
+        </p>
+        <p><strong>Conclusion:</strong> The presence of rosettes indicates neuroepithelial differentiation. Invasion of the optic nerve worsens the prognosis.</p>
+    </div>
+
+</div>
+
+</body>
+</html>
