@@ -390,6 +390,16 @@
             transform: scale(1);
         }
 
+        /* Remove overlay/animation on small screens (mobile) to avoid blocking UX */
+        @media (max-width: 800px), (pointer: coarse) {
+            .page-overlay {
+                display: none !important;
+                opacity: 0 !important;
+                pointer-events: none !important;
+                transition: none !important;
+            }
+        }
+
         .overlay-content {
             display: flex;
             flex-direction: column;
@@ -548,10 +558,27 @@
         // 4. Smooth navigation with page transition
         const pageOverlay = document.getElementById('pageOverlay');
 
+        function isMobileDevice() {
+            return (typeof window !== 'undefined') && (
+                window.matchMedia && window.matchMedia('(max-width: 800px)').matches
+                || ('ontouchstart' in window)
+                || (navigator.maxTouchPoints && navigator.maxTouchPoints > 0)
+            );
+        }
+
         function navigateTo(url) {
             // close modal to avoid visual overlap
             modal.style.display = 'none';
-            // show overlay with animation
+
+            // If on mobile / touch device, navigate immediately without showing overlay.
+            if (isMobileDevice()) {
+                // Ensure any scrolling locks are removed
+                document.body.style.overflow = '';
+                window.location.href = url;
+                return;
+            }
+
+            // show overlay with animation for non-mobile devices
             pageOverlay.setAttribute('aria-hidden', 'false');
             pageOverlay.classList.add('show');
             // prevent background scroll while overlay visible
