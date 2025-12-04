@@ -368,71 +368,6 @@
         }
 
         /* --- CSS ENDS HERE --- */
-        /* Page transition overlay (splash) */
-        .page-overlay {
-            position: fixed;
-            inset: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 600ms cubic-bezier(.22,.9,.28,1), transform 600ms cubic-bezier(.22,.9,.28,1);
-            transform: scale(0.98);
-            background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.98), rgba(255,245,245,0.95) 20%, rgba(255,235,235,0.9) 40%, rgba(242,222,222,0.85) 60%);
-            backdrop-filter: blur(6px);
-        }
-
-        .page-overlay.show {
-            opacity: 1;
-            pointer-events: auto;
-            transform: scale(1);
-        }
-
-        /* Remove overlay/animation on small screens (mobile) to avoid blocking UX */
-        @media (max-width: 800px), (pointer: coarse) {
-            .page-overlay {
-                display: none !important;
-                opacity: 0 !important;
-                pointer-events: none !important;
-                transition: none !important;
-            }
-        }
-
-        .overlay-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .overlay-heart {
-            width: 96px;
-            height: 96px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background: linear-gradient(180deg, rgba(211,47,47,0.95), rgba(211,47,47,0.8));
-            box-shadow: 0 10px 30px rgba(211,47,47,0.18);
-            color: white;
-            font-size: 44px;
-            transform-origin: center;
-            animation: heartPulse 1200ms ease-in-out infinite;
-        }
-
-        @keyframes heartPulse {
-            0% { transform: scale(0.88); box-shadow: 0 6px 18px rgba(211,47,47,0.12); }
-            40% { transform: scale(1); box-shadow: 0 12px 30px rgba(211,47,47,0.18); }
-            100% { transform: scale(0.92); box-shadow: 0 6px 18px rgba(211,47,47,0.12); }
-        }
-
-        .overlay-text {
-            color: #7a3333;
-            font-weight: 600;
-            letter-spacing: 0.3px;
-        }
     </style>
 </head>
 <body>
@@ -510,14 +445,6 @@
             </div>
         </div>
     </div>
-    
-    <!-- Page transition overlay (hidden by default) -->
-    <div id="pageOverlay" class="page-overlay" aria-hidden="true">
-        <div class="overlay-content" role="status" aria-live="polite">
-            <div class="overlay-heart">❤</div>
-            <div class="overlay-text">Opening notes...</div>
-        </div>
-    </div>
 
     <script>
         /* --- JAVASCRIPT STARTS HERE --- */
@@ -554,65 +481,6 @@
                 list.style.display = "flex";
             }
         }
-
-        // 4. Smooth navigation with page transition
-        const pageOverlay = document.getElementById('pageOverlay');
-
-        function isMobileDevice() {
-            return (typeof window !== 'undefined') && (
-                window.matchMedia && window.matchMedia('(max-width: 800px)').matches
-                || ('ontouchstart' in window)
-                || (navigator.maxTouchPoints && navigator.maxTouchPoints > 0)
-            );
-        }
-
-        function navigateTo(url) {
-            // close modal to avoid visual overlap
-            modal.style.display = 'none';
-
-            // If on mobile / touch device, navigate immediately without showing overlay.
-            if (isMobileDevice()) {
-                // Ensure any scrolling locks are removed
-                document.body.style.overflow = '';
-                window.location.href = url;
-                return;
-            }
-
-            // show overlay with animation for non-mobile devices
-            pageOverlay.setAttribute('aria-hidden', 'false');
-            pageOverlay.classList.add('show');
-            // prevent background scroll while overlay visible
-            document.body.style.overflow = 'hidden';
-            // small delay to let animation and heart pulse be perceived (smooth)
-            setTimeout(() => {
-                // navigate after animation
-                window.location.href = url;
-            }, 900);
-        }
-
-        // Replace inline onclick navigation with delegated handler (extract URL then attach)
-        document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.topic-btn').forEach(btn => {
-                const attr = btn.getAttribute('onclick');
-                if (attr && attr.includes("window.location.href")) {
-                    // extract URL between single quotes
-                    const m = attr.match(/window.location.href\s*=\s*'([^']+)'/);
-                    if (m && m[1]) {
-                        const url = m[1];
-                        // remove inline onclick to avoid duplicate behavior
-                        btn.removeAttribute('onclick');
-                        // attach handler that navigates immediately WITHOUT overlay/transition
-                        btn.addEventListener('click', (e) => {
-                            e.preventDefault();
-                            // close modal first to avoid visual overlap
-                            modal.style.display = 'none';
-                            // direct navigation (no overlay) for Paper topic links
-                            window.location.href = url;
-                        });
-                    }
-                }
-            });
-        });
 
         // 3. Background Heart Animation Generator
         function createHearts() {
