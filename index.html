@@ -378,7 +378,6 @@
             z-index: 9999;
             opacity: 0;
             pointer-events: none;
-            /* Transition added only when class .show is toggled normally */
             transition: opacity 600ms cubic-bezier(.22,.9,.28,1), transform 600ms cubic-bezier(.22,.9,.28,1);
             transform: scale(0.98);
             background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.98), rgba(255,245,245,0.95) 20%, rgba(255,235,235,0.9) 40%, rgba(242,222,222,0.85) 60%);
@@ -575,46 +574,17 @@
                         const url = m[1];
                         // remove inline onclick to avoid duplicate behavior
                         btn.removeAttribute('onclick');
-                        // attach handler that uses our navigateTo
+                        // attach handler that navigates immediately WITHOUT overlay/transition
                         btn.addEventListener('click', (e) => {
                             e.preventDefault();
-                            navigateTo(url);
+                            // close modal first to avoid visual overlap
+                            modal.style.display = 'none';
+                            // direct navigation (no overlay) for Paper topic links
+                            window.location.href = url;
                         });
                     }
                 }
             });
-        });
-
-        // Ensure overlay is hidden when returning to this page (Back/Forward navigation)
-        // Some mobile browsers restore the exact DOM state (including overlays) from bfcache.
-        // FIX: We must disable transition temporarily to prevent the overlay from "fading out" slowly
-        // which makes it look like it's loading again.
-        
-        function hideOverlayInstant() {
-            // 1. Kill the transition immediately
-            pageOverlay.style.transition = 'none';
-            
-            // 2. Hide the overlay
-            pageOverlay.classList.remove('show');
-            pageOverlay.setAttribute('aria-hidden', 'true');
-            document.body.style.overflow = '';
-            
-            // 3. Force reflow to apply the removal instantly
-            void pageOverlay.offsetWidth;
-            
-            // 4. Restore transition for future clicks
-            setTimeout(() => {
-                pageOverlay.style.transition = '';
-            }, 50);
-        }
-
-        window.addEventListener('pageshow', (event) => {
-            // Checks if page was restored from cache or just loaded regularly
-            hideOverlayInstant();
-        });
-
-        window.addEventListener('popstate', () => {
-            hideOverlayInstant();
         });
 
         // 3. Background Heart Animation Generator
